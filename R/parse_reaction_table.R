@@ -49,7 +49,7 @@ parse_reaction_table <- function(reaction_table){
     data_frame(stoich, met)
   }
   
-  reactions_expanded <- reaction_table[['equation']] %>%
+  reactions_expanded_partial <- reaction_table[['equation']] %>%
     str_split_fixed(pattern_arrow,2) %>%
     cbind(reaction_table[['abbreviation']]) %>%
     plyr::mdply(function(from, to, abbreviation){
@@ -59,14 +59,17 @@ parse_reaction_table <- function(reaction_table){
         str_split('[[:space:]]+\\+[[:space:]]+')
       from <- from[[1]] %>% str_trim()
       to <- to[[1]] %>% str_trim()
-      rbind_list(
-        parse_met_list(from) %>%
-          mutate(stoich = -stoich),
-        parse_met_list(to)
-        ) %>%
-        mutate(abbreviation = abbreviation)
-    }, .progress = 'text') %>%
-    select(stoich, met, abbreviation) %>%
+      data_frame(
+        direction = c(rep.int(-1,length(from)), rep.int(1,length(to))),
+        symbol = c(from,to),
+        abbreviation=abbreviation
+        )
+    }, .progress = 'text')
+  
+  reactions_expanded <- parse_met_list(reactions_expanded_partial$symbol) %>%
+    transmute(abbreviation = reactions_expanded_partial$abbreviation,
+              stoich = stoich*reactions_expanded_partial$direction,
+              met = met) %>%
     filter(met!='')
   
   stoichiometric_matrix <- Matrix::sparseMatrix(j = match(reactions_expanded[['abbreviation']], reaction_table[['abbreviation']]),
