@@ -49,26 +49,25 @@ parse_reaction_table <- function(reaction_table){
     data_frame(stoich, met)
   }
   
-  reactions_expanded_partial <- reaction_table[['equation']] %>%
+  reactions_expanded_partial_1 <- reaction_table[['equation']] %>%
     str_split_fixed(pattern_arrow,2) %>%
-    cbind(reaction_table[['abbreviation']]) %>%
-    plyr::mdply(function(from, to, abbreviation){
-      from <- from %>% 
-        str_split('[[:space:]]+\\+[[:space:]]+')
-      to <- to %>% 
-        str_split('[[:space:]]+\\+[[:space:]]+')
-      from <- from[[1]] %>% str_trim()
-      to <- to[[1]] %>% str_trim()
-      data_frame(
-        direction = c(rep.int(-1,length(from)), rep.int(1,length(to))),
-        symbol = c(from,to),
-        abbreviation=abbreviation
-        )
-    }, .progress = 'text')
+    cbind(reaction_table[['abbreviation']])
   
-  reactions_expanded <- parse_met_list(reactions_expanded_partial$symbol) %>%
-    transmute(abbreviation = reactions_expanded_partial$abbreviation,
-              stoich = stoich*reactions_expanded_partial$direction,
+  reactions_expanded_partial_2 <- rbind_list(
+   data.frame(direction = -1, string = reactions_expanded_partial_1[,1], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE),
+   data.frame(direction = 1, string = reactions_expanded_partial_1[,2], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE),
+   ) 
+  
+  symbols = str_split(reactions_expanded_partial_2$string, fixed(' + '))
+  
+  reactions_expanded_partial_3 <- cbind(
+    reactions_expanded_partial_2[rep.int(1:nrow(reactions_expanded_partial_2), times=laply(symbols, length)),],
+    symbol = unlist(symbols)
+    )
+  
+  reactions_expanded <- parse_met_list(reactions_expanded_partial_3$symbol) %>%
+    transmute(abbreviation = reactions_expanded_partial_3$abbreviation,
+              stoich = stoich*reactions_expanded_partial_3$direction,
               met = met) %>%
     filter(met!='')
   
