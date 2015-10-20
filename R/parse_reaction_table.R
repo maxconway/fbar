@@ -55,7 +55,7 @@ parse_reaction_table <- function(reaction_table){
   
   reactions_expanded_partial_2 <- rbind_list(
    data.frame(direction = -1, string = reactions_expanded_partial_1[,1], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE),
-   data.frame(direction = 1, string = reactions_expanded_partial_1[,2], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE),
+   data.frame(direction = 1, string = reactions_expanded_partial_1[,2], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE)
    ) 
   
   symbols = str_split(reactions_expanded_partial_2$string, fixed(' + '))
