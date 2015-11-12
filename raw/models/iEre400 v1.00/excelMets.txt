@@ -1,0 +1,411 @@
+#	ID	NAME	UNCONSTRAINED	MIRIAM	COMPOSITION	INCHI	COMPARTMENT	REPLACEMENT ID	METS FIELD
+	10-Formyltetrahydrofolate[5]	10-Formyltetrahydrofolate		obo.chebi:CHEBI:15637	C20H21N7O7		5	m1	m1	
+	3-Phospho-D-glyceroyl phosphate[5]	3-Phospho-D-glyceroyl phosphate		obo.chebi:CHEBI:16001	C3H4O10P2		5	m2	m2	
+	1,5-Diaminopentane[5]	1,5-Diaminopentane		obo.chebi:CHEBI:18127	C5H16N2		5	m3	m3	
+	1-Pyrroline-5-carboxylate[5]	1-Pyrroline-5-carboxylate		obo.chebi:CHEBI:371	C5H6NO2		5	m4	m4	
+	2,3-Dihydrodipicolinate[5]	2,3-Dihydrodipicolinate		obo.chebi:CHEBI:18042	C7H5NO4		5	m5	m5	
+	(R)-2,3-Dihydroxy-3-methylbutanoate[5]	(R)-2,3-Dihydroxy-3-methylbutanoate		obo.chebi:CHEBI:15684, 49072	C5H9O4		5	m6	m6	
+	(R)-2,3-Dihydroxy-3-methylpentanoate[5]	(R)-2,3-Dihydroxy-3-methylpentanoate		obo.chebi:CHEBI:27512, 49258	C6H11O4		5	m7	m7	
+	(S)-2-[5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate[5]	(S)-2-[5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate		obo.chebi:CHEBI:18319	C13H15N4O12P		5	m8	m8	
+	2,5-Diamino-6-hydroxy-4-(5'-phosphoribosylamino)-pyrimidine[5]	2,5-Diamino-6-hydroxy-4-(5'-phosphoribosylamino)-pyrimidine			C9H14N5O8P		5	m9	m9	
+	meso-2,6-Diaminoheptanedioate[5]	meso-2,6-Diaminoheptanedioate		obo.chebi:CHEBI:16488	C7H14N2O4		5	m10	m10	
+	(S)-2-Aceto-2-hydroxybutanoate[5]	(S)-2-Aceto-2-hydroxybutanoate		obo.chebi:CHEBI:27681, 49256	C6H9O4		5	m11	m11	
+	1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate[5]	1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate		obo.chebi:CHEBI:29112	C12H13NO9P		5	m12	m12	
+	2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate[5]	2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate		obo.chebi:CHEBI:18150	C7H10O10P		5	m13	m13	
+	2-Dehydropantoate[5]	2-Dehydropantoate		obo.chebi:CHEBI:17094	C6H9O4		5	m14	m14	
+	2-Deoxy-D-ribose 1-phosphate[5]	2-Deoxy-D-ribose 1-phosphate		obo.chebi:CHEBI:28542	C5H9O7P		5	m15	m15	
+	2-Deoxy-D-ribose 5-phosphate[5]	2-Deoxy-D-ribose 5-phosphate		obo.chebi:CHEBI:16132	C5H9O7P		5	m16	m16	
+	2-Isopropylmaleate[5]	2-Isopropylmaleate		obo.chebi:CHEBI:17275	C7H8O2		5	m17	m17	
+	2-Methyl-4-amino-5-hydroxymethylpyrimidine diphosphate[5]	2-Methyl-4-amino-5-hydroxymethylpyrimidine diphosphate		obo.chebi:CHEBI:16629	C6H8N3O7P2		5	m18	m18	
+	2-Oxobutanoate[5]	2-Oxobutanoate		obo.chebi:CHEBI:30831	C4H5O3		5	m19	m19	
+	D-Glycerate 2-phosphate[5]	D-Glycerate 2-phosphate		obo.chebi:CHEBI:17835	C3H4O7P		5	m20	m20	
+	3-(4-Hydroxyphenyl)pyruvate[5]	3-(4-Hydroxyphenyl)pyruvate		obo.chebi:CHEBI:15999	C9H7O4		5	m21	m21	
+	3-Carboxy-2-hydroxy-4-methylpentanoate[5]	3-Carboxy-2-hydroxy-4-methylpentanoate		obo.chebi:CHEBI:35121	C7H10O5		5	m22	m22	
+	3-Carboxy-3-hydroxy-4-methylpentanoate[5]	3-Carboxy-3-hydroxy-4-methylpentanoate		obo.chebi:CHEBI:1178, 35128	C7H10O5		5	m23	m23	
+	3-Carboxy-4-methyl-2-oxopentanoate[5]	3-Carboxy-4-methyl-2-oxopentanoate		obo.chebi:CHEBI:1467	C7H8O5		5	m24	m24	
+	3-Dehydroquinate[5]	3-Dehydroquinate		obo.chebi:CHEBI:17947	C7H9O6		5	m25	m25	
+	3-Dehydroshikimate[5]	3-Dehydroshikimate		obo.chebi:CHEBI:30918	C7H7O5		5	m26	m26	
+	(S)-3-Hydroxybutanoyl-CoA[5]	(S)-3-Hydroxybutanoyl-CoA		obo.chebi:CHEBI:15453	C25H38N7O18P3S		5	m27	m27	
+	C'-(3-Indolyl)-glycerol 3-phosphate[5]	C'-(3-Indolyl)-glycerol 3-phosphate		obo.chebi:CHEBI:18299, 51793	C11H14NO6P		5	m28	m28	
+	3-Methyl-2-oxobutanoate[5]	3-Methyl-2-oxobutanoate		obo.chebi:CHEBI:11851, 16530	C5H7O3		5	m29	m29	
+	(S)-3-Methyl-2-oxopentanoate[5]	(S)-3-Methyl-2-oxopentanoate		obo.chebi:CHEBI:15614	C6H9O3		5	m30	m30	
+	3-Phospho-D-glycerate[5]	3-Phospho-D-glycerate		obo.chebi:CHEBI:17794	C3H4O7P		5	m31	m31	
+	3-Phosphohydroxypyruvate[5]	3-Phosphohydroxypyruvate		obo.chebi:CHEBI:30933	C3H2O7P		5	m32	m32	
+	5-O-(1-Carboxyvinyl)-3-phosphoshikimate[5]	5-O-(1-Carboxyvinyl)-3-phosphoshikimate		obo.chebi:CHEBI:16257	C10H9O10P		5	m33	m33	
+	4-Amino-2-methyl-5-phosphomethylpyrimidine[5]	4-Amino-2-methyl-5-phosphomethylpyrimidine		obo.chebi:CHEBI:18032	C6H8N3O4P		5	m34	m34	
+	4-Methyl-5-(2-hydroxyethyl)-thiazole[5]	4-Methyl-5-(2-hydroxyethyl)-thiazole		obo.chebi:CHEBI:17957	C6H9NOS		5	m35	m35	
+	4-Methyl-2-oxopentanoate[5]	4-Methyl-2-oxopentanoate		obo.chebi:CHEBI:48430	C6H9O3		5	m36	m36	
+	4-Methyl-5-(2-phosphoethyl)-thiazole[5]	4-Methyl-5-(2-phosphoethyl)-thiazole		obo.chebi:CHEBI:17857	C6H8NO4PS		5	m37	m37	
+	4-Phospho-L-aspartate[5]	4-Phospho-L-aspartate		obo.chebi:CHEBI:15836	C4H6NO7P		5	m38	m38	
+	D-4'-Phosphopantothenate[5]	D-4'-Phosphopantothenate		obo.chebi:CHEBI:15905	C9H15NO8P		5	m39	m39	
+	N-((R)-4-Phosphopantothenoyl)-L-cysteine[5]	N-((R)-4-Phosphopantothenoyl)-L-cysteine		obo.chebi:CHEBI:15769	C12H20N2O9PS		5	m40	m40	
+	4-(1-D-Ribitylamino)-5-aminouracil[5]	4-(1-D-Ribitylamino)-5-aminouracil		obo.chebi:CHEBI:15934	C9H16N4O6		5	m41	m41	
+	5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate[5]	5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate		obo.chebi:CHEBI:28413	C9H11N3O9P		5	m42	m42	
+	5-Amino-6-(5'-phosphoribitylamino)uracil[5]	5-Amino-6-(5'-phosphoribitylamino)uracil		obo.chebi:CHEBI:18247	C9H15N4O9P		5	m43	m43	
+	5-Amino-6-(5'-phosphoribosylamino)uracil[5]	5-Amino-6-(5'-phosphoribosylamino)uracil		obo.chebi:CHEBI:18337	C9H13N4O9P		5	m44	m44	
+	5-phosphoribosyl-5-carboxyaminoimidazole[5]	5-phosphoribosyl-5-carboxyaminoimidazole		obo.chebi:CHEBI:28413	C9H11N3O9P		5	m45	m45	
+	5-Methylthioadenosine[5]	5-Methylthioadenosine		obo.chebi:CHEBI:17509	C11H15N5O3S		5	m46	m46	
+	5-Methyltetrahydrofolate[5]	5-Methyltetrahydrofolate		obo.chebi:CHEBI:15641	C20H24N7O6		5	m47	m47	
+	5-Methylthio-D-ribose[5]	5-Methylthio-D-ribose		obo.chebi:CHEBI:16895	C6H12O4S		5	m48	m48	
+	acyl carrier protein[5]	acyl carrier protein		obo.chebi:CHEBI:18359	C11H21N2O7PRS		5	m49	m49	
+	Acetoacetyl-CoA[5]	Acetoacetyl-CoA		obo.chebi:CHEBI:15345	C25H36N7O18P3S		5	m50	m50	
+	Acetyl-ACP[5]	Acetyl-ACP		obo.chebi:CHEBI:17093	C13H23N2O8PRS		5	m51	m51	
+	Acetate[5]	Acetate		obo.chebi:CHEBI:15366	C2H3O2		5	m52	m52	
+	Acetaldehyde[5]	Acetaldehyde		obo.chebi:CHEBI:15343	C2H4O		5	m53	m53	
+	Acetyl-CoA[5]	Acetyl-CoA		obo.chebi:CHEBI:15351	C23H34N7O17P3S		5	m54	m54	
+	N-Acetyl-L-glutamyl 5-phosphate[5]	N-Acetyl-L-glutamyl 5-phosphate		obo.chebi:CHEBI:16878	C7H9NO8P		5	m55	m55	
+	N-Acetyl-L-glutamate 5-semialdehyde[5]	N-Acetyl-L-glutamate 5-semialdehyde		obo.chebi:CHEBI:16319	C7H10NO4		5	m56	m56	
+	N-Acetyl-D-glucosamine 1-phosphate[5]	N-Acetyl-D-glucosamine 1-phosphate		obo.chebi:CHEBI:7125	C8H14NO9P		5	m57	m57	
+	N-Acetyl-D-glucosamine 6-phosphate[5]	N-Acetyl-D-glucosamine 6-phosphate		obo.chebi:CHEBI:15784	C8H14NO9P		5	m58	m58	
+	N-Acetyl-D-glucosamine[5]	N-Acetyl-D-glucosamine		obo.chebi:CHEBI:506227	C8H15NO6		5	m59	m59	
+	N-Acetyl-D-glucosamine[2]	N-Acetyl-D-glucosamine		obo.chebi:CHEBI:506227	C8H15NO6		2	m60	m60	
+	N-Acetyl-L-glutamate[5]	N-Acetyl-L-glutamate		obo.chebi:CHEBI:17533	C7H9NO5		5	m61	m61	
+	Acetyl-maltose[5]	Acetyl-maltose		obo.chebi:CHEBI:2411	C14H24O12		5	m62	m62	
+	N-Acetyl-D-muramoate[5]	N-Acetyl-D-muramoate		obo.chebi:CHEBI:21615, 28881	C11H18NO8		5	m63	m63	
+	N-Acetyl-D-muramoyl-L-alanine[5]	N-Acetyl-D-muramoyl-L-alanine		obo.chebi:CHEBI:28920	C14H23N2O9		5	m64	m64	
+	N-Acetyl-D-mannosamine[5]	N-Acetyl-D-mannosamine		obo.chebi:CHEBI:17122	C8H15NO6		5	m65	m65	
+	N-Acetyl-D-mannosamine 6-phosphate[5]	N-Acetyl-D-mannosamine 6-phosphate		obo.chebi:CHEBI:28273	C8H14NO9P		5	m66	m66	
+	N2-Acetyl-L-ornithine[5]	N2-Acetyl-L-ornithine		obo.chebi:CHEBI:16543	C7H14N2O3		5	m67	m67	
+	O-Acetyl-L-serine[5]	O-Acetyl-L-serine		obo.chebi:CHEBI:17981	C5H9NO4		5	m68	m68	
+	Acetoacetyl-ACP[5]	Acetoacetyl-ACP		obo.chebi:CHEBI:2393	C15H25N2O9PRS		5	m69	m69	
+	Acetyl phosphate[5]	Acetyl phosphate		obo.chebi:CHEBI:15350	C2H3O5P		5	m70	m70	
+	Adenine[5]	Adenine		obo.chebi:CHEBI:16708	C5H5N5		5	m71	m71	
+	Adenosine[5]	Adenosine		obo.chebi:CHEBI:16335	C10H13N5O4		5	m72	m72	
+	ADP[5]	ADP		obo.chebi:CHEBI:16761	C10H12N5O10P2		5	m73	m73	
+	ADP-D-glycero-D-manno-heptose[5]	ADP-D-glycero-D-manno-heptose		obo.chebi:CHEBI:16693	C17H25N5O16P2		5	m74	m74	
+	ADP-L-glycero-D-manno-heptose[5]	ADP-L-glycero-D-manno-heptose		obo.chebi:CHEBI:15915	C17H25N5O16P2		5	m75	m75	
+	ADPribose[5]	ADPribose		obo.chebi:CHEBI:16960	C15H21N5O14P2		5	m76	m76	
+	Agmatine[5]	Agmatine		obo.chebi:CHEBI:17431	C5H16N4		5	m77	m77	
+	S-Adenosyl-L-homocysteine[5]	S-Adenosyl-L-homocysteine		obo.chebi:CHEBI:16680	C14H20N6O5S		5	m78	m78	
+	5-Amino-1-(5-Phospho-D-ribosyl)imidazole-4-carboxamide[5]	5-Amino-1-(5-Phospho-D-ribosyl)imidazole-4-carboxamide		obo.chebi:CHEBI:18302	C9H15N4O8P	C9H15N4O8P	5	m79	m79	
+	5-amino-1-(5-phospho-D-ribosyl)imidazole[5]	5-amino-1-(5-phospho-D-ribosyl)imidazole		obo.chebi:CHEBI:28413	C8H12N3O7P		5	m80	m80	
+	2-Oxoglutarate[5]	2-Oxoglutarate		obo.chebi:CHEBI:30915	C5H4O5		5	m81	m81	
+	beta-Alanine[5]	beta-Alanine		obo.chebi:CHEBI:16958	C3H7NO2		5	m82	m82	
+	D-Alanine[5]	D-Alanine		obo.chebi:CHEBI:15570	C3H7NO2		5	m83	m83	
+	D-Alanine[2]	D-Alanine		obo.chebi:CHEBI:15570	C3H7NO2		2	m84	m84	
+	L-Alanine[5]	L-Alanine		obo.chebi:CHEBI:16977	C3H7NO2		5	m85	m85	
+	L-Alanine[2]	L-Alanine		obo.chebi:CHEBI:16977	C3H7NO2		2	m86	m86	
+	D-Alanyl-D-alanine[5]	D-Alanyl-D-alanine		obo.chebi:CHEBI:16576	C6H12N2O3		5	m87	m87	
+	(S)-2-Acetolactate[5]	(S)-2-Acetolactate		obo.chebi:CHEBI:18409	C5H7O4		5	m88	m88	
+	L-Alanyl-tRNA(Ala)[5]	L-Alanyl-tRNA(Ala)		obo.chebi:CHEBI:17732	C3H6NOR		5	m89	m89	
+	S-Adenosyl-L-methionine[5]	S-Adenosyl-L-methionine		obo.chebi:CHEBI:15414	C15H23N6O5S		5	m90	m90	
+	AMP[5]	AMP		obo.chebi:CHEBI:16027	C10H12N5O7P		5	m91	m91	
+	Anthranilate[5]	Anthranilate		obo.chebi:CHEBI:30754	C7H6NO2		5	m92	m92	
+	Adenosine 5'-phosphosulfate[5]	Adenosine 5'-phosphosulfate		obo.chebi:CHEBI:17709	C10H12N5O10PS		5	m93	m93	
+	L-Arginine[5]	L-Arginine		obo.chebi:CHEBI:16467	C6H15N4O2		5	m94	m94	
+	N(omega)-(L-Arginino)succinate[5]	N(omega)-(L-Arginino)succinate		obo.chebi:CHEBI:15682	C10H17N4O6		5	m95	m95	
+	L-Arginyl-tRNA(Arg)[5]	L-Arginyl-tRNA(Arg)		obo.chebi:CHEBI:18366	C6H14N4OR		5	m96	m96	
+	L-Asparagine[5]	L-Asparagine		obo.chebi:CHEBI:17196	C4H8N2O3		5	m97	m97	
+	L-Asparaginyl-tRNA(Asn)[5]	L-Asparaginyl-tRNA(Asn)		obo.chebi:CHEBI:29265	C14H23N2O12PR2		5	m98	m98	
+	L-Aspartate[5]	L-Aspartate		obo.chebi:CHEBI:17053	C4H6NO4		5	m99	m99	
+	L-Aspartate 4-semialdehyde[5]	L-Aspartate 4-semialdehyde		obo.chebi:CHEBI:13086	C4H7NO3		5	m100	m100	
+	L-Aspartyl-tRNA(Asp)[5]	L-Aspartyl-tRNA(Asp)		obo.chebi:CHEBI:29158	C4H5NO3R		5	m101	m101	
+	ATP[5]	ATP		obo.chebi:CHEBI:15422	C10H12N5O13P3		5	m102	m102	
+	Crotonoyl-CoA[5]	Crotonoyl-CoA		obo.chebi:CHEBI:15473	C25H36N7O17P3S		5	m103	m103	
+	Butanoyl-CoA[5]	Butanoyl-CoA		obo.chebi:CHEBI:15517	C25H38N7O17P3S		5	m104	m104	
+	N-Carbamoyl-L-aspartate[5]	N-Carbamoyl-L-aspartate		obo.chebi:CHEBI:15859	C5H6N2O5		5	m105	m105	
+	Carbamoyl phosphate[5]	Carbamoyl phosphate		obo.chebi:CHEBI:17672	CH2NO5P		5	m106	m106	
+	CDPdiacylglycerol[5]	CDPdiacylglycerol		obo.chebi:CHEBI:17962	C14H19N3O15P2R2		5	m107	m107	
+	CDPglycerol[5]	CDPglycerol		obo.chebi:CHEBI:17885	C12H19N3O13P2		5	m108	m108	
+	Choline[5]	Choline		obo.chebi:CHEBI:15354	C5H14NO		5	m109	m109	
+	Choline[2]	Choline		obo.chebi:CHEBI:15354	C5H14NO		2	m110	m110	
+	chorismate[5]	chorismate		obo.chebi:CHEBI:17333	C10H8O6		5	m111	m111	
+	Citrate[5]	Citrate		obo.chebi:CHEBI:30769	C6H5O7		5	m112	m112	
+	L-Citrulline[5]	L-Citrulline		obo.chebi:CHEBI:16349	C6H13N3O3		5	m113	m113	
+	CO2[5]	CO2		obo.chebi:CHEBI:16526	CO2		5	m114	m114	
+	Coenzyme A[5]	Coenzyme A		obo.chebi:CHEBI:15346	C21H32N7O16P3S		5	m115	m115	
+	CTP[5]	CTP		obo.chebi:CHEBI:17677	C9H12N3O14P3		5	m116	m116	
+	L-Cysteine[5]	L-Cysteine		obo.chebi:CHEBI:17561	C3H7NO2S		5	m117	m117	
+	L-Cysteinyl-tRNA(Cys)[5]	L-Cysteinyl-tRNA(Cys)		obo.chebi:CHEBI:29152	C3H6NOSR		5	m118	m118	
+	Cytidine[5]	Cytidine		obo.chebi:CHEBI:17562	C9H13N3O5		5	m119	m119	
+	Deoxyadenosine[5]	Deoxyadenosine		obo.chebi:CHEBI:17256	C10H13N5O3		5	m120	m120	
+	dATP[5]	dATP		obo.chebi:CHEBI:16284	C10H12N5O12P3		5	m121	m121	
+	3,4-dihydroxy-2-butanone 4-phosphate[5]	3,4-dihydroxy-2-butanone 4-phosphate		obo.chebi:CHEBI:50606	C4H7O6P		5	m122	m122	
+	N6-(1,2-Dicarboxyethyl)-AMP[5]	N6-(1,2-Dicarboxyethyl)-AMP		obo.chebi:CHEBI:15919	C14H14N5O11P		5	m123	m123	
+	dCDP[5]	dCDP			C9H12N3O10P2		5	m124	m124	
+	dCMP[5]	dCMP		obo.chebi:CHEBI:15918	C9H12N3O7P		5	m125	m125	
+	dCTP[5]	dCTP		obo.chebi:CHEBI:16311	C9H12N3O13P3		5	m126	m126	
+	dGDP[5]	dGDP		obo.chebi:CHEBI:28862	C10H12N5O10P2		5	m127	m127	
+	dGMP[5]	dGMP		obo.chebi:CHEBI:16192	C10H12N5O7P		5	m128	m128	
+	dGTP[5]	dGTP		obo.chebi:CHEBI:16497	C10H12N5O13P3		5	m129	m129	
+	Dihydroxyacetone phosphate[5]	Dihydroxyacetone phosphate		obo.chebi:CHEBI:16108	C3H5O6P		5	m130	m130	
+	7,8-Dihydrofolate[5]	7,8-Dihydrofolate		obo.chebi:CHEBI:15633	C19H19N7O6		5	m131	m131	
+	(S)-Dihydroorotate[5]	(S)-Dihydroorotate		obo.chebi:CHEBI:17025	C5H5N2O4		5	m132	m132	
+	Dihydropteroate[5]	Dihydropteroate		obo.chebi:CHEBI:4581	C14H13N6O3		5	m133	m133	
+	6,7-Dimethyl-8-(1-D-ribityl)lumazine[5]	6,7-Dimethyl-8-(1-D-ribityl)lumazine		obo.chebi:CHEBI:17601	C13H18N4O6		5	m134	m134	
+	Deamino-NAD+[5]	Deamino-NAD+		obo.chebi:CHEBI:18304	C21H24N6O15P2		5	m135	m135	
+	Dephospho-CoA[5]	Dephospho-CoA		obo.chebi:CHEBI:15468	C21H33N7O13P2S		5	m136	m136	
+	dTMP[5]	dTMP		obo.chebi:CHEBI:17013	C10H13N2O8P		5	m137	m137	
+	dUDP[5]	dUDP		obo.chebi:CHEBI:28850	C9H11N2O11P2		5	m138	m138	
+	dUMP[5]	dUMP		obo.chebi:CHEBI:17622	C9H11N2O8P		5	m139	m139	
+	Deoxyuridine[5]	Deoxyuridine		obo.chebi:CHEBI:16450	C9H12N2O5		5	m140	m140	
+	dUTP[5]	dUTP		obo.chebi:CHEBI:17625	C9H11N2O14P3		5	m141	m141	
+	D-Erythrose 4-phosphate[5]	D-Erythrose 4-phosphate		obo.chebi:CHEBI:48153	C4H7O7P		5	m142	m142	
+	D-erythro-1-(Imidazol-4-yl)glycerol 3-phosphate[5]	D-erythro-1-(Imidazol-4-yl)glycerol 3-phosphate		obo.chebi:CHEBI:17805	C6H9N2O6P		5	m143	m143	
+	D-Fructose 1-phosphate[5]	D-Fructose 1-phosphate		obo.chebi:CHEBI:18105	C6H11O9P		5	m144	m144	
+	D-Fructose 6-phosphate[5]	D-Fructose 6-phosphate		obo.chebi:CHEBI:15946	C6H11O9P		5	m145	m145	
+	Flavin adenine dinucleotide oxidized[5]	Flavin adenine dinucleotide oxidized		obo.chebi:CHEBI:16238	C27H31N9O15P2		5	m146	m146	
+	Flavin adenine dinucleotide reduced[5]	Flavin adenine dinucleotide reduced		obo.chebi:CHEBI:16238	C27H33N9O15P2		5	m147	m147	
+	D-Fructose 1,6-bisphosphate[5]	D-Fructose 1,6-bisphosphate		obo.chebi:CHEBI:16905	C6H10O12P2		5	m148	m148	
+	Oxidized ferredoxin[5]	Oxidized ferredoxin		obo.chebi:CHEBI:17908	X		5	m149	m149	
+	Reduced ferredoxin[5]	Reduced ferredoxin		obo.chebi:CHEBI:17513	X		5	m150	m150	
+	N2-Formyl-N1-(5-phospho-D-ribosyl)glycinamide[5]	N2-Formyl-N1-(5-phospho-D-ribosyl)glycinamide		obo.chebi:CHEBI:18272	C8H13N2O9P		5	m151	m151	
+	FMN[5]	FMN		obo.chebi:CHEBI:17621	C17H19N4O9P		5	m152	m152	
+	Reduced FMN[5]	Reduced FMN		obo.chebi:CHEBI:16048	C17H21N4O9P		5	m153	m153	
+	Formate[5]	Formate		obo.chebi:CHEBI:30751	CH1O2		5	m154	m154	
+	2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine[5]	2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine		obo.chebi:CHEBI:18413	C8H15N3O8P		5	m155	m155	
+	5-Formamido-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide[5]	5-Formamido-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide		obo.chebi:CHEBI:18381	C10H13N4O9P		5	m156	m156	
+	D-Fructose[5]	D-Fructose		obo.chebi:CHEBI:15824	C6H12O6		5	m157	m157	
+	D-Fructose[2]	D-Fructose		obo.chebi:CHEBI:15824	C6H12O6		2	m158	m158	
+	Fumarate[5]	Fumarate		obo.chebi:CHEBI:18012	C4H2O4		5	m159	m159	
+	D-Glucose 1-phosphate[5]	D-Glucose 1-phosphate		obo.chebi:CHEBI:16077	C6H11O9P		5	m160	m160	
+	Glyceraldehyde 3-phosphate[5]	Glyceraldehyde 3-phosphate		obo.chebi:CHEBI:29052	C3H5O6P		5	m161	m161	
+	sn-Glycero-3-phosphocholine[5]	sn-Glycero-3-phosphocholine		obo.chebi:CHEBI:16870	C8H20NO6P		5	m162	m162	
+	D-Glucose 6-phosphate[5]	D-Glucose 6-phosphate		obo.chebi:CHEBI:4170	C6H11O9P		5	m163	m163	
+	D-Glucosamine 1-phosphate[5]	D-Glucosamine 1-phosphate		obo.chebi:CHEBI:27625	C6H13NO8P		5	m164	m164	
+	D-Glucosamine 6-phosphate[5]	D-Glucosamine 6-phosphate		obo.chebi:CHEBI:15873	C6H13NO8P		5	m165	m165	
+	N1-(5-Phospho-D-ribosyl)glycinamide[5]	N1-(5-Phospho-D-ribosyl)glycinamide		obo.chebi:CHEBI:18272	C7H14N2O8P		5	m166	m166	
+	GDP[5]	GDP		obo.chebi:CHEBI:17552	C10H12N5O11P2		5	m167	m167	
+	Guanosine 3'-diphosphate 5'-triphosphate[5]	Guanosine 3'-diphosphate 5'-triphosphate		obo.chebi:CHEBI:16690	C10H11N5O20P5		5	m168	m168	
+	D-Glucose[5]	D-Glucose		obo.chebi:CHEBI:4167	C6H12O6		5	m169	m169	
+	D-Glucose[2]	D-Glucose		obo.chebi:CHEBI:4167	C6H12O6		2	m170	m170	
+	L-Glutamine[5]	L-Glutamine		obo.chebi:CHEBI:18050	C5H10N2O3		5	m171	m171	
+	L-Glutamate 5-semialdehyde[5]	L-Glutamate 5-semialdehyde		obo.chebi:CHEBI:17232	C5H9NO3		5	m172	m172	
+	D-Glutamate[5]	D-Glutamate		obo.chebi:CHEBI:15966	C5H8NO4		5	m173	m173	
+	L-Glutamate[5]	L-Glutamate		obo.chebi:CHEBI:16015	C5H8NO4		5	m174	m174	
+	L-Glutamate[2]	L-Glutamate		obo.chebi:CHEBI:16015	C5H8NO4		2	m175	m175	
+	L-Glutamyl-tRNA(Glu)[5]	L-Glutamyl-tRNA(Glu)		obo.chebi:CHEBI:29157	C5H7NO3R		5	m176	m176	
+	Glycine[5]	Glycine		obo.chebi:CHEBI:15428	C2H5NO2		5	m177	m177	
+	Glycerol 3-phosphate[5]	Glycerol 3-phosphate		obo.chebi:CHEBI:15978	C3H7O6P		5	m178	m178	
+	Glycerol 3-phosphate[2]	Glycerol 3-phosphate		obo.chebi:CHEBI:15978	C3H7O6P		2	m179	m179	
+	(R)-Glycerate[5]	(R)-Glycerate			C3H5O4		5	m180	m180	
+	Glycerol[5]	Glycerol		obo.chebi:CHEBI:17754	C3H8O3		5	m181	m181	
+	Glycyl-tRNA(Gly)[5]	Glycyl-tRNA(Gly)		obo.chebi:CHEBI:29156	C2H4NOR		5	m182	m182	
+	D-Glycero-D-manno-heptose 7-phosphate[5]	D-Glycero-D-manno-heptose 7-phosphate		obo.chebi:CHEBI:28723	C7H13O10P		5	m183	m183	
+	GMP[5]	GMP		obo.chebi:CHEBI:17345	C10H12N5O8P		5	m184	m184	
+	glycerol teichoic acid (n=25), unlinked, unsubstituted[5]	glycerol teichoic acid (n=25), unlinked, unsubstituted			C91H178N2O136P25		5	m185	m185	
+	glycerol teichoic acid (n=25), unlinked, D-ala substituted[5]	glycerol teichoic acid (n=25), unlinked, D-ala substituted			C166H328N27O161P25		5	m186	m186	
+	glycerol teichoic acid (n=25), unlinked, glucose substituted[5]	glycerol teichoic acid (n=25), unlinked, glucose substituted			C241H428N2O261P25		5	m187	m187	
+	GTP[5]	GTP		obo.chebi:CHEBI:15996	C10H12N5O14P3		5	m188	m188	
+	Guanine[5]	Guanine		obo.chebi:CHEBI:16235	C5H5N5O		5	m189	m189	
+	H2O[5]	H2O		obo.chebi:CHEBI:15377	H2O		5	m190	m190	
+	Hydrogen sulfide[5]	Hydrogen sulfide		obo.chebi:CHEBI:16136	H2S		5	m191	m191	
+	L-Homocysteine[5]	L-Homocysteine		obo.chebi:CHEBI:17588	C4H9NO2S		5	m192	m194	
+	L-Histidine[5]	L-Histidine		obo.chebi:CHEBI:15971	C6H9N3O2		5	m193	m195	
+	L-Histidinol phosphate[5]	L-Histidinol phosphate		obo.chebi:CHEBI:16996	C6H11N3O4P		5	m194	m196	
+	L-Histidinol[5]	L-Histidinol		obo.chebi:CHEBI:16255	C6H12N3O		5	m195	m197	
+	L-Homoserine[5]	L-Homoserine		obo.chebi:CHEBI:15699	C4H9NO3		5	m196	m198	
+	Hypoxanthine[5]	Hypoxanthine		obo.chebi:CHEBI:17368	C5H4N4O		5	m197	m199	
+	L-Isoleucine[5]	L-Isoleucine		obo.chebi:CHEBI:17191	C6H13NO2		5	m198	m200	
+	L-Isoleucyl-tRNA(Ile)[5]	L-Isoleucyl-tRNA(Ile)		obo.chebi:CHEBI:29160	C6H12NOR		5	m199	m201	
+	3-(Imidazol-4-yl)-2-oxopropyl phosphate[5]	3-(Imidazol-4-yl)-2-oxopropyl phosphate		obo.chebi:CHEBI:16426	C6H7N2O5P		5	m200	m202	
+	IMP[5]	IMP		obo.chebi:CHEBI:17202	C10H11N4O8P		5	m201	m203	
+	Lactose-6-phosphate[5]	Lactose-6-phosphate			C12H21O14P		5	m202	m204	
+	L-Lactate[5]	L-Lactate		obo.chebi:CHEBI:422	C3H5O3		5	m203	m205	
+	Lactose[2]	Lactose		obo.chebi:CHEBI:36219	C12H22O11		2	m204	m206	
+	L-Leucine[5]	L-Leucine		obo.chebi:CHEBI:15603	C6H13NO2		5	m205	m207	
+	L-Lysine[5]	L-Lysine		obo.chebi:CHEBI:18019	C6H15N2O2		5	m206	m208	
+	L-Lysine-tRNA (Lys)[5]	L-Lysine-tRNA (Lys)		obo.chebi:CHEBI:16047	C6H14N2OR		5	m207	m209	
+	Malonyl-[acyl-carrier protein][5]	Malonyl-[acyl-carrier protein]		obo.chebi:CHEBI:17330	C14H22N2O10PRS		5	m208	m210	
+	L-Malate[5]	L-Malate		obo.chebi:CHEBI:30797	C4H4O5		5	m209	m211	
+	Malonyl-CoA[5]	Malonyl-CoA		obo.chebi:CHEBI:15531	C24H33N7O19P3S		5	m210	m212	
+	Maltose[5]	Maltose		obo.chebi:CHEBI:17306	C12H22O11		5	m211	m213	
+	Maltose[2]	Maltose		obo.chebi:CHEBI:17306	C12H22O11		2	m212	m214	
+	D-Mannose 1-phosphate[5]	D-Mannose 1-phosphate		obo.chebi:CHEBI:35374	C6H11O9P		5	m213	m215	
+	D-Mannose 6-phosphate[5]	D-Mannose 6-phosphate		obo.chebi:CHEBI:17369	C6H11O9P		5	m214	m216	
+	Melibiose[5]	Melibiose		obo.chebi:CHEBI:28053	C12H22O11		5	m215	m217	
+	L-Methionine[5]	L-Methionine		obo.chebi:CHEBI:16643	C5H11NO2S		5	m216	m218	
+	5,10-Methenyltetrahydrofolate[5]	5,10-Methenyltetrahydrofolate		obo.chebi:CHEBI:15638	C20H20N7O6		5	m217	m219	
+	L-Methionyl-tRNA (Met)[5]	L-Methionyl-tRNA (Met)		obo.chebi:CHEBI:16635	C5H10NOSR		5	m218	m220	
+	5,10-Methylenetetrahydrofolate[5]	5,10-Methylenetetrahydrofolate		obo.chebi:CHEBI:1989	C20H21N7O6		5	m219	m221	
+	NAD+[5]	NAD+		obo.chebi:CHEBI:15846	C21H26N7O14P2		5	m220	m222	
+	NADH[5]	NADH		obo.chebi:CHEBI:16908	C21H27N7O14P2		5	m221	m223	
+	NADP+[5]	NADP+		obo.chebi:CHEBI:18009	C21H25N7O17P3		5	m222	m224	
+	NADPH[5]	NADPH		obo.chebi:CHEBI:16474	C21H26N7O17P3		5	m223	m225	
+	Ammonium[5]	Ammonium		obo.chebi:CHEBI:16134	H4N		5	m224	m226	
+	Ammonium[2]	Ammonium		obo.chebi:CHEBI:16134	H4N		2	m225	m227	
+	Nicotinate D-ribonucleotide[5]	Nicotinate D-ribonucleotide		obo.chebi:CHEBI:15763	C11H12NO9P		5	m226	m228	
+	Oxaloacetate[5]	Oxaloacetate		obo.chebi:CHEBI:30744	C4H2O5		5	m227	m229	
+	Ornithine[5]	Ornithine		obo.chebi:CHEBI:18257	C5H13N2O2		5	m228	m230	
+	Ornithine[2]	Ornithine		obo.chebi:CHEBI:18257	C5H13N2O2		2	m229	m231	
+	Orotate[5]	Orotate		obo.chebi:CHEBI:16742	C5H3N2O4		5	m230	m232	
+	Phosphatidate[5]	Phosphatidate		obo.chebi:CHEBI:16337	C5H7O8PR2		5	m231	m233	
+	Pantetheine 4'-phosphate[5]	Pantetheine 4'-phosphate		obo.chebi:CHEBI:16858, 4222	C11H21N2O7PS		5	m232	m234	
+	Phosphoenolpyruvate[5]	Phosphoenolpyruvate		obo.chebi:CHEBI:18021	C3H2O6P		5	m233	m235	
+	Phosphatidylglycerophosphate[5]	Phosphatidylglycerophosphate		obo.chebi:CHEBI:37393	C8H14O13P2R2		5	m234	m236	
+	L-Phenylalanine[5]	L-Phenylalanine		obo.chebi:CHEBI:17295	C9H11NO2		5	m235	m237	
+	Phenylpyruvate[5]	Phenylpyruvate		obo.chebi:CHEBI:30851	C9H7O3		5	m236	m238	
+	Phosphate[5]	Phosphate		obo.chebi:CHEBI:15978	HO4P		5	m237	m239	
+	Phosphate[2]	Phosphate		obo.chebi:CHEBI:15978	HO4P		2	m238	m240	
+	Prephenate[5]	Prephenate		obo.chebi:CHEBI:16666	C10H8O6		5	m239	m241	
+	Diphosphate[5]	Diphosphate		obo.chebi:CHEBI:18361	HO7P2		5	m240	m242	
+	5-Phospho-beta-D-ribosylamine[5]	5-Phospho-beta-D-ribosylamine		obo.chebi:CHEBI:37737	C5H11NO7P		5	m241	m243	
+	N-(5-Phospho-D-ribosyl)anthranilate[5]	N-(5-Phospho-D-ribosyl)anthranilate		obo.chebi:CHEBI:7091	C12H13NO9P		5	m242	m244	
+	1-(5-Phosphoribosyl)-AMP[5]	1-(5-Phosphoribosyl)-AMP		obo.chebi:CHEBI:18374	C15H19N5O14P2		5	m243	m245	
+	1-(5-Phosphoribosyl)-ATP[5]	1-(5-Phosphoribosyl)-ATP		obo.chebi:CHEBI:18263	C15H19N5O20P4		5	m244	m246	
+	1-(5-Phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino]imidazole-4-carboxamide[5]	1-(5-Phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino]imidazole-4-carboxamide		obo.chebi:CHEBI:18302	C15H21N5O15P2		5	m245	m247	
+	5-[(5-phospho-1-deoxyribulos-1-ylamino)methylideneamino]-1-(5-phosphoribosyl)imidazole-4-carboxamide[5]	5-[(5-phospho-1-deoxyribulos-1-ylamino)methylideneamino]-1-(5-phosphoribosyl)imidazole-4-carboxamide		obo.chebi:CHEBI:27735	C15H21N5O15P2		5	m246	m248	
+	L-Proline[5]	L-Proline		obo.chebi:CHEBI:17203	C5H9NO2		5	m247	m249	
+	L-Proline[2]	L-Proline		obo.chebi:CHEBI:17203	C5H9NO2		2	m248	m250	
+	5-Phospho-alpha-D-ribose 1-diphosphate[5]	5-Phospho-alpha-D-ribose 1-diphosphate		obo.chebi:CHEBI:17111	C5H8O14P3		5	m249	m251	
+	Pseudouridine 5'-phosphate[5]	Pseudouridine 5'-phosphate		obo.chebi:CHEBI:18116	C9H11N2O9P		5	m250	m252	
+	Putrescine[5]	Putrescine		obo.chebi:CHEBI:17148	C4H14N2		5	m251	m253	
+	Pyruvate[5]	Pyruvate		obo.chebi:CHEBI:32816	C3H3O3		5	m252	m254	
+	alpha-D-Ribose 1-phosphate[5]	alpha-D-Ribose 1-phosphate		obo.chebi:CHEBI:35425	C5H9O8P		5	m253	m255	
+	alpha-D-Ribose 5-phosphate[5]	alpha-D-Ribose 5-phosphate		obo.chebi:CHEBI:18189	C5H9O8P		5	m254	m256	
+	Raffinose[5]	Raffinose		obo.chebi:CHEBI:16634	C18H32O16		5	m255	m257	
+	S-Ribosyl-L-homocysteine[5]	S-Ribosyl-L-homocysteine			C9H17NO6S		5	m256	m258	
+	Riboflavin[5]	Riboflavin		obo.chebi:CHEBI:17015	C17H20N4O6		5	m257	m259	
+	D-Ribulose 5-phosphate[5]	D-Ribulose 5-phosphate		obo.chebi:CHEBI:17363	C5H9O8P		5	m258	m260	
+	Sedoheptulose 7-phosphate[5]	Sedoheptulose 7-phosphate		obo.chebi:CHEBI:15721	C7H13O10P		5	m259	m261	
+	D-Sorbitol[5]	D-Sorbitol		obo.chebi:CHEBI:17924	C6H14O6		5	m260	m262	
+	L-Serine[5]	L-Serine		obo.chebi:CHEBI:17115	C3H7NO3		5	m261	m263	
+	L-Seryl-tRNA(Ser)[5]	L-Seryl-tRNA(Ser)		obo.chebi:CHEBI:29162	C3H6NO2R		5	m262	m264	
+	Shikimate 5-phosphate[5]	Shikimate 5-phosphate		obo.chebi:CHEBI:17052	C7H8O8P		5	m263	m265	
+	Shikimate[5]	Shikimate		obo.chebi:CHEBI:16119	C7H9O5		5	m264	m266	
+	Sulfate[5]	Sulfate		obo.chebi:CHEBI:16189	O4S		5	m265	m267	
+	Spermidine[5]	Spermidine		obo.chebi:CHEBI:16610	C7H22N3		5	m266	m268	
+	Spermidine[2]	Spermidine		obo.chebi:CHEBI:16610	C7H22N3		2	m267	m269	
+	Sucrose 6-phosphate[5]	Sucrose 6-phosphate		obo.chebi:CHEBI:16308	C12H21O14P		5	m268	m270	
+	Succinate[5]	Succinate		obo.chebi:CHEBI:15741	C4H4O4		5	m269	m271	
+	Succinyl-CoA[5]	Succinyl-CoA		obo.chebi:CHEBI:15380	C25H35N7O19P3S		5	m270	m272	
+	O-Succinyl-L-homoserine[5]	O-Succinyl-L-homoserine		obo.chebi:CHEBI:16160	C8H12NO6		5	m271	m273	
+	Sucrose[5]	Sucrose		obo.chebi:CHEBI:17992	C12H22O11		5	m272	m274	
+	2,3,4,5-Tetrahydrodipicolinate[5]	2,3,4,5-Tetrahydrodipicolinate		obo.chebi:CHEBI:864	C7H7NO4		5	m273	m275	
+	5,6,7,8-Tetrahydrofolate[5]	5,6,7,8-Tetrahydrofolate		obo.chebi:CHEBI:15635	C19H21N7O6		5	m274	m276	
+	Tetrahydrofolyl-[Glu](2)[5]	Tetrahydrofolyl-[Glu](2)		obo.chebi:CHEBI:27650	C24H27N8O9		5	m275	m277	
+	Thiamin monophosphate[5]	Thiamin monophosphate		obo.chebi:CHEBI:9533	C12H16N4O4PS		5	m276	m278	
+	L-Threonine[5]	L-Threonine		obo.chebi:CHEBI:16857	C4H9NO3		5	m277	m279	
+	L-Threonyl-tRNA(Thr)[5]	L-Threonyl-tRNA(Thr)		obo.chebi:CHEBI:29163	C4H8NO2R		5	m278	m280	
+	Oxidized thioredoxin[5]	Oxidized thioredoxin		obo.chebi:CHEBI:18191	X		5	m279	m281	
+	Reduced thioredoxin[5]	Reduced thioredoxin		obo.chebi:CHEBI:18191	XH2		5	m280	m282	
+	alpha,alpha'-Trehalose 6-phosphate[5]	alpha,alpha'-Trehalose 6-phosphate		obo.chebi:CHEBI:18283	C12H21O14P		5	m281	m283	
+	tRNA(Ala)[5]	tRNA(Ala)			R		5	m282	m284	
+	tRNA(Arg)[5]	tRNA(Arg)			R		5	m283	m285	
+	tRNA(Asn)[5]	tRNA(Asn)			C10H17O10PR2		5	m284	m286	
+	tRNA(Asp)[5]	tRNA(Asp)			R		5	m285	m287	
+	tRNA(Cys)[5]	tRNA(Cys)			R		5	m286	m288	
+	tRNA (Glu)[5]	tRNA (Glu)			R		5	m287	m289	
+	tRNA(Gly)[5]	tRNA(Gly)			R		5	m288	m290	
+	tRNA(Ile)[5]	tRNA(Ile)			R		5	m289	m291	
+	tRNA(Lys)[5]	tRNA(Lys)			R		5	m290	m292	
+	tRNA(Met)[5]	tRNA(Met)			R		5	m291	m293	
+	tRNA(Ser)[5]	tRNA(Ser)			R		5	m292	m294	
+	tRNA(Thr)[5]	tRNA(Thr)			R		5	m293	m295	
+	L-Tryptophan[5]	L-Tryptophan		obo.chebi:CHEBI:16828	C11H12N2O2		5	m294	m296	
+	L-Tyrosine[5]	L-Tyrosine		obo.chebi:CHEBI:17895	C9H11NO3		5	m295	m297	
+	Undecaprenyl-diphospho-N-acetylmuramoyl-(N-acetylglucosamine)-L-ala-D-glu-meso-2,6-diaminopimeloyl-D-ala-D-ala[5]	Undecaprenyl-diphospho-N-acetylmuramoyl-(N-acetylglucosamine)-L-ala-D-glu-meso-2,6-diaminopimeloyl-D-ala-D-ala		obo.chebi:CHEBI:	C95H152N8O28P2		5	m296	m298	
+	UDP-N-acetyl-3-O-(1-carboxyvinyl)-D-glucosamine[5]	UDP-N-acetyl-3-O-(1-carboxyvinyl)-D-glucosamine		obo.chebi:CHEBI:16435	C20H26N3O19P2		5	m297	m299	
+	UDP-N-acetyl-D-glucosamine[5]	UDP-N-acetyl-D-glucosamine		obo.chebi:CHEBI:16264	C17H25N3O17P2		5	m298	m300	
+	UDP-N-acetyl-D-mannosamine[5]	UDP-N-acetyl-D-mannosamine		obo.chebi:CHEBI:16287	C17H25N3O17P2		5	m299	m301	
+	Undecaprenyl-diphospho-N-acetylmuramoyl-L-alanyl-D-glutamyl-meso-2,6-diaminopimeloyl-D-alanyl-D-alanine[5]	Undecaprenyl-diphospho-N-acetylmuramoyl-L-alanyl-D-glutamyl-meso-2,6-diaminopimeloyl-D-alanyl-D-alanine			C87H139N7O23P2		5	m300	m302	
+	UDP-N-acetylmuramoyl-L-alanine[5]	UDP-N-acetylmuramoyl-L-alanine		obo.chebi:CHEBI:16932	C23H33N4O20P2		5	m301	m303	
+	UDP-N-acetylmuramoyl-L-alanyl-D-glutamate[5]	UDP-N-acetylmuramoyl-L-alanyl-D-glutamate		obo.chebi:CHEBI:16970	C28H39N5O23P2		5	m302	m304	
+	UDP-N-acetylmuramate[5]	UDP-N-acetylmuramate		obo.chebi:CHEBI:17882	C20H28N3O19P2		5	m303	m305	
+	Undecaprenol[5]	Undecaprenol		obo.chebi:CHEBI:16591	C55H90O		5	m304	m306	
+	Undecaprenyl phosphate[5]	Undecaprenyl phosphate		obo.chebi:CHEBI:60468	C55H89O4P		5	m305	m307	
+	UDP[5]	UDP		obo.chebi:CHEBI:17659	C9H11N2O12P2		5	m306	m308	
+	UDPglucose[5]	UDPglucose		obo.chebi:CHEBI:18066, 52249	C15H22N2O17P2		5	m307	m309	
+	UDPgalactose[5]	UDPgalactose		obo.chebi:CHEBI:18307	C15H22N2O17P2		5	m308	m310	
+	UDP-N-acetylmuramoyl-L-alanyl-D-gamma-glutamyl-meso-2,6-diaminopimelate[5]	UDP-N-acetylmuramoyl-L-alanyl-D-gamma-glutamyl-meso-2,6-diaminopimelate		obo.chebi:CHEBI:28639	C35H51N7O26P2		5	m309	m311	
+	UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-meso-2,6-diaminopimeloyl-D-alanyl-D-alanine[5]	UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-meso-2,6-diaminopimeloyl-D-alanyl-D-alanine		obo.chebi:CHEBI:18199	C41H61N9O28P2		5	m310	m312	
+	UMP[5]	UMP		obo.chebi:CHEBI:16695	C9H11N2O9P		5	m311	m313	
+	Uracil[5]	Uracil		obo.chebi:CHEBI:17568	C4H4N2O2		5	m312	m314	
+	Uracil[2]	Uracil		obo.chebi:CHEBI:17568	C4H4N2O2		2	m313	m315	
+	Uridine[5]	Uridine		obo.chebi:CHEBI:16704	C9H12N2O6		5	m314	m316	
+	UTP[5]	UTP		obo.chebi:CHEBI:15713	C9H11N2O15P3		5	m315	m317	
+	L-Valine[5]	L-Valine		obo.chebi:CHEBI:16414	C5H11NO2		5	m316	m318	
+	Xanthine[5]	Xanthine		obo.chebi:CHEBI:17712	C5H4N4O2		5	m317	m319	
+	Xanthine[2]	Xanthine		obo.chebi:CHEBI:17712	C5H4N4O2		2	m318	m320	
+	Xanthosine 5'-phosphate[5]	Xanthosine 5'-phosphate		obo.chebi:CHEBI:15652	C10H11N4O9P		5	m319	m321	
+	D-Xylulose 5-phosphate[5]	D-Xylulose 5-phosphate		obo.chebi:CHEBI:16332	C5H9O8P		5	m320	m322	
+	D-Xylulose[5]	D-Xylulose		obo.chebi:CHEBI:17140	C5H10O5		5	m321	m323	
+	D-Xylose[5]	D-Xylose		obo.chebi:CHEBI:15936	C5H10O5		5	m322	m324	
+	Cellulose[5]	Cellulose		obo.chebi:CHEBI:18246	C6H10O5		5	m323	m325	
+	Cellobiose[5]	Cellobiose		obo.chebi:CHEBI:17057	C12H22O11	1/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3)23-10-4(2-14)21-11(20)8(18)7(10)17/h3-20H,1-2H2/t3-,4-,5-,6+,7-,8-,9-,10-,11?,12+/m1/s1	5	m324	m326	
+	glycogen[5]	glycogen		obo.chebi:CHEBI:28087	C6H10O5		5	m325	m327	
+	Starch[5]	Starch		obo.chebi:CHEBI:28017	C6H10O5		5	m326	m328	
+	Butyrate[5]	Butyrate		obo.chebi:CHEBI:30772	C4H8O2	1/C4H8O2/c1-2-3-4(5)6/h2-3H2,1H3,(H,5,6)/p-1/fC4H7O2/q-1	5	m327	m329	
+	Phosphatidylglycerol[5]	Phosphatidylglycerol		obo.chebi:CHEBI:17517	C8H13O10P		5	m328	m330	
+	Acyl-CoA[5]	Acyl-CoA		obo.chebi:CHEBI:17984	C22H35N7O17P3SR		5	m329	m331	
+	1-Acyl-sn-glycerol 3-phosphate[5]	1-Acyl-sn-glycerol 3-phosphate		obo.chebi:CHEBI:16975	C4H8O7PR		5	m330	m332	
+	Orotidine 5'-phosphate[5]	Orotidine 5'-phosphate		obo.chebi:CHEBI:15842	C10H13N2O11P	1/C10H13N2O11P/c13-5-1-3(9(16)17)12(10(18)11-5)8-7(15)6(14)4(23-8)2-22-24(19,20)21/h1,4,6-8,14-15H,2H2,(H,16,17)(H,11,13,18)(H2,19,20,21)/t4-,6-,7-,8-/m1/s1	5	m331	m333	
+	dTDP[5]	dTDP		obo.chebi:CHEBI:18075	C10H16N2O11P2	1/C10H16N2O11P2/c1-5-3-12(10(15)11-9(5)14)8-2-6(13)7(22-8)4-21-25(19,20)23-24(16,17)18/h3,6-8,13H,2,4H2,1H3,(H,19,20)(H,11,14,15)(H2,16,17,18)/t6-,7+,8+/m0/s1/f/h11,16-17,19H	5	m332	m334	
+	dTTP[5]	dTTP		obo.chebi:CHEBI:18077	C10H17N2O14P3	1/C10H17N2O14P3/c1-5-3-12(10(15)11-9(5)14)8-2-6(13)7(24-8)4-23-28(19,20)26-29(21,22)25-27(16,17)18/h3,6-8,13H,2,4H2,1H3,(H,19,20)(H,21,22)(H,11,14,15)(H2,16,17,18)/t6-,7+,8+/m0/s1/f/h11,16-17,19,21H	5	m333	m335	
+	O-Phospho-L-serine[5]	O-Phospho-L-serine		obo.chebi:CHEBI:15811	C3H8NO6P	1/C3H8NO6P/c4-2(3(5)6)1-10-11(7,8)9/h2H,1,4H2,(H,5,6)(H2,7,8,9)/t2-/m0/s1/f/h5,7-8H	5	m334	m336	
+	LL-2,6-Diaminoheptanedioate[5]	LL-2,6-Diaminoheptanedioate		obo.chebi:CHEBI:16026	C7H14N2O4		5	m335	m337	
+	L-Glutamyl 5-phosphate[5]	L-Glutamyl 5-phosphate		obo.chebi:CHEBI:17798	C5H10NO7P		5	m336	m338	
+	Crosslinked peptideglycan[5]	Crosslinked peptideglycan					5	m337	m339	
+	Protein[5]	Protein		obo.chebi:CHEBI:16541	C2H4NO2RC2H2NORn		5	m338	m340	
+	DNA[5]	DNA		obo.chebi:CHEBI:16991	C10H17O8PR2C5H8O5PRn		5	m339	m341	
+	RNA[5]	RNA			C10H18O13P2R2C5H8O6PRn		5	m340	m342	
+	Lipid[5]	Lipid		obo.chebi:CHEBI:18059			5	m341	m343	
+	Cellwall[5]	Cellwall					5	m342	m344	
+	Pool[5]	Pool					5	m343	m345	
+	Biomassere[5]	Biomassere					5	m344	m346	
+	Biomassere[2]	Biomassere					2	m345	m348	
+	Butyrate[2]	Butyrate		obo.chebi:CHEBI:30772	C4H8O2		2	m346	m350	
+	Acetate[2]	Acetate		obo.chebi:CHEBI:15366	C2H4O2		2	m347	m352	
+	L-Lactate[2]	L-Lactate		obo.chebi:CHEBI:422	C3H6O3		2	m348	m355	
+	CO2[2]	CO2		obo.chebi:CHEBI:16526	CO2		2	m349	m357	
+	H2O[2]	H2O		obo.chebi:CHEBI:15377	H2O		2	m350	m358	
+	Isocitrate[5]	Isocitrate		obo.chebi:CHEBI:30887	C6H8O7		5	m351	m362	
+	Hydrogen sulfide[2]	Hydrogen sulfide		obo.chebi:CHEBI:16136	H2S		2	m352	m363	
+	O-Phospho-L-homoserine[5]	O-Phospho-L-homoserine		obo.chebi:CHEBI:15961	C4H10NO6P		5	m353	m365	
+	O-Acetyl-L-homoserine[5]	O-Acetyl-L-homoserine		obo.chebi:CHEBI:16288	C6H11NO4		5	m354	m366	
+	L-Cystathionine[5]	L-Cystathionine		obo.chebi:CHEBI:17482	C7H14N2O4S		5	m355	m367	
+	L-Histidinal[5]	L-Histidinal			C6H9N3O		5	m356	m368	
+	Hexadecanoyl-CoA[5]	Hexadecanoyl-CoA		obo.chebi:CHEBI:15525	C37H66N7O17P3S		5	m357	m369	
+	1-Hexadecanoyl-sn-glycerol 3-phosphate[5]	1-Hexadecanoyl-sn-glycerol 3-phosphate			C19H38O7P		5	m358	m370	
+	Hexadecanoylglycerol[5]	Hexadecanoylglycerol					5	m359	m371	
+	1,2-Dihexadecanoyl-sn-glycerol[5]	1,2-Dihexadecanoyl-sn-glycerol					5	m360	m372	
+	Trihexadecanoylglycerol[5]	Trihexadecanoylglycerol					5	m361	m373	
+	Hexadecanoyl-[acp][5]	Hexadecanoyl-[acp]		obo.chebi:CHEBI:5697	C37H66N7O17P3S		5	m362	m374	
+	[acp][5]	[acp]		obo.chebi:CHEBI:18359	HSR		5	m363	m375	
+	Pantetheine[5]	Pantetheine		obo.chebi:CHEBI:16753	C11H22N2O4S		5	m364	m376	
+	Hexadecanoate[5]	Hexadecanoate		obo.chebi:CHEBI:15756	C16H32O2		5	m365	m377	
+	Crosslinked-N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-D-isoglutaminyl-L-lysyl-(glycyl)5-D-alanyl-D-alanine[5]	Crosslinked-N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-D-isoglutaminyl-L-lysyl-(glycyl)5-D-alanyl-D-alanine					5	m366	m378	
+	N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-D-isoglutaminyl-L-lysyl-(glycyl)5-D-alanyl-D-alanine[5]	N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-D-isoglutaminyl-L-lysyl-(glycyl)5-D-alanyl-D-alanine					5	m367	m379	
+	N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-D-isoglutaminyl-L-lysyl-(glycyl)5-D-alanyl-D-alanine-c55p[j][5]	N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-D-isoglutaminyl-L-lysyl-(glycyl)5-D-alanyl-D-alanine-c55p[j]					5	m368	m380	
+	N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-D-isoglutaminyl-L-lysyl-D-alanyl-D-alanine-c55p[5]	N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-D-isoglutaminyl-L-lysyl-D-alanyl-D-alanine-c55p					5	m369	m381	
+	N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-gamma-D-glutamyl-L-lysyl-D-alanyl-D-alanine-c55p[5]	N-acetylmuramoyl-(N-acetylglucosamine)-L-alanyl-gamma-D-glutamyl-L-lysyl-D-alanyl-D-alanine-c55p					5	m370	m382	
+	MurAc(oyl-L-Ala-D-gamma-Glu-L-Lys-D-Ala-D-Ala)-c55p[5]	MurAc(oyl-L-Ala-D-gamma-Glu-L-Lys-D-Ala-D-Ala)-c55p					5	m371	m383	
+	UDPMurAc(oyl-L-Ala-D-gamma-Glu-L-Lys-D-Ala-D-Ala)[5]	UDPMurAc(oyl-L-Ala-D-gamma-Glu-L-Lys-D-Ala-D-Ala)		obo.chebi:CHEBI:16574	C40H65N9O26P2		5	m372	m384	
+	UDP-N-acetylmuramoyl-L-alanyl-gamma-D-glutamyl-L-lysine[5]	UDP-N-acetylmuramoyl-L-alanyl-gamma-D-glutamyl-L-lysine		obo.chebi:CHEBI:16329	C34H55N7O24P2		5	m373	m385	
+	H2[5]	H2		obo.chebi:CHEBI:18276	H		5	m374	m386	
+	H2[2]	H2		obo.chebi:CHEBI:18276	H		2	m375	m387	
+	Proton[2]	Proton			H+		2	m376	m389	
+	Proton[5]	Proton			H+		5	m377	m390	
+	cardiolipin[5]	cardiolipin		obo.chebi:CHEBI:28494	C13H18O17P2		5	m378	m391	
+	CMP[5]	CMP		obo.chebi:CHEBI:17361	C9H14N3O8P	1/C9H14N3O8P/c10-5-1-2-12(9(15)11-5)8-7(14)6(13)4(20-8)3-19-21(16,17)18/h1-2,4,6-8,13-14H,3H2,(H2,10,11,15)(H2,16,17,18)/t4-,6-,7-,8-/m1/s1	5	m379	m392	
+	beta-D-Glucose[5]	beta-D-Glucose		obo.chebi:CHEBI:15903	C6H12O6		5	m380	m393	
+	Nicotinamide D-ribonucleotide[5]	Nicotinamide D-ribonucleotide		obo.chebi:CHEBI:16171	C11H15N2O8P		5	m381	m394	
+	(R,R)-Tartaric acid[5]	(R,R)-Tartaric acid		obo.chebi:CHEBI:15671, 30924	C4H6O6		5	m382	m395	
+	N6-(L-1,3-Dicarboxypropyl)-L-lysine[5]	N6-(L-1,3-Dicarboxypropyl)-L-lysine		obo.chebi:CHEBI:16927	C11H20N2O6		5	m383	m396	
+	4-Hydroy-2-oxopentanoate[5]	4-Hydroy-2-oxopentanoate		obo.chebi:CHEBI:17655	C5H8O4		5	m384	m397	
+	Cys-Gly[5]	Cys-Gly		obo.chebi:CHEBI:4047	C5H10N2O3S		5	m385	m398	
+	ADP-glucose[5]	ADP-glucose		obo.chebi:CHEBI:15751	C16H25N5O15P2		5	m386	m399	
+	alpha-D-Galactose 1-phosphate[5]	alpha-D-Galactose 1-phosphate		obo.chebi:CHEBI:17973	C6H13O9P		5	m387	m400	
+	Methylglyoxal[5]	Methylglyoxal		obo.chebi:CHEBI:17158	C3H4O2		5	m388	m401	
+	1-(5-Phospho-D-ribosyl)-ATP[5]	1-(5-Phospho-D-ribosyl)-ATP		obo.chebi:CHEBI:18263	C15H25N5O20P4		5	m389	m402	
+	D-Galactose[5]	D-Galactose		obo.chebi:CHEBI:4139	C6H12O6		5	m390	m403	
+	3-beta-D-Galactosyl-sn-glycerol[5]	3-beta-D-Galactosyl-sn-glycerol		obo.chebi:CHEBI:15754	C9H18O8		5	m391	m404	
+	Galactan[5]	Galactan		obo.chebi:CHEBI:37165	C12H20O11		5	m392	m405	
+	1-Methylhistidine[5]	1-Methylhistidine		obo.chebi:CHEBI:27596	C7H11N3O2		5	m393	m406	
+	Carnosine[5]	Carnosine		obo.chebi:CHEBI:15727	C9H14N4O3		5	m394	m407	
+	Lactose[5]	Lactose		obo.chebi:CHEBI:4139	C12H22O11		5	m395	m408	
+	Dextrin[5]	Dextrin			C12H20O10n		5	m396	m409	
+	Amylose[5]	Amylose		obo.chebi:CHEBI:28102	C6H10O5n		5	m397	m410	
+	Shikimate 3-phosphate[5]	Shikimate 3-phosphate		obo.chebi:CHEBI:17052	C7H11O8P		5	m398	m411	
+	Melibiitol[5]	Melibiitol		obo.chebi:CHEBI:27527	C12H24O11		5	m399	m412	
+	dTDP-glucose[5]	dTDP-glucose		obo.chebi:CHEBI:15700	C16H26N2O16P2		5	m400	m413	
+	dTDP-galactose[5]	dTDP-galactose		obo.chebi:CHEBI:14086	C16H26N2O16P2		5	m401	m414	
+	N-Acetylneuraminate 9-phosphate[5]	N-Acetylneuraminate 9-phosphate		obo.chebi:CHEBI:27438	C11H20NO12P		5	m402	m415	
+	N-D-Ribosylpurine[5]	N-D-Ribosylpurine			C10H12N4O4		5	m403	m416	
+	Purine[5]	Purine		obo.chebi:CHEBI:26386	C5H4N4		5	m404	m417	
+	Cellobiose[2]	Cellobiose		obo.chebi:CHEBI:17057	C12H22O11	1/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3)23-10-4(2-14)21-11(20)8(18)7(10)17/h3-20H,1-2H2/t3-,4-,5-,6+,7-,8-,9-,10-,11?,12+/m1/s1	2	m405	m418	
+	Methyl beta-D-galactoside[2]	Methyl beta-D-galactoside		obo.chebi:CHEBI:17540	C7H14O6		2	m406	m419	
+	Methyl beta-D-galactoside[5]	Methyl beta-D-galactoside		obo.chebi:CHEBI:17540	C7H14O6		5	m407	m420	
+	beta-D-galactoside[2]	beta-D-galactoside		obo.chebi:CHEBI:28034	C6H11O6		2	m408	m421	
+	beta-D-galactoside[5]	beta-D-galactoside		obo.chebi:CHEBI:28034	C6H11O6		5	m409	m422	
+	D-Glucosamine[2]	D-Glucosamine		obo.chebi:CHEBI:47977	C6H13NO5		2	m410	m423	

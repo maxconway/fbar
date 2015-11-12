@@ -1,0 +1,536 @@
+#	ID	NAME	UNCONSTRAINED	MIRIAM	COMPOSITION	INCHI	COMPARTMENT	REPLACEMENT ID	METS FIELD
+	3-Phospho-D-glyceroyl phosphate[1]	3-Phospho-D-glyceroyl phosphate			C3H4O10P2		1	m1	m1	
+	2,3-Dihydrodipicolinate[1]	2,3-Dihydrodipicolinate			C7H5NO4		1	m2	m2	
+	(R)-2,3-Dihydroxy-3-methylbutanoate[1]	(R)-2,3-Dihydroxy-3-methylbutanoate			C5H9O4		1	m3	m3	
+	(R)-2,3-Dihydroxy-3-methylpentanoate[1]	(R)-2,3-Dihydroxy-3-methylpentanoate			C6H11O4		1	m4	m4	
+	(S)-2-[5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate[1]	(S)-2-[5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate			C13H15N4O12P		1	m5	m5	
+	2,5-Diamino-6-hydroxy-4-(5'-phosphoribosylamino)-pyrimidine[1]	2,5-Diamino-6-hydroxy-4-(5'-phosphoribosylamino)-pyrimidine			C9H14N5O8P		1	m6	m6	
+	2,5-diamino-6-ribitylamino-4(3H)-pyrimidinone 5'-phosphate[1]	2,5-diamino-6-ribitylamino-4(3H)-pyrimidinone 5'-phosphate			C9H16N5O8P		1	m7	m7	
+	meso-2,6-Diaminoheptanedioate[1]	meso-2,6-Diaminoheptanedioate			C7H14N2O4		1	m8	m8	
+	(S)-2-Aceto-2-hydroxybutanoate[1]	(S)-2-Aceto-2-hydroxybutanoate			C6H9O4		1	m9	m9	
+	N-Acetyl-D-mannosamine[1]	N-Acetyl-D-mannosamine			acmana		1	m10	m10	
+	1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate[1]	1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate			C12H13NO9P		1	m11	m11	
+	2-Inosose[1]	2-Inosose			C6H10O6		1	m12	m12	
+	2-Isopropylmaleate[1]	2-Isopropylmaleate			C7H8O4		1	m13	m13	
+	2-Methyl-4-amino-5-hydroxymethylpyrimidine diphosphate[1]	2-Methyl-4-amino-5-hydroxymethylpyrimidine diphosphate			C6H8N3O7P2		1	m14	m14	
+	2-Oxobutanoate[1]	2-Oxobutanoate			C4H5O3		1	m15	m15	
+	2-oxooctanedioic acid[1]	2-oxooctanedioic acid			C8H10O5		1	m16	m16	
+	D-Glycerate 2-phosphate[1]	D-Glycerate 2-phosphate			C3H4O7P		1	m17	m17	
+	2-phospho-L-lactate[1]	2-phospho-L-lactate			C3H4O6P		1	m18	m18	
+	2-sulfoacetaldehyde[1]	2-sulfoacetaldehyde			C2H3O4S		1	m19	m20	
+	3-(4-Hydroxyphenyl)pyruvate[1]	3-(4-Hydroxyphenyl)pyruvate			C9H7O4		1	m20	m21	
+	3-Carboxy-2-hydroxy-4-methylpentanoate[1]	3-Carboxy-2-hydroxy-4-methylpentanoate			C7H10O5		1	m21	m22	
+	3-Carboxy-3-hydroxy-4-methylpentanoate[1]	3-Carboxy-3-hydroxy-4-methylpentanoate			C7H10O5		1	m22	m23	
+	3-Carboxy-4-methyl-2-oxopentanoate[1]	3-Carboxy-4-methyl-2-oxopentanoate			C7H8O5		1	m23	m24	
+	3-Dehydroquinate[1]	3-Dehydroquinate			C7H9O6		1	m24	m25	
+	3-Dehydroshikimate[1]	3-Dehydroshikimate			C7H7O5		1	m25	m26	
+	CDP2O(3'-hydroxy)geranyl-3-O-geranyl-sn-glycerol[1]	CDP2O(3'-hydroxy)geranyl-3-O-geranyl-sn-glycerol			C52H85N3O14P2		1	m26	m27	
+	2-O-(3'-hydroxy)geranyl-3-O-geranyl-sn-glyceroserine[1]	2-O-(3'-hydroxy)geranyl-3-O-geranyl-sn-glyceroserine			C46H79N1O9P1		1	m27	m28	
+	2-O-(3'hydroxy)geranyl-3-O-geranyl-sn-glycero-1-phospho-myo-inositol[1]	2-O-(3'hydroxy)geranyl-3-O-geranyl-sn-glycero-1-phospho-myo-inositol			C49H84O12P1		1	m28	m30	
+	2-O-(3'-hydroxyl)phytanyl-3-O-phytanyl-sn-glycero-1-phospho-myo-inositol[1]	2-O-(3'-hydroxyl)phytanyl-3-O-phytanyl-sn-glycero-1-phospho-myo-inositol			C49H98O12P1		1	m29	m32	
+	2-O-(3'-hydroxy)phytanyl-3-O-phytanyl-sn-glycero-l-phosphoserine[1]	2-O-(3'-hydroxy)phytanyl-3-O-phytanyl-sn-glycero-l-phosphoserine			C46H93N1O9P1		1	m30	m33	
+	3-hydroxy-farnesyl diphosphate[1]	3-hydroxy-farnesyl diphosphate			C15H27O8P2		1	m31	m34	
+	3-hydroxy-geranylgeranyl diphosphate[1]	3-hydroxy-geranylgeranyl diphosphate			C20H35O8P2		1	m32	m35	
+	3-hydroxy-geranyl diphsophate[1]	3-hydroxy-geranyl diphsophate			C10H19O8P2		1	m33	m36	
+	C'-(3-Indolyl)-glycerol 3-phosphate[1]	C'-(3-Indolyl)-glycerol 3-phosphate			C11H12NO6P		1	m34	m37	
+	3-Methyl-2-oxobutanoate[1]	3-Methyl-2-oxobutanoate			C5H7O3		1	m35	m38	
+	(S)-3-Methyl-2-oxopentanoate[1]	(S)-3-Methyl-2-oxopentanoate			C6H9O3		1	m36	m39	
+	3-Phospho-D-glycerate[1]	3-Phospho-D-glycerate			C3H4O7P		1	m37	m40	
+	3-Phosphohydroxypyruvate[1]	3-Phosphohydroxypyruvate			C3H2O7P		1	m38	m41	
+	5-O-(1-Carboxyvinyl)-3-phosphoshikimate[1]	5-O-(1-Carboxyvinyl)-3-phosphoshikimate			C10H9O10P		1	m39	m42	
+	3-Sulfopyruvate[1]	3-Sulfopyruvate			C3H2O6S		1	m40	m43	
+	4-Aminobutanoate[1]	4-Aminobutanoate			C4H9NO2		1	m41	m44	
+	4-Aminobenzoate[1]	4-Aminobenzoate			C7H6NO2		1	m42	m45	
+	4-Amino-5-hydroxymethyl-2-methylpyrimidine[1]	4-Amino-5-hydroxymethyl-2-methylpyrimidine			C6H9N3O		1	m43	m46	
+	4-Amino-2-methyl-5-phosphomethylpyrimidine[1]	4-Amino-2-methyl-5-phosphomethylpyrimidine			C6H8N3O4P		1	m44	m47	
+	4-Hydroxy-benzyl alcohol[1]	4-Hydroxy-benzyl alcohol			C7H8O2		1	m45	m48	
+	4-Hydroxyphenylacetate[1]	4-Hydroxyphenylacetate			C8H7O3		1	m46	m49	
+	4-Methyl-5-(2-hydroxyethyl)-thiazole[1]	4-Methyl-5-(2-hydroxyethyl)-thiazole			C6H9NOS		1	m47	m50	
+	4-Methyl-2-oxopentanoate[1]	4-Methyl-2-oxopentanoate			C6H9O3		1	m48	m51	
+	4-Methyl-5-(2-phosphoethyl)-thiazole[1]	4-Methyl-5-(2-phosphoethyl)-thiazole			C6H8NO4PS		1	m49	m52	
+	4-Phospho-L-aspartate[1]	4-Phospho-L-aspartate			C4H6NO7P		1	m50	m53	
+	D-4'-Phosphopantothenate[1]	D-4'-Phosphopantothenate			C9H15NO8P		1	m51	m54	
+	N-((R)-4-Phosphopantothenoyl)-L-cysteine[1]	N-((R)-4-Phosphopantothenoyl)-L-cysteine			C12H20N2O9PS		1	m52	m55	
+	4-(1-D-Ribitylamino)-5-aminouracil[1]	4-(1-D-Ribitylamino)-5-aminouracil			C9H16N4O6		1	m53	m56	
+	5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate[1]	5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate			C9H11N3O9P		1	m54	m57	
+	5-Amino-4-oxopentanoate[1]	5-Amino-4-oxopentanoate			C5H9NO3		1	m55	m58	
+	5-Amino-6-(5'-phosphoribitylamino)uracil[1]	5-Amino-6-(5'-phosphoribitylamino)uracil			C9H15N4O9P		1	m56	m59	
+	5-phosphoribosyl-5-carboxyaminoimidazole[1]	5-phosphoribosyl-5-carboxyaminoimidazole			C9H11N3O9P		1	m57	m60	
+	5-hydroxybenzimidazole[1]	5-hydroxybenzimidazole			C7H6N2O		1	m58	m61	
+	5-Methylthio-5-deoxy-D-ribose 1-phosphate[1]	5-Methylthio-5-deoxy-D-ribose 1-phosphate			C6H11O7PS		1	m59	m62	
+	5-Methylthioadenosine[1]	5-Methylthioadenosine			C11H15N5O3S		1	m60	m63	
+	(R)-5-Phosphomevalonate[1]	(R)-5-Phosphomevalonate			C6H10O7P		1	m61	m64	
+	N1-(5-Phospho-alpha-D-ribosyl)-5-hydroxybenzimidazole[1]	N1-(5-Phospho-alpha-D-ribosyl)-5-hydroxybenzimidazole			C12H13N2O8P		1	m62	m65	
+	6-phospho-D-glucono-1,5-lactone[1]	6-phospho-D-glucono-1,5-lactone			C6H9O9P		1	m63	m66	
+	7-mercaptoheptanoic acid[1]	7-mercaptoheptanoic acid			C7H13O2S		1	m64	m67	
+	7-mercaptoheptanoylthreonine[1]	7-mercaptoheptanoylthreonine			C11H20NO4S		1	m65	m68	
+	4-(B-D-ribofuranosyl)aminobenzene 5'-phosphate[1]	4-(B-D-ribofuranosyl)aminobenzene 5'-phosphate			C11H14NO7P		1	m66	m69	
+	C00039_m[1]	C00039_m					1	m67	m72	
+	C00039[1]	C00039					1	m68	m73	
+	C00039_n[1]	C00039_n					1	m69	m74	
+	Acyl-CoA[1]	Acyl-CoA			C22H35N7O17P3SR		1	m70	m75	
+	Dolichyl phosphate[1]	Dolichyl phosphate					1	m71	m80	
+	CMP-N-acetylneuraminate[1]	CMP-N-acetylneuraminate			C20H31N4O16P		1	m72	m81	
+	D-Glutamate[1]	D-Glutamate			C5H9NO4		1	m73	m82	
+	3,4-Dihydroxybenzoate[1]	3,4-Dihydroxybenzoate			C7H6O4		1	m74	m83	
+	(R)-Lactate[1]	(R)-Lactate			C3H6O3		1	m75	m84	
+	N-Acetylneuraminate[1]	N-Acetylneuraminate			C11H19NO9		1	m76	m85	
+	Sulfide[1]	Sulfide			SR2		1	m77	m86	
+	ADP-ribose[1]	ADP-ribose			C15H23N5O14P2		1	m78	m87	
+	L-Xylulose[1]	L-Xylulose			C5H10O5		1	m79	m88	
+	Spermidine[1]	Spermidine			C7H19N3		1	m80	m89	
+	Long-chain carboxylate[1]	Long-chain carboxylate			C3H5O2R		1	m81	m90	
+	NDP[1]	NDP			C5H11O10P2R		1	m82	m91	
+	Methylglyoxal[1]	Methylglyoxal			C3H4O2		1	m83	m92	
+	UDP-D-galacturonate[1]	UDP-D-galacturonate			C15H22N2O18P2		1	m84	m93	
+	3-Hydroxyanthranilate[1]	3-Hydroxyanthranilate			C7H7NO3		1	m85	m94	
+	UDP-N-acetylmuramoyl-L-alanyl-D-glutamate[1]	UDP-N-acetylmuramoyl-L-alanyl-D-glutamate			C28H43N5O23P2		1	m86	m95	
+	Chloramphenicol[1]	Chloramphenicol			C11H12Cl2N2O5		1	m87	m96	
+	1,3-Diaminopropane[1]	1,3-Diaminopropane			C3H10N2		1	m88	m97	
+	Reduced riboflavin[1]	Reduced riboflavin			C17H22N4O6		1	m89	m98	
+	5-Dehydro-D-gluconate[1]	5-Dehydro-D-gluconate			C6H10O7		1	m90	m99	
+	O-Succinyl-L-homoserine[1]	O-Succinyl-L-homoserine			C8H13NO6		1	m91	m100	
+	N(pi)-Methyl-L-histidine[1]	N(pi)-Methyl-L-histidine			C7H11N3O2		1	m92	m101	
+	UDP-N-acetylmuramoyl-L-alanine[1]	UDP-N-acetylmuramoyl-L-alanine			C23H36N4O20P2		1	m93	m102	
+	ADP-D-ribosyl-[dinitrogen reductase][1]	ADP-D-ribosyl-[dinitrogen reductase]			C22H34N10O15P2R2		1	m94	m103	
+	L-Lyxose[1]	L-Lyxose			C5H10O5		1	m95	m104	
+	ADP-D-ribose[1]	ADP-D-ribose			C15H23N5O14P2		1	m96	m105	
+	2-Methylmaleate[1]	2-Methylmaleate			C5H6O4		1	m97	m106	
+	(R)-2-Methylmalate[1]	(R)-2-Methylmalate			C5H8O5		1	m98	m107	
+	Protein L-cysteine[1]	Protein L-cysteine			C4H6N2O2SR2		1	m99	m108	
+	[Dinitrogen reductase][1]	[Dinitrogen reductase]			C7H13N5O2R2		1	m100	m109	
+	N-Substituted amino acid[1]	N-Substituted amino acid			C3H3NO3R2		1	m101	m110	
+	Chloramphenicol 3-acetate[1]	Chloramphenicol 3-acetate			C13H14Cl2N2O6		1	m102	m111	
+	Peptidylproline (omega=0)[1]	Peptidylproline (omega=0)			C6H8N2O2R2		1	m103	m112	
+	Peptidylproline (omega=180)[1]	Peptidylproline (omega=180)			C6H8N2O2R2		1	m104	m113	
+	Protein S-methyl-L-cysteine[1]	Protein S-methyl-L-cysteine			C5H8N2O2SR2		1	m105	m114	
+	Dolichyl phosphate D-mannose[1]	Dolichyl phosphate D-mannose			n		1	m106	m115	
+	N-Substituted aminoacyl-tRNA[1]	N-Substituted aminoacyl-tRNA			n		1	m107	m116	
+	2-Hydroxyethylenedicarboxylate[1]	2-Hydroxyethylenedicarboxylate			C4H4O5		1	m108	m117	
+	tRNA containing N2-methylguanine[1]	tRNA containing N2-methylguanine			n		1	m109	m118	
+	DNA containing 6-O-methylguanine[1]	DNA containing 6-O-methylguanine			n		1	m110	m119	
+	5-Methyl-5,6,7,8-tetrahydromethanopterin[1]	5-Methyl-5,6,7,8-tetrahydromethanopterin			C31H47N6O16P		1	m111	m120	
+	UDP-2,3-bis(3-hydroxytetradecanoyl)glucosamine[1]	UDP-2,3-bis(3-hydroxytetradecanoyl)glucosamine			C43H77N3O20P2		1	m112	m121	
+	2,3-Bis(3-hydroxytetradecanoyl)-beta-D-glucosaminyl 1-phosphate[1]	2,3-Bis(3-hydroxytetradecanoyl)-beta-D-glucosaminyl 1-phosphate			C34H66NO12P		1	m113	m122	
+	N-Succinyl-L-glutamate[1]	N-Succinyl-L-glutamate			C9H13NO7		1	m114	m123	
+	[eIF5A-precursor]-lysine[1]	[eIF5A-precursor]-lysine			C7H13N3O2R2		1	m115	m124	
+	[eIF5A-precursor]-deoxyhypusine[1]	[eIF5A-precursor]-deoxyhypusine			C11H22N4O2R2		1	m116	m125	
+	DNA containing guanine[1]	DNA containing guanine			n		1	m117	m126	
+	[Enzyme]-cysteine[1]	[Enzyme]-cysteine			C4H6N2O2SR2		1	m118	m127	
+	[Enzyme]-S-sulfanylcysteine[1]	[Enzyme]-S-sulfanylcysteine			C4H6N2O2S2R2		1	m119	m128	
+	o-Hydroxylaminobenzoate[1]	o-Hydroxylaminobenzoate			C7H7NO3		1	m120	m129	
+	(R)-(homo)2citrate[1]	(R)-(homo)2citrate			C8H9O7		1	m121	m130	
+	(R)-(homo)3citrate[1]	(R)-(homo)3citrate			C9H11O7		1	m122	m131	
+	(S)-2-Hydroxyglutarate[1]	(S)-2-Hydroxyglutarate			C5H6O5		1	m123	m132	
+	Acetoacetyl-CoA[1]	Acetoacetyl-CoA			C25H36N7O18P3S		1	m124	m133	
+	Acetate[1]	Acetate			C2H3O2		1	m125	m134	
+	Acetaldehyde[1]	Acetaldehyde			C2H4O		1	m126	m135	
+	Acetyl-CoA[1]	Acetyl-CoA			C23H34N7O17P3S		1	m127	m136	
+	N-Acetyl-L-glutamyl 5-phosphate[1]	N-Acetyl-L-glutamyl 5-phosphate			C7H9NO8P		1	m128	m138	
+	N-Acetyl-L-glutamate 5-semialdehyde[1]	N-Acetyl-L-glutamate 5-semialdehyde			C7H10NO4		1	m129	m139	
+	N-Acetyl-D-glucosamine 1-phosphate[1]	N-Acetyl-D-glucosamine 1-phosphate			C8H14NO9P		1	m130	m140	
+	N-Acetyl-L-glutamate[1]	N-Acetyl-L-glutamate			C7H9NO5		1	m131	m141	
+	O-Acetyl-L-homoserine[1]	O-Acetyl-L-homoserine			C6H11NO4		1	m132	m142	
+	N2-Acetyl-L-ornithine[1]	N2-Acetyl-L-ornithine			C7H14N2O3		1	m133	m143	
+	O-Acetyl-L-serine[1]	O-Acetyl-L-serine			C5H9NO4		1	m134	m144	
+	Adenosyl cobyrinate diamide[1]	Adenosyl cobyrinate diamide			C55H68CoN11O15		1	m135	m145	
+	adenosyl-cobyric acid[1]	adenosyl-cobyric acid			C55H76CoN15O11		1	m136	m146	
+	Adenine[1]	Adenine			C5H5N5		1	m137	m147	
+	Adenosine[1]	Adenosine			C10H13N5O4		1	m138	m148	
+	Adenosyl cobinamide phosphate[1]	Adenosyl cobinamide phosphate			C58H83CoN16O14P		1	m139	m149	
+	Adenosylcobalamin-HBI[1]	Adenosylcobalamin-HBI			C70H96CoN18O18P		1	m140	m150	
+	ADP[1]	ADP			C10H12N5O10P2		1	m141	m151	
+	Adenosine-GDP-cobinamide[1]	Adenosine-GDP-cobinamide			C68H95CoN21O21P2		1	m142	m152	
+	N-Acetyl-D-glucosaminyl archaetidylinositol[1]	N-Acetyl-D-glucosaminyl archaetidylinositol			C57H111N1O16P1		1	m143	m153	
+	Agmatine[1]	Agmatine			C5H16N4		1	m144	m154	
+	S-Adenosyl-L-homocysteine[1]	S-Adenosyl-L-homocysteine			C14H20N6O5S		1	m145	m155	
+	2-Amino-4-hydroxy-6-(erythro-1,2,3-trihydroxypropyl)dihydropteridine triphosphate[1]	2-Amino-4-hydroxy-6-(erythro-1,2,3-trihydroxypropyl)dihydropteridine triphosphate			C9H12N5O13P3		1	m146	m156	
+	5-Amino-1-(5-Phospho-D-ribosyl)imidazole-4-carboxamide[1]	5-Amino-1-(5-Phospho-D-ribosyl)imidazole-4-carboxamide			C9H13N4O8P		1	m147	m157	
+	5-amino-1-(5-phospho-D-ribosyl)imidazole[1]	5-amino-1-(5-phospho-D-ribosyl)imidazole			C8H12N3O7P		1	m148	m158	
+	2-Oxoglutarate[1]	2-Oxoglutarate			C5H4O5		1	m149	m159	
+	beta-Alanine[1]	beta-Alanine			C3H7NO2		1	m150	m160	
+	L-Alanine[1]	L-Alanine			C3H7NO2		1	m151	m161	
+	(S)-2-Acetolactate[1]	(S)-2-Acetolactate			C5H7O4		1	m152	m162	
+	L-Alanyl-tRNA(Ala)[1]	L-Alanyl-tRNA(Ala)			C3H6NOR		1	m153	m163	
+	S-Adenosyl-L-methionine[1]	S-Adenosyl-L-methionine			C15H23N6O5S		1	m154	m164	
+	AMP[1]	AMP			C10H12N5O7P		1	m155	m165	
+	Anthranilate[1]	Anthranilate			C7H6NO2		1	m156	m166	
+	1-Aminopropan-2-ol[1]	1-Aminopropan-2-ol			C3H10NO		1	m157	m167	
+	D-1-Aminopropan-2-ol O-phosphate[1]	D-1-Aminopropan-2-ol O-phosphate			C3H9NO4P		1	m158	m168	
+	L-Arginine[1]	L-Arginine			C6H15N4O2		1	m159	m169	
+	N(omega)-(L-Arginino)succinate[1]	N(omega)-(L-Arginino)succinate			C10H17N4O6		1	m160	m170	
+	L-Arginyl-tRNA(Arg)[1]	L-Arginyl-tRNA(Arg)			C6H14N4OR		1	m161	m171	
+	L-Asparagine[1]	L-Asparagine			C4H8N2O3		1	m162	m172	
+	L-Aspartate[1]	L-Aspartate			C4H6NO4		1	m163	m173	
+	L-Aspartate 4-semialdehyde[1]	L-Aspartate 4-semialdehyde			C4H7NO3		1	m164	m174	
+	L-Aspartyl-tRNA(Asp)[1]	L-Aspartyl-tRNA(Asp)			C4H5NO3R		1	m165	m175	
+	ATP[1]	ATP			C10H12N5O13P3		1	m166	m176	
+	Atrazine[1]	Atrazine			C8H16ClN5		1	m167	m177	
+	Biotinyl-5'-AMP[1]	Biotinyl-5'-AMP			C20H27N7O9PS		1	m168	m178	
+	Biotin[1]	Biotin			C10H15N2O3S		1	m169	m179	
+	cAMP[1]	cAMP			C10H11N5O6P		1	m170	m182	
+	2-(3-Carboxy-3-aminopropyl)-L-histidine[1]	2-(3-Carboxy-3-aminopropyl)-L-histidine			C10H16N4O4		1	m171	m183	
+	N-Carbamoyl-L-aspartate[1]	N-Carbamoyl-L-aspartate			C5H6N2O5		1	m172	m184	
+	Carbamoyl phosphate[1]	Carbamoyl phosphate			CH2NO5P		1	m173	m185	
+	CDP-2,3-digeranylgeranyl-sn-glycerol[1]	CDP-2,3-digeranylgeranyl-sn-glycerol			C52H83N3O13P2		1	m174	m188	
+	CDP[1]	CDP			C9H12N3O11P2		1	m175	m189	
+	Methane[1]	Methane			CH4		1	m176	m190	
+	Methanethiol[1]	Methanethiol			CH4S		1	m177	m191	
+	chorismate[1]	chorismate			C10H8O6		1	m178	m192	
+	Citrate[1]	Citrate			C6H5O7		1	m179	m193	
+	Citrate[1]	Citrate			C6H5O7		1	m180	m194	
+	L-Citrulline[1]	L-Citrulline			C6H13N3O3		1	m181	m195	
+	Chloride[1]	Chloride			Cl		1	m182	m196	
+	2-[3-Carboxy-3-(methylammonio)propyl]-L-histidine[1]	2-[3-Carboxy-3-(methylammonio)propyl]-L-histidine			C11H18N4O4		1	m183	m197	
+	CMP[1]	CMP			C9H12N3O8P		1	m184	m198	
+	CO2[1]	CO2			CO2		1	m185	m199	
+	Cob(II)yrinate a,c diamide[1]	Cob(II)yrinate a,c diamide			C45H56CoN6O12		1	m186	m200	
+	CoA[1]	CoA			C21H32N7O16P3S		1	m187	m201	
+	coenzyme b[1]	coenzyme b			C11H19N1O7P1S1		1	m188	m202	
+	Cobyrinate[1]	Cobyrinate			C45H52N4O14Co		1	m189	m205	
+	cobalt-dihydro-precorrin 6[1]	cobalt-dihydro-precorrin 6			C44H47N4O16Co		1	m190	m206	
+	coenzyme m[1]	coenzyme m			C2H5O3S2		1	m191	m207	
+	cobalt-precorrin 2[1]	cobalt-precorrin 2			C42H38N4O16Co		1	m192	m208	
+	cobalt-precorrin 3[1]	cobalt-precorrin 3			C43H40N4O16Co		1	m193	m209	
+	cobalt-precorrin 4[1]	cobalt-precorrin 4			C44H43N4O16Co		1	m194	m210	
+	cobalt-precorrin 5[1]	cobalt-precorrin 5			C45H45N4O16Co		1	m195	m211	
+	cobalt-precorrin 6[1]	cobalt-precorrin 6			C44H45N4O16Co		1	m196	m212	
+	cobalt-precorrin 8[1]	cobalt-precorrin 8			C45H52N4O14Co		1	m197	m213	
+	Cytosine[1]	Cytosine			C4H5N3O		1	m198	m214	
+	CTP[1]	CTP			C9H12N3O14P3		1	m199	m215	
+	L-Cysteine[1]	L-Cysteine			C3H7NO2S		1	m200	m218	
+	L-Cysteinyl-tRNA(Cys)[1]	L-Cysteinyl-tRNA(Cys)			C3H6NOSR		1	m201	m219	
+	dADP[1]	dADP			C10H12N5O9P2		1	m202	m220	
+	dATP[1]	dATP			C10H12N5O12P3		1	m203	m221	
+	3,4-dihydroxy-2-butanone 4-phosphate[1]	3,4-dihydroxy-2-butanone 4-phosphate			C4H7O6P		1	m204	m222	
+	N6-(1,2-Dicarboxyethyl)-AMP[1]	N6-(1,2-Dicarboxyethyl)-AMP			C14H14N5O11P		1	m205	m223	
+	dCDP[1]	dCDP			C9H12N3O10P2		1	m206	m224	
+	dCMP[1]	dCMP			C9H12N3O7P		1	m207	m225	
+	dCTP[1]	dCTP			C9H12N3O13P3		1	m208	m226	
+	7,8-didemethyl-8-hydroxy-5-deazariboflavin[1]	7,8-didemethyl-8-hydroxy-5-deazariboflavin			C16H17N3O7		1	m209	m227	
+	dGDP[1]	dGDP			C10H12N5O10P2		1	m210	m228	
+	2,3-di-O-geranylgeranyl-sn-glyceroserine[1]	2,3-di-O-geranylgeranyl-sn-glyceroserine			C46H77N1O8P1		1	m211	m229	
+	2,3-di-O-geranyl-sn-glycerol-1-phospho-3'-sn-glycerol[1]	2,3-di-O-geranyl-sn-glycerol-1-phospho-3'-sn-glycerol			C46H78O8P1		1	m212	m230	
+	2,3-di-O-geranyl-sn-glycero-1-phospho-myo-inositol[1]	2,3-di-O-geranyl-sn-glycero-1-phospho-myo-inositol			C49H82O11P1		1	m213	m231	
+	dGTP[1]	dGTP			C10H12N5O13P3		1	m214	m232	
+	Dihydroxyacetone[1]	Dihydroxyacetone			C3H6O3		1	m215	m233	
+	Dihydroxyacetone phosphate[1]	Dihydroxyacetone phosphate			C3H5O6P		1	m216	m234	
+	7,8-Dihydrofolate[1]	7,8-Dihydrofolate			C19H19N7O6		1	m217	m235	
+	(S)-Dihydroorotate[1]	(S)-Dihydroorotate			C5H5N2O4		1	m218	m236	
+	Dihydropteroate[1]	Dihydropteroate			C14H13N6O3		1	m219	m237	
+	6-deoxy-5-ketomannitol 1-phosphate[1]	6-deoxy-5-ketomannitol 1-phosphate			C6H11O8P		1	m220	m238	
+	6,7-Dimethyl-8-(1-D-ribityl)lumazine[1]	6,7-Dimethyl-8-(1-D-ribityl)lumazine			C13H18N4O6		1	m221	m239	
+	Dimethylallyl diphosphate[1]	Dimethylallyl diphosphate			C5H9O7P2		1	m222	m240	
+	Dimethyl sulfide[1]	Dimethyl sulfide			C2H6S		1	m223	m241	
+	Deamino-NAD+[1]	Deamino-NAD+			C21H24N6O15P2		1	m224	m242	
+	3,7-dideoxy-D-threo-hepto-2-amino-6-ulosonate[1]	3,7-dideoxy-D-threo-hepto-2-amino-6-ulosonate			C7H13O5N		1	m225	m243	
+	3,7-dideoxy-D-threo-hepto-2,6-diulosonate[1]	3,7-dideoxy-D-threo-hepto-2,6-diulosonate			C7H9O6		1	m226	m244	
+	Dephospho-CoA[1]	Dephospho-CoA			C21H33N7O13P2S		1	m227	m245	
+	2,3-di-O-phytanyl-sn-glycerol-1-phospho-3'-sn-glycerol[1]	2,3-di-O-phytanyl-sn-glycerol-1-phospho-3'-sn-glycerol			C46H94O8P1		1	m228	m246	
+	2,3-O-phytanyl-sn-glycero-1-phospho-myo-inositol[1]	2,3-O-phytanyl-sn-glycero-1-phospho-myo-inositol			C49H98O11P1		1	m229	m247	
+	2,3-O-phytanyl-sn-glycero-1-phosphoserine[1]	2,3-O-phytanyl-sn-glycero-1-phosphoserine			C46H93N1O8P1		1	m230	m248	
+	dihydrosirohydrochlorin[1]	dihydrosirohydrochlorin			C42H41N4O16		1	m231	m249	
+	Dethiobiotin[1]	Dethiobiotin			C10H17N2O3		1	m232	m250	
+	dTDP-4-dehydro-6-deoxy-D-glucose[1]	dTDP-4-dehydro-6-deoxy-D-glucose			C16H22N2O15P2		1	m233	m251	
+	dTDP-4-dehydro-6-deoxy-L-mannose[1]	dTDP-4-dehydro-6-deoxy-L-mannose			C16H22N2O15P2		1	m234	m252	
+	dTDP[1]	dTDP			C10H13N2O11P2		1	m235	m253	
+	dTDPglucose[1]	dTDPglucose			C16H24N2O16P2		1	m236	m254	
+	dTDP-L-rhamnose[1]	dTDP-L-rhamnose			C16H24N2O15P2		1	m237	m255	
+	dTMP[1]	dTMP			C10H13N2O8P		1	m238	m256	
+	dTTP[1]	dTTP			C10H13N2O14P3		1	m239	m257	
+	dUDP[1]	dUDP			C9H11N2O11P2		1	m240	m258	
+	dUMP[1]	dUMP			C9H11N2O8P		1	m241	m259	
+	dUTP[1]	dUTP			C9H11N2O14P3		1	m242	m260	
+	1-deoxy-D-xylulose 5-phosphate[1]	1-deoxy-D-xylulose 5-phosphate			C5H9O7P		1	m243	m261	
+	D-erythro-1-(Imidazol-4-yl)glycerol 3-phosphate[1]	D-erythro-1-(Imidazol-4-yl)glycerol 3-phosphate			C6H9N2O6P		1	m244	m262	
+	Ethanol[1]	Ethanol			C2H6O		1	m245	m263	
+	D-Fructose 1-phosphate[1]	D-Fructose 1-phosphate			C6H11O9P		1	m246	m264	
+	coenzyme F390 (adenosine)[1]	coenzyme F390 (adenosine)			C39H43N10O24P2		1	m247	m265	
+	coenzyme F390 (guanosine)[1]	coenzyme F390 (guanosine)			C39H43N10O25P2		1	m248	m266	
+	coenzyme ferredoxin 420-0[1]	coenzyme ferredoxin 420-0			C19H20N3O12P		1	m249	m267	
+	coenzyme ferredoxin 420-1[1]	coenzyme ferredoxin 420-1			C24H26N4O15P		1	m250	m268	
+	coenzyme ferredoxin 420-2 (oxidized)[1]	coenzyme ferredoxin 420-2 (oxidized)			C29H32O18N5P1		1	m251	m269	
+	coenzyme ferredoxin 420-2 (reduced)[1]	coenzyme ferredoxin 420-2 (reduced)			C29H34O18N5P1		1	m252	m270	
+	coenzyme ferredoxin 420-3[1]	coenzyme ferredoxin 420-3			C34H38N6O21P		1	m253	m271	
+	coenzyme ferredoxin 420-4[1]	coenzyme ferredoxin 420-4			C39H44N7O24P		1	m254	m272	
+	coenzyme ferredoxin 420-5[1]	coenzyme ferredoxin 420-5			C44H50N8O27P		1	m255	m273	
+	coenzyme ferredoxin 420-6[1]	coenzyme ferredoxin 420-6			C49H56N9O30P		1	m256	m274	
+	coenzyme ferredoxin 420-7[1]	coenzyme ferredoxin 420-7			C54H62N10O33P		1	m257	m275	
+	D-Fructose 6-phosphate[1]	D-Fructose 6-phosphate			C6H11O9P		1	m258	m276	
+	ferredoxin (oxidized) 2[4Fe-4S][1]	ferredoxin (oxidized) 2[4Fe-4S]			Fe8S8X		1	m259	m277	
+	D-Fructose 1,6-bisphosphate[1]	D-Fructose 1,6-bisphosphate			C6H10O12P2		1	m260	m278	
+	ferredoxin (reduced) 2[4Fe-4S][1]	ferredoxin (reduced) 2[4Fe-4S]			Fe8S8X		1	m261	m279	
+	N2-Formyl-N1-(5-phospho-D-ribosyl)glycinamide[1]	N2-Formyl-N1-(5-phospho-D-ribosyl)glycinamide			C8H13N2O9P		1	m262	m284	
+	FMN[1]	FMN			C17H19N4O9P		1	m263	m285	
+	formyltetrahydrosarcinapterin[1]	formyltetrahydrosarcinapterin			C36H48N7O20P1		1	m264	m287	
+	formylmethanofuran_b[1]	formylmethanofuran_b			C35H43N6O15		1	m265	m288	
+	2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine[1]	2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine			C8H15N3O8P		1	m266	m289	
+	5-Formamido-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide[1]	5-Formamido-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide			C10H13N4O9P		1	m267	m290	
+	Farnesyl diphosphate[1]	Farnesyl diphosphate			C15H25O7P2		1	m268	m291	
+	Fumarate[1]	Fumarate			C4H2O4		1	m269	m292	
+	D-Glucose 1-phosphate[1]	D-Glucose 1-phosphate			C6H11O9P		1	m270	m293	
+	Glyceraldehyde 3-phosphate[1]	Glyceraldehyde 3-phosphate			C3H5O6P		1	m271	m294	
+	D-Glucose 6-phosphate[1]	D-Glucose 6-phosphate			C6H11O9P		1	m272	m295	
+	D-Glucosamine 1-phosphate[1]	D-Glucosamine 1-phosphate			C6H13NO8P		1	m273	m296	
+	D-Glucosamine 6-phosphate[1]	D-Glucosamine 6-phosphate			C6H13NO8P		1	m274	m297	
+	N1-(5-Phospho-D-ribosyl)glycinamide[1]	N1-(5-Phospho-D-ribosyl)glycinamide			C7H14N2O8P		1	m275	m298	
+	Glycolaldehyde[1]	Glycolaldehyde			C2H4O2		1	m276	m299	
+	GDP[1]	GDP			C10H12N5O11P2		1	m277	m300	
+	GDP-D-mannose[1]	GDP-D-mannose			C16H23N5O16P2		1	m278	m301	
+	Geranylgeranyl diphosphate[1]	Geranylgeranyl diphosphate			C20H33O7P2		1	m279	m302	
+	(S)-3-O-geranylgeranylglyceryl phosphate[1]	(S)-3-O-geranylgeranylglyceryl phosphate			C23H39O6P1		1	m280	m303	
+	D-Gluconate[1]	D-Gluconate			C6H11O7		1	m281	m304	
+	L-Glutamine[1]	L-Glutamine			C5H10N2O3		1	m282	m305	
+	L-Glutaminyl-tRNA(Gln)[1]	L-Glutaminyl-tRNA(Gln)			C5H9N2O2R		1	m283	m306	
+	L-Glutamate[1]	L-Glutamate			C5H8NO4		1	m284	m307	
+	L-Glutamate 1-semialdehyde[1]	L-Glutamate 1-semialdehyde			C5H9NO3		1	m285	m308	
+	L_Glutamyl_tRNA_Gln_[1]	L_Glutamyl_tRNA_Gln_			C5H7NO3R		1	m286	m309	
+	L-Glutamyl-tRNA(Glu)[1]	L-Glutamyl-tRNA(Glu)			C5H7NO3R		1	m287	m310	
+	Glycine[1]	Glycine			C2H5NO2		1	m288	m311	
+	D-Glyceraldehyde[1]	D-Glyceraldehyde			C3H6O3		1	m289	m312	
+	Glycine betaine[1]	Glycine betaine			C5H11NO2		1	m290	m313	
+	Glycine_betaine[1]	Glycine_betaine			C5H11NO2		1	m291	m314	
+	Glycerol 1-phosphate[1]	Glycerol 1-phosphate			C3H7O6P		1	m292	m315	
+	Glycyl-tRNA(Gly)[1]	Glycyl-tRNA(Gly)			C2H4NOR		1	m293	m316	
+	GMP[1]	GMP			C10H12N5O8P		1	m294	m317	
+	Geranyl diphosphate[1]	Geranyl diphosphate			C10H17O7P2		1	m295	m318	
+	Oxidized glutathione[1]	Oxidized glutathione			C20H30N6O12S2		1	m296	m319	
+	Reduced glutathione[1]	Reduced glutathione			C10H16N3O6S		1	m297	m320	
+	GTP[1]	GTP			C10H12N5O14P3		1	m298	m321	
+	Guanine[1]	Guanine			C5H5N5O		1	m299	m322	
+	H2[1]	H2			H2		1	m300	m324	
+	cis-(homo)2aconitate[1]	cis-(homo)2aconitate			C8H7O6		1	m301	m325	
+	H2O[1]	H2O			H2O		1	m302	m326	
+	Hydrogen sulfide[1]	Hydrogen sulfide			H2S		1	m303	m327	
+	cis-(homo)3aconitate[1]	cis-(homo)3aconitate			C9H9O6		1	m304	m328	
+	5,6,7,8-tetrahydromethanopterin[1]	5,6,7,8-tetrahydromethanopterin			C30H42N6O16P		1	m305	m329	
+	tetrahydrosarcinapterin[1]	tetrahydrosarcinapterin			C35H48N7O19P1		1	m306	m330	
+	cis-homoaconitate[1]	cis-homoaconitate			C7H5O6		1	m307	m332	
+	trans-homoaconitate[1]	trans-homoaconitate			C7H5O6		1	m308	m333	
+	Hydroxyatrazine[1]	Hydroxyatrazine			C8H17N5O		1	m309	m334	
+	2-Hydroxybutane-1,2,4-tricarboxylate[1]	2-Hydroxybutane-1,2,4-tricarboxylate			C7H7O7		1	m310	m335	
+	Bicarbonate[1]	Bicarbonate			CHO3		1	m311	m336	
+	L-Homocysteine[1]	L-Homocysteine			C4H9NO2S		1	m312	m337	
+	Hydrogenobyrinate a,c diamide[1]	Hydrogenobyrinate a,c diamide			C45H57N6O12		1	m313	m338	
+	L-Histidine[1]	L-Histidine			C6H9N3O2		1	m314	m339	
+	L-Histidinol phosphate[1]	L-Histidinol phosphate			C6H11N3O4P		1	m315	m340	
+	L-Histidinol[1]	L-Histidinol			C6H12N3O		1	m316	m341	
+	L-Histidyl-tRNA(His)[1]	L-Histidyl-tRNA(His)			C6H8N3OR		1	m317	m342	
+	Hydroxymethylbilane[1]	Hydroxymethylbilane			C40H38N4O17		1	m318	m343	
+	Hydroxymethylglutaryl-CoA[1]	Hydroxymethylglutaryl-CoA			C27H39N7O20P3S		1	m319	m344	
+	L-Homoserine[1]	L-Homoserine			C4H9NO3		1	m320	m345	
+	4-Hydroxyphenylacetyl-CoA[1]	4-Hydroxyphenylacetyl-CoA			C29H38N7O18P3S		1	m321	m346	
+	heterodisulfide[1]	heterodisulfide			C13H22N1O10P1S3		1	m322	m347	
+	Hypoxanthine[1]	Hypoxanthine			C5H4N4O		1	m323	m348	
+	Iminoaspartate[1]	Iminoaspartate			C4H3NO4		1	m324	m349	
+	Isobutyryl-CoA[1]	Isobutyryl-CoA			C25H38N7O17P3S		1	m325	m350	
+	Isocitrate[1]	Isocitrate			C6H5O7		1	m326	m351	
+	IDP[1]	IDP			C10H11N4O11P2		1	m327	m352	
+	threo-isohomocitrate[1]	threo-isohomocitrate			C7H7O7		1	m328	m353	
+	L-Isoleucine[1]	L-Isoleucine			C6H13NO2		1	m329	m354	
+	L-Isoleucyl-tRNA(Ile)[1]	L-Isoleucyl-tRNA(Ile)			C6H12NOR		1	m330	m355	
+	3-(Imidazol-4-yl)-2-oxopropyl phosphate[1]	3-(Imidazol-4-yl)-2-oxopropyl phosphate			C6H7N2O5P		1	m331	m356	
+	IMP[1]	IMP			C10H11N4O8P		1	m332	m357	
+	Indole-3-acetate[1]	Indole-3-acetate			C10H8NO2		1	m333	m358	
+	S-2-(indol-3-yl)acetyl-CoA[1]	S-2-(indol-3-yl)acetyl-CoA			C31H39N8O17P3S		1	m334	m359	
+	Indole[1]	Indole			C8H7N		1	m335	m360	
+	Indolepyruvate[1]	Indolepyruvate			C11H8NO3		1	m336	m361	
+	myo-Inositol[1]	myo-Inositol			C6H12O6		1	m337	m362	
+	Isopentenyl diphosphate[1]	Isopentenyl diphosphate			C5H9O7P2		1	m338	m363	
+	ITP[1]	ITP			C10H11N4O14P3		1	m339	m364	
+	L-Leucine[1]	L-Leucine			C6H13NO2		1	m340	m367	
+	L-Leucyl-tRNA(Leu)[1]	L-Leucyl-tRNA(Leu)			C6H12NOR		1	m341	m368	
+	lactyl-(2)-diphospho-(5')-guanosine[1]	lactyl-(2)-diphospho-(5')-guanosine			C13H16N5O13P2		1	m342	m369	
+	L-Lysine[1]	L-Lysine			C6H15N2O2		1	m343	m370	
+	L-Lysine-tRNA (Lys)[1]	L-Lysine-tRNA (Lys)			C6H14N2OR		1	m344	m371	
+	m[1]	m					1	m345	m372	
+	methyl-3-hydroxyl diphosphate[1]	methyl-3-hydroxyl diphosphate			C5H11O8P2		1	m346	m373	
+	L-Malate[1]	L-Malate			C4H4O5		1	m347	m374	
+	D-Mannose 1-phosphate[1]	D-Mannose 1-phosphate			C6H11O9P		1	m348	m375	
+	D-Mannose 6-phosphate[1]	D-Mannose 6-phosphate			C6H11O9P		1	m349	m376	
+	methylcoenzyme m[1]	methylcoenzyme m			C3O3S2H7		1	m350	m377	
+	methenyl-tetrahydrosarcinapterin[1]	methenyl-tetrahydrosarcinapterin			C36H47N7O19P1		1	m351	m378	
+	Methanol[1]	Methanol			CH4O1		1	m352	m379	
+	L-Methionine[1]	L-Methionine			C5H11NO2S		1	m353	m380	
+	L-Methionyl-tRNA (Met)[1]	L-Methionyl-tRNA (Met)			C5H10NOSR		1	m354	m381	
+	(R)-Mevalonate[1]	(R)-Mevalonate			C6H11O4		1	m355	m382	
+	methanofuran_b[1]	methanofuran_b			C34H44N6O14		1	m356	m383	
+	N5-methyl-tetrahydrosarcinapterin[1]	N5-methyl-tetrahydrosarcinapterin			C36H50N7O19P1		1	m357	m386	
+	1D-myo-Inositol 1-phosphate[1]	1D-myo-Inositol 1-phosphate			C6H11O9P		1	m358	m387	
+	N5,N10-methylene-5,6,7,8-tetrahydromethanopterin[1]	N5,N10-methylene-5,6,7,8-tetrahydromethanopterin			C36H48N7O19P1		1	m359	m388	
+	5,10-Methylenetetrahydrofolate[1]	5,10-Methylenetetrahydrofolate			C20H21N7O6		1	m360	m389	
+	methanophenazine (oxidized)[1]	methanophenazine (oxidized)			C37N2O1H50		1	m361	m390	
+	methanophenazine (reduced)[1]	methanophenazine (reduced)			C37N2O1H52		1	m362	m391	
+	Magnesium protoporphyrin[1]	Magnesium protoporphyrin			C34H30MgN4O4		1	m363	m392	
+	Sodium[1]	Sodium			Na		1	m364	m393	
+	Sodium[1]	Sodium			Na		1	m365	m394	
+	Nicotinate[1]	Nicotinate			C6H4NO2		1	m366	m395	
+	NAD+[1]	NAD+			C21H26N7O14P2		1	m367	m396	
+	NADH[1]	NADH			C21H27N7O14P2		1	m368	m397	
+	NADP+[1]	NADP+			C21H25N7O17P3		1	m369	m398	
+	NADPH[1]	NADPH			C21H26N7O17P3		1	m370	m399	
+	Ammonium[1]	Ammonium			H4N		1	m371	m400	
+	Ammonium[1]	Ammonium			H4N		1	m372	m401	
+	Nicotinate D-ribonucleotide[1]	Nicotinate D-ribonucleotide			C11H12NO9P		1	m373	m402	
+	NMN[1]	NMN			C11H14N2O8P		1	m374	m403	
+	O2[1]	O2			O2		1	m375	m404	
+	Oxaloacetate[1]	Oxaloacetate			C4H2O5		1	m376	m405	
+	2-oxoheptanedioic acid[1]	2-oxoheptanedioic acid			C7H8O5		1	m377	m406	
+	2-oxohexanedioic acid[1]	2-oxohexanedioic acid			C6H6O5		1	m378	m407	
+	Ornithine[1]	Ornithine			C5H13N2O2		1	m379	m408	
+	Orotidine 5'-phosphate[1]	Orotidine 5'-phosphate			C10H10N2O11P		1	m380	m409	
+	Orotate[1]	Orotate			C5H3N2O4		1	m381	m410	
+	Oxalate[1]	Oxalate			C2O4		1	m382	m411	
+	Phenylacetic acid[1]	Phenylacetic acid			C8H7O2		1	m383	m412	
+	Pantetheine 4'-phosphate[1]	Pantetheine 4'-phosphate			C11H21N2O7PS		1	m384	m413	
+	(R)-Pantoate[1]	(R)-Pantoate			C6H11O4		1	m385	m414	
+	Phosphoenolpyruvate[1]	Phosphoenolpyruvate			C3H2O6P		1	m386	m415	
+	Phenylacetyl-CoA[1]	Phenylacetyl-CoA			C29H38N7O17P3S		1	m387	m416	
+	L-Phenylalanine[1]	L-Phenylalanine			C9H11NO2		1	m388	m417	
+	L-Phenylalanyl-tRNA(Phe)[1]	L-Phenylalanyl-tRNA(Phe)			C9H10NOR		1	m389	m418	
+	O-Phospho-L-homoserine[1]	O-Phospho-L-homoserine			C4H8NO6P		1	m390	m419	
+	Phenylpyruvate[1]	Phenylpyruvate			C9H7O3		1	m391	m420	
+	Phosphate[1]	Phosphate			HO4P		1	m392	m421	
+	Phosphate[1]	Phosphate			HO4P		1	m393	m422	
+	(R)-Pantothenate[1]	(R)-Pantothenate			C9H16NO5		1	m394	m423	
+	Propionate (n-C3:0)[1]	Propionate (n-C3:0)			C3H5O2		1	m395	m424	
+	Porphobilinogen[1]	Porphobilinogen			C10H13N2O4		1	m396	m425	
+	Propanoyl-CoA[1]	Propanoyl-CoA			C24H36N7O17P3S		1	m397	m426	
+	Prephenate[1]	Prephenate			C10H8O6		1	m398	m427	
+	Diphosphate[1]	Diphosphate			HO7P2		1	m399	m428	
+	Protoporphyrin[1]	Protoporphyrin			C34H32N4O4		1	m400	m429	
+	Inorganic triphosphate[1]	Inorganic triphosphate			HO10P3		1	m401	m430	
+	5-Phospho-beta-D-ribosylamine[1]	5-Phospho-beta-D-ribosylamine			C5H11NO7P		1	m402	m431	
+	N-(5-Phospho-D-ribosyl)anthranilate[1]	N-(5-Phospho-D-ribosyl)anthranilate			C12H13NO9P		1	m403	m432	
+	1-(5-Phosphoribosyl)-AMP[1]	1-(5-Phosphoribosyl)-AMP			C15H19N5O14P2		1	m404	m433	
+	1-(5-Phosphoribosyl)-ATP[1]	1-(5-Phosphoribosyl)-ATP			C15H19N5O20P4		1	m405	m434	
+	1-(5-Phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino]imidazole-4-carboxamide[1]	1-(5-Phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino]imidazole-4-carboxamide			C15H21N5O15P2		1	m406	m435	
+	5-[(5-phospho-1-deoxyribulos-1-ylamino)methylideneamino]-1-(5-phosphoribosyl)imidazole-4-carboxamide[1]	5-[(5-phospho-1-deoxyribulos-1-ylamino)methylideneamino]-1-(5-phosphoribosyl)imidazole-4-carboxamide			C15H21N5O15P2		1	m407	m436	
+	L-Proline[1]	L-Proline			C5H9NO2		1	m408	m437	
+	L-Prolyl-tRNA(Pro)[1]	L-Prolyl-tRNA(Pro)			C5H8NOR		1	m409	m439	
+	5-Phospho-alpha-D-ribose 1-diphosphate[1]	5-Phospho-alpha-D-ribose 1-diphosphate			C5H8O14P3		1	m410	m440	
+	Pseudouridine 5'-phosphate[1]	Pseudouridine 5'-phosphate			C9H11N2O9P		1	m411	m441	
+	O-Phospho-L-serine[1]	O-Phospho-L-serine			C3H6NO6P		1	m412	m442	
+	triaminopyrimidine triphosphate[1]	triaminopyrimidine triphosphate			C9H14N5O14P3		1	m413	m443	
+	Putrescine[1]	Putrescine			C4H14N2		1	m414	m444	
+	Pyruvate[1]	Pyruvate			C3H3O3		1	m415	m445	
+	Quinolinate[1]	Quinolinate			C7H3NO4		1	m416	m446	
+	N1-(alpha-D-ribosyl)-5-hydroxybenzimidazole[1]	N1-(alpha-D-ribosyl)-5-hydroxybenzimidazole			C12H14N2O5		1	m417	m447	
+	alpha-D-Ribose 5-phosphate[1]	alpha-D-Ribose 5-phosphate			C5H9O8P		1	m418	m448	
+	D-Ribose[1]	D-Ribose			C5H10O5		1	m419	m449	
+	Riboflavin[1]	Riboflavin			C17H20N4O6		1	m420	m450	
+	D-Ribulose 5-phosphate[1]	D-Ribulose 5-phosphate			C5H9O8P		1	m421	m451	
+	Sulfur[1]	Sulfur			S		1	m422	m452	
+	sirohydrochlorin[1]	sirohydrochlorin			C42H39N4O16		1	m423	m453	
+	L-Serine[1]	L-Serine			C3H7NO3		1	m424	m454	
+	L-Seryl-tRNA(Ser)[1]	L-Seryl-tRNA(Ser)			C3H6NO2R		1	m425	m455	
+	Siroheme[1]	Siroheme			C42H36FeN4O16		1	m426	m456	
+	Shikimate 5-phosphate[1]	Shikimate 5-phosphate			C7H8O8P		1	m427	m457	
+	Shikimate[1]	Shikimate			C7H9O5		1	m428	m458	
+	L-sulfolactate[1]	L-sulfolactate			C3H4O6S		1	m429	m459	
+	L-sulfolactyl phosphate[1]	L-sulfolactyl phosphate			C3H3O9PS		1	m430	m460	
+	Sulfate[1]	Sulfate			O4S		1	m431	m461	
+	Sulfate[1]	Sulfate			O4S		1	m432	m462	
+	Succinate[1]	Succinate			C4H4O4		1	m433	m463	
+	Succinyl-CoA[1]	Succinyl-CoA			C25H35N7O19P3S		1	m434	m464	
+	Succinic semialdehyde[1]	Succinic semialdehyde			C4H5O3		1	m435	m465	
+	2,3,4,5-Tetrahydrodipicolinate[1]	2,3,4,5-Tetrahydrodipicolinate			C7H7NO4		1	m436	m466	
+	5,6,7,8-Tetrahydrofolate[1]	5,6,7,8-Tetrahydrofolate			C19H21N7O6		1	m437	m467	
+	Thiamin monophosphate[1]	Thiamin monophosphate			C12H16N4O4PS		1	m438	m468	
+	Thiamine diphosphate[1]	Thiamine diphosphate			C12H16N4O7P2S		1	m439	m469	
+	L-Threonine[1]	L-Threonine			C4H9NO3		1	m440	m470	
+	L-Threonine O-3-phosphate[1]	L-Threonine O-3-phosphate			C4H8NO6P		1	m441	m471	
+	L-Threonyl-tRNA(Thr)[1]	L-Threonyl-tRNA(Thr)			C4H8NO2R		1	m442	m472	
+	(-)threo-iso(homo)2citrate[1]	(-)threo-iso(homo)2citrate			C8H9O7		1	m443	m473	
+	(-)threo-iso(homo)3citrate[1]	(-)threo-iso(homo)3citrate			C9H11O7		1	m444	m474	
+	Oxidized thioredoxin[1]	Oxidized thioredoxin			X		1	m445	m475	
+	Reduced thioredoxin[1]	Reduced thioredoxin			XH2		1	m446	m476	
+	tRNA(Ala)[1]	tRNA(Ala)			R		1	m447	m477	
+	tRNA(Arg)[1]	tRNA(Arg)			R		1	m448	m478	
+	tRNA(Asp)[1]	tRNA(Asp)			R		1	m449	m479	
+	tRNA(Cys)[1]	tRNA(Cys)			R		1	m450	m480	
+	tRNA(Gln)[1]	tRNA(Gln)			R		1	m451	m481	
+	tRNA (Glu)[1]	tRNA (Glu)			R		1	m452	m482	
+	tRNA(Gly)[1]	tRNA(Gly)			R		1	m453	m483	
+	tRNA(His)[1]	tRNA(His)			R		1	m454	m484	
+	tRNA(Ile)[1]	tRNA(Ile)			R		1	m455	m485	
+	tRNA(Leu)[1]	tRNA(Leu)			R		1	m456	m486	
+	tRNA(Lys)[1]	tRNA(Lys)			R		1	m457	m487	
+	tRNA(Met)[1]	tRNA(Met)			R		1	m458	m488	
+	tRNA(Phe)[1]	tRNA(Phe)			R		1	m459	m489	
+	tRNA(Pro)[1]	tRNA(Pro)			R		1	m460	m490	
+	tRNA(Ser)[1]	tRNA(Ser)			R		1	m461	m491	
+	tRNA(Thr)[1]	tRNA(Thr)			R		1	m462	m492	
+	tRNA(Trp)[1]	tRNA(Trp)			R		1	m463	m493	
+	tRNA(Tyr)[1]	tRNA(Tyr)			R		1	m464	m494	
+	tRNA(Val)[1]	tRNA(Val)			R		1	m465	m495	
+	L-Tryptophan[1]	L-Tryptophan			C11H12N2O2		1	m466	m496	
+	L-Tryptophanyl-tRNA(Trp)[1]	L-Tryptophanyl-tRNA(Trp)			C11H11N2OR		1	m467	m497	
+	Thiosulfate[1]	Thiosulfate			O3S2		1	m468	m498	
+	Thiosulfate[1]	Thiosulfate			O3S2		1	m469	m499	
+	L-Tyrosine[1]	L-Tyrosine			C9H11NO3		1	m470	m500	
+	L-Tyrosyl-tRNA(Tyr)[1]	L-Tyrosyl-tRNA(Tyr)			C9H10NO2R		1	m471	m501	
+	UDP-N-acetyl-D-glucosamine[1]	UDP-N-acetyl-D-glucosamine			C17H25N3O17P2		1	m472	m502	
+	UDP[1]	UDP			C9H11N2O12P2		1	m473	m503	
+	UDPglucose[1]	UDPglucose			C15H22N2O17P2		1	m474	m504	
+	UDPgalactose[1]	UDPgalactose			C15H22N2O17P2		1	m475	m505	
+	UDP-D-glucuronate[1]	UDP-D-glucuronate			C15H19N2O18P2		1	m476	m506	
+	UMP[1]	UMP			C9H11N2O9P		1	m477	m507	
+	Uroporphyrinogen III[1]	Uroporphyrinogen III			C40H36N4O16		1	m478	m508	
+	Uracil[1]	Uracil			C4H4N2O2		1	m479	m509	
+	Urea[1]	Urea			CH4N2O		1	m480	m510	
+	UTP[1]	UTP			C9H11N2O15P3		1	m481	m511	
+	L-Valine[1]	L-Valine			C5H11NO2		1	m482	m512	
+	L-Valyl-tRNA(Val)[1]	L-Valyl-tRNA(Val)			C5H10NOR		1	m483	m513	
+	Xanthosine 5'-phosphate[1]	Xanthosine 5'-phosphate			C10H11N4O9P		1	m484	m514	
+	Methanol[1]	Methanol					1	m485	m515	
+	Ethanol[1]	Ethanol					1	m486	m518	
+	CO2[1]	CO2					1	m487	m520	
+	Methane[1]	Methane					1	m488	m522	
+	Acetate[1]	Acetate					1	m489	m524	
+	Hydrogen sulfide[1]	Hydrogen sulfide			H2S		1	m490	m528	
+	H2[1]	H2			H2		1	m491	m530	
+	Biomass_msi[1]	Biomass_msi					1	m492	m531	
+	Biomass_msi[1]	Biomass_msi					1	m493	m532	
+	LL-2,6-Diaminoheptanedioate[1]	LL-2,6-Diaminoheptanedioate			C7H14N2O4		1	m494	m534	
+	Glycogen[1]	Glycogen					1	m495	m535	
+	5'-Phosphoribosylglycinamide[1]	5'-Phosphoribosylglycinamide					1	m496	m536	
+	5'-Phosphoribosyl-N-formylglycinamide[1]	5'-Phosphoribosyl-N-formylglycinamide					1	m497	m537	
+	10-Formyltetrahydrofolate[1]	10-Formyltetrahydrofolate					1	m498	m538	
+	Tetrahydrofolate[1]	Tetrahydrofolate					1	m499	m539	
+	5,10-Methenyltetrahydrofolate[1]	5,10-Methenyltetrahydrofolate					1	m500	m540	
+	3-Phosphonooxypyruvate[1]	3-Phosphonooxypyruvate					1	m501	m541	
+	Sulfite[1]	Sulfite					1	m502	m542	
+	L-Proline[1]	L-Proline					1	m503	exclude1	
+	tRNA guanine[1]	tRNA guanine					1	m504	m543	
+	D-erythro-3-Methylmalate[1]	D-erythro-3-Methylmalate					1	m505	m544	
+	tRNA[1]	tRNA					1	m506	m545	
+	Flavin adenine dinucleotide oxidized[1]	Flavin adenine dinucleotide oxidized					1	m507	m546	
+	Flavin adenine dinucleotide reduced[1]	Flavin adenine dinucleotide reduced					1	m508	m547	
+	D-arabino-Hex-3-ulose 6-phosphate[1]	D-arabino-Hex-3-ulose 6-phosphate					1	m509	m548	
+	Formaldehyde[1]	Formaldehyde					1	m510	m549	
+	alpha-D-Ribose 1-phosphate[1]	alpha-D-Ribose 1-phosphate					1	m511	m550	
+	D-Ribose 5-phosphate[1]	D-Ribose 5-phosphate					1	m512	m551	
+	1-(5-Phospho-D-ribosyl)-ATP[1]	1-(5-Phospho-D-ribosyl)-ATP					1	m513	m554	
+	H2O[1]	H2O			H2O		1	m514	m556	
+	6-deoxy-5-ketofructose 1-phosphate[1]	6-deoxy-5-ketofructose 1-phosphate					1	m515	m561	
+	4,5-diketo-6-deoxyfructose 1-phosphate[1]	4,5-diketo-6-deoxyfructose 1-phosphate					1	m516	m562	
+	4-ketofructose 1,6-bisphosphate[1]	4-ketofructose 1,6-bisphosphate					1	m517	m563	
+	5-Methyltetrahydrofolate[1]	5-Methyltetrahydrofolate					1	m518	m564	
+	7,8-dihydromethanopterin[1]	7,8-dihydromethanopterin					1	m519	m565	
+	monomethylated 7,8-dihydromethanoterin[1]	monomethylated 7,8-dihydromethanoterin					1	m520	m566	
+	didemethylated 7,8-dihydromethanopterin[1]	didemethylated 7,8-dihydromethanopterin					1	m521	m567	
+	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-5-[1-A-D-ribofuranosyl 5'-triphosphate]-D-ribitol[1]	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-5-[1-A-D-ribofuranosyl 5'-triphosphate]-D-ribitol					1	m522	m568	
+	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-5-[1-A-D-ribofuranosyl 5'-diphosphate]-D-ribitol[1]	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-5-[1-A-D-ribofuranosyl 5'-diphosphate]-D-ribitol					1	m523	m569	
+	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-5-[1-A-D-ribofuranosyl 5'-phosphate]-D-ribitol[1]	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-5-[1-A-D-ribofuranosyl 5'-phosphate]-D-ribitol					1	m524	m570	
+	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-D-ribitol[1]	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-D-ribitol					1	m525	m571	
+	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-D-ribitol 5'-phosphate[1]	7,8-dihydropterin-6-ylmethyl-1-(4-aminophenyl)-1-deoxy-D-ribitol 5'-phosphate					1	m526	m572	
+	7,8-dihydropterin-6-ylmethyl-4-(B-D-ribofuranosyl) aminobenzene 5'-phosphate[1]	7,8-dihydropterin-6-ylmethyl-4-(B-D-ribofuranosyl) aminobenzene 5'-phosphate					1	m527	m573	
+	6-hydroxymethyl-dihydropterin pyrophosphate[1]	6-hydroxymethyl-dihydropterin pyrophosphate					1	m528	m575	
+	6-hydroxymethyl dihydropterin[1]	6-hydroxymethyl dihydropterin					1	m529	m576	
+	Dihydroneopterin[1]	Dihydroneopterin					1	m530	m577	
+	Dihydroneopterin monophosphate[1]	Dihydroneopterin monophosphate					1	m531	m578	
+	7,8-dihydronepterin 2' :3'-cyclicphosphate[1]	7,8-dihydronepterin 2' :3'-cyclicphosphate					1	m532	m579	
+	Proton[1]	Proton					1	m533	m580	
+	Proton[1]	Proton					1	m534	m581	
+	Formate[1]	Formate					1	m535	m582	

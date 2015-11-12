@@ -91,4 +91,5 @@ parse_reaction_table <- function(reaction_table){
     modelsense='max'
     )
     
+  return(model)
 }

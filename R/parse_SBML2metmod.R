@@ -13,8 +13,7 @@ parse_SBML2metmod <- function(sbml){
     keep(is.list) %>% 
     map(attributes) %>% 
     bind_rows %>%
-    mutate(boundaryCondition = boundaryCondition=='true',
-           boundaryCondition = ifelse(!is.na(boundaryCondition), boundaryCondition, FALSE))
+    mutate(boundaryCondition = ifelse(is.na(boundaryCondition), FALSE, as.logical(boundaryCondition)))
   
   reactions <- sbml[[1]] %>% 
     keep(function(x){'reaction' %in% names(x)}) %>% 
@@ -36,7 +35,7 @@ parse_SBML2metmod <- function(sbml){
     mutate(parameter = str_replace(id, rxnid, '')) %>%
     select(parameter, name, reversible, rxnid, value) %>%
     spread(key=parameter, value=value, drop=TRUE) %>%
-    (function(x){
+    boundaryCondition(function(x){
       colnames(x)[str_detect(colnames(x),'LB_|LOWER_')] <- 'lowbnd'
       colnames(x)[str_detect(colnames(x),'UB_|UPPER_')] <- 'uppbnd'
       colnames(x)[str_detect(colnames(x),'OBJ_|OBJECTIVE_COEFFICIENT')] <- 'obj_coef'

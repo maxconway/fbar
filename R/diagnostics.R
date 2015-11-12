@@ -11,6 +11,7 @@ diagnose_dead_ends <- function(stoich){
 #' shrink model
 #' 
 #' @export
+#' ### invalid!!!
 shrink_model <- function(model){
   # remove zero flux reactions
   zero_flux_reactions <- (model$lb == 0) & (model$ub == 0)
