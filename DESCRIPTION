@@ -13,5 +13,8 @@ Imports:
   dplyr,
   stringr
 Suggests: testthat,
-    knitr
+    knitr,
+    rmarkdown,
+    gurobi,
+    ggplot2
 VignetteBuilder: knitr
