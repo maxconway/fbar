@@ -38,10 +38,10 @@ parse_reaction_table <- function(reaction_table){
   obj_coef[is.na(obj_coef)] <- 0
   
   parse_met_list <- function(mets){
-    pattern_stoich <- '^[[:space:]]*[[:digit:]]+(\\.[[:digit:]]+)?[[:space:]]+'
+    pattern_stoich <- '^[[:space:]]*[[:digit:].()]+[[:space:]]+'
     stoich <- mets %>% 
       str_extract(pattern_stoich) %>% 
-      str_trim() %>%
+      str_replace_all('[[:space:]()]+','') %>%
       as.numeric
     stoich[is.na(stoich)] <- 1
     met <- mets %>% 
@@ -62,7 +62,7 @@ parse_reaction_table <- function(reaction_table){
   symbols = str_split(reactions_expanded_partial_2$string, fixed(' + '))
   
   reactions_expanded_partial_3 <- cbind(
-    reactions_expanded_partial_2[rep.int(1:nrow(reactions_expanded_partial_2), times=laply(symbols, length)),],
+    reactions_expanded_partial_2[rep.int(1:nrow(reactions_expanded_partial_2), times=plyr::laply(symbols, length)),],
     symbol = unlist(symbols)
     )
   
