@@ -17,13 +17,23 @@
 #' @import dplyr 
 #' @import assertthat 
 #' @import stringr
-parse_reaction_table <- function(reaction_table){
+parse_reaction_table <- function(reaction_table, genes = NULL){
+  assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
   assert_that(reaction_table %has_name% 'equation')
   assert_that(reaction_table %has_name% 'uppbnd')
   assert_that(reaction_table %has_name% 'lowbnd')
   assert_that(reaction_table %has_name% 'obj_coef')
   assert_that(!any(str_detect(reaction_table$equation, '^\\[\\w+?]:'))) # can't handle compartments at start of string
+  
+  # Deal with gpr mappings
+  if(('geneAssociation' %in% names(reaction_table)) && !is.null(genes)){
+    assert_that('data.frame' %in% class(genes))
+    reaction_table %>%
+      mutate(present = gene_eval_boolean(geneAssociation, genes$genes, genes$presences)) %>%
+      mutate(uppbnd = uppbnd*present,
+             lowbnd = lowbnd*present)
+  }
   
   const_inf <- 1000
   
