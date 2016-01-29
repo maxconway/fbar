@@ -30,7 +30,7 @@ parse_reaction_table <- function(reaction_table, genes = NULL){
   if(('geneAssociation' %in% names(reaction_table)) && !is.null(genes)){
     assert_that('data.frame' %in% class(genes))
     reaction_table %>%
-      mutate(present = gene_eval_boolean(geneAssociation, genes$genes, genes$presences)) %>%
+      mutate(present = gene_eval_boolean(geneAssociation, genes$name, genes$presence)) %>%
       mutate(uppbnd = uppbnd*present,
              lowbnd = lowbnd*present)
   }
