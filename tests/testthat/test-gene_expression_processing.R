@@ -1,4 +1,7 @@
 context("Gene Expression Processing")
+library(dplyr)
+library(purrr)
+library(stringr)
 
 
 test_that("works with single values, boolean", {
@@ -20,4 +23,14 @@ test_that("works with multi value expressions, boolean", {
   presences <- c(T,T,F)
   expressions <- c('(a & b) | c', '(b | a) & c', '(b & c) | b', 'c & (c | b)')
   expect_equal(gene_eval_boolean(expressions, genes, presences), c(T,F,T,F))
+})
+
+test_that('full test', {
+  model <- readr::read_tsv('inst/extdata/iJO1366.tsv')
+  genes <- data_frame(name = str_extract_all(model$geneAssociation, 'b[0-9]{4}') %>%
+    flatten_chr() %>%
+    discard(is.na)
+  ) %>%
+    mutate(presence = runif(n())<0.05)
+  parse_reaction_table(model, genes)
 })
