@@ -39,7 +39,7 @@ parse_reaction_table <- function(reaction_table){
   obj_coef[is.na(obj_coef)] <- 0
   
   parse_met_list <- function(mets){
-    pattern_stoich <- '^[[:space:]]*[[:digit:].()]+[[:space:]]+'
+    pattern_stoich <- '^[[:space:]]*[[:digit:].()e-]+[[:space:]]+'
     stoich <- mets %>% 
       str_extract(pattern_stoich) %>% 
       str_replace_all('[[:space:]()]+','') %>%
