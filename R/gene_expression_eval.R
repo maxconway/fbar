@@ -1,3 +1,4 @@
+#' @import purrr
 multi_subs <- function(names, presences){
   assert_that(is.character(names))
   assert_that(is.logical(presences))
@@ -6,12 +7,14 @@ multi_subs <- function(names, presences){
   e <- new.env(parent=emptyenv())
   
   for(i in 1:length(names)){
-    assign(genes[i], presences[i], pos=e)
+    assign(names[i], presences[i], pos=e)
   }
   
   return(e)
 }
 
+#' @export
+#' @import purrr
 gene_eval_boolean <- function(expressions, genes, presences){
   e <- multi_subs(genes, presences)
   assign('&', `&&`, e)

@@ -1,8 +1,5 @@
 # Model compartment utilities
 
-#'
-#' @import stringr
-#' @import dplyr
 list_compartments <- function(model){
   model$equation %>%
     str_extract_all('\\[\\w+?][ $]|^\\[\\w+?]: ') %>%
