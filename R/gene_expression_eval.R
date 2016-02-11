@@ -5,6 +5,7 @@ multi_subs <- function(names, presences){
   assert_that(are_equal(length(names), length(presences)))
   
   e <- new.env(parent=emptyenv())
+  assign('unmapped', TRUE, e)
   
   for(i in 1:length(names)){
     assign(names[i], presences[i], pos=e)
@@ -16,6 +17,7 @@ multi_subs <- function(names, presences){
 #' @export
 #' @import purrr
 gene_eval_boolean <- function(expressions, genes, presences){
+  expressions[expressions=='' | is.na(expressions)] <- 'unmapped'
   e <- multi_subs(genes, presences)
   assign('&', `&&`, e)
   assign('|', `||`, e)

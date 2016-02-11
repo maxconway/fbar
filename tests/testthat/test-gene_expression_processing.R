@@ -3,6 +3,12 @@ library(dplyr)
 library(purrr)
 library(stringr)
 
+test_that("works with missing values, boolean", {
+  genes <- letters[1:2]
+  presences <- c(T,F)
+  expressions <- c('a','','b')
+  expect_equal(gene_eval_boolean(expressions, genes, presences), c(T,T,F))
+})
 
 test_that("works with single values, boolean", {
   genes <- letters[1:3]
@@ -26,11 +32,14 @@ test_that("works with multi value expressions, boolean", {
 })
 
 test_that('full test', {
-  model <- readr::read_tsv('inst/extdata/iJO1366.tsv')
-  genes <- data_frame(name = str_extract_all(model$geneAssociation, 'b[0-9]{4}') %>%
+  model <- readr::read_tsv('inst/extdata/iJO1366.tsv', na='NA') %>%
+    mutate(geneAssociation = `Gene-Reaction Association` %>%
+             str_replace_all(fixed('or'),'|') %>%
+             str_replace_all(fixed('and'),'&'))
+  genes <- data_frame(name = str_extract_all(model$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
     flatten_chr() %>%
     discard(is.na)
   ) %>%
     mutate(presence = runif(n())<0.05)
-  parse_reaction_table(model, genes)
+  gene_associate(model, genes)
 })
