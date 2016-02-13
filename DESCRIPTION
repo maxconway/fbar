@@ -11,7 +11,8 @@ Imports:
     assertthat,
     plyr,
     dplyr,
-    stringr
+    stringr,
+    purrr
 Suggests:
     testthat,
     knitr,
