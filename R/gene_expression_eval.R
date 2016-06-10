@@ -1,7 +1,6 @@
 #' @import purrr
 multi_subs <- function(names, presences){
   assert_that(is.character(names))
-  assert_that(is.logical(presences))
   assert_that(are_equal(length(names), length(presences)))
   
   e <- new.env(parent=emptyenv())
@@ -16,15 +15,30 @@ multi_subs <- function(names, presences){
 
 #' @export
 #' @import purrr
-gene_eval_boolean <- function(expressions, genes, presences){
-  expressions[expressions=='' | is.na(expressions)] <- 'unmapped'
+gene_eval <- function(expressions, genes, presences){
+  expressions[expressions=='' | is.na(expressions)] <- NA
   e <- multi_subs(genes, presences)
-  assign('&', `&&`, e)
-  assign('|', `||`, e)
+  liberalmin <- function(a1, a2){
+    if(is.na(a1) && is.na(a2)){
+      return(NA)
+    }else{
+      min(a1, a2, na.rm=TRUE)
+    }
+  }
+  liberalmax <- function(a1, a2){
+    if(is.na(a1) && is.na(a2)){
+      return(NA)
+    }else{
+      max(a1, a2, na.rm=TRUE)
+    }
+  }
+  
+  assign('&', liberalmin, e)
+  assign('|', liberalmax, e)
   assign('(', `(`, e)
   
   expressions %>%
-    map_lgl(function(x){
+    map_dbl(function(x){
       eval(parse(text=x),e)
     })
 }
