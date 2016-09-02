@@ -78,14 +78,13 @@ expand_reactions <- function(reaction_table, pattern_arrow){
       transmute(abbreviation, string = after, direction = 1)
   )
   
-  symbols = str_split(reactions_expanded_partial_2$string, fixed(' + '))
+  reactions_expanded_partial_3 <- reactions_expanded_partial_2 %>%
+    mutate(symbol = str_split(string, fixed(' + '))) %>%
+    tidyr::unnest(symbol) %>%
+    filter(symbol!='')
   
-  reactions_expanded_partial_3 <- cbind(
-    reactions_expanded_partial_2[rep.int(1:nrow(reactions_expanded_partial_2), times=plyr::laply(symbols, length)),],
-    symbol = unlist(symbols)
-  )
-  
-  reactions_expanded <- parse_met_list(reactions_expanded_partial_3$symbol) %>%
+  reactions_expanded <- bind_cols(reactions_expanded_partial_3,
+                                  parse_met_list(reactions_expanded_partial_3)) %>%
     transmute(abbreviation = reactions_expanded_partial_3$abbreviation,
               stoich = stoich*reactions_expanded_partial_3$direction,
               met = met) %>%
