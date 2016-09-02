@@ -1,5 +1,24 @@
 #' @import dplyr 
 #' @import stringr
+split_on_arrow <- function(equations, pattern_arrow = '[[:space:]]*<?[-=]+>[[:space:]]*'){
+  assert_that(length(equations)>0)
+  assert_that(all(str_count(equations, pattern_arrow) == 1))
+  
+  split <- str_split_fixed(equations, pattern_arrow, 2) 
+  
+  colnames(split) <- c('before', 'after')
+  
+  split %>% 
+    as_data_frame() %>%
+    mutate(reversible = equations %>%
+             str_extract(pattern_arrow) %>%
+             str_detect('<')
+           ) %>%
+    return
+}
+
+#' @import dplyr 
+#' @import stringr
 parse_met_list <- function(mets){
   pattern_stoich <- '^[[:space:]]*[[:digit:].()e-]+[[:space:]]+'
   stoich <- mets %>% 
@@ -33,7 +52,7 @@ parse_met_list <- function(mets){
 #' @import dplyr 
 #' @import assertthat 
 #' @import stringr
-expand_reactions <- function(reaction_table){
+expand_reactions <- function(reaction_table, pattern_arrow){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
   assert_that(reaction_table %has_name% 'equation')
@@ -44,24 +63,20 @@ expand_reactions <- function(reaction_table){
   
   const_inf <- 1000
   
-  pattern_arrow <- '[[:space:]]*<?[-=]+>[[:space:]]*'
-  reversible <- reaction_table[['equation']] %>%
-    str_extract(pattern_arrow) %>%
-    str_detect('<')
+  reactions_expanded_partial_1 <- split_on_arrow(reaction_table[['equation']], pattern_arrow) %>%
+    mutate(abbreviation = reaction_table[['abbreviation']])
   
   uppbnd <- pmin(reaction_table[['uppbnd']], const_inf, na.rm=TRUE)
-  lowbnd <- pmax(reaction_table[['lowbnd']], ifelse(reversible, -const_inf, 0), na.rm=TRUE)
+  lowbnd <- pmax(reaction_table[['lowbnd']], ifelse(reactions_expanded_partial_1[['reversible']], -const_inf, 0), na.rm=TRUE)
   obj_coef <- reaction_table[['obj_coef']]
   obj_coef[is.na(obj_coef)] <- 0
   
-  reactions_expanded_partial_1 <- reaction_table[['equation']] %>%
-    str_split_fixed(pattern_arrow,2) %>%
-    cbind(reaction_table[['abbreviation']])
-  
-  reactions_expanded_partial_2 <- rbind_list(
-    data.frame(direction = -1, string = reactions_expanded_partial_1[,1], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE),
-    data.frame(direction = 1, string = reactions_expanded_partial_1[,2], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE)
-  ) 
+  reactions_expanded_partial_2 <- bind_rows(
+    reactions_expanded_partial_1 %>%
+      transmute(abbreviation, string = before, direction = -1),
+    reactions_expanded_partial_1 %>%
+      transmute(abbreviation, string = after, direction = 1)
+  )
   
   symbols = str_split(reactions_expanded_partial_2$string, fixed(' + '))
   
@@ -151,8 +166,8 @@ collapse_reactions <- function(reactions_expanded, reaction_table){
 #' @import dplyr 
 #' @import assertthat 
 #' @import stringr
-parse_reaction_table <- function(reaction_table){
-  collapse_reactions(reactions_expanded = expand_reactions(reaction_table), 
+parse_reaction_table <- function(reaction_table, pattern_arrow = '[[:space:]]*<?[-=]+>[[:space:]]*'){
+  collapse_reactions(reactions_expanded = expand_reactions(reaction_table, pattern_arrow), 
                      reaction_table = reaction_table
                      )
 }
