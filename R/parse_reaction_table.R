@@ -84,9 +84,9 @@ expand_reactions <- function(reaction_table, pattern_arrow){
     filter(symbol!='')
   
   reactions_expanded <- bind_cols(reactions_expanded_partial_3,
-                                  parse_met_list(reactions_expanded_partial_3)) %>%
-    transmute(abbreviation = reactions_expanded_partial_3$abbreviation,
-              stoich = stoich*reactions_expanded_partial_3$direction,
+                                  parse_met_list(reactions_expanded_partial_3$symbol)) %>%
+    transmute(abbreviation = abbreviation,
+              stoich = stoich*direction,
               met = met) %>%
     filter(met!='')
   
