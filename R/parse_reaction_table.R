@@ -1,7 +1,7 @@
 #' @import dplyr 
 #' @import stringr
-split_on_arrow <- function(equations, pattern_arrow = '[[:space:]]*<?[-=]+>[[:space:]]*'){
-  assert_that(length(equations)>0)
+split_on_arrow <- function(equations, pattern_arrow = '<?[-=]+>'){
+  #assert_that(length(equations)>0)
   assert_that(all(str_count(equations, pattern_arrow) == 1))
   
   split <- str_split_fixed(equations, pattern_arrow, 2) 
@@ -12,7 +12,9 @@ split_on_arrow <- function(equations, pattern_arrow = '[[:space:]]*<?[-=]+>[[:sp
     as_data_frame() %>%
     mutate(reversible = equations %>%
              str_extract(pattern_arrow) %>%
-             str_detect('<')
+             str_detect('<'),
+           before = str_trim(before),
+           after = str_trim(after)
            ) %>%
     return
 }
@@ -80,7 +82,13 @@ expand_reactions <- function(reaction_table, pattern_arrow){
   
   reactions_expanded_partial_3 <- reactions_expanded_partial_2 %>%
     mutate(symbol = str_split(string, fixed(' + '))) %>%
-    tidyr::unnest(symbol) %>%
+    (function(x){
+      if(nrow(x)>0){
+        tidyr::unnest(x, symbol)
+      } else {
+        return(x)
+      }
+      }) %>%
     filter(symbol!='')
   
   reactions_expanded <- bind_cols(reactions_expanded_partial_3,
@@ -165,7 +173,7 @@ collapse_reactions <- function(reactions_expanded, reaction_table){
 #' @import dplyr 
 #' @import assertthat 
 #' @import stringr
-parse_reaction_table <- function(reaction_table, pattern_arrow = '[[:space:]]*<?[-=]+>[[:space:]]*'){
+parse_reaction_table <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
   collapse_reactions(reactions_expanded = expand_reactions(reaction_table, pattern_arrow), 
                      reaction_table = reaction_table
                      )
