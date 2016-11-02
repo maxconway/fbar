@@ -40,6 +40,7 @@ expand_reactions <- function(reaction_table){
   assert_that(reaction_table %has_name% 'uppbnd')
   assert_that(reaction_table %has_name% 'lowbnd')
   assert_that(reaction_table %has_name% 'obj_coef')
+  assert_that(sum(duplicated(reaction_table$abbrevitation))==0)
   assert_that(!any(str_detect(reaction_table$equation, '^\\[\\w+?]:'))) # can't handle compartments at start of string
   
   const_inf <- 1000
@@ -58,7 +59,7 @@ expand_reactions <- function(reaction_table){
     str_split_fixed(pattern_arrow,2) %>%
     cbind(reaction_table[['abbreviation']])
   
-  reactions_expanded_partial_2 <- rbind_list(
+  reactions_expanded_partial_2 <- dplyr::bind_rows(
     data.frame(direction = -1, string = reactions_expanded_partial_1[,1], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE),
     data.frame(direction = 1, string = reactions_expanded_partial_1[,2], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE)
   ) 
