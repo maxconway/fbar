@@ -5,7 +5,8 @@
 \title{Apply gene expressions to reaction table}
 \usage{
 gene_associate(reaction_table, gene_table,
-  expression_flux_function = function(x) {     (1 + log(x))^sign(x - 1) })
+  expression_flux_function = function(x) {     (1 + log(x)/sd(x)^2)^sign(x -
+  1) })
 }
 \arguments{
 \item{reaction_table}{A data frame describing the metabolic model.}

@@ -40,7 +40,7 @@ expand_reactions <- function(reaction_table){
   assert_that(reaction_table %has_name% 'uppbnd')
   assert_that(reaction_table %has_name% 'lowbnd')
   assert_that(reaction_table %has_name% 'obj_coef')
-  assert_that(sum(duplicated(reaction_table$abbrevitation))==0)
+  assert_that(sum(duplicated(reaction_table$abbreviation))==0)
   assert_that(!any(str_detect(reaction_table$equation, '^\\[\\w+?]:'))) # can't handle compartments at start of string
   
   const_inf <- 1000
