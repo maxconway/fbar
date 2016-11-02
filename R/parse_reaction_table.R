@@ -1,5 +1,26 @@
 #' @import dplyr 
 #' @import stringr
+split_on_arrow <- function(equations, pattern_arrow = '<?[-=]+>'){
+  #assert_that(length(equations)>0)
+  assert_that(all(str_count(equations, pattern_arrow) == 1))
+  
+  split <- str_split_fixed(equations, pattern_arrow, 2) 
+  
+  colnames(split) <- c('before', 'after')
+  
+  split %>% 
+    as_data_frame() %>%
+    mutate(reversible = equations %>%
+             str_extract(pattern_arrow) %>%
+             str_detect('<'),
+           before = str_trim(before),
+           after = str_trim(after)
+           ) %>%
+    return
+}
+
+#' @import dplyr 
+#' @import stringr
 parse_met_list <- function(mets){
   pattern_stoich <- '^[[:space:]]*[[:digit:].()e-]+[[:space:]]+'
   stoich <- mets %>% 
@@ -33,7 +54,7 @@ parse_met_list <- function(mets){
 #' @import dplyr 
 #' @import assertthat 
 #' @import stringr
-expand_reactions <- function(reaction_table){
+expand_reactions <- function(reaction_table, pattern_arrow){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
   assert_that(reaction_table %has_name% 'equation')
@@ -45,35 +66,37 @@ expand_reactions <- function(reaction_table){
   
   const_inf <- 1000
   
-  pattern_arrow <- '[[:space:]]*<?[-=]+>[[:space:]]*'
-  reversible <- reaction_table[['equation']] %>%
-    str_extract(pattern_arrow) %>%
-    str_detect('<')
+  reactions_expanded_partial_1 <- split_on_arrow(reaction_table[['equation']], pattern_arrow) %>%
+    mutate(abbreviation = reaction_table[['abbreviation']])
   
   uppbnd <- pmin(reaction_table[['uppbnd']], const_inf, na.rm=TRUE)
-  lowbnd <- pmax(reaction_table[['lowbnd']], ifelse(reversible, -const_inf, 0), na.rm=TRUE)
+  lowbnd <- pmax(reaction_table[['lowbnd']], ifelse(reactions_expanded_partial_1[['reversible']], -const_inf, 0), na.rm=TRUE)
   obj_coef <- reaction_table[['obj_coef']]
   obj_coef[is.na(obj_coef)] <- 0
   
-  reactions_expanded_partial_1 <- reaction_table[['equation']] %>%
-    str_split_fixed(pattern_arrow,2) %>%
-    cbind(reaction_table[['abbreviation']])
-  
-  reactions_expanded_partial_2 <- dplyr::bind_rows(
-    data.frame(direction = -1, string = reactions_expanded_partial_1[,1], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE),
-    data.frame(direction = 1, string = reactions_expanded_partial_1[,2], abbreviation = reactions_expanded_partial_1[,3], stringsAsFactors = FALSE)
-  ) 
-  
-  symbols = str_split(reactions_expanded_partial_2$string, fixed(' + '))
-  
-  reactions_expanded_partial_3 <- cbind(
-    reactions_expanded_partial_2[rep.int(1:nrow(reactions_expanded_partial_2), times=plyr::laply(symbols, length)),],
-    symbol = unlist(symbols)
+
+  reactions_expanded_partial_2 <- bind_rows(
+    reactions_expanded_partial_1 %>%
+      transmute(abbreviation, string = before, direction = -1),
+    reactions_expanded_partial_1 %>%
+      transmute(abbreviation, string = after, direction = 1)
   )
   
-  reactions_expanded <- parse_met_list(reactions_expanded_partial_3$symbol) %>%
-    transmute(abbreviation = reactions_expanded_partial_3$abbreviation,
-              stoich = stoich*reactions_expanded_partial_3$direction,
+  reactions_expanded_partial_3 <- reactions_expanded_partial_2 %>%
+    mutate(symbol = str_split(string, fixed(' + '))) %>%
+    (function(x){
+      if(nrow(x)>0){
+        tidyr::unnest(x, symbol)
+      } else {
+        return(x)
+      }
+      }) %>%
+    filter(symbol!='')
+  
+  reactions_expanded <- bind_cols(reactions_expanded_partial_3,
+                                  parse_met_list(reactions_expanded_partial_3$symbol)) %>%
+    transmute(abbreviation = abbreviation,
+              stoich = stoich*direction,
               met = met) %>%
     filter(met!='')
   
@@ -152,8 +175,8 @@ collapse_reactions <- function(reactions_expanded, reaction_table){
 #' @import dplyr 
 #' @import assertthat 
 #' @import stringr
-parse_reaction_table <- function(reaction_table){
-  collapse_reactions(reactions_expanded = expand_reactions(reaction_table), 
+parse_reaction_table <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
+  collapse_reactions(reactions_expanded = expand_reactions(reaction_table, pattern_arrow), 
                      reaction_table = reaction_table
                      )
 }
