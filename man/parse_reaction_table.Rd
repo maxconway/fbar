@@ -4,7 +4,7 @@
 \alias{parse_reaction_table}
 \title{parse reaction table to Gurobi format}
 \usage{
-parse_reaction_table(reaction_table)
+parse_reaction_table(reaction_table, pattern_arrow = "<?[-=]+>")
 }
 \arguments{
 \item{reaction_table}{A data frame describing the metabolic model.}

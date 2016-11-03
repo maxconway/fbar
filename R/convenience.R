@@ -13,16 +13,25 @@
 #' @import dplyr
 #' @import gurobi
 find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef){
-  res <- data_frame(abbreviation, equation, lowbnd, uppbnd, obj_coef) %>%
-    parse_reaction_table() %>%
-    gurobi::gurobi(params = list(OutputFlag=0))
+  mod1 <- data_frame(abbreviation, equation, lowbnd, uppbnd, obj_coef) %>%
+    parse_reaction_table()
   
-  if(!('x' %in% names(res))){
+  res1 <- gurobi::gurobi(mod1, params = list(OutputFlag=0))
+  
+  if(!('x' %in% names(res1))){
     warning('optimization failed')
     return(0)
-  }else{
-    return(res$x)
   }
+  
+  mod2 <- mod1
+  flux <- res1$x
+  mod2$lb[flux >= 0] <- 0
+  mod2$ub[flux <= 0] <- 0
+  mod2$lb[mod1$obj !=0] <- flux[mod1$obj !=0]
+  mod2$ub[mod1$obj !=0] <- flux[mod1$obj !=0]
+  mod2$obj <- -sign(flux)
+  
+  return(gurobi::gurobi(mod2, params = list(OutputFlag=0))$x)
 }
 
 #' Given a metabolic model as a data frame, return a new data frame with fluxes
@@ -43,4 +52,29 @@ find_fluxes_df <- function(reaction_table){
                                      uppbnd=uppbnd, 
                                      obj_coef=obj_coef
                                      ))
+}
+
+
+#' Given a metabolic model as a data frame, return a new data frame with fluxes and variability
+#' 
+#' This function calculates fluxes 10 times with shuffled versions of the metabolic model.
+#' 
+#' @param reaction_table a data frame representing the metabolic model
+#' 
+#' @return reaction_table with two added columns: sd (the standard deviation of fluxes found) and flux (a typical flux) from this distribution
+#' 
+#' @export
+#' @import dplyr
+#' @import gurobi
+find_flux_variability_df <- function(reaction_table){
+  fluxdf <- data_frame(index=1:10, data = map(index, function(x){reaction_table})) %>%
+    mutate(data = map(data, sample_frac)) %>%
+    mutate(data = map(data, find_fluxes_df)) %>%
+    mutate(data = map(data, arrange_, 'abbreviation')) %>%
+    unnest() %>%
+    select(abbreviation, flux) %>%
+    group_by(abbreviation) %>%
+    summarise(sd = sd(flux, na.rm=TRUE), flux = first(flux))
+  
+  inner_join(reaction_table, fluxdf, by='abbreviation')
 }

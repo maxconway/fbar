@@ -54,7 +54,7 @@ parse_met_list <- function(mets){
 #' @import dplyr 
 #' @import assertthat 
 #' @import stringr
-expand_reactions <- function(reaction_table, pattern_arrow){
+expand_reactions <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
   assert_that(reaction_table %has_name% 'equation')
