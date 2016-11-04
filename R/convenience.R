@@ -12,7 +12,8 @@
 #' @export
 #' @import dplyr
 #' @import gurobi
-find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef){
+#' @import assertthat
+find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef, do_minimization=TRUE){
   mod1 <- data_frame(abbreviation, equation, lowbnd, uppbnd, obj_coef) %>%
     parse_reaction_table()
   
@@ -23,15 +24,23 @@ find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef)
     return(0)
   }
   
+  if(!do_minimization){
+    return(res1$x)
+  }
+  
   mod2 <- mod1
   flux <- res1$x
-  mod2$lb[flux >= 0] <- 0
-  mod2$ub[flux <= 0] <- 0
-  mod2$lb[mod1$obj !=0] <- flux[mod1$obj !=0]
-  mod2$ub[mod1$obj !=0] <- flux[mod1$obj !=0]
+  mod2$lb[flux > 0] <- 0
+  mod2$ub[flux < 0] <- 0
+  mod2$lb[mod1$obj > 0] <- flux[mod1$obj > 0]
+  mod2$ub[mod1$obj < 0] <- flux[mod1$obj < 0]
   mod2$obj <- -sign(flux)
+  mod2$obj[mod1$obj != 0] <- 0
   
-  return(gurobi::gurobi(mod2, params = list(OutputFlag=0))$x)
+  res2 <- gurobi::gurobi(mod2, params = list(OutputFlag=0))
+  assert_that(res2 %has_name% 'x')
+  
+  return(res2$x)
 }
 
 #' Given a metabolic model as a data frame, return a new data frame with fluxes
@@ -45,12 +54,13 @@ find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef)
 #' @export
 #' @import dplyr
 #' @import gurobi
-find_fluxes_df <- function(reaction_table){
+find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   reaction_table %>%
     mutate(flux = find_fluxes_vector(abbreviation=abbreviation, 
                                      equation=equation, lowbnd=lowbnd, 
                                      uppbnd=uppbnd, 
-                                     obj_coef=obj_coef
+                                     obj_coef=obj_coef,
+                                     do_minimization=do_minimization
                                      ))
 }
 
@@ -66,10 +76,10 @@ find_fluxes_df <- function(reaction_table){
 #' @export
 #' @import dplyr
 #' @import gurobi
-find_flux_variability_df <- function(reaction_table){
+find_flux_variability_df <- function(reaction_table, do_minimization=TRUE){
   fluxdf <- data_frame(index=1:10, data = map(index, function(x){reaction_table})) %>%
     mutate(data = map(data, sample_frac)) %>%
-    mutate(data = map(data, find_fluxes_df)) %>%
+    mutate(data = map(data, find_fluxes_df, do_minimization=do_minimization)) %>%
     mutate(data = map(data, arrange_, 'abbreviation')) %>%
     unnest() %>%
     select(abbreviation, flux) %>%
