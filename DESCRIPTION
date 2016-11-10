@@ -9,15 +9,11 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Imports:
     assertthat,
-    plyr,
     dplyr,
     stringr,
     purrr
 Suggests:
     testthat,
-    knitr,
-    rmarkdown,
-    gurobi,
-    ggplot2
+    gurobi
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1.9000
