@@ -1,4 +1,4 @@
-#' @import purrr
+#' @import assertthat
 multi_subs <- function(names, presences){
   assert_that(is.character(names))
   assert_that(are_equal(length(names), length(presences)))
@@ -14,7 +14,6 @@ multi_subs <- function(names, presences){
 }
 
 #' @export
-#' @import purrr
 gene_eval <- function(expressions, genes, presences){
   expressions[expressions=='' | is.na(expressions)] <- NA
   e <- multi_subs(genes, presences)
@@ -37,8 +36,7 @@ gene_eval <- function(expressions, genes, presences){
   assign('|', liberalmax, e)
   assign('(', `(`, e)
   
-  expressions %>%
-    map_dbl(function(x){
-      eval(parse(text=x),e)
-    })
+  purrr::map_dbl(expressions, function(x){
+    eval(parse(text=x),e)
+  })
 }

@@ -11,7 +11,6 @@
 #' 
 #' @export
 #' @import dplyr
-#' @import gurobi
 #' @import assertthat
 find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef, do_minimization=TRUE){
   mod1 <- data_frame(abbreviation, equation, lowbnd, uppbnd, obj_coef) %>%
@@ -53,7 +52,6 @@ find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef,
 #' 
 #' @export
 #' @import dplyr
-#' @import gurobi
 find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   reaction_table %>%
     mutate(flux = find_fluxes_vector(abbreviation=abbreviation, 
@@ -75,13 +73,12 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
 #' 
 #' @export
 #' @import dplyr
-#' @import gurobi
 find_flux_variability_df <- function(reaction_table, folds=10, do_minimization=TRUE){
-  fluxdf <- data_frame(index=1:folds, data = map(index, function(x){reaction_table})) %>%
+  fluxdf <- data_frame(index=1:folds, data = purrr::map(index, function(x){reaction_table})) %>%
     mutate(data = map(data, sample_frac)) %>%
     mutate(data = map(data, find_fluxes_df, do_minimization=do_minimization)) %>%
     mutate(data = map(data, arrange_, 'abbreviation')) %>%
-    unnest() %>%
+    tidyr::unnest() %>%
     select(abbreviation, flux) %>%
     group_by(abbreviation) %>%
     summarise(sd = sd(flux, na.rm=TRUE), flux = first(flux))
