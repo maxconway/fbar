@@ -11,7 +11,8 @@ Imports:
     assertthat,
     dplyr,
     stringr,
-    purrr
+    purrr,
+    tidyr
 Suggests:
     knitr,
     rmarkdown,

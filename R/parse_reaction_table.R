@@ -1,36 +1,36 @@
+#' @import assertthat
 #' @import dplyr 
 #' @import stringr
 split_on_arrow <- function(equations, pattern_arrow = '<?[-=]+>'){
   #assert_that(length(equations)>0)
-  assert_that(all(str_count(equations, pattern_arrow) == 1))
+  assert_that(all(stringr::str_count(equations, pattern_arrow) == 1))
   
-  split <- str_split_fixed(equations, pattern_arrow, 2) 
+  split <- stringr::str_split_fixed(equations, pattern_arrow, 2) 
   
   colnames(split) <- c('before', 'after')
   
   split %>% 
     as_data_frame() %>%
     mutate(reversible = equations %>%
-             str_extract(pattern_arrow) %>%
-             str_detect('<'),
-           before = str_trim(before),
-           after = str_trim(after)
+             stringr::str_extract(pattern_arrow) %>%
+             stringr::str_detect('<'),
+           before = stringr::str_trim(before),
+           after = stringr::str_trim(after)
            ) %>%
     return
 }
 
 #' @import dplyr 
-#' @import stringr
 parse_met_list <- function(mets){
   pattern_stoich <- '^[[:space:]]*[[:digit:].()e-]+[[:space:]]+'
   stoich <- mets %>% 
-    str_extract(pattern_stoich) %>% 
-    str_replace_all('[[:space:]()]+','') %>%
+    stringr::str_extract(pattern_stoich) %>% 
+    stringr::str_replace_all('[[:space:]()]+','') %>%
     as.numeric
   stoich[is.na(stoich)] <- 1
   met <- mets %>% 
-    str_replace( pattern_stoich,'') %>% 
-    str_trim()
+    stringr::str_replace( pattern_stoich,'') %>% 
+    stringr::str_trim()
   data_frame(stoich, met)
 }
 
@@ -53,7 +53,6 @@ parse_met_list <- function(mets){
 #' @export
 #' @import dplyr 
 #' @import assertthat 
-#' @import stringr
 expand_reactions <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
@@ -62,7 +61,7 @@ expand_reactions <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
   assert_that(reaction_table %has_name% 'lowbnd')
   assert_that(reaction_table %has_name% 'obj_coef')
   assert_that(sum(duplicated(reaction_table$abbreviation))==0)
-  assert_that(!any(str_detect(reaction_table$equation, '^\\[\\w+?]:'))) # can't handle compartments at start of string
+  assert_that(!any(stringr::str_detect(reaction_table$equation, '^\\[\\w+?]:'))) # can't handle compartments at start of string
   
   const_inf <- 1000
   
@@ -83,7 +82,7 @@ expand_reactions <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
   )
   
   reactions_expanded_partial_3 <- reactions_expanded_partial_2 %>%
-    mutate(symbol = str_split(string, fixed(' + '))) %>%
+    mutate(symbol = stringr::str_split(string, stringr::fixed(' + '))) %>%
     (function(x){
       if(nrow(x)>0){
         tidyr::unnest(x, symbol)
@@ -121,9 +120,7 @@ expand_reactions <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
 #' @param reaction_table A data frame describing the metabolic model.
 #' 
 #' @export
-#' @import dplyr 
 #' @import assertthat 
-#' @import stringr
 collapse_reactions <- function(reactions_expanded, reaction_table){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
@@ -172,9 +169,6 @@ collapse_reactions <- function(reactions_expanded, reaction_table){
 #' @param reaction_table A data frame describing the metabolic model.
 #' 
 #' @export
-#' @import dplyr 
-#' @import assertthat 
-#' @import stringr
 parse_reaction_table <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
   collapse_reactions(reactions_expanded = expand_reactions(reaction_table, pattern_arrow), 
                      reaction_table = reaction_table
