@@ -76,8 +76,8 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
 #' @export
 #' @import dplyr
 #' @import gurobi
-find_flux_variability_df <- function(reaction_table, do_minimization=TRUE){
-  fluxdf <- data_frame(index=1:10, data = map(index, function(x){reaction_table})) %>%
+find_flux_variability_df <- function(reaction_table, folds=10, do_minimization=TRUE){
+  fluxdf <- data_frame(index=1:folds, data = map(index, function(x){reaction_table})) %>%
     mutate(data = map(data, sample_frac)) %>%
     mutate(data = map(data, find_fluxes_df, do_minimization=do_minimization)) %>%
     mutate(data = map(data, arrange_, 'abbreviation')) %>%
