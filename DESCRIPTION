@@ -13,6 +13,8 @@ Imports:
     stringr,
     purrr
 Suggests:
+    knitr,
+    rmarkdown,
     testthat,
     gurobi
 VignetteBuilder: knitr
