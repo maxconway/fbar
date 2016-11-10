@@ -2,6 +2,8 @@ context('toy models')
 library(gurobi)
 
 test_that('toy model 1', {
+  skip_if_not_installed('gurobi')
+  
   model <- parse_reaction_table(dplyr::data_frame(
     abbreviation = c('one', 'two'),
     equation = c('alpha -> beta', 'gamma -> delta'),
@@ -15,6 +17,8 @@ test_that('toy model 1', {
 })
 
 test_that('toy model 2', {
+  skip_if_not_installed('gurobi')
+  
   model <- parse_reaction_table(dplyr::data_frame(
     abbreviation = c('one', 'two'),
     equation = c('alpha -> ', ' <-> alpha'),

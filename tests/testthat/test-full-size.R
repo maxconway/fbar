@@ -1,24 +1,11 @@
 context("full-size")
 data("iJO1366")
 
-test_models <- list(iJO1366 = iJO1366,
-                    salmonella = read_tsv('../salmonella-mouse/data/LT2_react.tsv') %>%
-                      select(abbreviation=`Rxn name`,
-                             equation=Formula,
-                             uppbnd=UB,
-                             lowbnd=LB,
-                             geneAssociation=`Gene-reaction association`,
-                             Subsystem,
-                             name = `Rxn description`
-                      )%>%
-                      mutate(obj_coef=1*(abbreviation=='biomass_iRR1083')) %>%
-                      mutate(lowbnd = ifelse(abbreviation=='EX_skm(e)',-10,lowbnd)))
-
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
-})
+test_models <- list(iJO1366 = iJO1366)
 
 test_that("find_fluxes_vector and find_fluxes_df produce same results", {
+  skip_if_not_installed('gurobi')
+  
   v <- find_fluxes_vector(abbreviation = iJO1366$abbreviation,
                           equation = iJO1366$equation,
                           lowbnd = iJO1366$lowbnd,
@@ -31,6 +18,8 @@ test_that("find_fluxes_vector and find_fluxes_df produce same results", {
 })
 
 test_that("find_fluxes_vector works in grouped context", {
+  skip_if_not_installed('gurobi')
+  
   d <- find_fluxes_df(iJO1366)
   
   g <- purrr::map_df(1:10, function(x){iJO1366}, .id='sample') %>%
@@ -44,7 +33,8 @@ test_that("find_fluxes_vector works in grouped context", {
 })
 
 test_that("find_fluxes_df stable across shuffling", {
-  skip('iJO1366 is not working')
+  skip_if_not_installed('gurobi')
+  skip('known fault')
   
   d1 <- iJO1366 %>% sample_frac() %>% find_fluxes_df() %>% arrange(abbreviation)
   d2 <- iJO1366 %>% sample_frac() %>% find_fluxes_df() %>% arrange(abbreviation)
@@ -53,7 +43,8 @@ test_that("find_fluxes_df stable across shuffling", {
 })
 
 test_that("find_flux_variability_df works", {
-  skip('not working')
+  testthat::skip_if_not_installed('gurobi')
+  skip('known fault')
 
   for(rxns in test_models){
   v1 <- rxns %>% 
