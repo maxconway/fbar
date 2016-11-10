@@ -4,7 +4,8 @@
 \alias{find_fluxes_vector}
 \title{Given a metabolic model as a set of vectors, return the flux distribution}
 \usage{
-find_fluxes_vector(abbreviation, equation, lowbnd, uppbnd, obj_coef)
+find_fluxes_vector(abbreviation, equation, lowbnd, uppbnd, obj_coef,
+  do_minimization = TRUE)
 }
 \arguments{
 \item{abbreviation}{unique reaction names}

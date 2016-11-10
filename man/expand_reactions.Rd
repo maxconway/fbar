@@ -4,7 +4,7 @@
 \alias{expand_reactions}
 \title{parse reaction table to an intermediate, long format}
 \usage{
-expand_reactions(reaction_table, pattern_arrow)
+expand_reactions(reaction_table, pattern_arrow = "<?[-=]+>")
 }
 \arguments{
 \item{reaction_table}{A data frame describing the metabolic model.}

@@ -11,7 +11,7 @@ test_that('toy model 1', {
     uppbnd = c(3,3),
     obj_coef = c(1,0)))
   
-  result <- gurobi(model)
+  result <- gurobi(model, params = list(OutputFlag=0))
   expect_equal(result$status, 'OPTIMAL')
   expect_equal(result$objval, 0)
 })
@@ -26,7 +26,7 @@ test_that('toy model 2', {
     uppbnd = c(3,3),
     obj_coef = c(1,0)))
   
-  result <- gurobi(model)
+  result <- gurobi(model, params = list(OutputFlag=0))
   expect_equal(result$status, 'OPTIMAL')
   expect_equal(result$objval, 3)
 })
