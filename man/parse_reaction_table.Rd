@@ -4,10 +4,12 @@
 \alias{parse_reaction_table}
 \title{parse reaction table to Gurobi format}
 \usage{
-parse_reaction_table(reaction_table, pattern_arrow = "<?[-=]+>")
+parse_reaction_table(reaction_table, regex_arrow = "<?[-=]+>")
 }
 \arguments{
 \item{reaction_table}{A data frame describing the metabolic model.}
+
+\item{regex_arrow}{Regular expression for the arrow splitting sides of the reaction equation.}
 }
 \description{
 Parses a reaction table to give a list in Gurobi's input format

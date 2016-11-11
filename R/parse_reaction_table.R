@@ -1,18 +1,21 @@
+#' Internal function for splitting reaction equation into substrate and product
+#' 
+#' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
+#' 
 #' @import assertthat
-#' @import dplyr 
-#' @import stringr
-split_on_arrow <- function(equations, pattern_arrow = '<?[-=]+>'){
+#' @import tidyverse 
+split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
   #assert_that(length(equations)>0)
-  assert_that(all(stringr::str_count(equations, pattern_arrow) == 1))
+  assert_that(all(stringr::str_count(equations, regex_arrow) == 1))
   
-  split <- stringr::str_split_fixed(equations, pattern_arrow, 2) 
+  split <- stringr::str_split_fixed(equations, regex_arrow, 2) 
   
   colnames(split) <- c('before', 'after')
   
   split %>% 
     as_data_frame() %>%
     mutate(reversible = equations %>%
-             stringr::str_extract(pattern_arrow) %>%
+             stringr::str_extract(regex_arrow) %>%
              stringr::str_detect('<'),
            before = stringr::str_trim(before),
            after = stringr::str_trim(after)
@@ -20,7 +23,7 @@ split_on_arrow <- function(equations, pattern_arrow = '<?[-=]+>'){
     return
 }
 
-#' @import dplyr 
+#' @import tidyverse
 parse_met_list <- function(mets){
   pattern_stoich <- '^[[:space:]]*[[:digit:].()e-]+[[:space:]]+'
   stoich <- mets %>% 
@@ -49,11 +52,11 @@ parse_met_list <- function(mets){
 #' }
 #' 
 #' @param reaction_table A data frame describing the metabolic model.
+#' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
 #' @export
-#' @import dplyr 
-#' @import assertthat 
-expand_reactions <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
+#' @import tidyverse
+expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
   assert_that(reaction_table %has_name% 'equation')
@@ -65,7 +68,7 @@ expand_reactions <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
   
   const_inf <- 1000
   
-  reactions_expanded_partial_1 <- split_on_arrow(reaction_table[['equation']], pattern_arrow) %>%
+  reactions_expanded_partial_1 <- split_on_arrow(reaction_table[['equation']], regex_arrow) %>%
     mutate(abbreviation = reaction_table[['abbreviation']])
   
   uppbnd <- pmin(reaction_table[['uppbnd']], const_inf, na.rm=TRUE)
@@ -121,6 +124,7 @@ expand_reactions <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
 #' 
 #' @export
 #' @import assertthat 
+#' @import Matrix
 collapse_reactions <- function(reactions_expanded, reaction_table){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
@@ -167,10 +171,11 @@ collapse_reactions <- function(reactions_expanded, reaction_table){
 #' }
 #' 
 #' @param reaction_table A data frame describing the metabolic model.
+#' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
 #' @export
-parse_reaction_table <- function(reaction_table, pattern_arrow = '<?[-=]+>'){
-  collapse_reactions(reactions_expanded = expand_reactions(reaction_table, pattern_arrow), 
+parse_reaction_table <- function(reaction_table, regex_arrow = '<?[-=]+>'){
+  collapse_reactions(reactions_expanded = expand_reactions(reaction_table, regex_arrow), 
                      reaction_table = reaction_table
                      )
 }
