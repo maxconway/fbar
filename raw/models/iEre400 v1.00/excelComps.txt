@@ -1,7 +1,0 @@
-#	ABBREVIATION	NAME	INSIDE	MIRIAM
-	1	c_bth	2		
-	2	e	4		
-	3	p	2		
-	4	b			
-	5	c_ere	2		
-	6	c_msi	2		
