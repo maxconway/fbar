@@ -33,7 +33,7 @@ library(ggplot2)
 Load some example data, and look at it:
 ```{r}
 data("ecoli_core")
-View(ecoli_core)
+ecoli_core
 ```
 This table is a list of all the reactions in the model: their names and equations, and parameters like the upper and lower bounds.
 
@@ -48,7 +48,7 @@ It works! You should get an optimal objective of 0.9.
 
 To explore the results, we can view the resulting fluxes alongside the model:
 ```{r}
-ecoli_core %>% mutate(result$x) %>% View
+ecoli_core %>% mutate(result$x)
 ```
 This shows us that D-Glucose uptake, and the internal succinate dehydrogenase reaction are limiting.
 
@@ -65,7 +65,7 @@ result2 <- mod2 %>%
 parse_reaction_table() %>%
 gurobi()
 
-mod2 %>% mutate(result2$x) %>% View
+mod2 %>% mutate(result2$x)
 ```
 
 We can see that we still don't get any acetate production.

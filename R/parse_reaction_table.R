@@ -1,8 +1,9 @@
+#' Internal function for splitting reaction equation into substrate and product
+#' 
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
 #' @import assertthat
-#' @import dplyr 
-#' @import stringr
+#' @import tidyverse 
 split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
   #assert_that(length(equations)>0)
   assert_that(all(stringr::str_count(equations, regex_arrow) == 1))
@@ -22,7 +23,7 @@ split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
     return
 }
 
-#' @import dplyr 
+#' @import tidyverse
 parse_met_list <- function(mets){
   pattern_stoich <- '^[[:space:]]*[[:digit:].()e-]+[[:space:]]+'
   stoich <- mets %>% 
@@ -54,8 +55,7 @@ parse_met_list <- function(mets){
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
 #' @export
-#' @import dplyr 
-#' @import assertthat 
+#' @import tidyverse
 expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
@@ -124,6 +124,7 @@ expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' 
 #' @export
 #' @import assertthat 
+#' @import Matrix
 collapse_reactions <- function(reactions_expanded, reaction_table){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')

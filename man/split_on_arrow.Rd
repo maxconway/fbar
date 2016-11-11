@@ -2,10 +2,14 @@
 % Please edit documentation in R/parse_reaction_table.R
 \name{split_on_arrow}
 \alias{split_on_arrow}
+\title{Internal function for splitting reaction equation into substrate and product}
 \usage{
 split_on_arrow(equations, regex_arrow = "<?[-=]+>")
 }
 \arguments{
 \item{regex_arrow}{Regular expression for the arrow splitting sides of the reaction equation.}
+}
+\description{
+Internal function for splitting reaction equation into substrate and product
 }
 

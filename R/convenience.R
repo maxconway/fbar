@@ -10,7 +10,7 @@
 #' @seealso find_fluxes_vector
 #' 
 #' @export
-#' @import dplyr
+#' @import tidyverse
 #' @import assertthat
 find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef, do_minimization=TRUE){
   mod1 <- data_frame(abbreviation, equation, lowbnd, uppbnd, obj_coef) %>%
@@ -51,7 +51,7 @@ find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef,
 #' @seealso find_fluxes_vector
 #' 
 #' @export
-#' @import dplyr
+#' @import tidyverse
 find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   reaction_table %>%
     mutate(flux = find_fluxes_vector(abbreviation=abbreviation, 
@@ -72,7 +72,7 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
 #' @return reaction_table with two added columns: sd (the standard deviation of fluxes found) and flux (a typical flux) from this distribution
 #' 
 #' @export
-#' @import dplyr
+#' @import tidyverse
 find_flux_variability_df <- function(reaction_table, folds=10, do_minimization=TRUE){
   fluxdf <- data_frame(index=1:folds, data = purrr::map(index, function(x){reaction_table})) %>%
     mutate(data = map(data, sample_frac)) %>%
