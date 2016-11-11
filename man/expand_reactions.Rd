@@ -4,10 +4,12 @@
 \alias{expand_reactions}
 \title{parse reaction table to an intermediate, long format}
 \usage{
-expand_reactions(reaction_table, pattern_arrow = "<?[-=]+>")
+expand_reactions(reaction_table, regex_arrow = "<?[-=]+>")
 }
 \arguments{
 \item{reaction_table}{A data frame describing the metabolic model.}
+
+\item{regex_arrow}{Regular expression for the arrow splitting sides of the reaction equation.}
 }
 \description{
 Used as the first half of \code{parse_reactions}

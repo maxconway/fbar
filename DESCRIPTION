@@ -9,10 +9,7 @@ Description: A tidy data approach to metabolic modelling.
 License: GPL-3
 Imports:
     assertthat,
-    dplyr,
-    stringr,
-    purrr,
-    tidyr
+    tidyverse
 Suggests:
     knitr,
     rmarkdown,
