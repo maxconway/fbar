@@ -8,6 +8,8 @@ find_fluxes_df(reaction_table, do_minimization = TRUE)
 }
 \arguments{
 \item{reaction_table}{a data frame representing the metabolic model}
+
+\item{do_minimization}{boolean to control whether a secondary flux minimization round is conducted}
 }
 \description{
 This function is a wrapper round \code{\link{find_fluxes_vector}}

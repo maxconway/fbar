@@ -8,6 +8,8 @@ find_flux_variability_df(reaction_table, folds = 10, do_minimization = TRUE)
 }
 \arguments{
 \item{reaction_table}{a data frame representing the metabolic model}
+
+\item{do_minimization}{boolean to control whether a secondary flux minimization round is conducted}
 }
 \value{
 reaction_table with two added columns: sd (the standard deviation of fluxes found) and flux (a typical flux) from this distribution

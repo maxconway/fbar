@@ -17,6 +17,8 @@ find_fluxes_vector(abbreviation, equation, lowbnd, uppbnd, obj_coef,
 \item{uppbnd}{maximum reaction rate}
 
 \item{obj_coef}{controls which reactions are maximized or minimised}
+
+\item{do_minimization}{boolean to control whether a secondary flux minimization round is conducted}
 }
 \description{
 Given a metabolic model as a set of vectors, return the flux distribution

@@ -1,6 +1,6 @@
 Package: FluxBalanceAnalyzeR
 Type: Package
-Title: Flux Balance Analysis with a tidy data approach.
+Title: Flux Balance Analysis with a tidy data approach
 Version: 1.0
 Date: 2015-07-17
 Authors@R: person("Max", "Conway", email = "conway.max1@gmail.com",
@@ -9,12 +9,15 @@ Description: A tidy data approach to metabolic modelling.
 License: GPL-3
 Imports:
     assertthat,
-    Matrix,
-    tidyverse
+    dplyr,
+    purrr,
+    stringr,
+    Matrix
 Suggests:
     knitr,
     rmarkdown,
     testthat,
-    gurobi
+    gurobi,
+    tidyverse
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1.9000

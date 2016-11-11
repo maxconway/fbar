@@ -6,11 +6,12 @@
 #' @param lowbnd minimum reaction rate
 #' @param uppbnd maximum reaction rate
 #' @param obj_coef controls which reactions are maximized or minimised
+#' @param do_minimization boolean to control whether a secondary flux minimization round is conducted
 #' 
 #' @seealso find_fluxes_vector
 #' 
 #' @export
-#' @import tidyverse
+#' @import dplyr
 #' @import assertthat
 find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef, do_minimization=TRUE){
   mod1 <- data_frame(abbreviation, equation, lowbnd, uppbnd, obj_coef) %>%
@@ -47,11 +48,12 @@ find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef,
 #' This function is a wrapper round \code{\link{find_fluxes_vector}}
 #' 
 #' @param reaction_table a data frame representing the metabolic model
+#' @param do_minimization boolean to control whether a secondary flux minimization round is conducted
 #' 
 #' @seealso find_fluxes_vector
 #' 
 #' @export
-#' @import tidyverse
+#' @import dplyr
 find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   reaction_table %>%
     mutate(flux = find_fluxes_vector(abbreviation=abbreviation, 
@@ -68,16 +70,17 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
 #' This function calculates fluxes 10 times with shuffled versions of the metabolic model.
 #' 
 #' @param reaction_table a data frame representing the metabolic model
+#' @param do_minimization boolean to control whether a secondary flux minimization round is conducted
 #' 
 #' @return reaction_table with two added columns: sd (the standard deviation of fluxes found) and flux (a typical flux) from this distribution
 #' 
 #' @export
-#' @import tidyverse
+#' @import dplyr
 find_flux_variability_df <- function(reaction_table, folds=10, do_minimization=TRUE){
   fluxdf <- data_frame(index=1:folds, data = purrr::map(index, function(x){reaction_table})) %>%
-    mutate(data = map(data, sample_frac)) %>%
-    mutate(data = map(data, find_fluxes_df, do_minimization=do_minimization)) %>%
-    mutate(data = map(data, arrange_, 'abbreviation')) %>%
+    mutate(data = purrr::map(data, sample_frac)) %>%
+    mutate(data = purrr::map(data, find_fluxes_df, do_minimization=do_minimization)) %>%
+    mutate(data = purrr::map(data, arrange_, 'abbreviation')) %>%
     tidyr::unnest() %>%
     select(abbreviation, flux) %>%
     group_by(abbreviation) %>%
