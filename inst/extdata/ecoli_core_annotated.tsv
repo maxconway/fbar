@@ -1,96 +1,96 @@
 abbreviation	officialName	equation	lowbnd	uppbnd	obj_coef	geneAssociation
-CYTBD	cytochrome oxidase bd (ubiquinol-8: 2 protons)	(2) h[c] + (0.5) o2[c] + q8h2[c] --> (2) h[e] + h2o[c] + q8[c]	0.0	1000	0	
-MALt2_2	Malate transport via proton symport (2 H)	(2) h[e] + mal-L[e] --> (2) h[c] + mal-L[c]	0.0	1000	0	
-THD2	NAD(P) transhydrogenase	(2) h[e] + nadh[c] + nadp[c] --> (2) h[c] + nad[c] + nadph[c]	0.0	1000	0	
-SUCCt2_2	succinate transport via proton symport (2 H)	(2) h[e] + succ[e] --> (2) h[c] + succ[c]	0.0	1000	0	
-NADH16	NADH dehydrogenase (ubiquinone-8 & 3 protons)	(4) h[c] + nadh[c] + q8[c] --> (3) h[e] + nad[c] + q8h2[c]	0.0	1000	0	
-Biomass_Ecoli_core_w/GAM	Biomass Objective Function with GAM	(1.496) 3pg[c] + (3.7478) accoa[c] + (59.8100) atp[c] + (0.3610) e4p[c] + (0.0709) f6p[c] + (0.1290) g3p[c] + (0.2050) g6p[c] + (0.2557) gln-L[c] + (4.9414) glu-L[c] + (59.8100) h2o[c] + (3.5470) nad[c] + (13.0279) nadph[c] + (1.7867) oaa[c] + (0.5191) pep[c] + (2.8328) pyr[c] + (0.8977) r5p[c] --> (59.8100) adp[c] + (4.1182) akg[c] + (3.7478) coa[c] + (59.8100) h[c] + (3.5470) nadh[c] + (13.0279) nadp[c] + (59.8100) pi[c]	0.0	1000	1	
-PGM	phosphoglycerate mutase	2pg[c] <==> 3pg[c]	-1e3	1000	0	( b3612  or  b4395  or  b0755 )
-ENO	enolase	2pg[c] <==> h2o[c] + pep[c]	-1e3	1000	0	b2779
-PGK	phosphoglycerate kinase	3pg[c] + atp[c] <==> 13dpg[c] + adp[c]	-1e3	1000	0	b2926
-GND	phosphogluconate dehydrogenase	6pgc[c] + nadp[c] --> co2[c] + nadph[c] + ru5p-D[c]	0.0	1000	0	b2029
-PGL	6-phosphogluconolactonase	6pgl[c] + h2o[c] --> 6pgc[c] + h[c]	0.0	1000	0	b0767
-ACKr	acetate kinase	ac[c] + atp[c] <==> actp[c] + adp[c]	-1e3	1000	0	( b3115  or  b2296  or  b1849 )
-ACALD	acetaldehyde dehydrogenase (acetylating)	acald[c] + coa[c] + nad[c] <==> accoa[c] + h[c] + nadh[c]	-1e3	1000	0	( b1241  or  b0351 )
-MALS	malate synthase	accoa[c] + glx[c] + h2o[c] --> coa[c] + h[c] + mal-L[c]	0.0	1000	0	( b4014  or  b2976 )
-CS	citrate synthase	accoa[c] + h2o[c] + oaa[c] --> cit[c] + coa[c] + h[c]	0.0	1000	0	b0720
-PTAr	phosphotransacetylase	accoa[c] + pi[c] <==> actp[c] + coa[c]	-1e3	1000	0	( b2458  or  b2297 )
-ACONTb	aconitase (half-reaction B, Isocitrate hydro-lyase)	acon-C[c] + h2o[c] <==> icit[c]	-1e3	1000	0	( b0118  or  b1276 )
-PYK	pyruvate kinase	adp[c] + h[c] + pep[c] --> atp[c] + pyr[c]	0.0	1000	0	( b1854  or  b1676 )
-AKGDH	2-Oxogluterate dehydrogenase	akg[c] + coa[c] + nad[c] --> co2[c] + nadh[c] + succoa[c]	0.0	1000	0	( b0116  and  b0726  and  b0727 )
-GLUSy	glutamate synthase (NADPH)	akg[c] + gln-L[c] + h[c] + nadph[c] --> (2) glu-L[c] + nadp[c]	0.0	1000	0	( b3212  and  b3213 )
-ADK1	adenylate kinase	amp[c] + atp[c] <==> (2) adp[c]	-1e3	1000	0	b0474
-SUCOAS	succinyl-CoA synthetase (ADP-forming)	atp[c] + coa[c] + succ[c] <==> adp[c] + pi[c] + succoa[c]	-1e3	1000	0	( b0728  and  b0729 )
-PFK	phosphofructokinase	atp[c] + f6p[c] --> adp[c] + fdp[c] + h[c]	0.0	1000	0	( b3916  or  b1723 )
-GLNS	glutamine synthetase	atp[c] + glu-L[c] + nh4[c] --> adp[c] + gln-L[c] + h[c] + pi[c]	0.0	1000	0	( b3870  or  b1297 )
-ATPM	ATP maintenance requirement	atp[c] + h2o[c] + pyr[c] --> amp[c] + (2) h[c] + pep[c] + pi[c]	8.39	1000	0	
-PPS	phosphoenolpyruvate synthase	atp[c] + h2o[c] --> adp[c] + h[c] + pi[c]	0.0	1000	0	b1702
-PPCK	phosphoenolpyruvate carboxykinase	atp[c] + oaa[c] --> adp[c] + co2[c] + pep[c]	0.0	1000	0	b3403
-ACONTa	aconitase (half-reaction A, Citrate hydro-lyase)	cit[c] <==> acon-C[c] + h2o[c]	-1e3	1000	0	( b1276  or  b0118 )
-PPC	phosphoenolpyruvate carboxylase	co2[c] + h2o[c] + pep[c] --> h[c] + oaa[c] + pi[c]	0.0	1000	0	b3956
-PDH	pyruvate dehydrogenase	coa[c] + nad[c] + pyr[c] --> accoa[c] + co2[c] + nadh[c]	0.0	1000	0	( b0114  and  b0115  and  b0116 )
-PFL	pyruvate formate lyase	coa[c] + pyr[c] --> accoa[c] + for[c]	0.0	1000	0	( ( ( b0902  and  b0903 )  and  b2579 )  or  ( b0902  and  b0903 )  or  ( b0902  and  b3114 )  or  ( b3951  and  b3952 ) )
-TPI	triose-phosphate isomerase	dhap[c] <==> g3p[c]	-1e3	1000	0	b3919
-TKT2	transketolase	e4p[c] + xu5p-D[c] <==> f6p[c] + g3p[c]	-1e3	1000	0	( b2935  or  b2465 )
-ALCD2x	alcohol dehydrogenase (ethanol)	etoh[c] + nad[c] <==> acald[c] + h[c] + nadh[c]	-1e3	1000	0	( b0356  or  b1478  or  b1241 )
-FBP	fructose-bisphosphatase	fdp[c] + h2o[c] --> f6p[c] + pi[c]	0.0	1000	0	( b4232  or  b3925 )
-FBA	fructose-bisphosphate aldolase	fdp[c] <==> dhap[c] + g3p[c]	-1e3	1000	0	( b2097  or  b2925  or  b1773 )
-FUM	fumarase	fum[c] + h2o[c] <==> mal-L[c]	-1e3	1000	0	( b1612  or  b4122  or  b1611 )
-FRD7	fumarate reductase	fum[c] + q8h2[c] --> q8[c] + succ[c]	0.0	1000	0	
-GAPD	glyceraldehyde-3-phosphate dehydrogenase	g3p[c] + nad[c] + pi[c] <==> 13dpg[c] + h[c] + nadh[c]	-1e3	1000	0	b1779
-TALA	transaldolase	g3p[c] + s7p[c] <==> e4p[c] + f6p[c]	-1e3	1000	0	( b2464  or  b0008 )
-G6PDH2r	glucose 6-phosphate dehydrogenase	g6p[c] + nadp[c] <==> 6pgl[c] + h[c] + nadph[c]	-1e3	1000	0	b1852
-PGI	glucose-6-phosphate isomerase	g6p[c] <==> f6p[c]	-1e3	1000	0	b4025
-GLUN	glutaminase	gln-L[c] + h2o[c] --> glu-L[c] + nh4[c]	0.0	1000	0	( b1812  or  b0485  or  b1524 )
-GLUDy	glutamate dehydrogenase (NADP)	glu-L[c] + h2o[c] + nadp[c] <==> akg[c] + h[c] + nadph[c] + nh4[c]	-1e3	1000	0	b1761
-ICL	Isocitrate lyase	icit[c] + nadp[c] <==> akg[c] + co2[c] + nadph[c]	0.0	1000	0	b4015
-ICDHyr	isocitrate dehydrogenase (NADP)	icit[c] --> glx[c] + succ[c]	-1e3	1000	0	b1136
-LDH_D	D-lactate dehydrogenase	lac-D[c] + nad[c] <==> h[c] + nadh[c] + pyr[c]	-1e3	1000	0	( b2133  or  b1380 )
-ME1	malic enzyme (NAD)	mal-L[c] + nad[c] --> co2[c] + nadh[c] + pyr[c]	0.0	1000	0	b1479
-MDH	malate dehydrogenase	mal-L[c] + nad[c] <==> h[c] + nadh[c] + oaa[c]	-1e3	1000	0	b3236
-ME2	malic enzyme (NADP)	mal-L[c] + nadp[c] --> co2[c] + nadph[c] + pyr[c]	0.0	1000	0	b2463
-NADTRHD	NAD transhydrogenase	nad[c] + nadph[c] --> nadh[c] + nadp[c]	0.0	1000	0	( b3962  or  ( b1602  and  b1603 ) )
-SUCDi	succinate dehydrogenase (irreversible)	q8[c] + succ[c] --> fum[c] + q8h2[c]	0.0	1000	0	( b0721  and  b0722  and  b0723  and  b0724 )
-TKT1	transketolase	r5p[c] + xu5p-D[c] <==> g3p[c] + s7p[c]	-1e3	1000	0	( b2935  or  b2465 )
-RPI	ribose-5-phosphate isomerase	r5p[c] <==> ru5p-D[c]	-1e3	1000	0	( b2914  or  b4090 )
-RPE	ribulose 5-phosphate 3-epimerase	ru5p-D[c] <==> xu5p-D[c]	-1e3	1000	0	( b4301  or  b3386 )
-EX_ac(e)	Acetate exchange	ac[e] <==>	0.0	1000	0	
-EX_acald(e)	Acetaldehyde exchange	acald[e] <==>	0.0	1000	0	
-EX_akg(e)	2-Oxoglutarate exchange	akg[e] <==>	0.0	1000	0	
-EX_co2(e)	CO2 exchange	co2[e] <==>	-1e3	1000	0	
-EX_etoh(e)	Ethanol exchange	etoh[e] <==>	0.0	1000	0	
-EX_for(e)	Formate exchange	for[e] <==>	0.0	1000	0	
-EX_fru(e)	D-Fructose exchange	fru[e] <==>	0.0	1000	0	
-EX_fum(e)	Fumarate exchange	fum[e] <==>	0.0	1000	0	
-EX_glc(e)	D-Glucose exchange	glc-D[e] <==>	-10.0	1000	0	
-EX_gln_L(e)	L-Glutamine exchange	gln-L[e] <==>	0.0	1000	0	
-EX_glu_L(e)	L-Glutamate exchange	glu-L[e] <==>	0.0	1000	0	
-EX_h(e)	H+ exchange	h[e] <==>	-1e3	1000	0	
-EX_h2o(e)	H2O exchange	h2o[e] <==>	-1e3	1000	0	
-EX_lac_D(e)	D-Lactate exchange	lac-D[e] <==>	0.0	1000	0	
-EX_mal_L(e)	L-Malate exchange	mal-L[e] <==>	0.0	1000	0	
-EX_nh4(e)	Ammonium exchange	nh4[e] <==>	-1e3	1000	0	
-EX_o2(e)	O2 exchange	o2[e] <==>	-1e3	1000	0	
-EX_pi(e)	Phosphate exchange	pi[e] <==>	-1e3	1000	0	
-EX_pyr(e)	Pyruvate exchange	pyr[e] <==>	0.0	1000	0	
-EX_succ(e)	Succinate exchange	succ[e] <==>	0.0	1000	0	
-ACt2r	acetate reversible transport via proton symport	ac[e] + h[e] <==> ac[c] + h[c]	-1e3	1000	0	
-ACALDt	acetaldehyde reversible transport	acald[e] <==> acald[c]	-1e3	1000	0	
-ATPS4r	ATP synthase (four protons for one ATP)	adp[c] + (4) h[e] + pi[c] <==> atp[c] + (3) h[c] + h2o[c]	-1e3	1000	0	
-AKGt2r	2-oxoglutarate reversible transport via symport	akg[e] + h[e] <==> akg[c] + h[c]	-1e3	1000	0	
-GLNabc	L-glutamine transport via ABC system	atp[c] + gln-L[e] + h2o[c] --> adp[c] + gln-L[c] + h[c] + pi[c]	0.0	1000	0	
-CO2t	CO2 transporter via diffusion	co2[e] <==> co2[c]	-1e3	1000	0	
-ETOHt2r	ethanol reversible transport via proton symport	etoh[e] + h[e] <==> etoh[c] + h[c]	-1e3	1000	0	
-FORti	formate transport via diffusion	for[c] --> for[e]	0.0	1000	0	
-FORt2	formate transport via proton symport (uptake only)	for[e] + h[e] --> for[c] + h[c]	0.0	1000	0	
-FRUpts2	Fructose transport via PEP:Pyr PTS (f6p generating)	fru[e] + pep[c] --> f6p[c] + pyr[c]	0.0	1000	0	
-FUMt2_2	Fumarate transport via proton symport (2 H)	fum[e] + (2) h[e] --> fum[c] + (2) h[c]	0.0	1000	0	
-GLCpts	D-glucose transport via PEP:Pyr PTS	glc-D[e] + pep[c] --> g6p[c] + pyr[c]	0.0	1000	0	
-GLUt2r	L-glutamate transport via proton symport, reversible (periplasm)	glu-L[e] + h[e] <==> glu-L[c] + h[c]	-1e3	1000	0	
-D_LACt2	D-lactate transport via proton symport	h2o[e] <==> h2o[c]	-1e3	1000	0	
-PIt2r	phosphate reversible transport via proton symport	h[e] + lac-D[e] <==> h[c] + lac-D[c]	-1e3	1000	0	
-PYRt2r	pyruvate reversible transport via proton symport	h[e] + pi[e] <==> h[c] + pi[c]	-1e3	1000	0	
-SUCCt3	succinate transport out via proton antiport	h[e] + pyr[e] <==> h[c] + pyr[c]	0.0	1000	0	
-H2Ot	H2O transport via diffusion	h[e] + succ[c] --> h[c] + succ[e]	-1e3	1000	0	
-NH4t	ammonia reversible transport	nh4[e] <==> nh4[c]	-1e3	1000	0	
-O2t	o2 transport via diffusion	o2[e] <==> o2[c]	-1e3	1000	0	
+CYTBD	cytochrome oxidase bd (ubiquinol-8: 2 protons)	(2) h[c] + (0.5) o2[c] + q8h2[c] --> (2) h[e] + h2o[c] + q8[c]	0.0	1e3	0.0	NA
+MALt2_2	Malate transport via proton symport (2 H)	(2) h[e] + mal-L[e] --> (2) h[c] + mal-L[c]	0.0	1e3	0.0	NA
+THD2	NAD(P) transhydrogenase	(2) h[e] + nadh[c] + nadp[c] --> (2) h[c] + nad[c] + nadph[c]	0.0	1e3	0.0	NA
+SUCCt2_2	succinate transport via proton symport (2 H)	(2) h[e] + succ[e] --> (2) h[c] + succ[c]	0.0	1e3	0.0	NA
+NADH16	NADH dehydrogenase (ubiquinone-8 & 3 protons)	(4) h[c] + nadh[c] + q8[c] --> (3) h[e] + nad[c] + q8h2[c]	0.0	1e3	0.0	NA
+Biomass_Ecoli_core_w/GAM	Biomass Objective Function with GAM	(1.496) 3pg[c] + (3.7478) accoa[c] + (59.8100) atp[c] + (0.3610) e4p[c] + (0.0709) f6p[c] + (0.1290) g3p[c] + (0.2050) g6p[c] + (0.2557) gln-L[c] + (4.9414) glu-L[c] + (59.8100) h2o[c] + (3.5470) nad[c] + (13.0279) nadph[c] + (1.7867) oaa[c] + (0.5191) pep[c] + (2.8328) pyr[c] + (0.8977) r5p[c] --> (59.8100) adp[c] + (4.1182) akg[c] + (3.7478) coa[c] + (59.8100) h[c] + (3.5470) nadh[c] + (13.0279) nadp[c] + (59.8100) pi[c]	0.0	1e3	1.0	NA
+PGM	phosphoglycerate mutase	2pg[c] <==> 3pg[c]	-1e3	1e3	0.0	( b3612  |  b4395  |  b0755 )
+ENO	enolase	2pg[c] <==> h2o[c] + pep[c]	-1e3	1e3	0.0	b2779
+PGK	phosphoglycerate kinase	3pg[c] + atp[c] <==> 13dpg[c] + adp[c]	-1e3	1e3	0.0	b2926
+GND	phosphogluconate dehydrogenase	6pgc[c] + nadp[c] --> co2[c] + nadph[c] + ru5p-D[c]	0.0	1e3	0.0	b2029
+PGL	6-phosphogluconolactonase	6pgl[c] + h2o[c] --> 6pgc[c] + h[c]	0.0	1e3	0.0	b0767
+ACKr	acetate kinase	ac[c] + atp[c] <==> actp[c] + adp[c]	-1e3	1e3	0.0	( b3115  |  b2296  |  b1849 )
+ACALD	acetaldehyde dehydrogenase (acetylating)	acald[c] + coa[c] + nad[c] <==> accoa[c] + h[c] + nadh[c]	-1e3	1e3	0.0	( b1241  |  b0351 )
+MALS	malate synthase	accoa[c] + glx[c] + h2o[c] --> coa[c] + h[c] + mal-L[c]	0.0	1e3	0.0	( b4014  |  b2976 )
+CS	citrate synthase	accoa[c] + h2o[c] + oaa[c] --> cit[c] + coa[c] + h[c]	0.0	1e3	0.0	b0720
+PTAr	phosphotransacetylase	accoa[c] + pi[c] <==> actp[c] + coa[c]	-1e3	1e3	0.0	( b2458  |  b2297 )
+ACONTb	aconitase (half-reaction B, Isocitrate hydro-lyase)	acon-C[c] + h2o[c] <==> icit[c]	-1e3	1e3	0.0	( b0118  |  b1276 )
+PYK	pyruvate kinase	adp[c] + h[c] + pep[c] --> atp[c] + pyr[c]	0.0	1e3	0.0	( b1854  |  b1676 )
+AKGDH	2-Oxogluterate dehydrogenase	akg[c] + coa[c] + nad[c] --> co2[c] + nadh[c] + succoa[c]	0.0	1e3	0.0	( b0116  &  b0726  &  b0727 )
+GLUSy	glutamate synthase (NADPH)	akg[c] + gln-L[c] + h[c] + nadph[c] --> (2) glu-L[c] + nadp[c]	0.0	1e3	0.0	( b3212  &  b3213 )
+ADK1	adenylate kinase	amp[c] + atp[c] <==> (2) adp[c]	-1e3	1e3	0.0	b0474
+SUCOAS	succinyl-CoA synthetase (ADP-forming)	atp[c] + coa[c] + succ[c] <==> adp[c] + pi[c] + succoa[c]	-1e3	1e3	0.0	( b0728  &  b0729 )
+PFK	phosphofructokinase	atp[c] + f6p[c] --> adp[c] + fdp[c] + h[c]	0.0	1e3	0.0	( b3916  |  b1723 )
+GLNS	glutamine synthetase	atp[c] + glu-L[c] + nh4[c] --> adp[c] + gln-L[c] + h[c] + pi[c]	0.0	1e3	0.0	( b3870  |  b1297 )
+ATPM	ATP maintenance requirement	atp[c] + h2o[c] + pyr[c] --> amp[c] + (2) h[c] + pep[c] + pi[c]	8.39	1e3	0.0	NA
+PPS	phosphoenolpyruvate synthase	atp[c] + h2o[c] --> adp[c] + h[c] + pi[c]	0.0	1e3	0.0	b1702
+PPCK	phosphoenolpyruvate carboxykinase	atp[c] + oaa[c] --> adp[c] + co2[c] + pep[c]	0.0	1e3	0.0	b3403
+ACONTa	aconitase (half-reaction A, Citrate hydro-lyase)	cit[c] <==> acon-C[c] + h2o[c]	-1e3	1e3	0.0	( b1276  |  b0118 )
+PPC	phosphoenolpyruvate carboxylase	co2[c] + h2o[c] + pep[c] --> h[c] + oaa[c] + pi[c]	0.0	1e3	0.0	b3956
+PDH	pyruvate dehydrogenase	coa[c] + nad[c] + pyr[c] --> accoa[c] + co2[c] + nadh[c]	0.0	1e3	0.0	( b0114  &  b0115  &  b0116 )
+PFL	pyruvate formate lyase	coa[c] + pyr[c] --> accoa[c] + for[c]	0.0	1e3	0.0	( ( ( b0902  &  b0903 )  &  b2579 )  |  ( b0902  &  b0903 )  |  ( b0902  &  b3114 )  |  ( b3951  &  b3952 ) )
+TPI	triose-phosphate isomerase	dhap[c] <==> g3p[c]	-1e3	1e3	0.0	b3919
+TKT2	transketolase	e4p[c] + xu5p-D[c] <==> f6p[c] + g3p[c]	-1e3	1e3	0.0	( b2935  |  b2465 )
+ALCD2x	alcohol dehydrogenase (ethanol)	etoh[c] + nad[c] <==> acald[c] + h[c] + nadh[c]	-1e3	1e3	0.0	( b0356  |  b1478  |  b1241 )
+FBP	fructose-bisphosphatase	fdp[c] + h2o[c] --> f6p[c] + pi[c]	0.0	1e3	0.0	( b4232  |  b3925 )
+FBA	fructose-bisphosphate aldolase	fdp[c] <==> dhap[c] + g3p[c]	-1e3	1e3	0.0	( b2097  |  b2925  |  b1773 )
+FUM	fumarase	fum[c] + h2o[c] <==> mal-L[c]	-1e3	1e3	0.0	( b1612  |  b4122  |  b1611 )
+FRD7	fumarate reductase	fum[c] + q8h2[c] --> q8[c] + succ[c]	0.0	1e3	0.0	NA
+GAPD	glyceraldehyde-3-phosphate dehydrogenase	g3p[c] + nad[c] + pi[c] <==> 13dpg[c] + h[c] + nadh[c]	-1e3	1e3	0.0	b1779
+TALA	transaldolase	g3p[c] + s7p[c] <==> e4p[c] + f6p[c]	-1e3	1e3	0.0	( b2464  |  b0008 )
+G6PDH2r	glucose 6-phosphate dehydrogenase	g6p[c] + nadp[c] <==> 6pgl[c] + h[c] + nadph[c]	-1e3	1e3	0.0	b1852
+PGI	glucose-6-phosphate isomerase	g6p[c] <==> f6p[c]	-1e3	1e3	0.0	b4025
+GLUN	glutaminase	gln-L[c] + h2o[c] --> glu-L[c] + nh4[c]	0.0	1e3	0.0	( b1812  |  b0485  |  b1524 )
+GLUDy	glutamate dehydrogenase (NADP)	glu-L[c] + h2o[c] + nadp[c] <==> akg[c] + h[c] + nadph[c] + nh4[c]	-1e3	1e3	0.0	b1761
+ICL	Isocitrate lyase	icit[c] + nadp[c] <==> akg[c] + co2[c] + nadph[c]	0.0	1e3	0.0	b4015
+ICDHyr	isocitrate dehydrogenase (NADP)	icit[c] --> glx[c] + succ[c]	-1e3	1e3	0.0	b1136
+LDH_D	D-lactate dehydrogenase	lac-D[c] + nad[c] <==> h[c] + nadh[c] + pyr[c]	-1e3	1e3	0.0	( b2133  |  b1380 )
+ME1	malic enzyme (NAD)	mal-L[c] + nad[c] --> co2[c] + nadh[c] + pyr[c]	0.0	1e3	0.0	b1479
+MDH	malate dehydrogenase	mal-L[c] + nad[c] <==> h[c] + nadh[c] + oaa[c]	-1e3	1e3	0.0	b3236
+ME2	malic enzyme (NADP)	mal-L[c] + nadp[c] --> co2[c] + nadph[c] + pyr[c]	0.0	1e3	0.0	b2463
+NADTRHD	NAD transhydrogenase	nad[c] + nadph[c] --> nadh[c] + nadp[c]	0.0	1e3	0.0	( b3962  |  ( b1602  &  b1603 ) )
+SUCDi	succinate dehydrogenase (irreversible)	q8[c] + succ[c] --> fum[c] + q8h2[c]	0.0	1e3	0.0	( b0721  &  b0722  &  b0723  &  b0724 )
+TKT1	transketolase	r5p[c] + xu5p-D[c] <==> g3p[c] + s7p[c]	-1e3	1e3	0.0	( b2935  |  b2465 )
+RPI	ribose-5-phosphate isomerase	r5p[c] <==> ru5p-D[c]	-1e3	1e3	0.0	( b2914  |  b4090 )
+RPE	ribulose 5-phosphate 3-epimerase	ru5p-D[c] <==> xu5p-D[c]	-1e3	1e3	0.0	( b4301  |  b3386 )
+EX_ac(e)	Acetate exchange	ac[e] <==>	0.0	1e3	0.0	NA
+EX_acald(e)	Acetaldehyde exchange	acald[e] <==>	0.0	1e3	0.0	NA
+EX_akg(e)	2-Oxoglutarate exchange	akg[e] <==>	0.0	1e3	0.0	NA
+EX_co2(e)	CO2 exchange	co2[e] <==>	-1e3	1e3	0.0	NA
+EX_etoh(e)	Ethanol exchange	etoh[e] <==>	0.0	1e3	0.0	NA
+EX_for(e)	Formate exchange	for[e] <==>	0.0	1e3	0.0	NA
+EX_fru(e)	D-Fructose exchange	fru[e] <==>	0.0	1e3	0.0	NA
+EX_fum(e)	Fumarate exchange	fum[e] <==>	0.0	1e3	0.0	NA
+EX_glc(e)	D-Glucose exchange	glc-D[e] <==>	-10.0	1e3	0.0	NA
+EX_gln_L(e)	L-Glutamine exchange	gln-L[e] <==>	0.0	1e3	0.0	NA
+EX_glu_L(e)	L-Glutamate exchange	glu-L[e] <==>	0.0	1e3	0.0	NA
+EX_h(e)	H+ exchange	h[e] <==>	-1e3	1e3	0.0	NA
+EX_h2o(e)	H2O exchange	h2o[e] <==>	-1e3	1e3	0.0	NA
+EX_lac_D(e)	D-Lactate exchange	lac-D[e] <==>	0.0	1e3	0.0	NA
+EX_mal_L(e)	L-Malate exchange	mal-L[e] <==>	0.0	1e3	0.0	NA
+EX_nh4(e)	Ammonium exchange	nh4[e] <==>	-1e3	1e3	0.0	NA
+EX_o2(e)	O2 exchange	o2[e] <==>	-1e3	1e3	0.0	NA
+EX_pi(e)	Phosphate exchange	pi[e] <==>	-1e3	1e3	0.0	NA
+EX_pyr(e)	Pyruvate exchange	pyr[e] <==>	0.0	1e3	0.0	NA
+EX_succ(e)	Succinate exchange	succ[e] <==>	0.0	1e3	0.0	NA
+ACt2r	acetate reversible transport via proton symport	ac[e] + h[e] <==> ac[c] + h[c]	-1e3	1e3	0.0	NA
+ACALDt	acetaldehyde reversible transport	acald[e] <==> acald[c]	-1e3	1e3	0.0	NA
+ATPS4r	ATP synthase (four protons for one ATP)	adp[c] + (4) h[e] + pi[c] <==> atp[c] + (3) h[c] + h2o[c]	-1e3	1e3	0.0	NA
+AKGt2r	2-oxoglutarate reversible transport via symport	akg[e] + h[e] <==> akg[c] + h[c]	-1e3	1e3	0.0	NA
+GLNabc	L-glutamine transport via ABC system	atp[c] + gln-L[e] + h2o[c] --> adp[c] + gln-L[c] + h[c] + pi[c]	0.0	1e3	0.0	NA
+CO2t	CO2 transporter via diffusion	co2[e] <==> co2[c]	-1e3	1e3	0.0	NA
+ETOHt2r	ethanol reversible transport via proton symport	etoh[e] + h[e] <==> etoh[c] + h[c]	-1e3	1e3	0.0	NA
+FORti	formate transport via diffusion	for[c] --> for[e]	0.0	1e3	0.0	NA
+FORt2	formate transport via proton symport (uptake only)	for[e] + h[e] --> for[c] + h[c]	0.0	1e3	0.0	NA
+FRUpts2	Fructose transport via PEP:Pyr PTS (f6p generating)	fru[e] + pep[c] --> f6p[c] + pyr[c]	0.0	1e3	0.0	NA
+FUMt2_2	Fumarate transport via proton symport (2 H)	fum[e] + (2) h[e] --> fum[c] + (2) h[c]	0.0	1e3	0.0	NA
+GLCpts	D-glucose transport via PEP:Pyr PTS	glc-D[e] + pep[c] --> g6p[c] + pyr[c]	0.0	1e3	0.0	NA
+GLUt2r	L-glutamate transport via proton symport, reversible (periplasm)	glu-L[e] + h[e] <==> glu-L[c] + h[c]	-1e3	1e3	0.0	NA
+D_LACt2	D-lactate transport via proton symport	h2o[e] <==> h2o[c]	-1e3	1e3	0.0	NA
+PIt2r	phosphate reversible transport via proton symport	h[e] + lac-D[e] <==> h[c] + lac-D[c]	-1e3	1e3	0.0	NA
+PYRt2r	pyruvate reversible transport via proton symport	h[e] + pi[e] <==> h[c] + pi[c]	-1e3	1e3	0.0	NA
+SUCCt3	succinate transport out via proton antiport	h[e] + pyr[e] <==> h[c] + pyr[c]	0.0	1e3	0.0	NA
+H2Ot	H2O transport via diffusion	h[e] + succ[c] --> h[c] + succ[e]	-1e3	1e3	0.0	NA
+NH4t	ammonia reversible transport	nh4[e] <==> nh4[c]	-1e3	1e3	0.0	NA
+O2t	o2 transport via diffusion	o2[e] <==> o2[c]	-1e3	1e3	0.0	NA
