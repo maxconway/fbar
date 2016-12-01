@@ -42,9 +42,9 @@ parse_met_list <- function(mets){
 }
 
 
-#' parse reaction table to an intermediate, long format
+#' parse a reaction table to an intermediate, long format
 #' 
-#' Used as the first half of \code{parse_reactions}
+#' Used as the first half of \code{parse_reactions}. The long format can also be suitable for manipulating equations.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -132,7 +132,7 @@ expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' @export
 #' @import assertthat 
 #' @import Matrix
-collapse_reactions <- function(reactions_expanded, reaction_table){
+collapse_reactions_gurobi <- function(reactions_expanded, reaction_table){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
   assert_that(reaction_table %has_name% 'uppbnd')
@@ -182,7 +182,7 @@ collapse_reactions <- function(reactions_expanded, reaction_table){
 #' 
 #' @export
 parse_reaction_table <- function(reaction_table, regex_arrow = '<?[-=]+>'){
-  collapse_reactions(reactions_expanded = expand_reactions(reaction_table, regex_arrow), 
+  collapse_reactions_gurobi(reactions_expanded = expand_reactions(reaction_table, regex_arrow), 
                      reaction_table = reaction_table
                      )
 }

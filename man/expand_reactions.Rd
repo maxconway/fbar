@@ -2,7 +2,7 @@
 % Please edit documentation in R/parsing_and_conversion.R
 \name{expand_reactions}
 \alias{expand_reactions}
-\title{parse reaction table to an intermediate, long format}
+\title{parse a reaction table to an intermediate, long format}
 \usage{
 expand_reactions(reaction_table, regex_arrow = "<?[-=]+>")
 }
@@ -12,7 +12,7 @@ expand_reactions(reaction_table, regex_arrow = "<?[-=]+>")
 \item{regex_arrow}{Regular expression for the arrow splitting sides of the reaction equation.}
 }
 \description{
-Used as the first half of \code{parse_reactions}
+Used as the first half of \code{parse_reactions}. The long format can also be suitable for manipulating equations.
 }
 \details{
 The \code{reaction_table} must have columns:
