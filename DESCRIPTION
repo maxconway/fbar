@@ -10,11 +10,16 @@ License: GPL-3
 Imports:
     assertthat,
     Matrix,
-    tidyverse
+    dplyr,
+    tidyr,
+    purrr,
+    tibble,
+    stringr
 Suggests:
     knitr,
     rmarkdown,
     testthat,
-    gurobi
+    gurobi,
+    readr
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1.9000

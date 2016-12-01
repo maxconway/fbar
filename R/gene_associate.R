@@ -5,7 +5,8 @@
 #' 
 #' @export
 #' @import assertthat 
-#' @import tidyverse
+#' @import dplyr
+#' @importFrom magrittr %>%
 gene_associate <- function(reaction_table, gene_table, expression_flux_function = function(x){(1+log(x)/sd(x)^2)^sign(x-1)}){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that('data.frame' %in% class(gene_table))

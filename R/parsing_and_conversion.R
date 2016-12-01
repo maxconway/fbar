@@ -2,39 +2,43 @@
 #' 
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
+#' @importFrom magrittr %>%
 #' @import assertthat
-#' @import tidyverse 
+#' @import dplyr
+#' @import stringr
 split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
   #assert_that(length(equations)>0)
-  assert_that(all(stringr::str_count(equations, regex_arrow) == 1))
+  assert_that(all(str_count(equations, regex_arrow) == 1))
   
-  split <- stringr::str_split_fixed(equations, regex_arrow, 2) 
+  split <- str_split_fixed(equations, regex_arrow, 2) 
   
   colnames(split) <- c('before', 'after')
   
   split %>% 
-    as_data_frame() %>%
+    tibble::as_data_frame() %>%
     mutate(reversible = equations %>%
-             stringr::str_extract(regex_arrow) %>%
-             stringr::str_detect('<'),
-           before = stringr::str_trim(before),
-           after = stringr::str_trim(after)
+             str_extract(regex_arrow) %>%
+             str_detect('<'),
+           before = str_trim(before),
+           after = str_trim(after)
            ) %>%
     return
 }
 
-#' @import tidyverse
+#' @importFrom magrittr %>%
+#' @import dplyr
+#' @import stringr
 parse_met_list <- function(mets){
   pattern_stoich <- '^[[:space:]]*[[:digit:].()e-]+[[:space:]]+'
   stoich <- mets %>% 
-    stringr::str_extract(pattern_stoich) %>% 
-    stringr::str_replace_all('[[:space:]()]+','') %>%
+    str_extract(pattern_stoich) %>% 
+    str_replace_all('[[:space:]()]+','') %>%
     as.numeric
   stoich[is.na(stoich)] <- 1
   met <- mets %>% 
-    stringr::str_replace( pattern_stoich,'') %>% 
-    stringr::str_trim()
-  data_frame(stoich, met)
+    str_replace( pattern_stoich,'') %>% 
+    str_trim()
+  tibble::data_frame(stoich, met)
 }
 
 
@@ -55,7 +59,10 @@ parse_met_list <- function(mets){
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
 #' @export
-#' @import tidyverse
+#' @importFrom magrittr %>%
+#' @import assertthat
+#' @import dplyr
+#' @import stringr
 expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
