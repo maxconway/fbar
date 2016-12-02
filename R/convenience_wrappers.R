@@ -14,7 +14,7 @@
 #' @import assertthat
 find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef, do_minimization=TRUE){
   mod1 <- tibble::data_frame(abbreviation, equation, lowbnd, uppbnd, obj_coef) %>%
-    parse_reaction_table()
+    reactiontbl_to_gurobi()
   
   res1 <- gurobi::gurobi(mod1, params = list(OutputFlag=0))
   

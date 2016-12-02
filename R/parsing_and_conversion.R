@@ -44,7 +44,7 @@ parse_met_list <- function(mets){
 
 #' parse a reaction table to an intermediate, long format
 #' 
-#' Used as the first half of \code{parse_reactions}. The long format can also be suitable for manipulating equations.
+#' Used as the first half of \code{reactiontbl_to_gurobi}. The long format can also be suitable for manipulating equations.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -58,12 +58,18 @@ parse_met_list <- function(mets){
 #' @param reaction_table A data frame describing the metabolic model.
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
+#' @return A list of data frames: \itemize{
+#'   \item \code{rxns}, which has one row per reaction, 
+#'   \item \code{mets}, which has one row for each metabolite, and 
+#'   \item \code{stoich}, which has one row for each time a metabolite appears in a reaction.
+#' }
+#' 
 #' @export
 #' @importFrom magrittr %>%
 #' @import assertthat
 #' @import dplyr
 #' @import stringr
-expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
+reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
   assert_that(reaction_table %has_name% 'equation')
@@ -77,11 +83,6 @@ expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   
   reactions_expanded_partial_1 <- split_on_arrow(reaction_table[['equation']], regex_arrow) %>%
     mutate(abbreviation = reaction_table[['abbreviation']])
-  
-  uppbnd <- pmin(reaction_table[['uppbnd']], const_inf, na.rm=TRUE)
-  lowbnd <- pmax(reaction_table[['lowbnd']], ifelse(reactions_expanded_partial_1[['reversible']], -const_inf, 0), na.rm=TRUE)
-  obj_coef <- reaction_table[['obj_coef']]
-  obj_coef[is.na(obj_coef)] <- 0
   
 
   reactions_expanded_partial_2 <- bind_rows(
@@ -109,7 +110,9 @@ expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
               met = met) %>%
     filter(met!='')
   
-  return(reactions_expanded)
+  return(list(stoich = reactions_expanded, 
+              rxns = reaction_table %>% select(-equation),
+              mets = reactions_expanded %>% select(met)))
 }
 
 
@@ -126,35 +129,34 @@ expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #'  \item \code{obj_coef}.
 #' }
 #' 
-#' @param reactions_expanded A data frame as output by \code{expand_reactions}
-#' @param reaction_table A data frame describing the metabolic model.
+#' @param reactions_expanded A list of data frames as output by \code{expand_reactions}
 #' 
 #' @export
 #' @import assertthat 
 #' @import Matrix
-collapse_reactions_gurobi <- function(reactions_expanded, reaction_table){
+expanded_to_gurobi <- function(reactions_expanded){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
   assert_that(reaction_table %has_name% 'uppbnd')
   assert_that(reaction_table %has_name% 'lowbnd')
   assert_that(reaction_table %has_name% 'obj_coef')
-  stoichiometric_matrix <- Matrix::sparseMatrix(j = match(reactions_expanded[['abbreviation']], reaction_table[['abbreviation']]),
-                                                i = match(reactions_expanded[['met']], sort(unique(reactions_expanded$met))),
-                                                x = reactions_expanded[['stoich']],
-                                                dims = c(length(unique(reactions_expanded$met)),
-                                                         length(reaction_table[['abbreviation']])
+  stoichiometric_matrix <- Matrix::sparseMatrix(j = match(reactions_expanded[['stoich']][['abbreviation']], reactions_expanded[['rxns']][['abbreviation']]),
+                                                i = match(reactions_expanded[['stoich']][['met']], sort(unique(reactions_expanded[['stoich']]$met))),
+                                                x = reactions_expanded[['stoich']][['stoich']],
+                                                dims = c(length(unique(reactions_expanded[['stoich']]$met)),
+                                                         length(reactions_expanded[['rxns']][['abbreviation']])
                                                 ),
-                                                dimnames = list(metabolites=sort(unique(reactions_expanded$met)),
-                                                                reactions=reaction_table[['abbreviation']])
+                                                dimnames = list(metabolites=sort(unique(reactions_expanded[['stoich']]$met)),
+                                                                reactions=reactions_expanded[['rxns']][['abbreviation']])
   )
   
   model <- list(
     A = stoichiometric_matrix,
-    obj = reaction_table$obj_coef,
+    obj = reactions_expanded[['rxns']]$obj_coef,
     sense='=',
     rhs=0,
-    lb=reaction_table$lowbnd,
-    ub=reaction_table$uppbnd,
+    lb=reactions_expanded[['rxns']]$lowbnd,
+    ub=reactions_expanded[['rxns']]$uppbnd,
     modelsense='max'
   )
   
@@ -181,8 +183,25 @@ collapse_reactions_gurobi <- function(reactions_expanded, reaction_table){
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
 #' @export
-parse_reaction_table <- function(reaction_table, regex_arrow = '<?[-=]+>'){
-  collapse_reactions_gurobi(reactions_expanded = expand_reactions(reaction_table, regex_arrow), 
+reactiontbl_to_gurobi <- function(reaction_table, regex_arrow = '<?[-=]+>'){
+  expanded_to_gurobi(expanded = reactiontbl_to_expanded(reaction_table, regex_arrow), 
                      reaction_table = reaction_table
                      )
 }
+
+# Deprecated functions
+expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
+  .Deprecated('reactiontbl_to_expanded')
+  reactiontbl_to_expanded(reaction_table, regex_arrow)$stoich
+}
+
+collapse_reactions_gurobi <- function(reactions_expanded, reaction_table){
+  .Deprecated('expanded_to_gurobi')
+  expanded_to_gurobi(list(stoich=reactions_expanded, rxns=reaction_table))
+}
+
+parse_reaction_table <- function(reaction_table, regex_arrow = '<?[-=]+>'){
+  .Deprecated('reactiontbl_to_gurobi')
+  reactiontbl_to_gurobi(reaction_table, regex_arrow)
+}
+
