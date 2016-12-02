@@ -22,6 +22,8 @@ Suggests:
     testthat,
     gurobi,
     readr,
-    tidyverse
+    tidyverse,
+    ggplot2,
+    plyr
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1.9000

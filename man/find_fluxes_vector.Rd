@@ -17,6 +17,8 @@ find_fluxes_vector(abbreviation, equation, lowbnd, uppbnd, obj_coef,
 \item{uppbnd}{maximum reaction rate}
 
 \item{obj_coef}{controls which reactions are maximized or minimised}
+
+\item{do_minimization}{toggle to uniformly minimize all non-objective fluxes after finding the objective}
 }
 \value{
 The flux distribution, a numeric vector.

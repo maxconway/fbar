@@ -18,7 +18,7 @@
 #' @format A data frame with 95 rows and 8 columns:
 #' \describe{
 #'   \item{abbreviation}{an abbreviated reaction name, acts as the reaction id}
-#'   \item{nameame}{full reaction name}
+#'   \item{name}{full reaction name}
 #'   \item{equation}{reaction equation}
 #'   \item{subsystem}{an indicator of reaction function}
 #'   \item{GPR}{A boolean combination of proteins and genes which control the reaction}

@@ -6,6 +6,7 @@
 #' @param lowbnd minimum reaction rate
 #' @param uppbnd maximum reaction rate
 #' @param obj_coef controls which reactions are maximized or minimised
+#' @param do_minimization toggle to uniformly minimize all non-objective fluxes after finding the objective
 #' 
 #' @return The flux distribution, a numeric vector.
 #' 
