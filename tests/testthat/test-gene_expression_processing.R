@@ -1,5 +1,5 @@
 context("Gene Expression Processing")
-data("iJO1366_full")
+data("ecoli_core")
 library(dplyr)
 library(purrr)
 library(stringr)
@@ -33,14 +33,10 @@ test_that("works with multi value expressions, boolean", {
 })
 
 test_that('full test', {
-  model <- iJO1366_full %>%
-    mutate(geneAssociation = `Gene-Reaction Association` %>%
-             str_replace_all(fixed('or'),'|') %>%
-             str_replace_all(fixed('and'),'&'))
-  genes <- data_frame(name = str_extract_all(model$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
+  genes <- data_frame(name = str_extract_all(ecoli_core$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
     flatten_chr() %>%
     discard(is.na)
   ) %>%
     mutate(presence = runif(n())<0.05)
-  gene_associate(model, genes)
+  gene_associate(ecoli_core, genes)
 })
