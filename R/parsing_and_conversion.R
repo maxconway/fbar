@@ -17,12 +17,12 @@ split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
   
   split %>% 
     tibble::as_data_frame() %>%
-    mutate(reversible = equations %>%
-             str_extract(regex_arrow) %>%
-             str_detect('<'),
-           before = str_trim(before),
-           after = str_trim(after)
-           ) %>%
+    mutate_(reversible =~ equations %>%
+              str_extract(regex_arrow) %>%
+              str_detect('<'),
+            before =~ str_trim(before),
+            after =~ str_trim(after)
+    ) %>%
     return
 }
 
@@ -88,39 +88,39 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   const_inf <- 1000
   
   reactions_expanded_partial_1 <- split_on_arrow(reaction_table[['equation']], regex_arrow) %>%
-    mutate(abbreviation = reaction_table[['abbreviation']])
+    mutate_(abbreviation =~ reaction_table[['abbreviation']])
   
 
   reactions_expanded_partial_2 <- bind_rows(
     reactions_expanded_partial_1 %>%
-      transmute(abbreviation, string = before, direction = -1),
+      transmute_(~abbreviation, string =~ before, direction =~ -1),
     reactions_expanded_partial_1 %>%
-      transmute(abbreviation, string = after, direction = 1)
+      transmute_(~abbreviation, string =~ after, direction =~ 1)
   )
   
   reactions_expanded_partial_3 <- reactions_expanded_partial_2 %>%
-    mutate(symbol = stringr::str_split(string, stringr::fixed(' + '))) %>%
+    mutate_(symbol =~ stringr::str_split(string, stringr::fixed(' + '))) %>%
     (function(x){
       if(nrow(x)>0){
-        tidyr::unnest(x, symbol)
+        tidyr::unnest_(x, 'symbol')
       } else {
         return(x)
       }
-      }) %>%
-    filter(symbol!='')
+    }) %>%
+    filter_(~symbol!='')
   
   reactions_expanded <- bind_cols(reactions_expanded_partial_3,
                                   parse_met_list(reactions_expanded_partial_3$symbol)) %>%
-    transmute(abbreviation = abbreviation,
-              stoich = stoich*direction,
-              met = met) %>%
-    filter(met!='')
+    transmute_(abbreviation =~ abbreviation,
+               stoich =~ stoich*direction,
+               met =~ met) %>%
+    filter_(~met!='')
   
   return(list(stoich = reactions_expanded, 
               rxns = reaction_table %>% 
-                select(-equation),
+                select_(~-equation),
               mets = reactions_expanded %>% 
-                group_by(met) %>%
+                group_by_(~met) %>%
                 summarise()))
 }
 
