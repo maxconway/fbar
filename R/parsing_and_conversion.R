@@ -111,8 +111,11 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
     filter(met!='')
   
   return(list(stoich = reactions_expanded, 
-              rxns = reaction_table %>% select(-equation),
-              mets = reactions_expanded %>% select(met)))
+              rxns = reaction_table %>% 
+                select(-equation),
+              mets = reactions_expanded %>% 
+                group_by(met) %>%
+                summarise()))
 }
 
 
@@ -135,11 +138,11 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' @import assertthat 
 #' @import Matrix
 expanded_to_gurobi <- function(reactions_expanded){
-  assert_that('data.frame' %in% class(reaction_table))
-  assert_that(reaction_table %has_name% 'abbreviation')
-  assert_that(reaction_table %has_name% 'uppbnd')
-  assert_that(reaction_table %has_name% 'lowbnd')
-  assert_that(reaction_table %has_name% 'obj_coef')
+  assert_that('data.frame' %in% class(reactions_expanded[['rxns']]))
+  assert_that(reactions_expanded[['rxns']] %has_name% 'abbreviation')
+  assert_that(reactions_expanded[['rxns']] %has_name% 'uppbnd')
+  assert_that(reactions_expanded[['rxns']] %has_name% 'lowbnd')
+  assert_that(reactions_expanded[['rxns']] %has_name% 'obj_coef')
   stoichiometric_matrix <- Matrix::sparseMatrix(j = match(reactions_expanded[['stoich']][['abbreviation']], reactions_expanded[['rxns']][['abbreviation']]),
                                                 i = match(reactions_expanded[['stoich']][['met']], sort(unique(reactions_expanded[['stoich']]$met))),
                                                 x = reactions_expanded[['stoich']][['stoich']],
@@ -184,9 +187,7 @@ expanded_to_gurobi <- function(reactions_expanded){
 #' 
 #' @export
 reactiontbl_to_gurobi <- function(reaction_table, regex_arrow = '<?[-=]+>'){
-  expanded_to_gurobi(expanded = reactiontbl_to_expanded(reaction_table, regex_arrow), 
-                     reaction_table = reaction_table
-                     )
+  expanded_to_gurobi(reactiontbl_to_expanded(reaction_table, regex_arrow))
 }
 
 # Deprecated functions
