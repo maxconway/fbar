@@ -2,7 +2,7 @@
 % Please edit documentation in R/parsing_and_conversion.R
 \name{reactiontbl_to_expanded}
 \alias{reactiontbl_to_expanded}
-\title{parse a reaction table to an intermediate, long format}
+\title{Parse a reaction table to an intermediate, long format}
 \usage{
 reactiontbl_to_expanded(reaction_table, regex_arrow = "<?[-=]+>")
 }

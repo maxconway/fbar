@@ -21,6 +21,7 @@ Suggests:
     rmarkdown,
     testthat,
     gurobi,
-    readr
+    readr,
+    tidyverse
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1.9000

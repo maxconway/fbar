@@ -8,6 +8,11 @@ find_fluxes_df(reaction_table, do_minimization = TRUE)
 }
 \arguments{
 \item{reaction_table}{a data frame representing the metabolic model}
+
+\item{do_minimization}{toggle to uniformly minimize all non-objective fluxes after finding the objective}
+}
+\value{
+The input data frame with a new numeric column, "\code{flux}".
 }
 \description{
 This function is a wrapper round \code{\link{find_fluxes_vector}}

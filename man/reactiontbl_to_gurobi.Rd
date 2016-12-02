@@ -2,7 +2,7 @@
 % Please edit documentation in R/parsing_and_conversion.R
 \name{reactiontbl_to_gurobi}
 \alias{reactiontbl_to_gurobi}
-\title{parse reaction table to Gurobi format}
+\title{Parse reaction table to Gurobi format}
 \usage{
 reactiontbl_to_gurobi(reaction_table, regex_arrow = "<?[-=]+>")
 }
@@ -11,8 +11,11 @@ reactiontbl_to_gurobi(reaction_table, regex_arrow = "<?[-=]+>")
 
 \item{regex_arrow}{Regular expression for the arrow splitting sides of the reaction equation.}
 }
+\value{
+A list suitable for input to Gurobi.
+}
 \description{
-Parses a reaction table to give a list in Gurobi's input format
+Parses a reaction table to give a list in Gurobi's input format.
 }
 \details{
 The \code{reaction_table} must have columns:

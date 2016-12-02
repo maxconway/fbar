@@ -1,7 +1,8 @@
 #' Apply gene expressions to reaction table
 #' 
 #' @param reaction_table A data frame describing the metabolic model.
-#' @param genes A data frame showing gene presence
+#' @param gene_table A data frame showing gene presence
+#' @param expression_flux_function a function to convert from gene set expression to flux
 #' 
 #' @export
 #' @import assertthat 

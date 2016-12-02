@@ -11,7 +11,9 @@ gene_associate(reaction_table, gene_table,
 \arguments{
 \item{reaction_table}{A data frame describing the metabolic model.}
 
-\item{genes}{A data frame showing gene presence}
+\item{gene_table}{A data frame showing gene presence}
+
+\item{expression_flux_function}{a function to convert from gene set expression to flux}
 }
 \description{
 Apply gene expressions to reaction table

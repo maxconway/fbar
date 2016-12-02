@@ -7,6 +7,8 @@
 split_on_arrow(equations, regex_arrow = "<?[-=]+>")
 }
 \arguments{
+\item{equations}{Character vector of reaction equations.}
+
 \item{regex_arrow}{Regular expression for the arrow splitting sides of the reaction equation.}
 }
 \description{

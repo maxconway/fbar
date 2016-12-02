@@ -7,6 +7,8 @@
 #' @param uppbnd maximum reaction rate
 #' @param obj_coef controls which reactions are maximized or minimised
 #' 
+#' @return The flux distribution, a numeric vector.
+#' 
 #' @seealso find_fluxes_vector
 #' 
 #' @export
@@ -47,6 +49,9 @@ find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef,
 #' This function is a wrapper round \code{\link{find_fluxes_vector}}
 #' 
 #' @param reaction_table a data frame representing the metabolic model
+#' @param do_minimization toggle to uniformly minimize all non-objective fluxes after finding the objective
+#' 
+#' @return The input data frame with a new numeric column, "\code{flux}".
 #' 
 #' @seealso find_fluxes_vector
 #' 
@@ -66,9 +71,12 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
 
 #' Given a metabolic model as a data frame, return a new data frame with fluxes and variability
 #' 
-#' This function calculates fluxes 10 times with shuffled versions of the metabolic model.
+#' This function calculates fluxes \code{folds} times with shuffled versions of the metabolic model.
+#' This is designed to detect and quantify underdetermined fluxes.
 #' 
 #' @param reaction_table a data frame representing the metabolic model
+#' @param folds number of times to calculate fluxes
+#' @param do_minimization toggle to uniformly minimize all non-objective fluxes after finding the objective
 #' 
 #' @return reaction_table with two added columns: sd (the standard deviation of fluxes found) and flux (a typical flux) from this distribution
 #' 

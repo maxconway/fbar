@@ -2,12 +2,15 @@
 % Please edit documentation in R/parsing_and_conversion.R
 \name{expanded_to_gurobi}
 \alias{expanded_to_gurobi}
-\title{parse a long format metabolic model to a gurobi model}
+\title{Parse a long format metabolic model to a gurobi model}
 \usage{
 expanded_to_gurobi(reactions_expanded)
 }
 \arguments{
 \item{reactions_expanded}{A list of data frames as output by \code{expand_reactions}}
+}
+\value{
+A list suitable for input to Gurobi.
 }
 \description{
 Used as the second half of \code{parse_reactions}, this parses the long format produced by \code{expand_reactions} to a gurobi model

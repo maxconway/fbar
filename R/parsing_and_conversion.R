@@ -1,5 +1,6 @@
 #' Internal function for splitting reaction equation into substrate and product
 #' 
+#' @param equations Character vector of reaction equations.
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
 #' @importFrom magrittr %>%
@@ -25,6 +26,11 @@ split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
     return
 }
 
+
+#' Expand half reaction equations into a long form
+#' 
+#' @param mets Character vector of halves of reaction equations.
+#' 
 #' @importFrom magrittr %>%
 #' @import dplyr
 #' @import stringr
@@ -42,7 +48,7 @@ parse_met_list <- function(mets){
 }
 
 
-#' parse a reaction table to an intermediate, long format
+#' Parse a reaction table to an intermediate, long format
 #' 
 #' Used as the first half of \code{reactiontbl_to_gurobi}. The long format can also be suitable for manipulating equations.
 #' 
@@ -119,7 +125,7 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 }
 
 
-#' parse a long format metabolic model to a gurobi model
+#' Parse a long format metabolic model to a gurobi model
 #' 
 #' Used as the second half of \code{parse_reactions}, this parses the long format produced by \code{expand_reactions} to a gurobi model
 #' 
@@ -133,6 +139,8 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' }
 #' 
 #' @param reactions_expanded A list of data frames as output by \code{expand_reactions}
+#' 
+#' @return A list suitable for input to Gurobi.
 #' 
 #' @export
 #' @import assertthat 
@@ -175,9 +183,10 @@ expanded_to_gurobi <- function(reactions_expanded){
 
 
 
-#' parse reaction table to Gurobi format
+#' Parse reaction table to Gurobi format
 #' 
-#' Parses a reaction table to give a list in Gurobi's input format
+#' Parses a reaction table to give a list in Gurobi's input format.
+#' 
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -190,6 +199,8 @@ expanded_to_gurobi <- function(reactions_expanded){
 #' 
 #' @param reaction_table A data frame describing the metabolic model.
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
+#' 
+#' @return A list suitable for input to Gurobi.
 #' 
 #' @export
 reactiontbl_to_gurobi <- function(reaction_table, regex_arrow = '<?[-=]+>'){
