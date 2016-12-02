@@ -40,7 +40,7 @@ This table is a list of all the reactions in the model: their names and equation
 First, we want to evaluate the model as it is, to check that it is working. While the current table format is suitable for viewing and editing the model, it's not the correct one for evaluating it. To evaluate it we must transform it into the input format for the Gurobi linear programming library, and then run it using the Gurobi function:
 ```{r}
 result <- ecoli_core %>%
-  parse_reaction_table() %>%
+  reactiontbl_to_gurobi() %>%
   gurobi()
 ```
 
@@ -62,7 +62,7 @@ mod2[mod2$abbreviation=='EX_ac(e)','obj_coef']<-1
 mod2[mod2$abbreviation=='Biomass_Ecoli_core_w/GAM','obj_coef']<-0
 
 result2 <- mod2 %>%
-parse_reaction_table() %>%
+reactiontbl_to_gurobi() %>%
 gurobi()
 
 mod2 %>% mutate(result2$x)
@@ -75,7 +75,7 @@ To try to increase acetate production, we could try knockouts or knockdowns of r
 ```{r}
 culture <- function(mod1){
   result1 <- mod1 %>%
-    parse_reaction_table() %>%
+    reactiontbl_to_gurobi() %>%
     gurobi(params=list(OutputFlag=0))
   
   if(result1$status!='OPTIMAL'){
@@ -90,7 +90,7 @@ culture <- function(mod1){
   mod2[mod2$abbreviation=='Biomass_Ecoli_core_w/GAM','obj_coef'] <- 0
 
   result2 <- mod2 %>%
-    parse_reaction_table() %>%
+    reactiontbl_to_gurobi() %>%
     gurobi(params=list(OutputFlag=0))
   
   data_frame(biomass=result2$x[mod2$abbreviation=='Biomass_Ecoli_core_w/GAM'], 

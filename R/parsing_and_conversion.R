@@ -138,28 +138,34 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' @import assertthat 
 #' @import Matrix
 expanded_to_gurobi <- function(reactions_expanded){
-  assert_that('data.frame' %in% class(reactions_expanded[['rxns']]))
-  assert_that(reactions_expanded[['rxns']] %has_name% 'abbreviation')
-  assert_that(reactions_expanded[['rxns']] %has_name% 'uppbnd')
-  assert_that(reactions_expanded[['rxns']] %has_name% 'lowbnd')
-  assert_that(reactions_expanded[['rxns']] %has_name% 'obj_coef')
-  stoichiometric_matrix <- Matrix::sparseMatrix(j = match(reactions_expanded[['stoich']][['abbreviation']], reactions_expanded[['rxns']][['abbreviation']]),
-                                                i = match(reactions_expanded[['stoich']][['met']], sort(unique(reactions_expanded[['stoich']]$met))),
-                                                x = reactions_expanded[['stoich']][['stoich']],
-                                                dims = c(length(unique(reactions_expanded[['stoich']]$met)),
-                                                         length(reactions_expanded[['rxns']][['abbreviation']])
+  
+  rxns <- reactions_expanded$rxns
+  stoich <- reactions_expanded$stoich
+  mets <- reactions_expanded$mets
+  
+  assert_that('data.frame' %in% class(rxns))
+  assert_that(rxns %has_name% 'abbreviation')
+  assert_that(rxns %has_name% 'uppbnd')
+  assert_that(rxns %has_name% 'lowbnd')
+  assert_that(rxns %has_name% 'obj_coef')
+  
+  stoichiometric_matrix <- Matrix::sparseMatrix(j = match(stoich$abbreviation, rxns$abbreviation),
+                                                i = match(stoich$met, mets$met),
+                                                x = stoich$stoich,
+                                                dims = c(nrow(mets),
+                                                         nrow(rxns)
                                                 ),
-                                                dimnames = list(metabolites=sort(unique(reactions_expanded[['stoich']]$met)),
-                                                                reactions=reactions_expanded[['rxns']][['abbreviation']])
+                                                dimnames = list(metabolites=mets$met,
+                                                                reactions=rxns$abbreviation)
   )
   
   model <- list(
     A = stoichiometric_matrix,
-    obj = reactions_expanded[['rxns']]$obj_coef,
+    obj = rxns$obj_coef,
     sense='=',
     rhs=0,
-    lb=reactions_expanded[['rxns']]$lowbnd,
-    ub=reactions_expanded[['rxns']]$uppbnd,
+    lb=rxns$lowbnd,
+    ub=rxns$uppbnd,
     modelsense='max'
   )
   

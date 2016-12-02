@@ -1,6 +1,6 @@
 Package: FluxBalanceAnalyzeR
 Type: Package
-Title: Flux Balance Analysis with a tidy data approach.
+Title: Flux Balance Analysis with a tidy data approach
 Version: 1.0
 Date: 2015-07-17
 Authors@R: person("Max", "Conway", email = "conway.max1@gmail.com",
@@ -14,7 +14,8 @@ Imports:
     tidyr,
     purrr,
     tibble,
-    stringr
+    stringr,
+    magrittr
 Suggests:
     knitr,
     rmarkdown,

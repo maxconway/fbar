@@ -34,7 +34,7 @@ test_that("find_fluxes_vector works in grouped context", {
 
 test_that("find_fluxes_df stable across shuffling", {
   skip_if_not_installed('gurobi')
-  skip('known fault')
+  skip('known theoretical issue')
   
   d1 <- iJO1366 %>% sample_frac() %>% find_fluxes_df() %>% arrange(abbreviation)
   d2 <- iJO1366 %>% sample_frac() %>% find_fluxes_df() %>% arrange(abbreviation)
@@ -44,7 +44,7 @@ test_that("find_fluxes_df stable across shuffling", {
 
 test_that("find_flux_variability_df works", {
   testthat::skip_if_not_installed('gurobi')
-  skip('known fault')
+  skip('known theoretical issue')
 
   for(rxns in test_models){
   v1 <- rxns %>% 
