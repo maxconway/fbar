@@ -3,3 +3,4 @@
 .RData
 inst/doc
 gurobi.log
+tmp/
