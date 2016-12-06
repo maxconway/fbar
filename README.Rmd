@@ -4,7 +4,13 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
 
 # Introduction
 A simple, easy to use Flux Balance Analysis package with a tidy data approach. Just `data_frames` and the occasional `list`, no new classes to learn. The focus is on simplicity and speed. Models are expected as a flat table, and results can be simply appended to the table. This makes this package very suitable for useage in pipelines with pre- and post- processing of models and results, so that it works well as a backbone for customized methods. Loading, parsing and evaluating a model takes around 0.1s, which, together with the straightforward data structures used, makes this library very suitable for large parameter sweeps.
@@ -12,8 +18,7 @@ A simple, easy to use Flux Balance Analysis package with a tidy data approach. J
 ## Simple Example
 This example calculates the fluxes for the model ecoli_core. Ecoli_core starts out as a data frame, and is returned as the same data frame, with fluxes appended.
 
-
-```r
+```{r}
 library(FluxBalanceAnalyzeR)
 data(ecoli_core)
 
@@ -23,8 +28,7 @@ ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
 ## Verbose Example
 This example finds the fluxes in ecoli_core, just like the previous case. However, this is longer to show how the package works.
 
-
-```r
+```{r}
 library(FluxBalanceAnalyzeR)
 library(gurobi)
 data(ecoli_core)
@@ -41,8 +45,7 @@ ecoli_core_with_flux <- ecoli_core %>%
 This example expands the single data frame model into an intermediate form, the collapses it back to a gurobi model and evaluates it. Then it adds the result as a column, named flux. This longer style is useful because it allows access to the intermediate form. This just consists of three data frames: metabolites, stoichiometry, and reactions. This makes it easy to alter and combine models.
 
 ## Installation
-
-```r
+```{r, eval=FALSE}
 devtools::install_github('maxconway/FluxBalanceAnalyzeR')
 ```
 

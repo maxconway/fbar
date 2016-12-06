@@ -1,3 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^scripts/*
+^README\.Rmd$
+^README-.*\.png$
