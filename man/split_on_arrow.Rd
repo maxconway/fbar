@@ -11,6 +11,13 @@ split_on_arrow(equations, regex_arrow = "<?[-=]+>")
 
 \item{regex_arrow}{Regular expression for the arrow splitting sides of the reaction equation.}
 }
+\value{
+a \code{data_frame}, with columns: \describe{
+  \item{reversible}{boolean, is reaction reversible}
+  \item{before}{the left hand side of the reaction string}
+  \item{after}{the right hand side of the reaction string}
+}
+}
 \description{
 Internal function for splitting reaction equation into substrate and product
 }

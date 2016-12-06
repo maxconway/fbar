@@ -4,6 +4,8 @@
 #' @param gene_table A data frame showing gene presence
 #' @param expression_flux_function a function to convert from gene set expression to flux
 #' 
+#' @return the reaction_table, with a new column, present, and altered upper and lower bounds
+#' 
 #' @export
 #' @import assertthat 
 #' @import dplyr
@@ -16,7 +18,7 @@ gene_associate <- function(reaction_table, gene_table, expression_flux_function 
   assert_that(gene_table %has_name% 'presence')
   
   reaction_table %>%
-    mutate_(present = ~gene_eval(geneAssociation, gene_table$name, gene_table$presence)) %>%
-    mutate_(uppbnd = ~uppbnd*expression_flux_function(present),
-            lowbnd = ~lowbnd*expression_flux_function(present))
+    mutate_(present =~ gene_eval(geneAssociation, gene_table$name, gene_table$presence)) %>%
+    mutate_(uppbnd =~ uppbnd*expression_flux_function(present),
+            lowbnd =~ lowbnd*expression_flux_function(present))
 }

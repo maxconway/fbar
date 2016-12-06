@@ -9,6 +9,12 @@ parse_met_list(mets)
 \arguments{
 \item{mets}{Character vector of halves of reaction equations.}
 }
+\value{
+a \code{date_frame} with columns: \describe{
+  \item{stoich}{the stoichiometric coefficient}
+  \item{met}{the metabolite}
+}
+}
 \description{
 Expand half reaction equations into a long form
 }

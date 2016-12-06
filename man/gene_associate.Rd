@@ -15,6 +15,9 @@ gene_associate(reaction_table, gene_table,
 
 \item{expression_flux_function}{a function to convert from gene set expression to flux}
 }
+\value{
+the reaction_table, with a new column, present, and altered upper and lower bounds
+}
 \description{
 Apply gene expressions to reaction table
 }

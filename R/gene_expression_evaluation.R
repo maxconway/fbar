@@ -30,23 +30,25 @@ multi_subs <- function(names, presences){
 
 #' Function to estimate the expression levels of gene sets
 #' 
-#' @param expressions A list of gene set expression strings: names of genes punctuated with \code{&}, \code{|} and brackets.
+#' @param gene_sets A list of gene set strings: names of genes punctuated with \code{&}, \code{|} and brackets.
 #' @param genes A list of gene names
-#' @param presences A list of gene presences, the same length as 'genes'
+#' @param presences A list of gene presences, the same length as \code{genes}
 #' 
-#' This function evaluates the gene set expressions in the context of the gene presences. 
+#' @return a vector the same length as \code{gene_sets}, with the the calcuated combined gene expression levels.
+#' 
+#' This function evaluates the gene sets in the context of the gene presences. 
 #' It can take booleans, or numbers, in which case it associates \code{&} with finding the minimum, and \code{|} with finding the maximum.
 #' 
 #' @export
-gene_eval <- function(expressions, genes, presences){
-  expressions[expressions=='' | is.na(expressions)] <- NA
+gene_eval <- function(gene_sets, genes, presences){
+  gene_sets[gene_sets=='' | is.na(gene_sets)] <- NA
   e <- multi_subs(genes, presences)
   
   assign('&', liberalmin, e)
   assign('|', liberalmax, e)
   assign('(', `(`, e)
   
-  purrr::map_dbl(expressions, function(x){
+  purrr::map_dbl(gene_sets, function(x){
     eval(parse(text=x),e)
   })
 }

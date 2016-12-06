@@ -3,6 +3,13 @@
 #' @param equations Character vector of reaction equations.
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
 #' 
+#' @return a \code{data_frame}, with columns: \describe{
+#'   \item{reversible}{boolean, is reaction reversible}
+#'   \item{before}{the left hand side of the reaction string}
+#'   \item{after}{the right hand side of the reaction string}
+#' }
+#' 
+#' 
 #' @importFrom magrittr %>%
 #' @import assertthat
 #' @import dplyr
@@ -30,6 +37,11 @@ split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
 #' Expand half reaction equations into a long form
 #' 
 #' @param mets Character vector of halves of reaction equations.
+#' 
+#' @return a \code{date_frame} with columns: \describe{
+#'   \item{stoich}{the stoichiometric coefficient}
+#'   \item{met}{the metabolite}
+#' }
 #' 
 #' @importFrom magrittr %>%
 #' @import dplyr
