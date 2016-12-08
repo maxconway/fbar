@@ -85,11 +85,16 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
 #' @importFrom magrittr %>%
 #' @import dplyr
 find_flux_variability_df <- function(reaction_table, folds=10, do_minimization=TRUE){
-  fluxdf <- data_frame(index=1:folds) %>% 
-    mutate_(data = ~purrr::map(index, function(x){reaction_table})) %>%
-    mutate_(data = ~map(data, sample_frac)) %>%
-    mutate_(data = ~map(data, find_fluxes_df, do_minimization=do_minimization)) %>%
-    mutate_(data = ~map(data, arrange_, 'abbreviation')) %>%
+  replicates <- data_frame(index=1:(folds %/% 2)) %>% 
+    mutate_(data =~ purrr::map(index, function(x){reaction_table})) %>%
+    mutate_(data =~ map(data, sample_frac)) 
+  
+  replicates_reversed <- replicates %>%
+    mutate_(data =~ map(data, function(x){x[nrow(x):1,]}))
+  
+  fluxdf <- bind_rows(replicates, replicates_reversed) %>%
+    mutate_(data =~ map(data, find_fluxes_df, do_minimization=do_minimization)) %>%
+    mutate_(data =~ map(data, arrange_, 'abbreviation')) %>%
     tidyr::unnest() %>%
     select_(~abbreviation, ~flux) %>%
     group_by_(~abbreviation) %>%
