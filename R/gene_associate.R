@@ -1,11 +1,14 @@
 #' Apply gene expressions to reaction table
 #' 
+#' A convenience function that uses \code{\link{gene_eval}} and a custom function to apply new upper and lower bounds.
+#' 
 #' @param reaction_table A data frame describing the metabolic model.
 #' @param gene_table A data frame showing gene presence
 #' @param expression_flux_function a function to convert from gene set expression to flux
 #' 
 #' @return the reaction_table, with a new column, present, and altered upper and lower bounds
 #' 
+#' @seealso gene_eval
 #' @export
 #' @import assertthat 
 #' @import dplyr

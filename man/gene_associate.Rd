@@ -19,6 +19,9 @@ gene_associate(reaction_table, gene_table,
 the reaction_table, with a new column, present, and altered upper and lower bounds
 }
 \description{
-Apply gene expressions to reaction table
+A convenience function that uses \code{\link{gene_eval}} and a custom function to apply new upper and lower bounds.
+}
+\seealso{
+gene_eval
 }
 

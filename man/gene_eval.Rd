@@ -22,4 +22,11 @@ It can take booleans, or numbers, in which case it associates \code{&} with find
 \description{
 Function to estimate the expression levels of gene sets
 }
+\section{Warning}{
+
+This function uses \code{\link{eval}} to evaluate gene expression sets. 
+This gives flexibility, but means that malicious code in the \code{gene_sets} argument could get evaluated.
+\code{gene_sets} is evaluated in a restricted environment, but there might be a way around this, so you might want to check for anything suspicious in this argument manually.
+For more information, read the code.
+}
 
