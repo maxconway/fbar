@@ -220,16 +220,20 @@ reactiontbl_to_gurobi <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 }
 
 # Deprecated functions
+
+#' @export
 expand_reactions <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   .Deprecated('reactiontbl_to_expanded')
   reactiontbl_to_expanded(reaction_table, regex_arrow)$stoich
 }
 
+#' @export
 collapse_reactions_gurobi <- function(reactions_expanded, reaction_table){
   .Deprecated('expanded_to_gurobi')
   expanded_to_gurobi(list(stoich=reactions_expanded, rxns=reaction_table))
 }
 
+#' @export
 parse_reaction_table <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   .Deprecated('reactiontbl_to_gurobi')
   reactiontbl_to_gurobi(reaction_table, regex_arrow)
