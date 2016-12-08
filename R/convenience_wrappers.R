@@ -17,21 +17,22 @@
 #' @import assertthat
 find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef, do_minimization=TRUE){
   mod1 <- tibble::data_frame(abbreviation, equation, lowbnd, uppbnd, obj_coef) %>%
-    reactiontbl_to_gurobi()
+    reactiontbl_to_expanded() %>%
+    expanded_to_ROI()
   
-  res1 <- gurobi::gurobi(mod1, params = list(OutputFlag=0))
+  res1 <- ROI::ROI_solve(mod1)
   
-  if(!('x' %in% names(res1))){
+  if(res1$status$code!=0){
     warning('optimization failed')
     return(0)
   }
   
   if(!do_minimization){
-    return(res1$x)
+    return(res1$solution)
   }
   
   mod2 <- mod1
-  flux <- res1$x
+  flux <- res1$solution
   mod2$lb[flux > 0] <- 0
   mod2$ub[flux < 0] <- 0
   mod2$lb[mod1$obj > 0] <- flux[mod1$obj > 0]
@@ -39,10 +40,10 @@ find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef,
   mod2$obj <- -sign(flux)
   mod2$obj[mod1$obj != 0] <- 0
   
-  res2 <- gurobi::gurobi(mod2, params = list(OutputFlag=0))
-  assert_that(res2 %has_name% 'x')
+  res2 <- ROI::ROI_solve(mod2)
+  assert_that(res1$status$code==0)
   
-  return(res2$x)
+  return(res2$solution)
 }
 
 #' Given a metabolic model as a data frame, return a new data frame with fluxes
