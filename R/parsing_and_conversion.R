@@ -140,7 +140,7 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 
 #' Parse a long format metabolic model to a gurobi model
 #' 
-#' Used as the second half of \code{parse_reactions}, this parses the long format produced by \code{expand_reactions} to a gurobi model
+#' Used as the second half of \code{reactiontbl_to_gurobi}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -189,6 +189,62 @@ expanded_to_gurobi <- function(reactions_expanded){
     lb=rxns$lowbnd,
     ub=rxns$uppbnd,
     modelsense='max'
+  )
+  
+  return(model)
+}
+
+#' Parse a long format metabolic model to a glpk model
+#' 
+#' This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model
+#' 
+#' The \code{reaction_table} must have columns:
+#' \itemize{
+#'  \item \code{abbreviation},
+#'  \item \code{equation},
+#'  \item \code{uppbnd},
+#'  \item \code{lowbnd}, and
+#'  \item \code{obj_coef}.
+#' }
+#' 
+#' @param reactions_expanded A list of data frames as output by \code{reactiontbl_to_expanded}
+#' 
+#' @return A list suitable for input to glpkAPI.
+#' 
+#' @family parsing_and_conversion
+#' @export
+#' @import assertthat 
+#' @import Matrix
+expanded_to_glpk <- function(reactions_expanded){
+  
+  rxns <- reactions_expanded$rxns
+  stoich <- reactions_expanded$stoich
+  mets <- reactions_expanded$mets
+  
+  assert_that('data.frame' %in% class(rxns))
+  assert_that(rxns %has_name% 'abbreviation')
+  assert_that(rxns %has_name% 'uppbnd')
+  assert_that(rxns %has_name% 'lowbnd')
+  assert_that(rxns %has_name% 'obj_coef')
+  
+  stoichiometric_matrix <- Matrix::sparseMatrix(j = match(stoich$abbreviation, rxns$abbreviation),
+                                                i = match(stoich$met, mets$met),
+                                                x = stoich$stoich,
+                                                dims = c(nrow(mets),
+                                                         nrow(rxns)
+                                                ),
+                                                dimnames = list(metabolites=mets$met,
+                                                                reactions=rxns$abbreviation)
+  )
+  
+  model <- list(
+    mat = stoichiometric_matrix,
+    obj = rxns$obj_coef,
+    dir= rep('==', times=nrow(stoichiometric_matrix)),
+    rhs= rep(0, times=nrow(stoichiometric_matrix)),
+    bounds=list(lower=list(ind = seq_along(rxns$lowbnd), val = rxns$lowbnd),
+                upper=list(ind = seq_along(rxns$uppbnd), val = rxns$uppbnd)),
+    max=TRUE
   )
   
   return(model)

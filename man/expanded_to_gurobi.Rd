@@ -13,7 +13,7 @@ expanded_to_gurobi(reactions_expanded)
 A list suitable for input to Gurobi.
 }
 \description{
-Used as the second half of \code{parse_reactions}, this parses the long format produced by \code{expand_reactions} to a gurobi model
+Used as the second half of \code{reactiontbl_to_gurobi}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
 }
 \details{
 The \code{reaction_table} must have columns:
@@ -26,7 +26,8 @@ The \code{reaction_table} must have columns:
 }
 }
 \seealso{
-Other parsing_and_conversion: \code{\link{reactiontbl_to_expanded}},
+Other parsing_and_conversion: \code{\link{expanded_to_glpk}},
+  \code{\link{reactiontbl_to_expanded}},
   \code{\link{reactiontbl_to_gurobi}}
 }
 

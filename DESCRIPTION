@@ -26,6 +26,7 @@ Suggests:
     readr,
     tidyverse,
     ggplot2,
-    plyr
+    plyr,
+    Rglpk
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1.9000
