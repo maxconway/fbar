@@ -103,7 +103,7 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   reactions_expanded_partial_1 <- split_on_arrow(reaction_table[['equation']], regex_arrow) %>%
     mutate_(abbreviation =~ reaction_table[['abbreviation']])
   
-
+  
   reactions_expanded_partial_2 <- bind_rows(
     reactions_expanded_partial_1 %>%
       transmute_(~abbreviation, string =~ before, direction =~ -1),
@@ -209,7 +209,7 @@ expanded_to_gurobi <- function(reactions_expanded){
 #' 
 #' @param reactions_expanded A list of data frames as output by \code{reactiontbl_to_expanded}
 #' 
-#' @return A list suitable for input to glpkAPI.
+#' @return A list suitable for input to Rglpk
 #' 
 #' @family parsing_and_conversion
 #' @export
@@ -250,7 +250,62 @@ expanded_to_glpk <- function(reactions_expanded){
   return(model)
 }
 
-
+#' Parse a long format metabolic model to an ROI model
+#' 
+#' This parses the long format produced by \code{reactiontbl_to_expanded} to an ROI model
+#' 
+#' The \code{reaction_table} must have columns:
+#' \itemize{
+#'  \item \code{abbreviation},
+#'  \item \code{equation},
+#'  \item \code{uppbnd},
+#'  \item \code{lowbnd}, and
+#'  \item \code{obj_coef}.
+#' }
+#' 
+#' @param reactions_expanded A list of data frames as output by \code{reactiontbl_to_expanded}
+#' 
+#' @return A list suitable for input to ROI.
+#' 
+#' @family parsing_and_conversion
+#' @export
+#' @import assertthat 
+#' @import Matrix
+#' @import ROI
+expanded_to_ROI <- function(reactions_expanded){
+  
+  rxns <- reactions_expanded$rxns
+  stoich <- reactions_expanded$stoich
+  mets <- reactions_expanded$mets
+  
+  assert_that('data.frame' %in% class(rxns))
+  assert_that(rxns %has_name% 'abbreviation')
+  assert_that(rxns %has_name% 'uppbnd')
+  assert_that(rxns %has_name% 'lowbnd')
+  assert_that(rxns %has_name% 'obj_coef')
+  
+  stoichiometric_matrix <- Matrix::sparseMatrix(j = match(stoich$abbreviation, rxns$abbreviation),
+                                                i = match(stoich$met, mets$met),
+                                                x = stoich$stoich,
+                                                dims = c(nrow(mets),
+                                                         nrow(rxns)
+                                                ),
+                                                dimnames = list(metabolites=mets$met,
+                                                                reactions=rxns$abbreviation)
+  )
+  
+  problem <- OP(objective = L_objective(L = rxns$obj_coef), 
+                constraints =  L_constraint(L = as.matrix(stoichiometric_matrix), 
+                                            dir = rep('==', times=nrow(stoichiometric_matrix)), 
+                                            rhs = rep(0, times=nrow(stoichiometric_matrix))
+                ),
+                bounds=V_bound(li = seq_along(rxns$lowbnd), lb = rxns$lowbnd,
+                               ui = seq_along(rxns$uppbnd), ub = rxns$uppbnd),
+                maximum = TRUE
+  )
+  
+  return(problem)
+}
 
 
 #' Parse reaction table to Gurobi format

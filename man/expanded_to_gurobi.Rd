@@ -26,7 +26,8 @@ The \code{reaction_table} must have columns:
 }
 }
 \seealso{
-Other parsing_and_conversion: \code{\link{expanded_to_glpk}},
+Other parsing_and_conversion: \code{\link{expanded_to_ROI}},
+  \code{\link{expanded_to_glpk}},
   \code{\link{reactiontbl_to_expanded}},
   \code{\link{reactiontbl_to_gurobi}}
 }
