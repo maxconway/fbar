@@ -1,5 +1,5 @@
 library(testthat)
-library(FluxBalanceAnalyzeR)
+library(fbar)
 library(tidyverse)
 
-test_check("FluxBalanceAnalyzeR")
+test_check("fbar")
