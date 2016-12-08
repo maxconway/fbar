@@ -45,6 +45,7 @@ multi_subs <- function(names, presences){
 #' \code{gene_sets} is evaluated in a restricted environment, but there might be a way around this, so you might want to check for anything suspicious in this argument manually.
 #' For more information, read the code.
 #' 
+#' @seealso gene_associate
 #' @export
 gene_eval <- function(gene_sets, genes, presences){
   gene_sets[gene_sets=='' | is.na(gene_sets)] <- NA

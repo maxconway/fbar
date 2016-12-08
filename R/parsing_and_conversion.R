@@ -82,6 +82,7 @@ parse_met_list <- function(mets){
 #'   \item \code{stoich}, which has one row for each time a metabolite appears in a reaction.
 #' }
 #' 
+#' @family parsing_and_conversion
 #' @export
 #' @importFrom magrittr %>%
 #' @import assertthat
@@ -154,6 +155,7 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' 
 #' @return A list suitable for input to Gurobi.
 #' 
+#' @family parsing_and_conversion
 #' @export
 #' @import assertthat 
 #' @import Matrix
@@ -214,6 +216,7 @@ expanded_to_gurobi <- function(reactions_expanded){
 #' 
 #' @return A list suitable for input to Gurobi.
 #' 
+#' @family parsing_and_conversion
 #' @export
 reactiontbl_to_gurobi <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   expanded_to_gurobi(reactiontbl_to_expanded(reaction_table, regex_arrow))

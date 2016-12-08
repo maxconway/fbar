@@ -25,4 +25,8 @@ The \code{reaction_table} must have columns:
  \item \code{obj_coef}.
 }
 }
+\seealso{
+Other parsing_and_conversion: \code{\link{reactiontbl_to_expanded}},
+  \code{\link{reactiontbl_to_gurobi}}
+}
 
