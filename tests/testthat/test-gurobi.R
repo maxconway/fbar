@@ -1,10 +1,10 @@
-context('toy models')
-library(gurobi)
+context('gurobi')
 
 test_that('toy model 1', {
   skip_if_not_installed('gurobi')
+  library(gurobi)
   
-  model <- parse_reaction_table(dplyr::data_frame(
+  model <- reactiontbl_to_gurobi(dplyr::data_frame(
     abbreviation = c('one', 'two'),
     equation = c('alpha -> beta', 'gamma -> delta'),
     lowbnd = c(-1,-1),
@@ -18,8 +18,9 @@ test_that('toy model 1', {
 
 test_that('toy model 2', {
   skip_if_not_installed('gurobi')
+  library(gurobi)
   
-  model <- parse_reaction_table(dplyr::data_frame(
+  model <- reactiontbl_to_gurobi(dplyr::data_frame(
     abbreviation = c('one', 'two'),
     equation = c('alpha -> ', ' <-> alpha'),
     lowbnd = c(-1,-1),

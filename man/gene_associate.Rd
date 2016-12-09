@@ -5,15 +5,30 @@
 \title{Apply gene expressions to reaction table}
 \usage{
 gene_associate(reaction_table, gene_table,
-  expression_flux_function = function(x) {     (1 + log(x)/sd(x)^2)^sign(x -
-  1) })
+  expression_flux_function = function(x) {     (1 +
+  log(x)/stats::sd(x)^2)^sign(x - 1) })
 }
 \arguments{
 \item{reaction_table}{A data frame describing the metabolic model.}
 
-\item{genes}{A data frame showing gene presence}
+\item{gene_table}{A data frame showing gene presence}
+
+\item{expression_flux_function}{a function to convert from gene set expression to flux}
+}
+\value{
+the reaction_table, with a new column, present, and altered upper and lower bounds
 }
 \description{
-Apply gene expressions to reaction table
+A convenience function that uses \code{\link{gene_eval}} and a custom function to apply new upper and lower bounds.
+}
+\section{Warning}{
+
+This function relies on \code{\link{gene_eval}}, which uses \code{\link{eval}} to evaluate gene expression sets. 
+This gives flexibility, but means that malicious code in the \code{gene_sets} argument could get evaluated.
+\code{gene_sets} is evaluated in a restricted environment, but there might be a way around this, so you might want to check for anything suspicious in this argument manually.
+For more information, read the code.
+}
+\seealso{
+gene_eval
 }
 

@@ -1,15 +1,20 @@
 ---
-title: "Introduction"
-author: "Max Conway"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Introduction}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output: github_document
 ---
 
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
 # fbar
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/fbar)](https://cran.r-project.org/package=fbar)
+
 fbar is a simple, easy to use Flux Balance Analysis package with a tidy data approach. Just `data_frames` and the occasional `list`, no new classes to learn. The focus is on simplicity and speed. Models are expected as a flat table, and results can be simply appended to the table. This makes this package very suitable for useage in pipelines with pre- and post- processing of models and results, so that it works well as a backbone for customized methods. Loading, parsing and evaluating a model takes around 0.1s, which, together with the straightforward data structures used, makes this library very suitable for large parameter sweeps.
 
 ## A Simple Example
@@ -51,7 +56,6 @@ fbar's functions can be considered in three groups: convenience wrappers which p
 These functions wrap common workflows. They parse and evaluate models all in one go.
 
 - `find_fluxes_df` Given a metabolic model as a data frame, return a new data frame with fluxes. For simple FBA, this is what you want.
-- `find_fluxes_vector` Given a metabolic model as vectors, return the flux distribution.
 - `find_flux_varability_df` Given a metabolic model as a data frame, return a new data frame with fluxes and variability.
 
 #### Parsing and conversion
