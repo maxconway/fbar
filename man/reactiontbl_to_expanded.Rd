@@ -31,6 +31,20 @@ The \code{reaction_table} must have columns:
  \item \code{obj_coef}.
 }
 }
+\examples{
+
+data(ecoli_core)
+library(ROI)
+library(dplyr)
+
+roi_result <- ecoli_core \%>\%
+  reactiontbl_to_expanded \%>\%
+  expanded_to_ROI \%>\%
+  ROI_solve()
+
+ecoli_core_with_flux <- ecoli_core \%>\%
+  mutate(flux = roi_result[['solution']])
+}
 \seealso{
 Other parsing_and_conversion: \code{\link{expanded_to_ROI}},
   \code{\link{expanded_to_glpk}},

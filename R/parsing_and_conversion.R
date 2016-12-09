@@ -88,6 +88,20 @@ parse_met_list <- function(mets){
 #' @import assertthat
 #' @import dplyr
 #' @import stringr
+#' 
+#' @examples 
+#' 
+#' data(ecoli_core)
+#' library(ROI)
+#' library(dplyr)
+#'
+#' roi_result <- ecoli_core %>%
+#'   reactiontbl_to_expanded %>%
+#'   expanded_to_ROI %>%
+#'   ROI_solve()
+#'
+#' ecoli_core_with_flux <- ecoli_core %>%
+#'   mutate(flux = roi_result[['solution']])
 reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
@@ -272,6 +286,19 @@ expanded_to_glpk <- function(reactions_expanded){
 #' @import assertthat 
 #' @import Matrix
 #' @import ROI
+#' 
+#' @examples 
+#' data(ecoli_core)
+#' library(ROI)
+#' library(dplyr)
+#'
+#' roi_result <- ecoli_core %>%
+#'   reactiontbl_to_expanded %>%
+#'   expanded_to_ROI %>%
+#'   ROI_solve()
+#'
+#' ecoli_core_with_flux <- ecoli_core %>%
+#'   mutate(flux = roi_result[['solution']])
 expanded_to_ROI <- function(reactions_expanded){
   
   rxns <- reactions_expanded$rxns

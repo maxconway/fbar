@@ -80,7 +80,7 @@ The most used famous package for constraint based methods is probably COBRA, a M
 
 The existing R packages include `sybil` and `abcdeFBA`. 
 
-- `sybil` has a total 750 functions and classes, whereas fbar has only 12 functions; this is mainly because sybil makes extensive use of S4 classes. For instance `sybil` has 10 functions dealing with reaction abbreviations, whereas in fbar the reaction abbreviation is just a normal character vector. For this reason, you'll probably find fbar much faster to get to grips with.
+- `sybil` has a total 750 functions and classes, whereas fbar has only 9 functions; this is mainly because sybil makes extensive use of S4 classes. For instance `sybil` has 10 functions dealing with reaction abbreviations, whereas in fbar the reaction abbreviation is just a normal character vector. For this reason, you'll probably find fbar much faster to get to grips with.
 - `abcdeFBA` is much smaller than `sybil`, so it is another package to try before `sybil`, especially if you can't get hold of Gurobi.
 
 ### Solvers
@@ -89,5 +89,5 @@ fbar works with ROI by default. It also supports Rglpk and Gurobi. Gurobi is rec
 ### Bugs and feature requests
 If you find problems with the package, or there's anything that it doesn't do which you think it should, please submit them to https://github.com/maxconway/fbar/issues. In particular, let me know if there is an optimizer that isn't supported which you would like supported, or if you have a workflow which might make sense for inclusion as a default convenience function.
 
-I'm also open to feature requests
+I'm also open to feature requests.
 
