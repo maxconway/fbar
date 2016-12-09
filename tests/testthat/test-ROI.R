@@ -1,8 +1,8 @@
 context("ROI")
-library(ROI)
 
 test_that('toy model 1', {
   skip_if_not_installed('ROI')
+  library(ROI)
   
   expanded <- reactiontbl_to_expanded(dplyr::data_frame(
     abbreviation = c('one', 'two'),
@@ -21,6 +21,7 @@ test_that('toy model 1', {
 
 test_that('toy model 2', {
   skip_if_not_installed('ROI')
+  library(ROI)
   
   expanded <- reactiontbl_to_expanded(dplyr::data_frame(
     abbreviation = c('one', 'two'),

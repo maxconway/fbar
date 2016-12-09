@@ -15,7 +15,7 @@ find_fluxes_df(reaction_table, do_minimization = TRUE)
 The input data frame with a new numeric column, "\code{flux}".
 }
 \description{
-This function is a wrapper round \code{\link{find_fluxes_vector}}
+Given a metabolic model as a data frame, return a new data frame with fluxes
 }
 \seealso{
 find_fluxes_vector

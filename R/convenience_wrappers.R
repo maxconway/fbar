@@ -1,54 +1,4 @@
-#' Given a metabolic model as a set of vectors, return the flux distribution
-#' 
-#' 
-#' @param abbreviation unique reaction names
-#' @param equation stoichiometric equations of reactions
-#' @param lowbnd minimum reaction rate
-#' @param uppbnd maximum reaction rate
-#' @param obj_coef controls which reactions are maximized or minimised
-#' @param do_minimization toggle to uniformly minimize all non-objective fluxes after finding the objective
-#' 
-#' @return The flux distribution, a numeric vector.
-#' 
-#' @seealso find_fluxes_vector
-#' 
-#' @export
-#' @importFrom magrittr %>%
-#' @import assertthat
-find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef, do_minimization=TRUE){
-  mod1 <- tibble::data_frame(abbreviation, equation, lowbnd, uppbnd, obj_coef) %>%
-    reactiontbl_to_expanded() %>%
-    expanded_to_ROI()
-  
-  res1 <- ROI::ROI_solve(mod1)
-  
-  if(res1$status$code!=0){
-    warning('optimization failed')
-    return(0)
-  }
-  
-  if(!do_minimization){
-    return(res1$solution)
-  }
-  
-  mod2 <- mod1
-  flux <- res1$solution
-  mod2$lb[flux > 0] <- 0
-  mod2$ub[flux < 0] <- 0
-  mod2$lb[mod1$obj > 0] <- flux[mod1$obj > 0]
-  mod2$ub[mod1$obj < 0] <- flux[mod1$obj < 0]
-  mod2$obj <- -sign(flux)
-  mod2$obj[mod1$obj != 0] <- 0
-  
-  res2 <- ROI::ROI_solve(mod2)
-  assert_that(res1$status$code==0)
-  
-  return(res2$solution)
-}
-
 #' Given a metabolic model as a data frame, return a new data frame with fluxes
-#' 
-#' This function is a wrapper round \code{\link{find_fluxes_vector}}
 #' 
 #' @param reaction_table a data frame representing the metabolic model
 #' @param do_minimization toggle to uniformly minimize all non-objective fluxes after finding the objective
@@ -61,13 +11,40 @@ find_fluxes_vector <- function(abbreviation, equation, lowbnd, uppbnd, obj_coef,
 #' @importFrom magrittr %>%
 #' @import dplyr
 find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
-  reaction_table %>%
-    mutate_(flux = ~find_fluxes_vector(abbreviation=abbreviation, 
-                                       equation=equation, lowbnd=lowbnd, 
-                                       uppbnd=uppbnd, 
-                                       obj_coef=obj_coef,
-                                       do_minimization=do_minimization
-    ))
+  mod1 <- reaction_table %>%
+    reactiontbl_to_expanded() %>%
+    expanded_to_ROI()
+  
+  res1 <- ROI::ROI_solve(mod1)
+  
+  if(res1$status$code!=0){
+    warning('optimization failed')
+    return(reaction_table %>%
+             mutate(flux = 0))
+  }
+  
+  if(!do_minimization){
+    return(reaction_table %>%
+             mutate_(flux =~ res1[['solution']])
+    )
+  }
+  
+  mod2 <- reaction_table %>%
+    mutate_(flux =~ res1[['solution']],
+           lowbnd =~ if_else(flux>0,0,lowbnd),
+           uppbnd =~ if_else(flux<0,0,uppbnd),
+           lowbnd =~ if_else(obj_coef>0, flux, lowbnd),
+           uppbnd =~ if_else(obj_coef<0, flux, uppbnd),
+           obj_coef =~ if_else(near(obj_coef,0),-sign(flux), 0)
+           ) %>%
+    reactiontbl_to_expanded() %>%
+    expanded_to_ROI()
+  
+  res2 <- ROI::ROI_solve(mod2)
+  
+  return(reaction_table %>%
+           mutate_(flux =~ res2[['solution']])
+  )
 }
 
 

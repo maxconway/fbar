@@ -17,16 +17,17 @@ Imports:
     purrr,
     tibble,
     stringr,
-    magrittr
+    magrittr,
+    ROI
 Suggests:
     knitr,
     rmarkdown,
     testthat,
-    gurobi,
     readr,
     tidyverse,
     ggplot2,
     plyr,
-    Rglpk
+    Rglpk,
+    ROI.plugin.glpk
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1.9000

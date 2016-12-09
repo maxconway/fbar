@@ -1,8 +1,8 @@
-context('toy models')
-library(gurobi)
+context('gurobi')
 
 test_that('toy model 1', {
   skip_if_not_installed('gurobi')
+  library(gurobi)
   
   model <- reactiontbl_to_gurobi(dplyr::data_frame(
     abbreviation = c('one', 'two'),
@@ -18,6 +18,7 @@ test_that('toy model 1', {
 
 test_that('toy model 2', {
   skip_if_not_installed('gurobi')
+  library(gurobi)
   
   model <- reactiontbl_to_gurobi(dplyr::data_frame(
     abbreviation = c('one', 'two'),

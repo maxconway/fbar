@@ -1,8 +1,8 @@
 context("glpk")
-library(Rglpk)
 
 test_that('toy model 1', {
   skip_if_not_installed('Rglpk')
+  library(Rglpk)
   
   model <- expanded_to_glpk(reactiontbl_to_expanded(dplyr::data_frame(
     abbreviation = c('one', 'two'),
@@ -19,6 +19,7 @@ test_that('toy model 1', {
 
 test_that('toy model 2', {
   skip_if_not_installed('Rglpk')
+  library(Rglpk)
   
   model <- expanded_to_glpk(reactiontbl_to_expanded(dplyr::data_frame(
     abbreviation = c('one', 'two'),
