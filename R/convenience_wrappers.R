@@ -10,6 +10,12 @@
 #' @export
 #' @importFrom magrittr %>%
 #' @import dplyr
+#' 
+#' @examples 
+#' 
+#' data(ecoli_core)
+#'
+#' ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
 find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   mod1 <- reaction_table %>%
     reactiontbl_to_expanded() %>%

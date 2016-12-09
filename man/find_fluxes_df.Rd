@@ -17,6 +17,12 @@ The input data frame with a new numeric column, "\code{flux}".
 \description{
 Given a metabolic model as a data frame, return a new data frame with fluxes
 }
+\examples{
+
+data(ecoli_core)
+
+ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
+}
 \seealso{
 find_fluxes_vector
 }
