@@ -1,7 +1,6 @@
 context("Gene Expression Processing")
 data("ecoli_core")
-library(dplyr)
-library(purrr)
+library(tidyverse)
 library(stringr)
 
 test_that("works with missing values, boolean", {
