@@ -14,6 +14,6 @@ This makes this package very suitable for useage in pipelines with pre- and post
 Loading, parsing and evaluating a model takes around 0.1s, which, together with the straightforward data structures used, makes this library very suitable for large parameter sweeps.
 }
 \details{
-For a list of functions in the package, see \code{vignette('functions','fbar')}
+For a list of functions in the package, see \code{vignette('Introduction','fbar')}
 }
 

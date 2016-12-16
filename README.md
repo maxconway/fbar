@@ -50,23 +50,23 @@ Functions
 
 These functions wrap common workflows. They parse and evaluate models all in one go.
 
--   `find_fluxes_df` Given a metabolic model as a data frame, return a new data frame with fluxes. For simple FBA, this is what you want.
--   `find_flux_varability_df` Given a metabolic model as a data frame, return a new data frame with fluxes and variability.
+-   `find_fluxes_df` - Given a metabolic model as a data frame, return a new data frame with fluxes. For simple FBA, this is what you want.
+-   `find_flux_varability_df` - Given a metabolic model as a data frame, return a new data frame with fluxes and variability.
 
 #### Parsing and conversion
 
 These functions convert metabolic models between different formats.
 
--   `reactiontbl_to_gurobi` Convert a reaction table data frame to gurobi format. This is shorthand for `reactiontbl_to_expanded` followed by `expanded_to_gurobi`.
--   `reactiontbl_to_expanded` Convert a reaction table to an expanded, intermediate, format.
--   `expanded_to_gurobi` Convert a metabolic model in expanded format to a gurobi problem.
+-   `reactiontbl_to_expanded` - Convert a reaction table to an expanded, intermediate, format.
+-   `expanded_to_gurobi`, `expanded_to_glpk` and `expanded_to_ROI` - Convert a metabolic model in expanded format to the input format for a linear programming library.
+-   `reactiontbl_to_gurobi` - Convert a reaction table data frame to gurobi format. This is shorthand for `reactiontbl_to_expanded` followed by `expanded_to_gurobi`.
 
 #### Gene set processing
 
 These functions process gene protein reaction mappings.
 
--   `gene_eval` Evaluate gene sets in the context of particular gene presence levels.
--   `gene_associate` Apply gene presence levels to a metabolic model.
+-   `gene_eval` - Evaluate gene sets in the context of particular gene presence levels.
+-   `gene_associate` - Apply gene presence levels to a metabolic model.
 
 Notes and FAQs
 --------------
@@ -99,7 +99,7 @@ The most famous package for constraint based methods is probably COBRA, a Matlab
 
 The existing R packages for Flux Balance Analysis include `sybil` and `abcdeFBA`.
 
--   `sybil` has a total of 750 functions and classes, whereas `fbar` has only 9 functions; this is mainly because `sybil` makes extensive use of S4 classes. For instance `sybil` has 10 functions dealing with reaction abbreviations, whereas in `fbar` the reaction abbreviation is just a normal character vector. For this reason, you'll probably find `fbar` much faster to get to grips with.
+-   `sybil` has around 750 functions and classes, whereas `fbar` has only 9 functions; this is mainly because `sybil` makes extensive use of S4 classes. For instance `sybil` has 10 functions dealing with reaction abbreviations, whereas in `fbar` the reaction abbreviation is just a normal character vector. For this reason, you'll probably find `fbar` much faster to get to grips with.
 -   `abcdeFBA` is much smaller than `sybil`, however it is still relatively application specific and only supports GLPK, which limits its speed.
 
 Compared to the existing packages, `fbar` is intended to do less, but better. This should make it easier to develop new algorithms and techniques.
