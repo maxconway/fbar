@@ -1,5 +1,6 @@
 context("parsing_and_conversion")
 library(Matrix)
+library(tidyverse)
 
 data("ecoli_core")
 

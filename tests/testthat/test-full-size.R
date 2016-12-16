@@ -1,5 +1,6 @@
 context("full-size")
 data("iJO1366")
+library(tidyverse)
 
 test_models <- list(iJO1366 = iJO1366)
 

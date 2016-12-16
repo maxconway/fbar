@@ -1,11 +1,5 @@
 context("metabolite-parsing")
-
-## TODO: Rename context
-## TODO: Add more tests
-
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
-})
+library(tidyverse)
 
 test_that("tricky equations split correctly", {
   tricky_equations <- c("peptidylproline (omega=180) <=> peptidylproline (omega=0)",
