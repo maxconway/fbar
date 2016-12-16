@@ -101,7 +101,7 @@ The existing R packages for Flux Balance Analysis include `sybil` and `abcdeFBA`
 Compared to the existing packages, `fbar` is intended to do less, but better. This should make it easier to develop new algorithms and techniques.
 
 ### Linear programming solvers
-`fbar` uses [ROI](https://cran.r-project.org/web/packages/ROI/index.html) by default, which gives access to a number of solvers via plugins. It also supports Rglpk and Gurobi directly. [Gurobi](http://www.gurobi.com) is substantially faster than other solvers in my experience, so it is recommended if you can get it (it is commercial, but has a free academic licence).
+`fbar` uses [ROI](https://CRAN.R-project.org/package=ROI) by default, which gives access to a number of solvers via plugins. It also supports Rglpk and Gurobi directly. [Gurobi](http://www.gurobi.com) is substantially faster than other solvers in my experience, so it is recommended if you can get it (it is commercial, but has a free academic licence).
 
 ### Bugs and feature requests
 If you find problems with the package, or there's anything that it doesn't do which you think it should, please submit them to https://github.com/maxconway/fbar/issues. In particular, let me know about optimizers and formats which you'd like supported, or if you have a workflow which might make sense for inclusion as a default convenience function.

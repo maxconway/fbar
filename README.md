@@ -108,7 +108,7 @@ Compared to the existing packages, `fbar` is intended to do less, but better. Th
 
 ### Linear programming solvers
 
-`fbar` uses [ROI](https://cran.r-project.org/web/packages/ROI/index.html) by default, which gives access to a number of solvers via plugins. It also supports Rglpk and Gurobi directly. [Gurobi](http://www.gurobi.com) is substantially faster than other solvers in my experience, so it is recommended if you can get it (it is commercial, but has a free academic licence).
+`fbar` uses [ROI](https://CRAN.R-project.org/package=ROI) by default, which gives access to a number of solvers via plugins. It also supports Rglpk and Gurobi directly. [Gurobi](http://www.gurobi.com) is substantially faster than other solvers in my experience, so it is recommended if you can get it (it is commercial, but has a free academic licence).
 
 ### Bugs and feature requests
 
