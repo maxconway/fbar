@@ -7,7 +7,7 @@
 #' This makes this package very suitable for useage in pipelines with pre- and post- processing of models and results, so that it works well as a backbone for customized methods. 
 #' Loading, parsing and evaluating a model takes around 0.1s, which, together with the straightforward data structures used, makes this library very suitable for large parameter sweeps.
 #' 
-#' For a list of functions in the package, see \code{vignette('functions','fbar')}
+#' For a list of functions in the package, see \code{vignette('Introduction','fbar')}
 #' 
 #' @docType package
 #' @name fbar
