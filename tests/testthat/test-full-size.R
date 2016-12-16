@@ -11,9 +11,9 @@ test_that("find_fluxes_df works in grouped context", {
   
   g <- purrr::map_df(1:10, function(x){iJO1366}, .id='sample') %>%
     group_by(sample) %>%
-    nest() %>%
+    tidyr::nest() %>%
     mutate(data = map(data, find_fluxes_df)) %>%
-    unnest() %>%
+    tidyr::unnest() %>%
     ungroup %>%
     filter(sample=='3') %>%
     select(-sample) %>%
