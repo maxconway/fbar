@@ -3,16 +3,11 @@
 language: r
 sudo: false
 cache: packages
+addons:
+  apt:
+    packages:
+      - libglpk-dev
 branches:
   only:
   - master
   - develop
-  
-matrix:
-  include:
-  - r: devel
-    addons:
-      apt:
-      packages:
-        - libglpk-dev
-  - r: devel
