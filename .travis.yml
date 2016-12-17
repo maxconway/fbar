@@ -7,3 +7,7 @@ addons:
   apt:
     packages:
       - libglpk-dev
+branches:
+  only:
+  - master
+  - develop
