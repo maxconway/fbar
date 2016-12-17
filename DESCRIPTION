@@ -23,10 +23,7 @@ Suggests:
     knitr,
     rmarkdown,
     testthat,
-    readr,
     tidyverse,
-    ggplot2,
-    plyr,
     Rglpk,
     ROI.plugin.glpk
 VignetteBuilder: knitr
