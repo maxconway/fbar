@@ -3,11 +3,18 @@
 language: r
 sudo: false
 cache: packages
-addons:
-  apt:
-    packages:
-      - libglpk-dev
 branches:
   only:
   - master
   - develop
+addons:
+  apt:
+  packages:
+    - libglpk-dev
+  
+matrix:
+  include:
+  - r: devel
+  - r: devel
+    before_script:
+    - echo "if('ROI.plugin.glpk %in% installed.packages()) remove.packages('ROI.plugin.glpk')" | R BATCH --no-save
