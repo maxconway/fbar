@@ -95,13 +95,16 @@ parse_met_list <- function(mets){
 #' library(ROI)
 #' library(dplyr)
 #'
-#' roi_result <- ecoli_core %>%
+#' roi_model <- ecoli_core %>%
 #'   reactiontbl_to_expanded %>%
-#'   expanded_to_ROI %>%
-#'   ROI_solve()
-#'
-#' ecoli_core_with_flux <- ecoli_core %>%
-#'   mutate(flux = roi_result[['solution']])
+#'   expanded_to_ROI
+#'   
+#' if(length(ROI_applicable_solvers(model))>=1){
+#'   roi_result <- ROI_solve(model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = roi_result[['solution']])
+#' }
 reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
@@ -173,6 +176,21 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' @export
 #' @import assertthat 
 #' @import Matrix
+#' 
+#' @examples 
+#' data(ecoli_core)
+#' library(dplyr)
+#'
+#' gurobi_model <- ecoli_core %>%
+#'   reactiontbl_to_expanded %>%
+#'   expanded_to_gurobi
+#'   
+#' if(requireNamespace('gurobi', quietly=TRUE)){
+#'   gurobi <- gurobi(model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = guorbi_result[['solution']])
+#' }
 expanded_to_gurobi <- function(reactions_expanded){
   
   rxns <- reactions_expanded$rxns
@@ -229,6 +247,20 @@ expanded_to_gurobi <- function(reactions_expanded){
 #' @export
 #' @import assertthat 
 #' @import Matrix
+#' @example 
+#' data(ecoli_core)
+#' library(dplyr)
+#'
+#' glpk_model <- ecoli_core %>%
+#'   reactiontbl_to_expanded %>%
+#'   expanded_to_glpk
+#'   
+#' if(requireNamespace(glpk, quietly=TRUE)){
+#'   glpk_result <- purrr::lift_dl(Rglpk_solve_LP)(model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = glpk_result[['solution']])
+#' }
 expanded_to_glpk <- function(reactions_expanded){
   
   rxns <- reactions_expanded$rxns
@@ -289,16 +321,17 @@ expanded_to_glpk <- function(reactions_expanded){
 #' 
 #' @examples 
 #' data(ecoli_core)
-#' library(ROI)
 #' library(dplyr)
 #'
-#' roi_result <- ecoli_core %>%
-#'   reactiontbl_to_expanded %>%
-#'   expanded_to_ROI %>%
-#'   ROI_solve()
-#'
-#' ecoli_core_with_flux <- ecoli_core %>%
-#'   mutate(flux = roi_result[['solution']])
+#' roi_model <- ecoli_core %>%
+#'   reactiontbl_to_guorbi
+#'   
+#' if(length(ROI_applicable_solvers(model))>=1){
+#'   roi_result <- ROI_solve(model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = roi_result[['solution']])
+#' }
 expanded_to_ROI <- function(reactions_expanded){
   
   rxns <- reactions_expanded$rxns
@@ -356,6 +389,21 @@ expanded_to_ROI <- function(reactions_expanded){
 #' 
 #' @family parsing_and_conversion
 #' @export
+#' 
+#' @examples 
+#' data(ecoli_core)
+#' library(dplyr)
+#'
+#' gurobi_model <- ecoli_core %>%
+#'   reactiontbl_to_expanded %>%
+#'   expanded_to_gurobi
+#'   
+#' if(requireNamespace('gurobi', quietly=TRUE)){
+#'   gurobi <- gurobi(model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = guorbi_result[['solution']])
+#' }
 reactiontbl_to_gurobi <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   expanded_to_gurobi(reactiontbl_to_expanded(reaction_table, regex_arrow))
 }
