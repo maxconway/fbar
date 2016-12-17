@@ -1,5 +1,10 @@
 #' Given a metabolic model as a data frame, return a new data frame with fluxes
 #' 
+#' @details 
+#' This function uses ROI, so to solve models, you will need a solver plugin for ROI. Probably the easiest one to install is ROI.plugin.glpk.
+#' To install this in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
+#'
+#' 
 #' @param reaction_table a data frame representing the metabolic model
 #' @param do_minimization toggle to uniformly minimize all non-objective fluxes after finding the objective
 #' 
@@ -12,14 +17,18 @@
 #' @import dplyr
 #' 
 #' @examples 
-#' 
+#' \dontrun{
 #' data(ecoli_core)
-#'
 #' ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
+#' }
 find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   mod1 <- reaction_table %>%
     reactiontbl_to_expanded() %>%
     expanded_to_ROI()
+  
+  if(length(ROI_applicable_solvers(mod1))<1){
+    stop("ROI found no suitable solver found. The documentation includes instructions on how to install one.")
+  }
   
   res1 <- ROI::ROI_solve(mod1)
   
@@ -58,6 +67,11 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
 #' 
 #' This function calculates fluxes \code{folds} times with shuffled versions of the metabolic model.
 #' This is designed to detect and quantify underdetermined fluxes.
+#' 
+#' @details 
+#' This function uses ROI, so to solve models, you will need a solver plugin for ROI. Probably the easiest one to install is ROI.plugin.glpk.
+#' To install this in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
+#'
 #' 
 #' @param reaction_table a data frame representing the metabolic model
 #' @param folds number of times to calculate fluxes

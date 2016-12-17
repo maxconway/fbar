@@ -20,4 +20,8 @@ reaction_table with two added columns: sd (the standard deviation of fluxes foun
 This function calculates fluxes \code{folds} times with shuffled versions of the metabolic model.
 This is designed to detect and quantify underdetermined fluxes.
 }
+\details{
+This function uses ROI, so to solve models, you will need a solver plugin for ROI. Probably the easiest one to install is ROI.plugin.glpk.
+To install this in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
+}
 

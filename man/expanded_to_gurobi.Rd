@@ -36,7 +36,7 @@ gurobi_model <- ecoli_core \%>\%
   expanded_to_gurobi
   
 if(requireNamespace('gurobi', quietly=TRUE)){
-  gurobi <- gurobi(model)
+  gurobi <- gurobi(gurobi_model)
   
   ecoli_core_with_flux <- ecoli_core \%>\%
     mutate(flux = guorbi_result[['solution']])

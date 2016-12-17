@@ -17,11 +17,15 @@ The input data frame with a new numeric column, "\code{flux}".
 \description{
 Given a metabolic model as a data frame, return a new data frame with fluxes
 }
+\details{
+This function uses ROI, so to solve models, you will need a solver plugin for ROI. Probably the easiest one to install is ROI.plugin.glpk.
+To install this in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
+}
 \examples{
-
+\dontrun{
 data(ecoli_core)
-
 ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
+}
 }
 \seealso{
 find_fluxes_vector

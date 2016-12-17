@@ -27,6 +27,21 @@ The \code{reaction_table} must have columns:
  \item \code{obj_coef}.
 }
 }
+\examples{
+data(ecoli_core)
+library(dplyr)
+
+glpk_model <- ecoli_core \%>\%
+  reactiontbl_to_expanded \%>\%
+  expanded_to_glpk
+  
+if(requireNamespace(glpk, quietly=TRUE)){
+  glpk_result <- purrr::lift_dl(Rglpk_solve_LP)(glpk_model)
+  
+  ecoli_core_with_flux <- ecoli_core \%>\%
+    mutate(flux = glpk_result[['solution']])
+}
+}
 \seealso{
 Other parsing_and_conversion: \code{\link{expanded_to_ROI}},
   \code{\link{expanded_to_gurobi}},

@@ -99,8 +99,8 @@ parse_met_list <- function(mets){
 #'   reactiontbl_to_expanded %>%
 #'   expanded_to_ROI
 #'   
-#' if(length(ROI_applicable_solvers(model))>=1){
-#'   roi_result <- ROI_solve(model)
+#' if(length(ROI_applicable_solvers(roi_model))>=1){
+#'   roi_result <- ROI_solve(roi_model)
 #'   
 #'   ecoli_core_with_flux <- ecoli_core %>%
 #'     mutate(flux = roi_result[['solution']])
@@ -189,7 +189,7 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #'   expanded_to_gurobi
 #'   
 #' if(requireNamespace('gurobi', quietly=TRUE)){
-#'   gurobi <- gurobi(model)
+#'   gurobi <- gurobi(gurobi_model)
 #'   
 #'   ecoli_core_with_flux <- ecoli_core %>%
 #'     mutate(flux = guorbi_result[['solution']])
@@ -253,7 +253,7 @@ expanded_to_gurobi <- function(reactions_expanded){
 #' @export
 #' @import assertthat 
 #' @import Matrix
-#' @example 
+#' @examples
 #' data(ecoli_core)
 #' library(dplyr)
 #'
@@ -262,7 +262,7 @@ expanded_to_gurobi <- function(reactions_expanded){
 #'   expanded_to_glpk
 #'   
 #' if(requireNamespace(glpk, quietly=TRUE)){
-#'   glpk_result <- purrr::lift_dl(Rglpk_solve_LP)(model)
+#'   glpk_result <- purrr::lift_dl(Rglpk_solve_LP)(glpk_model)
 #'   
 #'   ecoli_core_with_flux <- ecoli_core %>%
 #'     mutate(flux = glpk_result[['solution']])
@@ -331,13 +331,15 @@ expanded_to_glpk <- function(reactions_expanded){
 #' 
 #' @examples 
 #' data(ecoli_core)
+#' library(ROI)
 #' library(dplyr)
 #'
 #' roi_model <- ecoli_core %>%
-#'   reactiontbl_to_guorbi
+#'   reactiontbl_to_expanded %>%
+#'   expanded_to_ROI
 #'   
-#' if(length(ROI_applicable_solvers(model))>=1){
-#'   roi_result <- ROI_solve(model)
+#' if(length(ROI_applicable_solvers(roi_model))>=1){
+#'   roi_result <- ROI_solve(roi_model)
 #'   
 #'   ecoli_core_with_flux <- ecoli_core %>%
 #'     mutate(flux = roi_result[['solution']])
@@ -409,7 +411,7 @@ expanded_to_ROI <- function(reactions_expanded){
 #'   expanded_to_gurobi
 #'   
 #' if(requireNamespace('gurobi', quietly=TRUE)){
-#'   gurobi <- gurobi(model)
+#'   gurobi <- gurobi(gurobi_model)
 #'   
 #'   ecoli_core_with_flux <- ecoli_core %>%
 #'     mutate(flux = guorbi_result[['solution']])

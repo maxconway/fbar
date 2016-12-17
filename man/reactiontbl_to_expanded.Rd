@@ -41,8 +41,8 @@ roi_model <- ecoli_core \%>\%
   reactiontbl_to_expanded \%>\%
   expanded_to_ROI
   
-if(length(ROI_applicable_solvers(model))>=1){
-  roi_result <- ROI_solve(model)
+if(length(ROI_applicable_solvers(roi_model))>=1){
+  roi_result <- ROI_solve(roi_model)
   
   ecoli_core_with_flux <- ecoli_core \%>\%
     mutate(flux = roi_result[['solution']])
