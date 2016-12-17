@@ -3,5 +3,7 @@
 language: R
 sudo: false
 cache: packages
-apt_packages:
-  - libglpk-dev
+addons:
+  apt:
+    packages:
+      - libglpk-dev
