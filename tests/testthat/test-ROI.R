@@ -14,6 +14,8 @@ test_that('toy model 1', {
   
   model <- expanded_to_ROI(expanded)
   
+  skip_if_not(length(ROI_applicable_solvers(model))>=1)
+  
   result <- ROI_solve(model)
   
   expect_equal(result$status$code, 0)
@@ -33,8 +35,9 @@ test_that('toy model 2', {
   
   model <- expanded_to_ROI(expanded)
   
+  skip_if_not(length(ROI_applicable_solvers(model))>=1)
+  
   result <- ROI_solve(model)
-  model <- expanded_to_ROI(expanded)
   
   expect_equal(result$status$code, 0)
   expect_equal(result$objval, 3)
