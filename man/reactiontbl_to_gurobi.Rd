@@ -16,6 +16,7 @@ A list suitable for input to Gurobi.
 }
 \description{
 Parses a reaction table to give a list in Gurobi's input format.
+This function is a shorthand for \code{\link{reactiontbl_to_expanded}} followed by \code{\link{expanded_to_gurobi}}.
 }
 \details{
 The \code{reaction_table} must have columns:
@@ -25,6 +26,21 @@ The \code{reaction_table} must have columns:
  \item \code{uppbnd},
  \item \code{lowbnd}, and
  \item \code{obj_coef}.
+}
+}
+\examples{
+data(ecoli_core)
+library(dplyr)
+
+gurobi_model <- ecoli_core \%>\%
+  reactiontbl_to_expanded \%>\%
+  expanded_to_gurobi
+  
+if(requireNamespace('gurobi', quietly=TRUE)){
+  gurobi <- gurobi(model)
+  
+  ecoli_core_with_flux <- ecoli_core \%>\%
+    mutate(flux = guorbi_result[['solution']])
 }
 }
 \seealso{

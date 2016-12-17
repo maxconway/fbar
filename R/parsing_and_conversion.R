@@ -62,7 +62,7 @@ parse_met_list <- function(mets){
 
 #' Parse a reaction table to an intermediate, long format
 #' 
-#' Used as the first half of \code{reactiontbl_to_gurobi}. The long format can also be suitable for manipulating equations.
+#' The long format can also be suitable for manipulating equations.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -157,7 +157,10 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 
 #' Parse a long format metabolic model to a gurobi model
 #' 
-#' Used as the second half of \code{reactiontbl_to_gurobi}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
+#' Used as the second half of \code{\link{reactiontbl_to_gurobi}}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
+#' 
+#' @details 
+#' For installation instructions for Gurobi, refer to the Gurobi website: \url{http://www.gurobi.com/}.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -228,7 +231,10 @@ expanded_to_gurobi <- function(reactions_expanded){
 
 #' Parse a long format metabolic model to a glpk model
 #' 
-#' This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model
+#' This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model.
+#' 
+#' @details 
+#' To install the Rglpk package in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('Rglpk')} in R.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -298,7 +304,11 @@ expanded_to_glpk <- function(reactions_expanded){
 
 #' Parse a long format metabolic model to an ROI model
 #' 
-#' This parses the long format produced by \code{reactiontbl_to_expanded} to an ROI model
+#' This parses the long format produced by \code{reactiontbl_to_expanded} to an ROI model.
+#' 
+#' @details 
+#' To solve models using ROI, you will need a solver plugin for ROI. Probably the easiest one to install is ROI.plugin.glpk.
+#' To install this in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -371,7 +381,7 @@ expanded_to_ROI <- function(reactions_expanded){
 #' Parse reaction table to Gurobi format
 #' 
 #' Parses a reaction table to give a list in Gurobi's input format.
-#' 
+#' This function is a shorthand for \code{\link{reactiontbl_to_expanded}} followed by \code{\link{expanded_to_gurobi}}.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{

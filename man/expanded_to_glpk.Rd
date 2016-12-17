@@ -13,9 +13,11 @@ expanded_to_glpk(reactions_expanded)
 A list suitable for input to Rglpk
 }
 \description{
-This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model
+This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model.
 }
 \details{
+To install the Rglpk package in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('Rglpk')} in R.
+
 The \code{reaction_table} must have columns:
 \itemize{
  \item \code{abbreviation},
