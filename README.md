@@ -3,6 +3,8 @@
 fbar
 ====
 
+[![Travis-CI Build Status](https://travis-ci.org/NA/NA.svg?branch=master)](https://travis-ci.org/NA/NA)
+
 `fbar` is a simple, easy to use Flux Balance Analysis package with a tidy data approach. Just `data_frames` and the occasional `list`, no new classes to learn. The focus is on simplicity and speed. Models are expected as a flat table, and results can be simply appended to the table. This makes this package very suitable for useage in pipelines with pre- and post- processing of models and results, so that it works well as a backbone for customized methods. Loading, parsing and evaluating a model takes around 0.1s, which, together with the straightforward data structures used, makes this library very suitable for large parameter sweeps.
 
 A Simple Example
@@ -97,12 +99,7 @@ install.packages('ROI.plugin.glpk')
 
 The most famous package for constraint based methods is probably COBRA, a Matlab package. If you prefer Matlab to R, you'll probably want to try that before `fbar`.
 
-The existing R packages for Flux Balance Analysis include `sybil` and `abcdeFBA`.
-
--   `sybil` has around 750 functions and classes, whereas `fbar` has only 9 functions; this is mainly because `sybil` makes extensive use of S4 classes. For instance `sybil` has 10 functions dealing with reaction abbreviations, whereas in `fbar` the reaction abbreviation is just a normal character vector. For this reason, you'll probably find `fbar` much faster to get to grips with.
--   `abcdeFBA` is much smaller than `sybil`, however it is still relatively application specific and only supports GLPK, which limits its speed.
-
-Compared to the existing packages, `fbar` is intended to do less, but better. This should make it easier to develop new algorithms and techniques.
+The existing R packages for Flux Balance Analysis include `sybil` and `abcdeFBA`. Compared to these packages, `fbar` is smaller and does less. The aim of `fbar` is to be more suitable for use as a building block in bioinformatics pipelines. Whereas `sybil` and to a lesser extent `abcdeFBA` intend to act as tools with a function for each analysis you might want to do, `fbar` intends to supply just enough functionality that you can easily construct your analysis with only standard data frame operations.
 
 ### Linear programming solvers
 
