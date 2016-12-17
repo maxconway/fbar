@@ -1,4 +1,4 @@
-# fbar 0.1.11
+# fbar 0.1.12
 
 - Tweaks and updates for CRAN submission
 
