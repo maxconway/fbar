@@ -2,7 +2,7 @@
 % Please edit documentation in R/parsing_and_conversion.R
 \name{split_on_arrow}
 \alias{split_on_arrow}
-\title{Internal function for splitting reaction equation into substrate and product}
+\title{Internal function: Splitting reaction equation into substrate and product}
 \usage{
 split_on_arrow(equations, regex_arrow = "<?[-=]+>")
 }
@@ -19,6 +19,6 @@ a \code{data_frame}, with columns: \describe{
 }
 }
 \description{
-Internal function for splitting reaction equation into substrate and product
+Internal function: Splitting reaction equation into substrate and product
 }
 

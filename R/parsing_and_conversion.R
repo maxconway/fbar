@@ -1,4 +1,4 @@
-#' Internal function for splitting reaction equation into substrate and product
+#' Internal function: Splitting reaction equation into substrate and product
 #' 
 #' @param equations Character vector of reaction equations.
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
@@ -34,7 +34,7 @@ split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
 }
 
 
-#' Expand half reaction equations into a long form
+#' Internal function: Expand half reaction equations into a long form
 #' 
 #' @param mets Character vector of halves of reaction equations.
 #' 
