@@ -3,6 +3,7 @@ This is a resubmission. In this version I have:
 
 - Added checks to test and examples so that they are skipped correctly when no appropriate LP solver is available.
 - Added more documentation and examples on use of different LP solvers
+- Updated tests for cleaner output
 
 ## Test environments
 * ubuntu 12.04, R 3.3.2

@@ -2,6 +2,7 @@
 
 - Checks and filters in tests, vigentte and examples to remove implicit dependency on ROI.plugin.glpk.
 - Other pdates and improvements to documentation and examples.
+- Updated tests for cleaner output
 
 # fbar 0.1.12
 
