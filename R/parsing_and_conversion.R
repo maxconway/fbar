@@ -1,4 +1,4 @@
-#' Internal function for splitting reaction equation into substrate and product
+#' Internal function: Splitting reaction equation into substrate and product
 #' 
 #' @param equations Character vector of reaction equations.
 #' @param regex_arrow Regular expression for the arrow splitting sides of the reaction equation.
@@ -34,7 +34,7 @@ split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
 }
 
 
-#' Expand half reaction equations into a long form
+#' Internal function: Expand half reaction equations into a long form
 #' 
 #' @param mets Character vector of halves of reaction equations.
 #' 
@@ -62,7 +62,7 @@ parse_met_list <- function(mets){
 
 #' Parse a reaction table to an intermediate, long format
 #' 
-#' Used as the first half of \code{reactiontbl_to_gurobi}. The long format can also be suitable for manipulating equations.
+#' The long format can also be suitable for manipulating equations.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -94,14 +94,18 @@ parse_met_list <- function(mets){
 #' data(ecoli_core)
 #' library(ROI)
 #' library(dplyr)
+#' try(library(ROI.plugin.glpk)) # make a solver available to ROI
 #'
-#' roi_result <- ecoli_core %>%
+#' roi_model <- ecoli_core %>%
 #'   reactiontbl_to_expanded %>%
-#'   expanded_to_ROI %>%
-#'   ROI_solve()
-#'
-#' ecoli_core_with_flux <- ecoli_core %>%
-#'   mutate(flux = roi_result[['solution']])
+#'   expanded_to_ROI
+#'   
+#' if(length(ROI_applicable_solvers(roi_model))>=1){
+#'   roi_result <- ROI_solve(roi_model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = roi_result[['solution']])
+#' }
 reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
   assert_that(reaction_table %has_name% 'abbreviation')
@@ -154,7 +158,10 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 
 #' Parse a long format metabolic model to a gurobi model
 #' 
-#' Used as the second half of \code{reactiontbl_to_gurobi}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
+#' Used as the second half of \code{\link{reactiontbl_to_gurobi}}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
+#' 
+#' @details 
+#' For installation instructions for Gurobi, refer to the Gurobi website: \url{http://www.gurobi.com/}.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -173,6 +180,23 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' @export
 #' @import assertthat 
 #' @import Matrix
+#' 
+#' @examples 
+#' data(ecoli_core)
+#' library(dplyr)
+#'
+#' gurobi_model <- ecoli_core %>%
+#'   reactiontbl_to_expanded %>%
+#'   expanded_to_gurobi
+#'   
+#' \dontrun{
+#' if(requireNamespace('gurobi', quietly=TRUE)){
+#'   gurobi <- gurobi(gurobi_model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = guorbi_result[['solution']])
+#' }
+#' }
 expanded_to_gurobi <- function(reactions_expanded){
   
   rxns <- reactions_expanded$rxns
@@ -210,7 +234,10 @@ expanded_to_gurobi <- function(reactions_expanded){
 
 #' Parse a long format metabolic model to a glpk model
 #' 
-#' This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model
+#' This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model.
+#' 
+#' @details 
+#' To install the Rglpk package in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('Rglpk')} in R.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -229,6 +256,21 @@ expanded_to_gurobi <- function(reactions_expanded){
 #' @export
 #' @import assertthat 
 #' @import Matrix
+#' @examples
+#' data(ecoli_core)
+#' library(dplyr)
+#'
+#' glpk_model <- ecoli_core %>%
+#'   reactiontbl_to_expanded %>%
+#'   expanded_to_glpk
+#'   
+#' if(requireNamespace('Rglpk', quietly=TRUE)){
+#' 
+#'   glpk_result <- purrr::lift_dl(Rglpk::Rglpk_solve_LP)(glpk_model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = glpk_result[['solution']])
+#' }
 expanded_to_glpk <- function(reactions_expanded){
   
   rxns <- reactions_expanded$rxns
@@ -266,7 +308,11 @@ expanded_to_glpk <- function(reactions_expanded){
 
 #' Parse a long format metabolic model to an ROI model
 #' 
-#' This parses the long format produced by \code{reactiontbl_to_expanded} to an ROI model
+#' This parses the long format produced by \code{reactiontbl_to_expanded} to an ROI model.
+#' 
+#' @details 
+#' To solve models using ROI, you will need a solver plugin for ROI. Probably the easiest one to install is ROI.plugin.glpk.
+#' To install this in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -291,14 +337,18 @@ expanded_to_glpk <- function(reactions_expanded){
 #' data(ecoli_core)
 #' library(ROI)
 #' library(dplyr)
+#' try(library(ROI.plugin.glpk)) # make a solver available to ROI
 #'
-#' roi_result <- ecoli_core %>%
+#' roi_model <- ecoli_core %>%
 #'   reactiontbl_to_expanded %>%
-#'   expanded_to_ROI %>%
-#'   ROI_solve()
-#'
-#' ecoli_core_with_flux <- ecoli_core %>%
-#'   mutate(flux = roi_result[['solution']])
+#'   expanded_to_ROI
+#'   
+#' if(length(ROI_applicable_solvers(roi_model))>=1){
+#'   roi_result <- ROI_solve(roi_model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = roi_result[['solution']])
+#' }
 expanded_to_ROI <- function(reactions_expanded){
   
   rxns <- reactions_expanded$rxns
@@ -338,7 +388,7 @@ expanded_to_ROI <- function(reactions_expanded){
 #' Parse reaction table to Gurobi format
 #' 
 #' Parses a reaction table to give a list in Gurobi's input format.
-#' 
+#' This function is a shorthand for \code{\link{reactiontbl_to_expanded}} followed by \code{\link{expanded_to_gurobi}}.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{
@@ -356,6 +406,23 @@ expanded_to_ROI <- function(reactions_expanded){
 #' 
 #' @family parsing_and_conversion
 #' @export
+#' 
+#' @examples 
+#' data(ecoli_core)
+#' library(dplyr)
+#'
+#' gurobi_model <- ecoli_core %>%
+#'   reactiontbl_to_expanded %>%
+#'   expanded_to_gurobi
+#'   
+#' \dontrun{   
+#' if(requireNamespace('gurobi', quietly=TRUE)){
+#'   gurobi <- gurobi(gurobi_model)
+#'   
+#'   ecoli_core_with_flux <- ecoli_core %>%
+#'     mutate(flux = guorbi_result[['solution']])
+#' }
+#' }
 reactiontbl_to_gurobi <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   expanded_to_gurobi(reactiontbl_to_expanded(reaction_table, regex_arrow))
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/parsing_and_conversion.R
 \name{parse_met_list}
 \alias{parse_met_list}
-\title{Expand half reaction equations into a long form}
+\title{Internal function: Expand half reaction equations into a long form}
 \usage{
 parse_met_list(mets)
 }
@@ -16,6 +16,6 @@ a \code{date_frame} with columns: \describe{
 }
 }
 \description{
-Expand half reaction equations into a long form
+Internal function: Expand half reaction equations into a long form
 }
 

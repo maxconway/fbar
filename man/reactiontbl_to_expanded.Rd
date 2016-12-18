@@ -19,7 +19,7 @@ A list of data frames: \itemize{
 }
 }
 \description{
-Used as the first half of \code{reactiontbl_to_gurobi}. The long format can also be suitable for manipulating equations.
+The long format can also be suitable for manipulating equations.
 }
 \details{
 The \code{reaction_table} must have columns:
@@ -36,14 +36,18 @@ The \code{reaction_table} must have columns:
 data(ecoli_core)
 library(ROI)
 library(dplyr)
+try(library(ROI.plugin.glpk)) # make a solver available to ROI
 
-roi_result <- ecoli_core \%>\%
+roi_model <- ecoli_core \%>\%
   reactiontbl_to_expanded \%>\%
-  expanded_to_ROI \%>\%
-  ROI_solve()
-
-ecoli_core_with_flux <- ecoli_core \%>\%
-  mutate(flux = roi_result[['solution']])
+  expanded_to_ROI
+  
+if(length(ROI_applicable_solvers(roi_model))>=1){
+  roi_result <- ROI_solve(roi_model)
+  
+  ecoli_core_with_flux <- ecoli_core \%>\%
+    mutate(flux = roi_result[['solution']])
+}
 }
 \seealso{
 Other parsing_and_conversion: \code{\link{expanded_to_ROI}},

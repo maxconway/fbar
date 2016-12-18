@@ -13,9 +13,11 @@ expanded_to_gurobi(reactions_expanded)
 A list suitable for input to Gurobi.
 }
 \description{
-Used as the second half of \code{reactiontbl_to_gurobi}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
+Used as the second half of \code{\link{reactiontbl_to_gurobi}}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
 }
 \details{
+For installation instructions for Gurobi, refer to the Gurobi website: \url{http://www.gurobi.com/}.
+
 The \code{reaction_table} must have columns:
 \itemize{
  \item \code{abbreviation},
@@ -23,6 +25,23 @@ The \code{reaction_table} must have columns:
  \item \code{uppbnd},
  \item \code{lowbnd}, and
  \item \code{obj_coef}.
+}
+}
+\examples{
+data(ecoli_core)
+library(dplyr)
+
+gurobi_model <- ecoli_core \%>\%
+  reactiontbl_to_expanded \%>\%
+  expanded_to_gurobi
+  
+\dontrun{
+if(requireNamespace('gurobi', quietly=TRUE)){
+  gurobi <- gurobi(gurobi_model)
+  
+  ecoli_core_with_flux <- ecoli_core \%>\%
+    mutate(flux = guorbi_result[['solution']])
+}
 }
 }
 \seealso{

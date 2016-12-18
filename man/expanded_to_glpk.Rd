@@ -13,9 +13,11 @@ expanded_to_glpk(reactions_expanded)
 A list suitable for input to Rglpk
 }
 \description{
-This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model
+This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model.
 }
 \details{
+To install the Rglpk package in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('Rglpk')} in R.
+
 The \code{reaction_table} must have columns:
 \itemize{
  \item \code{abbreviation},
@@ -23,6 +25,22 @@ The \code{reaction_table} must have columns:
  \item \code{uppbnd},
  \item \code{lowbnd}, and
  \item \code{obj_coef}.
+}
+}
+\examples{
+data(ecoli_core)
+library(dplyr)
+
+glpk_model <- ecoli_core \%>\%
+  reactiontbl_to_expanded \%>\%
+  expanded_to_glpk
+  
+if(requireNamespace('Rglpk', quietly=TRUE)){
+
+  glpk_result <- purrr::lift_dl(Rglpk::Rglpk_solve_LP)(glpk_model)
+  
+  ecoli_core_with_flux <- ecoli_core \%>\%
+    mutate(flux = glpk_result[['solution']])
 }
 }
 \seealso{

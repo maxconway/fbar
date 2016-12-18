@@ -13,9 +13,12 @@ expanded_to_ROI(reactions_expanded)
 A list suitable for input to ROI.
 }
 \description{
-This parses the long format produced by \code{reactiontbl_to_expanded} to an ROI model
+This parses the long format produced by \code{reactiontbl_to_expanded} to an ROI model.
 }
 \details{
+To solve models using ROI, you will need a solver plugin for ROI. Probably the easiest one to install is ROI.plugin.glpk.
+To install this in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
+
 The \code{reaction_table} must have columns:
 \itemize{
  \item \code{abbreviation},
@@ -29,14 +32,18 @@ The \code{reaction_table} must have columns:
 data(ecoli_core)
 library(ROI)
 library(dplyr)
+try(library(ROI.plugin.glpk)) # make a solver available to ROI
 
-roi_result <- ecoli_core \%>\%
+roi_model <- ecoli_core \%>\%
   reactiontbl_to_expanded \%>\%
-  expanded_to_ROI \%>\%
-  ROI_solve()
-
-ecoli_core_with_flux <- ecoli_core \%>\%
-  mutate(flux = roi_result[['solution']])
+  expanded_to_ROI
+  
+if(length(ROI_applicable_solvers(roi_model))>=1){
+  roi_result <- ROI_solve(roi_model)
+  
+  ecoli_core_with_flux <- ecoli_core \%>\%
+    mutate(flux = roi_result[['solution']])
+}
 }
 \seealso{
 Other parsing_and_conversion: \code{\link{expanded_to_glpk}},

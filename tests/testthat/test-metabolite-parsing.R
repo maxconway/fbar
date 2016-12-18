@@ -1,5 +1,5 @@
 context("metabolite-parsing")
-library(tidyverse)
+suppressMessages(library(tidyverse))
 
 test_that("tricky equations split correctly", {
   tricky_equations <- c("peptidylproline (omega=180) <=> peptidylproline (omega=0)",

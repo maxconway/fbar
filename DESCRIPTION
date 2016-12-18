@@ -1,8 +1,8 @@
 Package: fbar
 Type: Package
 Title: Flux Balance Analysis in R
-Version: 0.1.12
-Date: 2016-12-17
+Version: 0.1.13
+Date: 2016-12-18
 Authors@R: person("Max", "Conway", email = "conway.max1@gmail.com",
                   role = c("aut", "cre"))
 Description: An extensible, tidy data approach to metabolic modelling.
@@ -23,10 +23,7 @@ Suggests:
     knitr,
     rmarkdown,
     testthat,
-    readr,
     tidyverse,
-    ggplot2,
-    plyr,
     Rglpk,
     ROI.plugin.glpk
 VignetteBuilder: knitr
