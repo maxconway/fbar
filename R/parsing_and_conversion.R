@@ -94,6 +94,7 @@ parse_met_list <- function(mets){
 #' data(ecoli_core)
 #' library(ROI)
 #' library(dplyr)
+#' try(library(ROI.plugin.glpk)) # make a solver available to ROI
 #'
 #' roi_model <- ecoli_core %>%
 #'   reactiontbl_to_expanded %>%
@@ -336,7 +337,7 @@ expanded_to_glpk <- function(reactions_expanded){
 #' data(ecoli_core)
 #' library(ROI)
 #' library(dplyr)
-#' library(ROI.plugin.glpk)} # make a solver available to 
+#' try(library(ROI.plugin.glpk)) # make a solver available to ROI
 #'
 #' roi_model <- ecoli_core %>%
 #'   reactiontbl_to_expanded %>%

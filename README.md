@@ -16,7 +16,7 @@ This example calculates the fluxes for the model ecoli\_core. Ecoli\_core starts
 library(fbar)
 data(ecoli_core)
 
-try({
+try({ # this will fail if no appropriate solver is available.
   library(ROI.plugin.glpk)
 
   ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
@@ -40,7 +40,8 @@ roi_model <- ecoli_core %>%
   expanded_to_ROI
   
 # First, we need to check that an appropriate solver is available.
-# If you don't have an appropriate solver, see the section later in this document.
+# If you don't have an appropriate solver, see the section on installing 
+# one later in this document.
 if(length(ROI_applicable_solvers(roi_model))>=1){
   roi_result <- ROI_solve(roi_model)
   
