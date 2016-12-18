@@ -1,5 +1,5 @@
 context("glpk")
-library(tidyverse)
+suppressMessages(library(tidyverse))
 
 test_that('toy model 1', {
   skip_if_not_installed('Rglpk')

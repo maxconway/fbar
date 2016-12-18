@@ -1,7 +1,6 @@
 context("Gene Expression Processing")
 data("ecoli_core")
-library(tidyverse)
-library(stringr)
+suppressMessages(library(tidyverse))
 
 test_that("works with missing values, boolean", {
   genes <- letters[1:2]
@@ -32,7 +31,7 @@ test_that("works with multi value expressions, boolean", {
 })
 
 test_that('full test', {
-  genes <- data_frame(name = str_extract_all(ecoli_core$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
+  genes <- data_frame(name = stringr::str_extract_all(ecoli_core$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
     flatten_chr() %>%
     discard(is.na)
   ) %>%
