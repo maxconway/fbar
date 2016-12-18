@@ -3,6 +3,7 @@ library(tidyverse)
 
 test_that('toy model 1', {
   skip_if_not_installed('ROI')
+  skip_if_not_installed('ROI.plugin.glpk')
   library(ROI)
   library(ROI.plugin.glpk)
   
@@ -25,6 +26,7 @@ test_that('toy model 1', {
 
 test_that('toy model 2', {
   skip_if_not_installed('ROI')
+  skip_if_not_installed('ROI.plugin.glpk')
   library(ROI)
   library(ROI.plugin.glpk)
   

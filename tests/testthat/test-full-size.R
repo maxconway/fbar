@@ -27,6 +27,7 @@ test_that("find_fluxes_df works in grouped context", {
 
 test_that("find_fluxes_df stable across shuffling", {
   skip_if_not_installed('ROI')
+  skip_if_not_installed('ROI.plugin.glpk')
   library(ROI)
   library(ROI.plugin.glpk)
   skip('known theoretical issue')
