@@ -1,3 +1,8 @@
+# fbar 0.1.13
+
+- Checks and filters in tests, vigentte and examples to remove implicit dependency on ROI.plugin.glpk.
+- Other pdates and improvements to documentation and examples.
+
 # fbar 0.1.12
 
 - Tweaks and updates for CRAN submission
