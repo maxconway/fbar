@@ -23,9 +23,12 @@ This example calculates the fluxes for the model ecoli_core. Ecoli_core starts o
 ```{r}
 library(fbar)
 data(ecoli_core)
-library(ROI.plugin.glpk)
 
-ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
+try({
+  library(ROI.plugin.glpk)
+
+  ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
+})
 ```
 
 ## A Complicated Example
@@ -35,16 +38,21 @@ This example finds the fluxes in ecoli_core, just like the previous case. Howeve
 library(fbar)
 library(dplyr)
 library(ROI)
-library(ROI.plugin.glpk)
+try(library(ROI.plugin.glpk))
 data(ecoli_core)
 
-roi_result <- ecoli_core %>%
+roi_model <- ecoli_core %>%
   reactiontbl_to_expanded %>%
-  expanded_to_ROI %>%
-  ROI_solve()
-
-ecoli_core_with_flux <- ecoli_core %>%
-  mutate(flux = roi_result[['solution']])
+  expanded_to_ROI
+  
+# First, we need to check that an appropriate solver is available.
+# If you don't have an appropriate solver, see the section later in this document.
+if(length(ROI_applicable_solvers(roi_model))>=1){
+  roi_result <- ROI_solve(roi_model)
+  
+  ecoli_core_with_flux <- ecoli_core %>%
+    mutate(flux = roi_result[['solution']])
+}
 ```
 
 This example expands the single data frame model into an intermediate form, the collapses it back to a gurobi model and evaluates it. Then it adds the result as a column, named flux. This longer style is useful because it allows access to the intermediate form. This just consists of three data frames: metabolites, stoichiometry, and reactions. This makes it easy to alter and combine models.
