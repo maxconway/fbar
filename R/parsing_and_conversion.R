@@ -413,6 +413,7 @@ expanded_to_ROI <- function(reactions_expanded){
 #' gurobi_model <- ecoli_core %>%
 #'   reactiontbl_to_expanded %>%
 #'   expanded_to_gurobi
+#'   
 #' \dontrun{   
 #' if(requireNamespace('gurobi', quietly=TRUE)){
 #'   gurobi <- gurobi(gurobi_model)
