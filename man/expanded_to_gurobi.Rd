@@ -35,11 +35,13 @@ gurobi_model <- ecoli_core \%>\%
   reactiontbl_to_expanded \%>\%
   expanded_to_gurobi
   
+\dontrun{
 if(requireNamespace('gurobi', quietly=TRUE)){
   gurobi <- gurobi(gurobi_model)
   
   ecoli_core_with_flux <- ecoli_core \%>\%
     mutate(flux = guorbi_result[['solution']])
+}
 }
 }
 \seealso{

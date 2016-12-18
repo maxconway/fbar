@@ -35,8 +35,9 @@ glpk_model <- ecoli_core \%>\%
   reactiontbl_to_expanded \%>\%
   expanded_to_glpk
   
-if(requireNamespace(glpk, quietly=TRUE)){
-  glpk_result <- purrr::lift_dl(Rglpk_solve_LP)(glpk_model)
+if(requireNamespace('Rglpk', quietly=TRUE)){
+
+  glpk_result <- purrr::lift_dl(Rglpk::Rglpk_solve_LP)(glpk_model)
   
   ecoli_core_with_flux <- ecoli_core \%>\%
     mutate(flux = glpk_result[['solution']])
