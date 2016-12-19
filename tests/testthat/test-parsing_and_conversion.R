@@ -1,5 +1,5 @@
 context("parsing_and_conversion")
-library(Matrix)
+suppressMessages(library(Matrix))
 suppressMessages(library(tidyverse))
 
 data("ecoli_core")
