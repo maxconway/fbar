@@ -27,7 +27,7 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
     expanded_to_ROI()
   
   if(length(ROI_applicable_solvers(mod1))<1){
-    stop("ROI found no suitable solver found. The documentation includes instructions on how to install one.")
+    stop("ROI found no suitable solver. The documentation includes instructions on how to install one.")
   }
   
   res1 <- ROI::ROI_solve(mod1)
