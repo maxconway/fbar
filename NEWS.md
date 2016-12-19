@@ -1,3 +1,9 @@
+# fbar 0.1.14
+
+- Changed the title
+- Changed the description
+- Typo fixed
+
 # fbar 0.1.13
 
 - Checks and filters in tests, vigentte and examples to remove implicit dependency on ROI.plugin.glpk.

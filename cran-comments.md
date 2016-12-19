@@ -1,9 +1,9 @@
 ## Resumbmission
 This is a resubmission. In this version I have:
 
-- Added checks to test and examples so that they are skipped correctly when no appropriate LP solver is available.
-- Added more documentation and examples on use of different LP solvers
-- Updated tests for cleaner output
+- Changed the title (removed 'in R' and tried to make it more descriptive)
+- Written a new description with a lot more detail
+- Fixed a typo I found in an error message 
 
 ## Test environments
 * ubuntu 12.04, R 3.3.2
