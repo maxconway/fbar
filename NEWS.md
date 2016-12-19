@@ -1,3 +1,7 @@
+# fbar 0.1.16
+
+- Changes to tests to reduce chatter further
+
 # fbar 0.1.15
 
 - Description changes to remove notes
