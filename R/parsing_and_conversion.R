@@ -155,6 +155,32 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
                 summarise()))
 }
 
+#' Convert intermediate expanded format back to a reaction table
+#' 
+#' Useful for saving a new or edited model
+#' 
+#' @param expanded A list of data frames: \itemize{
+#'   \item \code{rxns}, which has one row per reaction, 
+#'   \item \code{mets}, which has one row for each metabolite, and 
+#'   \item \code{stoich}, which has one row for each time a metabolite appears in a reaction.
+#' }
+#' 
+#' @return A data frame describing the metabolic model.
+#' 
+#' @import dplyr
+#' @import stringr
+expanded_to_reactiontbl <- function(expanded){
+  expanded$stoich %>%
+    mutate(side = c('substrate', 'none', 'product')[sign(stoich)+2]) %>%
+    group_by(abbreviation, side) %>%
+    summarise(sum = str_c('(',abs(stoich),') ',met, collapse=' + ')) %>%
+    tidyr::spread(side, sum) %>%
+    inner_join(expanded$rxns) %>%
+    mutate(reversible = lowbnd<0) %>%
+    mutate(equation = str_c(substrate, c('-->', '<==>')[reversible+1], product,sep=' ')) %>%
+    select(-substrate, -product, -reversible)
+}
+
 
 #' Parse a long format metabolic model to a gurobi model
 #' 
