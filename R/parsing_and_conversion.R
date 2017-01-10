@@ -172,9 +172,14 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' @export
 expanded_to_reactiontbl <- function(expanded){
   expanded$stoich %>%
-    mutate(side = c('substrate', 'none', 'product')[sign(stoich)+2]) %>%
+    mutate(side = c('substrate', 'none', 'product')[sign(stoich)+2],
+           symbol = if_else(abs(stoich)!=1, 
+                            str_c('(',abs(stoich),') ',met), 
+                            met
+                            )
+           ) %>%
     group_by(abbreviation, side) %>%
-    summarise(sum = str_c('(',abs(stoich),') ',met, collapse=' + ')) %>%
+    summarise(sum = str_c(symbol, collapse=' + ')) %>%
     tidyr::spread(side, sum) %>%
     inner_join(expanded$rxns) %>%
     mutate(reversible = lowbnd<0) %>%
