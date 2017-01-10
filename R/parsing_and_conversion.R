@@ -179,7 +179,8 @@ expanded_to_reactiontbl <- function(expanded){
     inner_join(expanded$rxns) %>%
     mutate(reversible = lowbnd<0) %>%
     mutate(equation = str_c(substrate, c('-->', '<==>')[reversible+1], product,sep=' ')) %>%
-    select(-substrate, -product, -reversible)
+    select(-substrate, -product, -reversible) %>%
+    ungroup
 }
 
 
