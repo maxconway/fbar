@@ -3,6 +3,7 @@
 export(expanded_to_ROI)
 export(expanded_to_glpk)
 export(expanded_to_gurobi)
+export(expanded_to_reactiontbl)
 export(find_flux_variability_df)
 export(find_fluxes_df)
 export(gene_associate)
