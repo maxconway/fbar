@@ -61,3 +61,13 @@ test_that('reactiontbl_to_gurobi works on ecoli_core', {
                                              0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 
                                              50.4329))
 })
+
+test_that('reactiontbl_to_expanded is opposite of expande_to_reactiontbl', {
+  a <- reactiontbl_to_expanded(ecoli_core)
+  b <- expanded_to_reactiontbl(a)
+  
+  expect_equal(nrow(b), nrow(ecoli_core))
+  expect_named(b, names(ecoli_core), ignore.order = TRUE)
+  expect_equal(ecoli_core %>% arrange(abbreviation) %>% select(-equation),
+               b %>% arrange(abbreviation) %>% select(-equation))
+})
