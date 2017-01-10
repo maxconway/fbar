@@ -169,6 +169,7 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' 
 #' @import dplyr
 #' @import stringr
+#' @export
 expanded_to_reactiontbl <- function(expanded){
   expanded$stoich %>%
     mutate(side = c('substrate', 'none', 'product')[sign(stoich)+2]) %>%
