@@ -37,6 +37,7 @@ data(ecoli_core)
 library(ROI)
 library(dplyr)
 try(library(ROI.plugin.glpk)) # make a solver available to ROI
+try(library(ROI.plugin.ecos)) # make a solver available to ROI
 
 roi_model <- ecoli_core \%>\%
   reactiontbl_to_expanded \%>\%

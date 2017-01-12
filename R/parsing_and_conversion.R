@@ -95,6 +95,7 @@ parse_met_list <- function(mets){
 #' library(ROI)
 #' library(dplyr)
 #' try(library(ROI.plugin.glpk)) # make a solver available to ROI
+#' try(library(ROI.plugin.ecos)) # make a solver available to ROI
 #'
 #' roi_model <- ecoli_core %>%
 #'   reactiontbl_to_expanded %>%
@@ -171,20 +172,21 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' @import stringr
 #' @export
 expanded_to_reactiontbl <- function(expanded){
-  expanded$stoich %>%
-    mutate(side = c('substrate', 'none', 'product')[sign(stoich)+2],
-           symbol = if_else(abs(stoich)!=1, 
-                            str_c('(',abs(stoich),') ',met), 
-                            met
-                            )
-           ) %>%
-    group_by(abbreviation, side) %>%
-    summarise(sum = str_c(symbol, collapse=' + ')) %>%
-    tidyr::spread(side, sum) %>%
-    inner_join(expanded$rxns,.) %>%
-    mutate(reversible = lowbnd<0) %>%
-    mutate(equation = str_c(substrate, c('-->', '<==>')[reversible+1], product,sep=' ')) %>%
-    select(-substrate, -product, -reversible) %>%
+  equation_tbl <- expanded$stoich %>%
+    mutate_(side =~ c('substrate', 'none', 'product')[sign(stoich)+2],
+            symbol =~ if_else(abs(stoich)!=1, 
+                              str_c('(',abs(stoich),') ',met), 
+                              met
+            )
+    ) %>%
+    group_by_(~abbreviation, ~side) %>%
+    summarise_(sum =~ str_c(symbol, collapse=' + ')) %>%
+    tidyr::spread_('side', 'sum')
+  
+  inner_join(expanded$rxns, equation_tbl) %>%
+    mutate_(reversible =~ lowbnd<0) %>%
+    mutate_(equation =~ str_c(substrate, c('-->', '<==>')[reversible+1], product,sep=' ')) %>%
+    select_(quote(-substrate), quote(-product), quote(-reversible)) %>%
     ungroup
 }
 
@@ -371,6 +373,7 @@ expanded_to_glpk <- function(reactions_expanded){
 #' library(ROI)
 #' library(dplyr)
 #' try(library(ROI.plugin.glpk)) # make a solver available to ROI
+#' try(library(ROI.plugin.ecos)) # make a solver available to ROI
 #'
 #' roi_model <- ecoli_core %>%
 #'   reactiontbl_to_expanded %>%

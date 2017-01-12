@@ -62,7 +62,7 @@ test_that('reactiontbl_to_gurobi works on ecoli_core', {
                                              50.4329))
 })
 
-test_that('reactiontbl_to_expanded is opposite of expande_to_reactiontbl', {
+test_that('reactiontbl_to_expanded is opposite of expanded_to_reactiontbl', {
   a <- reactiontbl_to_expanded(ecoli_core)
   b <- expanded_to_reactiontbl(a)
   

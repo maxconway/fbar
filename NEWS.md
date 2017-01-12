@@ -1,3 +1,7 @@
+# fbar 0.1.18
+
+- variety of bug fixes
+
 # fbar 0.1.17
 
 - Started moving to using ROI.plugin.ecos for examples and tests, since it has no dependencies
