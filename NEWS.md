@@ -1,3 +1,9 @@
+# fbar 0.1.17
+
+- Started moving to using ROI.plugin.ecos for examples and tests, since it has no dependencies
+- New function to convert from an expanded model back to a reaction table
+- Fixed a bug in the total flux minimization code of find_fluxes_df
+
 # fbar 0.1.16
 
 - Changes to tests to reduce chatter further

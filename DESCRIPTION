@@ -35,6 +35,6 @@ Suggests:
     testthat,
     tidyverse,
     Rglpk,
-    ROI.plugin.glpk
+    ROI.plugin.ecos
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1.9000

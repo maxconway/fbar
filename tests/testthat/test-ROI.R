@@ -3,9 +3,7 @@ suppressMessages(library(tidyverse))
 
 test_that('toy model 1', {
   skip_if_not_installed('ROI')
-  skip_if_not_installed('ROI.plugin.glpk')
-  library(ROI)
-  library(ROI.plugin.glpk)
+  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
   
   expanded <- reactiontbl_to_expanded(dplyr::data_frame(
     abbreviation = c('one', 'two'),
@@ -16,9 +14,9 @@ test_that('toy model 1', {
   
   model <- expanded_to_ROI(expanded)
   
-  skip_if_not(length(ROI_applicable_solvers(model))>=1)
+  skip_if_not(length(ROI::ROI_applicable_solvers(model))>=1)
   
-  result <- ROI_solve(model)
+  result <- ROI::ROI_solve(model)
   
   expect_equal(result$status$code, 0)
   expect_equal(result$objval, 0)
@@ -26,9 +24,8 @@ test_that('toy model 1', {
 
 test_that('toy model 2', {
   skip_if_not_installed('ROI')
-  skip_if_not_installed('ROI.plugin.glpk')
-  library(ROI)
-  library(ROI.plugin.glpk)
+  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
+  
   
   expanded <- reactiontbl_to_expanded(dplyr::data_frame(
     abbreviation = c('one', 'two'),
@@ -39,9 +36,9 @@ test_that('toy model 2', {
   
   model <- expanded_to_ROI(expanded)
   
-  skip_if_not(length(ROI_applicable_solvers(model))>=1)
+  skip_if_not(length(ROI::ROI_applicable_solvers(model))>=1)
   
-  result <- ROI_solve(model)
+  result <- ROI::ROI_solve(model)
   
   expect_equal(result$status$code, 0)
   expect_equal(result$objval, 3)

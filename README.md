@@ -17,7 +17,7 @@ library(fbar)
 data(ecoli_core)
 
 try({ # this will fail if no appropriate solver is available.
-  library(ROI.plugin.glpk)
+  library(ROI.plugin.ecos)
 
   ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
 })
@@ -32,7 +32,7 @@ This example finds the fluxes in ecoli\_core, just like the previous case. Howev
 library(fbar)
 library(dplyr)
 library(ROI)
-try(library(ROI.plugin.glpk))
+try(library(ROI.plugin.ecos))
 data(ecoli_core)
 
 roi_model <- ecoli_core %>%
@@ -92,16 +92,10 @@ devtools::install_github('maxconway/fbar')
 
 #### Install a linear programming solver:
 
-This package requires a linear programming solver. There are a number of options for this (see below), but the easiest way to get started is to install glpk, as follows.
-
-In a (linux) terminal run:
-
-    sudo apt-get install libglpk-dev
-
-Then run this in R:
+This package requires a linear programming solver. There are a number of options for this (see below), but the easiest way to get started is to install `ROI.plugin.ecos` (one of the suggested packages).
 
 ``` r
-install.packages('ROI.plugin.glpk')
+install.packages('ROI.plugin.ecos')
 ```
 
 ### Comparison with other packages
