@@ -24,10 +24,6 @@ devtools::install('maxconway/fbar')
 However, `fbar`, like all flux balance analysis packages, requires an linear programming library in order to conduct simulations. `fbar` can use a number of linear programming libraries via the R Optimization Infrastructure (`ROI`) library and its plugins, and also supports `Rglpk` and `gurobi` directly. 
 
 The suggested method to get started quickly is via the `ROI.plugin.ecos` library. To install and set it up, just run:
-```{sh, eval=FALSE}
-sudo apt-get install libglpk-dev
-```
-Once you've installed GLPK on your operating system, run the following in R:
 ```{r, eval=FALSE}
 ROI::ROI_registered_solvers()
 install.packages('ROI.plugin.ecos')
@@ -98,11 +94,22 @@ ecoli_core_evaluated <- ecoli_core %>%
     c. Why are some of the number negative?
     d. What would be suitable units for this column?
     e. How does `flux` compare to `uppbnd` and `lowbnd`?
-3. By altering `ecoli_core`, and rerunning the code above, you can see the effects of changes to the model.
+
+## Modifying models
+The code in the previous section is explict, but we don't necessarily want to type it all out each time we evaluate a model. The code below does (roughly) the same thing in one line, so we can explore the model faster.
+```{r}
+evaluated <- find_fluxes_df(ecoli_core)
+```
+
+### Questions
+1. By altering `ecoli_core`, and rerunning `find_fluxes_df`, you can see the effects of changes to the model.
     a. Which reactions can you delete without changing biomass production?
     b. Alter the bounds of a reaction to increase biomass production.
     c. Find another reaction and change the bounds to reduce biomass production again, but not to 0.
-
+2. Look at the source code of `find_fluxes_df` (you can see it just by typing the name in at the console).
+    a. What does the argument `do_minimization` do?
+    b. Why is this possible?
+    c. Why would we want to do this?
 
 
 
