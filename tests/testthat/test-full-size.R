@@ -6,9 +6,7 @@ test_models <- list(iJO1366 = iJO1366)
 
 test_that("find_fluxes_df works in grouped context", {
   skip_if_not_installed('ROI')
-  skip_if_not_installed('ROI.plugin.glpk')
-  library(ROI)
-  library(ROI.plugin.glpk)
+  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
   
   d <- find_fluxes_df(iJO1366)$flux
   
@@ -27,9 +25,8 @@ test_that("find_fluxes_df works in grouped context", {
 
 test_that("find_fluxes_df stable across shuffling", {
   skip_if_not_installed('ROI')
-  skip_if_not_installed('ROI.plugin.glpk')
-  library(ROI)
-  library(ROI.plugin.glpk)
+  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
+  
   skip('known theoretical issue')
   
   d1 <- iJO1366 %>% sample_frac() %>% find_fluxes_df() %>% arrange(abbreviation)
@@ -40,9 +37,8 @@ test_that("find_fluxes_df stable across shuffling", {
 
 test_that("find_flux_variability_df works", {
   skip_if_not_installed('ROI')
-  skip_if_not_installed('ROI.plugin.glpk')
-  library(ROI)
-  library(ROI.plugin.glpk)
+  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
+  
   skip('known theoretical issue')
 
   for(rxns in test_models){

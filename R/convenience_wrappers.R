@@ -46,8 +46,8 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   
   mod2 <- reaction_table %>%
     mutate_(flux =~ res1[['solution']],
-           lowbnd =~ if_else(flux>0,0,lowbnd),
-           uppbnd =~ if_else(flux<0,0,uppbnd),
+           lowbnd =~ if_else(flux>0, pmax(0, lowbnd), lowbnd),
+           uppbnd =~ if_else(flux<0, pmin(0, uppbnd), uppbnd),
            lowbnd =~ if_else(obj_coef>0, flux, lowbnd),
            uppbnd =~ if_else(obj_coef<0, flux, uppbnd),
            obj_coef =~ if_else(near(obj_coef,0),-sign(flux), 0)
