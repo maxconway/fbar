@@ -1,3 +1,7 @@
+# fbar 0.1.19
+
+- New vignette
+
 # fbar 0.1.18
 
 - variety of bug fixes
