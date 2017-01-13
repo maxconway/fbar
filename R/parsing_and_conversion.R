@@ -91,6 +91,7 @@ parse_met_list <- function(mets){
 #' 
 #' @examples 
 #' 
+#' \dontrun{
 #' data(ecoli_core)
 #' library(dplyr)
 #' try(library(ROI.plugin.ecos)) # make a solver available to ROI
@@ -104,6 +105,7 @@ parse_met_list <- function(mets){
 #'   
 #'   ecoli_core_with_flux <- ecoli_core %>%
 #'     mutate(flux = roi_result[['solution']])
+#' }
 #' }
 reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   assert_that('data.frame' %in% class(reaction_table))
@@ -367,6 +369,8 @@ expanded_to_glpk <- function(reactions_expanded){
 #' @import ROI
 #' 
 #' @examples 
+#' 
+#' \dontrun{
 #' data(ecoli_core)
 #' library(dplyr)
 #' try(library(ROI.plugin.ecos)) # make a solver available to ROI
@@ -380,6 +384,7 @@ expanded_to_glpk <- function(reactions_expanded){
 #'   
 #'   ecoli_core_with_flux <- ecoli_core %>%
 #'     mutate(flux = roi_result[['solution']])
+#' }
 #' }
 expanded_to_ROI <- function(reactions_expanded){
   

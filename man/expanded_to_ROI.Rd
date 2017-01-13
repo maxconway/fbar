@@ -29,6 +29,8 @@ The \code{reaction_table} must have columns:
 }
 }
 \examples{
+
+\dontrun{
 data(ecoli_core)
 library(dplyr)
 try(library(ROI.plugin.ecos)) # make a solver available to ROI
@@ -42,6 +44,7 @@ if(length(ROI::ROI_applicable_solvers(roi_model))>=1){
   
   ecoli_core_with_flux <- ecoli_core \%>\%
     mutate(flux = roi_result[['solution']])
+}
 }
 }
 \seealso{
