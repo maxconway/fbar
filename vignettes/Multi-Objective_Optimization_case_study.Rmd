@@ -1,0 +1,182 @@
+---
+title: "Multi-Objective Optimization case study"
+author: "Max Conway"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Multi-Objective Optimization case study}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Multi Objective Optimization tutorial
+
+This tutorial is an in depth example of the use of this package in the context of an evolutionary optimization approach. It also shows the use of `gene_eval` to calculate a reaction speed from gene expressions.
+
+First, we need to load the appropriate libraries. You may also need to load your optimization library of choice.
+
+```{r, results="hide"}
+library(tidyverse)
+library(stringr)
+library(fbar)
+```
+
+This code block loads a model, then extracts the list of genes from the model.
+The model takes the form of a tabular list of reactions.
+
+```{r}
+data("ecoli_core")
+model <- ecoli_core
+
+genes_in_model <- model$geneAssociation %>%
+  str_split('[()|& ]+') %>%
+  flatten_chr() %>%
+  discard(is.na) %>%
+  discard(~ str_length(.x)==0)
+```
+
+The evaluation function is where the actual metabolic simulations are performed.
+This has four main stages:
+
+- The gene-reaction associations (`geneAssociation`) are evaluated in the context of which genes are present in this iteration (`genome`).
+- We conduct a round of FBA, optimizing for maximum biomass.
+- Having found the maximum biomass production, we fix the biomass at this value (+/-1%).
+- With the biomass value fixed, we the optimize to maximize the synthetic objective.
+
+The technique of fixing the biomass followed by maximizing the synthetic objective is important because there could still be slack in the model after the first optimization stage, and we wish to have a reliable synthetic objective estimate.
+
+```{r}
+evaluation_function <- function(genome){
+  
+  res <- model %>%
+    mutate(activation = gene_eval(geneAssociation, names(genome), genome),
+           activation = coalesce(activation, 1),
+           uppbnd = uppbnd*activation,
+           lowbnd = lowbnd*activation) %>%
+    find_fluxes_df(do_minimization = FALSE) %>%
+    mutate(lowbnd = ifelse(abbreviation=='Biomass_Ecoli_core_w/GAM', flux*0.99, lowbnd),
+           uppbnd = ifelse(abbreviation=='Biomass_Ecoli_core_w/GAM', flux*1.01, uppbnd),
+           obj_coef = 1*(abbreviation=='EX_ac(e)')) %>%
+    find_fluxes_df(do_minimization = FALSE)
+  
+  return(list(bm = filter(res, abbreviation=='Biomass_Ecoli_core_w/GAM')$flux, 
+              synth = filter(res, abbreviation=='EX_ac(e)')$flux))
+}
+```
+
+Non-domination sorting is the first stage of the selection procedure in NSGA-II.
+The code might be quite opaque, but the idea is as follows:
+
+- We perform an inner_join in order to compare every point against every other point.
+- For each point (`id.x`), we see if there exists any second point (`id.y`) that has a higher value than it in all objectives. Where such a second point exists, we term the original point 'dominated'.
+- We find the set of points which have no dominating point, and term this the first non-dominated front.
+- We repeat this procedure, but ignoring points in the first non-dominated front, to find the second on-dominated front, and so on.
+
+```{r}
+non_dom_sort <- function(input){
+  input_long <- input %>%
+    gather(property, value, -id) %>%
+    mutate(front=NA)
+  
+  currentfront <- 1
+  
+  while(any(is.na(input_long$front))){
+    
+    input_long <- input_long %>%
+      inner_join(.,., by='property') %>%
+      group_by(id.x,id.y) %>%
+      mutate(dominance = ifelse(all(value.x>=value.y), 
+                                'xdomy', 
+                                ifelse(all(value.y>=value.x), 
+                                       'ydomx', 
+                                       'nondom'
+                                       )
+                                )
+      ) %>%
+      group_by(id.x) %>%
+      mutate(front = ifelse(all(dominance[is.na(front.y)] %in% c('xdomy', 'nondom')), 
+                            pmin(currentfront, front.x, na.rm=TRUE), 
+                            NA
+                            )
+      ) %>%
+      group_by(id = id.x, property = property, front, value = value.x) %>%
+      summarise
+    
+    currentfront <- currentfront + 1
+  }
+  
+  return(
+    input_long %>%
+      spread(property, value)
+  )
+  
+}
+```
+
+The second part of the NSGA-II evaluation procedure is finding the crowding distance. This is used to break ties between points in the same non-dominated front.
+In for each front, for each dimension, this function sorts the points into order along the dimension, and finds the normalized distance between the proceeding point and succeeding point. These values are summed up across each dimension to find the value for the point.
+
+```{r}
+crowding_distance <- function(input){
+  return(
+    input %>%
+      gather(property, value, -id, -front) %>%
+      group_by(front, property) %>%
+      arrange(value) %>%
+      mutate(crowding = (lead(value)-lag(value))/(max(value)-min(value)),
+             crowding = ifelse(is.na(crowding),Inf, crowding)) %>%
+      group_by(id) %>%
+      mutate(crowding = sum(crowding)) %>%
+      spread(property, value)
+  )
+}
+```
+
+
+This is the genetic loop of the algorithm. It is explained by code comments, but follows a normal pattern of evaluating, sorting, selecting from and mutating the population.
+
+
+```{r, eval=FALSE}
+start_genome <- set_names(rep_along(genes_in_model, TRUE), genes_in_model)
+pop <- list(start_genome)
+
+popsize = 50
+
+for(i in 1:50){
+  results <- map_df(pop, evaluation_function) %>% # Evaluate all the genomes
+    mutate(bm=signif(bm), synth=signif(synth)) %>% # Round results
+    unique() %>% # Throw away duplicates
+    mutate(id = 1:n()) %>% # label the results
+    sample_frac() %>% # Shuffle
+    non_dom_sort() %>% # Find the non-dominated fronts
+    crowding_distance %>% # Find the crowding distances
+    arrange(front, desc(crowding)) # Sort by front, breaking ties by crowding distance
+  
+  selected <- results %>%
+    filter(row_number() <= popsize/2) %>% # Keep the best half of the population
+    getElement('id')
+  
+  kept_pop <- pop[selected]
+  altered_pop <- kept_pop %>%
+    sample(popsize-length(selected), TRUE) %>% # Select a random portion of the population as parents
+    map(function(genome){xor(genome, runif(length(genome))>0.98)}) # Mutate a small number of genes from the parent population.
+  
+  pop <- unique(c(kept_pop, altered_pop)) # Combine the ofspring and parent populations
+}
+```
+
+
+Now that we have results, the set of all non-dominated points, known as the Pareto Front. This describes the tradeoff between biomass production and our synthetic objective.
+
+```{r, eval=FALSE}
+library(ggplot2)
+
+results %>%
+  filter(front==1) %>%
+  ggplot(aes(x=bm, y=synth, colour=front)) + 
+  geom_point() + 
+  geom_step(direction='vh') +
+  scale_x_log10() +
+  scale_y_log10() +
+  theme_bw()
+```

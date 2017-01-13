@@ -37,9 +37,7 @@ Installing other optimizers to work with `ROI` is normally similar, but you may 
 ## Looking at a model and understanding what it means
 Download a simple model for *Escherichia coli* by running the following code:
 ```{r}
-ecoli_core <- read.delim('https://raw.githubusercontent.com/maxconway/FluxBalanceAnalyzeR/master/inst/extdata/ecoli_core.tsv', 
-           header=TRUE,
-           stringsAsFactors = FALSE)
+data(ecoli_core)
 ```
 To look at the model, you might want to use the `filter` and `select` functions from `dplyr`, or if you're using Rstudio, the `View` function.
 
@@ -110,7 +108,11 @@ evaluated <- find_fluxes_df(ecoli_core)
     a. What does the argument `do_minimization` do?
     b. Why is this possible?
     c. Why would we want to do this?
+3. Find the reaction `EX_ac(e)`.
+    a. What does it do?
+    b. Find the maximum acetate production possible without taking biomass production below 0.5.
 
-
+## Next
+When you're done with this, you might want to look at the vignette Multi-Objective Optimization case study, to see an example of this package in a a more complicated context. Try using the code to find a good tradeoff between production of Acetate and Biomass.
 
 
