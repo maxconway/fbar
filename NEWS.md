@@ -1,3 +1,7 @@
+# fbar 0.1.23
+
+- Added DONTRUN to some examples which take too long on some platforms
+
 # fbar 0.1.19
 
 - New vignette
