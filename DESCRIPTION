@@ -2,10 +2,10 @@ Package: fbar
 Type: Package
 Title: An Extensible Approach to Flux Balance Analysis
 Version: 0.1.23
-Date: 2017-1-14
+Date: 2017-1-22
 Authors@R: person("Max", "Conway", email = "conway.max1@gmail.com",
                   role = c("aut", "cre"))
-Description: This is a simple package for Flux Balance Analysis and related
+Description: A simple package for Flux Balance Analysis and related
     metabolic modelling techniques. Functions are provided for: parsing
     models in tabular format, converting parsed metabolic models to input
     formats for common linear programming solvers, and
@@ -17,6 +17,8 @@ Description: This is a simple package for Flux Balance Analysis and related
     implementation of new techniques, in particular those that involve large
     parameter sweeps.
 License: GPL-3
+URL: https://github.com/maxconway/fbar
+BugReports: https://github.com/maxconway/fbar/issues
 Depends:
     R (>= 3.0.0)
 Imports:
