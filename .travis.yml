@@ -9,8 +9,12 @@ branches:
     - develop
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
       - libglpk-dev
+      - gcc-4.9
+      - g++-4.9
   
 matrix:
   include:
