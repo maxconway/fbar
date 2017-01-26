@@ -72,6 +72,8 @@ To look at the model, you might want to use the `filter` and `select` functions 
 ## Parsing and evaluating a model
 To find the fluxes, and then compare them to the original model, do the following:
 ```{r}
+library(dplyr)
+
 ecoli_fluxes <- ecoli_core %>% 
   reactiontbl_to_expanded() %>% 
   expanded_to_ROI() %>% 
