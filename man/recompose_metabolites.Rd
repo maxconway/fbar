@@ -7,8 +7,20 @@
 recompose_metabolites(expanded_metabolites)
 }
 \arguments{
-\item{expanded_metabolites}{a metabolite table as created by \link{\code{decompose_metabolites}}}
+\item{expanded_metabolites}{a metabolite table as created by \code{\link{decompose_metabolites}}}
+}
+\value{
+a merged metabolite table with one column, \code{met}
 }
 \description{
 Merge metabolite stub and compartment to form an id
+}
+\examples{
+data(ecoli_core)
+
+mod <- reactiontbl_to_expanded(ecoli_core)
+
+decompose_metabolites(mod$mets)
+
+recompose_metabolites(decompose_metabolites(mod$mets))
 }

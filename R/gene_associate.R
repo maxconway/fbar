@@ -20,8 +20,9 @@
 #' @import dplyr
 #' @importFrom magrittr %>%
 #' 
-#' @example 
+#' @examples 
 #' data(iJO1366)
+#' library(dplyr)
 #' 
 #' gene_table = data_frame(name = iJO1366$GRassoc %>%
 #' stringr::str_split('and|or|\\s|\\(|\\)') %>%

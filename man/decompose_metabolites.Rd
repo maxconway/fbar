@@ -9,6 +9,18 @@ decompose_metabolites(met_table)
 \arguments{
 \item{met_table}{A metabolite table, with one column, \code{met}}
 }
+\value{
+a metabolite table with the columns \code{chemical} and \code{compartment}
+}
 \description{
 Decompose a metabolite table into the metabolite stub itself and the compartment it is in
+}
+\examples{
+data(ecoli_core)
+
+mod <- reactiontbl_to_expanded(ecoli_core)
+
+decompose_metabolites(mod$mets)
+
+recompose_metabolites(decompose_metabolites(mod$mets))
 }
