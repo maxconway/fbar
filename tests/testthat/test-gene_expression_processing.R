@@ -1,5 +1,6 @@
 context("Gene Expression Processing")
 data("ecoli_core")
+data("iJO1366")
 suppressMessages(library(tidyverse))
 
 test_that("works with missing values, boolean", {
