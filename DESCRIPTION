@@ -1,8 +1,8 @@
 Package: fbar
 Type: Package
 Title: An Extensible Approach to Flux Balance Analysis
-Version: 0.1.23
-Date: 2017-1-22
+Version: 0.1.24
+Date: 2017-05-18
 Authors@R: person("Max", "Conway", email = "conway.max1@gmail.com",
                   role = c("aut", "cre"))
 Description: A simple package for Flux Balance Analysis and related
@@ -30,14 +30,14 @@ Imports:
     tibble,
     stringr,
     magrittr,
-    ROI
+    ROI,
+    ROI.plugin.ecos
 Suggests:
     knitr,
     rmarkdown,
     testthat,
     tidyverse,
     Rglpk,
-    ROI.plugin.ecos,
     ROI.plugin.glpk
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1
