@@ -1,3 +1,8 @@
+# fbar 0.2.0
+
+- Added new functions for metabolite parsing
+- Added more documentation
+
 # fbar 0.1.23
 
 - Added DONTRUN to some examples which take too long on some platforms
