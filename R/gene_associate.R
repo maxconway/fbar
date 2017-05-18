@@ -21,6 +21,8 @@
 #' @importFrom magrittr %>%
 #' 
 #' @example 
+#' data(iJO1366)
+#' 
 #' gene_table = data_frame(name = iJO1366$GRassoc %>%
 #' stringr::str_split('and|or|\\s|\\(|\\)') %>%
 #'   purrr::flatten_chr() %>%
