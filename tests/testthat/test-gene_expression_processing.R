@@ -38,3 +38,20 @@ test_that('full test', {
     mutate(presence = runif(n())<0.05)
   gene_associate(ecoli_core, genes)
 })
+
+test_that('works with IJO1366', {
+  gene_table = data_frame(name = iJO1366$GRassoc %>%
+                            stringr::str_split('and|or|\\s|\\(|\\)') %>%
+                            purrr::flatten_chr() %>%
+                            unique,
+                          presence = 1) %>%
+    filter(name != '', !is.na(name))
+  
+  gene_associate(reaction_table = iJO1366 %>%
+                   mutate(geneAssociation = GRassoc %>%
+                            stringr::str_replace_all('and', '&') %>%
+                            stringr::str_replace_all('or', '|')
+                          ),
+                 gene_table = gene_table
+                 )
+})
