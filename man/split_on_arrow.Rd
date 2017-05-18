@@ -21,4 +21,3 @@ a \code{data_frame}, with columns: \describe{
 \description{
 Internal function: Splitting reaction equation into substrate and product
 }
-

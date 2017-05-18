@@ -29,7 +29,7 @@ This gives flexibility, but means that malicious code in the \code{gene_sets} ar
 \code{gene_sets} is evaluated in a restricted environment, but there might be a way around this, so you might want to check for anything suspicious in this argument manually.
 For more information, read the code.
 }
+
 \seealso{
 gene_associate
 }
-

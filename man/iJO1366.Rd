@@ -25,4 +25,3 @@ iJO1366
 A full size ecoli model.
 }
 \keyword{datasets}
-

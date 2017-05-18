@@ -24,4 +24,3 @@ ecoli_core
 A small ecoli model, created from a number of sources.
 }
 \keyword{datasets}
-

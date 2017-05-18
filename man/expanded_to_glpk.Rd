@@ -49,4 +49,3 @@ Other parsing_and_conversion: \code{\link{expanded_to_ROI}},
   \code{\link{reactiontbl_to_expanded}},
   \code{\link{reactiontbl_to_gurobi}}
 }
-

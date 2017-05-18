@@ -19,4 +19,3 @@ A data frame describing the metabolic model.
 \description{
 Useful for saving a new or edited model
 }
-

@@ -16,4 +16,3 @@ Loading, parsing and evaluating a model takes around 0.1s, which, together with 
 \details{
 For a list of functions in the package, see \code{vignette('Introduction','fbar')}
 }
-

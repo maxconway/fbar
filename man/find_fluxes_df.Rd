@@ -30,4 +30,3 @@ ecoli_core_with_flux <- find_fluxes_df(ecoli_core)
 \seealso{
 find_fluxes_vector
 }
-

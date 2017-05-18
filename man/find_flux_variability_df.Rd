@@ -24,4 +24,3 @@ This is designed to detect and quantify underdetermined fluxes.
 This function uses ROI, so to solve models, you will need a solver plugin for ROI. Probably the easiest one to install is ROI.plugin.glpk.
 To install this in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
 }
-

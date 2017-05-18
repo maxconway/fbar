@@ -18,4 +18,3 @@ a \code{date_frame} with columns: \describe{
 \description{
 Internal function: Expand half reaction equations into a long form
 }
-
