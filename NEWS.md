@@ -2,6 +2,7 @@
 
 - Updated and corrected some test code
 - Added test and fix for situation where metabolite is used multiple times in one reaction string
+- Small updates to vignettes and readme
 
 # fbar 0.2.0
 
