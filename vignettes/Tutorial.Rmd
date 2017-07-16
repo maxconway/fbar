@@ -37,6 +37,7 @@ Installing other optimizers to work with `ROI` is normally similar, but you may 
 ## Looking at a model and understanding what it means
 Download a simple model for *Escherichia coli* by running the following code:
 ```{r}
+library(fbar) # load fbar package
 data(ecoli_core)
 ```
 To look at the model, you might want to use the `filter` and `select` functions from `dplyr`, or if you're using Rstudio, the `View` function.
@@ -72,7 +73,7 @@ To look at the model, you might want to use the `filter` and `select` functions 
 ## Parsing and evaluating a model
 To find the fluxes, and then compare them to the original model, do the following:
 ```{r}
-library(dplyr)
+library(dplyr) # load dplyr, to explore data
 
 ecoli_fluxes <- ecoli_core %>% 
   reactiontbl_to_expanded() %>% 
