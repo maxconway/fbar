@@ -148,7 +148,9 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
                met =~ met) %>%
     filter_(~met!='')
   
-  return(list(stoich = reactions_expanded, 
+  return(list(stoich = reactions_expanded %>%
+                group_by(abbreviation, met) %>%
+                summarise(stoich = sum(stoich)), 
               rxns = reaction_table %>% 
                 select_(~-equation),
               mets = reactions_expanded %>% 

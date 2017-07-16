@@ -21,3 +21,26 @@ test_that('metabolites are decomposed and recomposed correctly', {
                  arrange(met)
                )
 })
+
+test_that('works correctly with duplicated metabolite', {
+  
+  normal_example <- reactiontbl_to_expanded(dplyr::data_frame(
+    abbreviation = c('one', 'two'),
+    equation = c('2 alpha -> beta', 'gamma -> 2 delta'),
+    lowbnd = c(-1,-1),
+    uppbnd = c(3,3),
+    obj_coef = c(1,0)))
+  
+  duplicated_example <- reactiontbl_to_expanded(dplyr::data_frame(
+    abbreviation = c('one', 'two'),
+    equation = c('alpha + alpha -> beta', 'gamma -> delta + delta'),
+    lowbnd = c(-1,-1),
+    uppbnd = c(3,3),
+    obj_coef = c(1,0)))
+  
+  expect_equal(duplicated_example$mets %>% arrange(met),
+               normal_example$mets %>% arrange(met))
+  
+  expect_equal(duplicated_example$stoich %>% arrange(abbreviation, met),
+               normal_example$stoich %>% arrange(abbreviation, met))
+})

@@ -1,3 +1,8 @@
+# fbar 0.2.1
+
+- Updated and corrected some test code
+- Added test and fix for situation where metabolite is used multiple times in one reaction string
+
 # fbar 0.2.0
 
 - Added new functions for metabolite parsing
