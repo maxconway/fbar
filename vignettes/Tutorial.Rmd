@@ -116,6 +116,6 @@ evaluated <- find_fluxes_df(ecoli_core)
     b. Find the maximum acetate production possible without taking biomass production below 0.5.
 
 ## Next
-When you're done with this, you might want to look at the vignette Multi-Objective Optimization case study, to see an example of this package in a a more complicated context. Try using the code to find a good tradeoff between production of Acetate and Biomass.
+When you're done with this, you might want to look at the vignette `Multi-Objective Optimization case study`, to see an example of this package in a a more complicated context. Try using the code to find a good tradeoff between production of Acetate and Biomass.
 
 
