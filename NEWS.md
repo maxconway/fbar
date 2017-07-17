@@ -1,3 +1,7 @@
+# fbar 0.2.2
+
+- Deprecated `expanded_to_gurobi`, `expanded_to_glpk` and `reactiontbl_to_gurobi`. ROI will now be the only backend.
+
 # fbar 0.2.1
 
 - Updated and corrected some test code
