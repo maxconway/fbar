@@ -14,6 +14,7 @@
 #' 
 #' @export
 #' @importFrom magrittr %>%
+#' @importFrom rlang .data
 #' @import dplyr
 #' 
 #' @examples 
@@ -40,17 +41,17 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   
   if(!do_minimization){
     return(reaction_table %>%
-             mutate_(flux =~ res1[['solution']])
+             mutate(flux = res1[['solution']])
     )
   }
   
   mod2 <- reaction_table %>%
-    mutate_(flux =~ res1[['solution']],
-           lowbnd =~ if_else(flux>0, pmax(0, lowbnd), lowbnd),
-           uppbnd =~ if_else(flux<0, pmin(0, uppbnd), uppbnd),
-           lowbnd =~ if_else(obj_coef>0, flux, lowbnd),
-           uppbnd =~ if_else(obj_coef<0, flux, uppbnd),
-           obj_coef =~ if_else(near(obj_coef,0),-sign(flux), 0)
+    mutate(flux = res1[['solution']],
+           lowbnd = if_else(.data$flux>0, pmax(0, .data$lowbnd), .data$lowbnd),
+           uppbnd = if_else(.data$flux<0, pmin(0, .data$uppbnd), .data$uppbnd),
+           lowbnd = if_else(.data$obj_coef>0, .data$flux, .data$lowbnd),
+           uppbnd = if_else(.data$obj_coef<0, .data$flux, .data$uppbnd),
+           obj_coef = if_else(near(.data$obj_coef,0),-sign(.data$flux), 0)
            ) %>%
     reactiontbl_to_expanded() %>%
     expanded_to_ROI()
@@ -58,7 +59,7 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   res2 <- ROI::ROI_solve(mod2)
   
   return(reaction_table %>%
-           mutate_(flux =~ res2[['solution']])
+           mutate(flux = res2[['solution']])
   )
 }
 
@@ -82,21 +83,23 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
 #' @export
 #' @importFrom magrittr %>%
 #' @import dplyr
+#' @importFrom purrr map
+#' @importFrom rlang .data
 find_flux_variability_df <- function(reaction_table, folds=10, do_minimization=TRUE){
   replicates <- data_frame(index=1:(folds %/% 2)) %>% 
-    mutate_(data =~ purrr::map(index, function(x){reaction_table})) %>%
-    mutate_(data =~ map(data, sample_frac)) 
+    mutate(data = purrr::map(.data$index, function(x){reaction_table})) %>%
+    mutate(data = map(.data$data, sample_frac)) 
   
   replicates_reversed <- replicates %>%
-    mutate_(data =~ map(data, function(x){x[nrow(x):1,]}))
+    mutate(data = map(.data$data, function(x){x[nrow(x):1,]}))
   
   fluxdf <- bind_rows(replicates, replicates_reversed) %>%
-    mutate_(data =~ map(data, find_fluxes_df, do_minimization=do_minimization)) %>%
-    mutate_(data =~ map(data, arrange_, 'abbreviation')) %>%
+    mutate(data = map(.data$data, find_fluxes_df, do_minimization=do_minimization)) %>%
+    mutate(data = map(.data$data, arrange_, 'abbreviation')) %>%
     tidyr::unnest() %>%
-    select_(~abbreviation, ~flux) %>%
-    group_by_(~abbreviation) %>%
-    summarise_(sd = ~stats::sd(flux, na.rm=TRUE), flux = ~first(flux))
+    select(.data$abbreviation, .data$flux) %>%
+    group_by(.data$abbreviation) %>%
+    summarise(sd = stats::sd(.data$flux, na.rm=TRUE), flux = first(.data$flux))
   
   inner_join(reaction_table, fluxdf, by='abbreviation')
 }

@@ -14,6 +14,7 @@
 #' @import assertthat
 #' @import dplyr
 #' @import stringr
+#' @importFrom rlang .data
 split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
   #assert_that(length(equations)>0)
   assert_that(all(str_count(equations, regex_arrow) == 1))
@@ -24,11 +25,11 @@ split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
   
   split %>% 
     tibble::as_data_frame() %>%
-    mutate_(reversible =~ equations %>%
+    mutate(reversible = equations %>%
               str_extract(regex_arrow) %>%
               str_detect('<'),
-            before =~ str_trim(before),
-            after =~ str_trim(after)
+            before = str_trim(.data$before),
+            after = str_trim(.data$after)
     ) %>%
     return
 }
@@ -88,6 +89,7 @@ parse_met_list <- function(mets){
 #' @import assertthat
 #' @import dplyr
 #' @import stringr
+#' @importFrom rlang .data
 #' 
 #' @examples 
 #' 
@@ -120,42 +122,45 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   const_inf <- 1000
   
   reactions_expanded_partial_1 <- split_on_arrow(reaction_table[['equation']], regex_arrow) %>%
-    mutate_(abbreviation =~ reaction_table[['abbreviation']])
+    mutate(abbreviation = reaction_table[['abbreviation']])
   
   
   reactions_expanded_partial_2 <- bind_rows(
     reactions_expanded_partial_1 %>%
-      transmute_(~abbreviation, string =~ before, direction =~ -1),
+      transmute(.data$abbreviation, string = .data$before, direction = -1),
     reactions_expanded_partial_1 %>%
-      transmute_(~abbreviation, string =~ after, direction =~ 1)
+      transmute(.data$abbreviation, string = .data$after, direction = 1)
   )
   
   reactions_expanded_partial_3 <- reactions_expanded_partial_2 %>%
-    mutate_(symbol =~ stringr::str_split(string, stringr::fixed(' + '))) %>%
+    mutate(symbol = stringr::str_split(.data$string, stringr::fixed(' + '))) %>%
     (function(x){
       if(nrow(x)>0){
-        tidyr::unnest_(x, 'symbol')
+        tidyr::unnest(x, .data$symbol)
       } else {
         return(x)
       }
     }) %>%
-    filter_(~symbol!='')
+    filter(.data$symbol!='')
   
   reactions_expanded <- bind_cols(reactions_expanded_partial_3,
                                   parse_met_list(reactions_expanded_partial_3$symbol)) %>%
-    transmute_(abbreviation =~ abbreviation,
-               stoich =~ stoich*direction,
-               met =~ met) %>%
-    filter_(~met!='')
+    transmute(abbreviation = .data$abbreviation,
+               stoich = .data$stoich*.data$direction,
+               met = .data$met) %>%
+    filter(.data$met!='')
   
   return(list(stoich = reactions_expanded %>%
-                group_by_(~abbreviation, ~met) %>%
-                summarise_(stoich =~ sum(stoich)), 
+                group_by(.data$abbreviation, .data$met) %>%
+                summarise(stoich = sum(.data$stoich)) %>%
+                ungroup(), 
               rxns = reaction_table %>% 
-                select_(~-equation),
+                select(-.data$equation) %>%
+                ungroup(),
               mets = reactions_expanded %>% 
-                group_by_(~met) %>%
-                summarise()))
+                group_by(.data$met) %>%
+                summarise() %>%
+                ungroup()))
 }
 
 #' Convert intermediate expanded format back to a reaction table
@@ -172,23 +177,24 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
 #' 
 #' @import dplyr
 #' @import stringr
+#' @importFrom rlang .data
 #' @export
 expanded_to_reactiontbl <- function(expanded){
   equation_tbl <- expanded$stoich %>%
-    mutate_(side =~ c('substrate', 'none', 'product')[sign(stoich)+2],
-            symbol =~ if_else(abs(stoich)!=1, 
-                              str_c('(',abs(stoich),') ',met), 
-                              met
+    mutate(side = c('substrate', 'none', 'product')[sign(.data$stoich)+2],
+            symbol = if_else(abs(.data$stoich)!=1, 
+                              str_c('(',abs(.data$stoich),') ',.data$met), 
+                             .data$met
             )
     ) %>%
-    group_by_(~abbreviation, ~side) %>%
-    summarise_(sum =~ str_c(symbol, collapse=' + ')) %>%
-    tidyr::spread_('side', 'sum')
+    group_by(.data$abbreviation, .data$side) %>%
+    summarise(sum = str_c(.data$symbol, collapse=' + ')) %>%
+    tidyr::spread('side', 'sum')
   
   inner_join(expanded$rxns, equation_tbl) %>%
-    mutate_(reversible =~ lowbnd<0) %>%
-    mutate_(equation =~ str_c(substrate, c('-->', '<==>')[reversible+1], product,sep=' ')) %>%
-    select_(quote(-substrate), quote(-product), quote(-reversible)) %>%
+    mutate(reversible = .data$lowbnd<0) %>%
+    mutate(equation = str_c(.data$substrate, c('-->', '<==>')[.data$reversible+1], .data$product,sep=' ')) %>%
+    select(-.data$substrate, -.data$product, -.data$reversible) %>%
     ungroup
 }
 

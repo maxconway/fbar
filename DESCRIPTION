@@ -1,7 +1,7 @@
 Package: fbar
 Type: Package
 Title: An Extensible Approach to Flux Balance Analysis
-Version: 0.2.2
+Version: 0.3.0
 Date: 2017-07-17
 Authors@R: person("Max", "Conway", email = "conway.max1@gmail.com",
                   role = c("aut", "cre"))
@@ -30,6 +30,7 @@ Imports:
     tibble,
     stringr,
     magrittr,
+    rlang,
     ROI,
     ROI.plugin.ecos
 Suggests:

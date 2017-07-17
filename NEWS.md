@@ -1,3 +1,7 @@
+#fbar 0.3.0
+
+- Moved to new NSE framework
+
 # fbar 0.2.2
 
 - Deprecated `expanded_to_gurobi`, `expanded_to_glpk` and `reactiontbl_to_gurobi`. ROI will now be the only backend.

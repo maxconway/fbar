@@ -5,6 +5,7 @@
 #' @return a metabolite table with the columns \code{chemical} and \code{compartment}
 #' 
 #' @import dplyr
+#' @importFrom rlang .data
 #' @export
 #' 
 #' @examples
@@ -17,8 +18,8 @@
 #' recompose_metabolites(decompose_metabolites(mod$mets))
 decompose_metabolites <- function(met_table){
   met_table %>%
-    transmute_(chemical =~ stringr::str_replace(met, '\\[[a-zA-Z0-9]+]$', ''),
-              compartment =~ stringr::str_extract(met, '\\[[a-zA-Z0-9]+]$') %>% 
+    transmute(chemical = stringr::str_replace(.data$met, '\\[[a-zA-Z0-9]+]$', ''),
+              compartment = stringr::str_extract(.data$met, '\\[[a-zA-Z0-9]+]$') %>% 
                 dplyr::coalesce('') %>%
                 stringr::str_replace_all('\\[|]', ''))
 }
@@ -42,5 +43,5 @@ decompose_metabolites <- function(met_table){
 #' recompose_metabolites(decompose_metabolites(mod$mets))
 recompose_metabolites <- function(expanded_metabolites){
   expanded_metabolites %>%
-    transmute_(met =~ stringr::str_c(chemical, '[', compartment, ']'))
+    transmute(met = stringr::str_c(.data$chemical, '[', .data$compartment, ']'))
 }
