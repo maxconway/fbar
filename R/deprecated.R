@@ -26,23 +26,6 @@
 #' @export
 #' @import assertthat 
 #' @import Matrix
-#' 
-#' @examples 
-#' data(ecoli_core)
-#' library(dplyr)
-#'
-#' gurobi_model <- ecoli_core %>%
-#'   reactiontbl_to_expanded %>%
-#'   expanded_to_gurobi
-#'   
-#' \dontrun{
-#' if(requireNamespace('gurobi', quietly=TRUE)){
-#'   gurobi <- gurobi(gurobi_model)
-#'   
-#'   ecoli_core_with_flux <- ecoli_core %>%
-#'     mutate(flux = guorbi_result[['solution']])
-#' }
-#' }
 expanded_to_gurobi <- function(reactions_expanded){
   .Deprecated("expanded_to_ROI")
   
@@ -105,21 +88,6 @@ expanded_to_gurobi <- function(reactions_expanded){
 #' @export
 #' @import assertthat 
 #' @import Matrix
-#' @examples
-#' data(ecoli_core)
-#' library(dplyr)
-#'
-#' glpk_model <- ecoli_core %>%
-#'   reactiontbl_to_expanded %>%
-#'   expanded_to_glpk
-#'   
-#' if(requireNamespace('Rglpk', quietly=TRUE)){
-#' 
-#'   glpk_result <- purrr::lift_dl(Rglpk::Rglpk_solve_LP)(glpk_model)
-#'   
-#'   ecoli_core_with_flux <- ecoli_core %>%
-#'     mutate(flux = glpk_result[['solution']])
-#' }
 expanded_to_glpk <- function(reactions_expanded){
   .Deprecated("expanded_to_ROI")
   
@@ -179,23 +147,6 @@ expanded_to_glpk <- function(reactions_expanded){
 #' 
 #' @family parsing_and_conversion
 #' @export
-#' 
-#' @examples 
-#' data(ecoli_core)
-#' library(dplyr)
-#'
-#' gurobi_model <- ecoli_core %>%
-#'   reactiontbl_to_expanded %>%
-#'   expanded_to_gurobi
-#'   
-#' \dontrun{   
-#' if(requireNamespace('gurobi', quietly=TRUE)){
-#'   gurobi <- gurobi(gurobi_model)
-#'   
-#'   ecoli_core_with_flux <- ecoli_core %>%
-#'     mutate(flux = guorbi_result[['solution']])
-#' }
-#' }
 reactiontbl_to_gurobi <- function(reaction_table, regex_arrow = '<?[-=]+>'){
   .Deprecated("reactiontbl_to_expanded %>% expanded_to_ROI")
   expanded_to_gurobi(reactiontbl_to_expanded(reaction_table, regex_arrow))
