@@ -1,0 +1,24 @@
+url: https://github.com/maxconway/fbar
+
+reference: 
+  - title: Data
+    contents:
+    - ecoli_core
+    - iJO1366
+  - title: Parsing and conversion
+    contents:
+    - reactiontbl_to_expanded
+    - expanded_to_reactiontbl
+    - expanded_to_ROI
+  - title: Metabolite editing
+    contents:
+    - decompose_metabolites
+    - recompose_metabolites
+  - title: Gene expressions
+    contents: 
+    - gene_associate
+    - gene_eval
+  - title: Convenience wrappers
+    contents: 
+    - find_fluxes_df
+    - find_flux_variability_df

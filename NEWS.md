@@ -1,4 +1,8 @@
-#fbar 0.3.0
+# fbar 0.3.1
+
+- Created website using pkgdown
+
+# fbar 0.3.0
 
 - Moved to new NSE framework
 

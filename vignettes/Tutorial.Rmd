@@ -72,7 +72,7 @@ To look at the model, you might want to use the `filter` and `select` functions 
 
 ## Parsing and evaluating a model
 To find the fluxes, and then compare them to the original model, do the following:
-```{r}
+```{r, eval=FALSE}
 library(dplyr) # load dplyr, to explore data
 
 ecoli_fluxes <- ecoli_core %>% 
@@ -98,7 +98,7 @@ ecoli_core_evaluated <- ecoli_core %>%
 
 ## Modifying models
 The code in the previous section is explict, but we don't necessarily want to type it all out each time we evaluate a model. The code below does (roughly) the same thing in one line, so we can explore the model faster.
-```{r}
+```{r, eval=FALSE}
 evaluated <- find_fluxes_df(ecoli_core)
 ```
 
