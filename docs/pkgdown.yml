@@ -1,8 +1,0 @@
-urls:
-  reference: https://github.com/maxconway/fbar/reference
-  article: https://github.com/maxconway/fbar/articles
-articles:
-  Introduction: Introduction.html
-  Multi-Objective_Optimization_case_study: Multi-Objective_Optimization_case_study.html
-  Tutorial: Tutorial.html
-
