@@ -1,0 +1,8 @@
+urls:
+  reference: http://maxconway.github.io/pkgdown/reference
+  article: http://maxconway.github.io/pkgdown/articles
+articles:
+  Introduction: Introduction.html
+  Multi-Objective_Optimization_case_study: Multi-Objective_Optimization_case_study.html
+  Tutorial: Tutorial.html
+
