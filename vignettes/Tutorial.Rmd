@@ -19,7 +19,7 @@ install.packages('fbar)
 ```
 or
 ```{r, eval=FALSE}
-devtools::install('maxconway/fbar')
+devtools::install_github('maxconway/fbar')
 ```
 However, `fbar`, like all flux balance analysis packages, requires an linear programming library in order to conduct simulations. `fbar` can use a number of linear programming libraries via the R Optimization Infrastructure (`ROI`) library and its plugins, and also supports `Rglpk` and `gurobi` directly. 
 
