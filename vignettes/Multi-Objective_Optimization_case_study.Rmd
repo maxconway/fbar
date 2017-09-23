@@ -100,7 +100,7 @@ non_dom_sort <- function(input){
                             )
       ) %>%
       group_by(id = id.x, property = property, front, value = value.x) %>%
-      summarise
+      summarise()
     
     currentfront <- currentfront + 1
   }

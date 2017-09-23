@@ -15,11 +15,13 @@ While README.Rmd or the Introduction vignette provide a brief overview of the pa
 ## Installation and Optimizers
 The `fbar` package should install in a very straightforward manner, as follows:
 ```{r, eval=FALSE}
-install.packages('fbar)
+install.packages('fbar')
+library(fbar)
 ```
 or
 ```{r, eval=FALSE}
 devtools::install_github('maxconway/fbar')
+library(fbar)
 ```
 However, `fbar`, like all flux balance analysis packages, requires an linear programming library in order to conduct simulations. `fbar` can use a number of linear programming libraries via the R Optimization Infrastructure (`ROI`) library and its plugins, and also supports `Rglpk` and `gurobi` directly. 
 
