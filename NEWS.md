@@ -1,3 +1,7 @@
+# fbar 0.3.2
+
+- Minor updates for Cran release
+
 # fbar 0.3.1
 
 - Created website using pkgdown
