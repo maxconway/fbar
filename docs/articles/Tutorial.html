@@ -59,7 +59,14 @@
   <a href="../news/index.html">News</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/maxconway/fbar">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -74,7 +81,7 @@
       <h1>Tutorial</h1>
                         <h4 class="author">Max Conway</h4>
             
-            <h4 class="date">2017-08-04</h4>
+            <h4 class="date">2017-10-17</h4>
           </div>
 
     
@@ -89,9 +96,11 @@
 <h2 class="hasAnchor">
 <a href="#installation-and-optimizers" class="anchor"></a>Installation and Optimizers</h2>
 <p>The <code>fbar</code> package should install in a very straightforward manner, as follows:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">'fbar)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">'fbar'</span>)
+<span class="kw">library</span>(fbar)</code></pre></div>
 <p>or</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install</span>(<span class="st">'maxconway/fbar'</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">'maxconway/fbar'</span>)
+<span class="kw">library</span>(fbar)</code></pre></div>
 <p>However, <code>fbar</code>, like all flux balance analysis packages, requires an linear programming library in order to conduct simulations. <code>fbar</code> can use a number of linear programming libraries via the R Optimization Infrastructure (<code>ROI</code>) library and its plugins, and also supports <code>Rglpk</code> and <code>gurobi</code> directly.</p>
 <p>The suggested method to get started quickly is via the <code>ROI.plugin.ecos</code> library. To install and set it up, just run:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ROI::<span class="kw">ROI_registered_solvers</span>()
@@ -105,8 +114,10 @@ ROI::<span class="kw">ROI_registered_solvers</span>()</code></pre></div>
 <h2 class="hasAnchor">
 <a href="#looking-at-a-model-and-understanding-what-it-means" class="anchor"></a>Looking at a model and understanding what it means</h2>
 <p>Download a simple model for <em>Escherichia coli</em> by running the following code:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fbar) <span class="co"># load fbar package</span>
-<span class="kw">data</span>(ecoli_core)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fbar) <span class="co"># load fbar package</span></code></pre></div>
+<pre><code>## Warning: Installed Rcpp (0.12.13) different from Rcpp used to build dplyr (0.12.11).
+## Please reinstall dplyr to avoid random crashes or undefined behavior.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(ecoli_core)</code></pre></div>
 <p>To look at the model, you might want to use the <code>filter</code> and <code>select</code> functions from <code>dplyr</code>, or if you’re using Rstudio, the <code>View</code> function.</p>
 <div id="questions" class="section level3">
 <h3 class="hasAnchor">

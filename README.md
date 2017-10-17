@@ -14,6 +14,8 @@ This example calculates the fluxes for the model ecoli\_core. Ecoli\_core starts
 
 ``` r
 library(fbar)
+#> Warning: Installed Rcpp (0.12.13) different from Rcpp used to build dplyr (0.12.11).
+#> Please reinstall dplyr to avoid random crashes or undefined behavior.
 data(ecoli_core)
 
 try({ # this will fail if no appropriate solver is available.

@@ -59,7 +59,14 @@
   <a href="news/index.html">News</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/maxconway/fbar">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -86,6 +93,8 @@
 <a href="#a-simple-example" class="anchor"></a>A Simple Example</h2>
 <p>This example calculates the fluxes for the model ecoli_core. Ecoli_core starts out as a data frame, and is returned as the same data frame, with fluxes appended.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fbar)
+<span class="co">#&gt; Warning: Installed Rcpp (0.12.13) different from Rcpp used to build dplyr (0.12.11).</span>
+<span class="co">#&gt; Please reinstall dplyr to avoid random crashes or undefined behavior.</span>
 <span class="kw">data</span>(ecoli_core)
 
 <span class="kw">try</span>({ <span class="co"># this will fail if no appropriate solver is available.</span>
@@ -204,7 +213,7 @@ if(<span class="kw">length</span>(<span class="kw"><a href="http://www.rdocument
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cran.r-project.org/package=fbar">https://​cran.r-project.org/​package=fbar</a>
 </li>
-<li>Browse source code at <br><a href="http://maxconway.github.io/fbar/">http://​maxconway.github.io/​fbar/​</a>
+<li>Browse source code at <br><a href="https://github.com/maxconway/fbar">https://​github.com/​maxconway/​fbar</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/maxconway/fbar/issues">https://​github.com/​maxconway/​fbar/​issues</a>
 </li>

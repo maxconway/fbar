@@ -59,7 +59,14 @@
   <a href="../news/index.html">News</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/maxconway/fbar">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -74,7 +81,7 @@
       <h1>Multi-Objective Optimization case study</h1>
                         <h4 class="author">Max Conway</h4>
             
-            <h4 class="date">2017-08-04</h4>
+            <h4 class="date">2017-10-17</h4>
           </div>
 
     
@@ -86,6 +93,8 @@
 <p>This tutorial is an in depth example of the use of this package in the context of an evolutionary optimization approach. It also shows the use of <code>gene_eval</code> to calculate a reaction speed from gene expressions.</p>
 <p>First, we need to load the appropriate libraries. You may also need to load your optimization library of choice.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
+<pre><code>## Warning: Installed Rcpp (0.12.13) different from Rcpp used to build dplyr (0.12.11).
+## Please reinstall dplyr to avoid random crashes or undefined behavior.</code></pre>
 <pre><code>## Loading tidyverse: ggplot2
 ## Loading tidyverse: tibble
 ## Loading tidyverse: tidyr
@@ -164,7 +173,7 @@ genes_in_model &lt;-<span class="st"> </span>model$geneAssociation %&gt;%
                             )
       ) %&gt;%
 <span class="st">      </span><span class="kw">group_by</span>(<span class="dt">id =</span> id.x, <span class="dt">property =</span> property, front, <span class="dt">value =</span> value.x) %&gt;%
-<span class="st">      </span>summarise
+<span class="st">      </span><span class="kw">summarise</span>()
     
     currentfront &lt;-<span class="st"> </span>currentfront +<span class="st"> </span><span class="dv">1</span>
   }
