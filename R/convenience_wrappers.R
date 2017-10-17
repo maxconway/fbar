@@ -34,7 +34,6 @@ find_fluxes_df <- function(reaction_table, do_minimization=TRUE){
   res1 <- ROI::ROI_solve(mod1)
   
   if(res1$status$code!=0){
-    warning('optimization failed')
     return(reaction_table %>%
              mutate(flux = 0))
   }
