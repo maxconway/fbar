@@ -17,7 +17,7 @@ This parses the long format produced by \code{reactiontbl_to_expanded} to an ROI
 }
 \details{
 To solve models using ROI, you will need a solver plugin for ROI. Probably the easiest one to install is ROI.plugin.glpk.
-To install this in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
+To install this in Linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('ROI.plugin.glpk')} in R.
 
 The \code{reaction_table} must have columns:
 \itemize{

@@ -1,3 +1,7 @@
+# fbar 0.3.3
+
+- Spelling corrections
+
 # fbar 0.3.2
 
 - Minor updates for Cran release

@@ -1,10 +1,10 @@
 # Deprecated
 
-#' Parse a long format metabolic model to a gurobi model
+#' Parse a long format metabolic model to a Gurobi model
 #' 
 #' \strong{This function is deprecated. \code{github.com/Fl0Sch/ROI.plugin.gurobi} is recommended instead.}
 #' 
-#' Used as the second half of \code{\link{reactiontbl_to_gurobi}}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
+#' Used as the second half of \code{\link{reactiontbl_to_gurobi}}, this parses the long format produced by \code{reactiontbl_to_expanded} to a Gurobi model
 #' 
 #' @details 
 #' For installation instructions for Gurobi, refer to the Gurobi website: \url{http://www.gurobi.com/}.
@@ -69,7 +69,7 @@ expanded_to_gurobi <- function(reactions_expanded){
 #' This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model.
 #' 
 #' @details 
-#' To install the Rglpk package in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('Rglpk')} in R.
+#' To install the Rglpk package in Linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('Rglpk')} in R.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{

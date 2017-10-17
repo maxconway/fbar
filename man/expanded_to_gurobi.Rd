@@ -2,7 +2,7 @@
 % Please edit documentation in R/deprecated.R
 \name{expanded_to_gurobi}
 \alias{expanded_to_gurobi}
-\title{Parse a long format metabolic model to a gurobi model}
+\title{Parse a long format metabolic model to a Gurobi model}
 \usage{
 expanded_to_gurobi(reactions_expanded)
 }
@@ -16,7 +16,7 @@ A list suitable for input to Gurobi.
 \strong{This function is deprecated. \code{github.com/Fl0Sch/ROI.plugin.gurobi} is recommended instead.}
 }
 \details{
-Used as the second half of \code{\link{reactiontbl_to_gurobi}}, this parses the long format produced by \code{reactiontbl_to_expanded} to a gurobi model
+Used as the second half of \code{\link{reactiontbl_to_gurobi}}, this parses the long format produced by \code{reactiontbl_to_expanded} to a Gurobi model
 
 
 For installation instructions for Gurobi, refer to the Gurobi website: \url{http://www.gurobi.com/}.

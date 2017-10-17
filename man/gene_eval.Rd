@@ -14,7 +14,7 @@ gene_eval(gene_sets, genes, presences)
 \item{presences}{A list of gene presences, the same length as \code{genes}}
 }
 \value{
-a vector the same length as \code{gene_sets}, with the the calcuated combined gene expression levels.
+a vector the same length as \code{gene_sets}, with the the calculated combined gene expression levels.
 
 This function evaluates the gene sets in the context of the gene presences. 
 It can take booleans, or numbers, in which case it associates \code{&} with finding the minimum, and \code{|} with finding the maximum.

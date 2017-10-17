@@ -19,7 +19,7 @@ A list suitable for input to Rglpk
 This parses the long format produced by \code{reactiontbl_to_expanded} to a glpk model.
 
 
-To install the Rglpk package in linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('Rglpk')} in R.
+To install the Rglpk package in Linux, run \code{sudo apt-get install libglpk-dev} in a terminal, and then run \code{install.packages('Rglpk')} in R.
 
 The \code{reaction_table} must have columns:
 \itemize{

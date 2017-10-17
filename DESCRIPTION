@@ -1,12 +1,12 @@
 Package: fbar
 Type: Package
 Title: An Extensible Approach to Flux Balance Analysis
-Version: 0.3.2
+Version: 0.3.3
 Date: 2017-10-17
 Authors@R: person("Max", "Conway", email = "conway.max1@gmail.com",
                   role = c("aut", "cre"))
 Description: A simple package for Flux Balance Analysis and related
-    metabolic modelling techniques. Functions are provided for: parsing
+    metabolic modeling techniques. Functions are provided for: parsing
     models in tabular format, converting parsed metabolic models to input
     formats for common linear programming solvers, and
     evaluating and applying gene-protein-reaction mappings. In addition, there
