@@ -1,3 +1,7 @@
+# fbar 0.3.4
+
+- New tests
+
 # fbar 0.3.3
 
 - Spelling corrections
