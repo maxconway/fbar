@@ -48,7 +48,7 @@ gene_associate <- function(reaction_table, gene_table, expression_flux_function 
   
   reaction_table %>%
     mutate(present = gene_eval(.data$geneAssociation, gene_table$name, gene_table$presence),
-           present = if_else(is.na(present), 1, present),
+           present = if_else(is.na(.data$present), 1, .data$present),
            uppbnd = .data$uppbnd*expression_flux_function(.data$present),
            lowbnd = .data$lowbnd*expression_flux_function(.data$present)
     )
