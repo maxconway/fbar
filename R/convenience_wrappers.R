@@ -16,6 +16,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom rlang .data
 #' @import dplyr
+#' @import ROI.plugin.ecos
 #' 
 #' @examples 
 #' \dontrun{
