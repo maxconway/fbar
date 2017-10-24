@@ -1,6 +1,5 @@
 ## Test environments
 * ubuntu 14.04, R 3.4.2
-* ubuntu 16.04, R 3.4.1
 * ubuntu 14.04, devel and release (on travis-ci)
 * win-builder (devel and release)
 
