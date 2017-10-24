@@ -3,7 +3,7 @@
 \docType{data}
 \name{iJO1366}
 \alias{iJO1366}
-\title{A full size ecoli model.}
+\title{A full size E. coli model.}
 \format{A data frame with 2,583 rows and 10 columns:
 \describe{
   \item{abbreviation}{an abbreviated reaction name, acts as the reaction id}
@@ -24,6 +24,6 @@
 iJO1366
 }
 \description{
-A full size ecoli model.
+A full size E. coli model.
 }
 \keyword{datasets}

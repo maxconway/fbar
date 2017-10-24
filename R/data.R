@@ -1,4 +1,4 @@
-#' A small ecoli model, created from a number of sources.
+#' A small E. coli model, created from a number of sources.
 #' 
 #' @format A data frame with 95 rows and 7 columns:
 #' \describe{
@@ -13,7 +13,7 @@
 #' @source \url{http://gcrg.ucsd.edu/Downloads/EcoliCore}, \href{http://www.asmscience.org/content/journal/ecosalplus/10.1128/ecosalplus.10.2.1}{Reconstruction and Use of Microbial Metabolic Networks: the Core Escherichia coli Metabolic Model as an Educational Guide}, \href{https://www.ncbi.nlm.nih.gov/pubmed/21988831}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
 'ecoli_core'
 
-#' A full size ecoli model.
+#' A full size E. coli model.
 #' 
 #' @format A data frame with 2,583 rows and 10 columns:
 #' \describe{

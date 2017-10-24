@@ -3,7 +3,7 @@
 \docType{data}
 \name{ecoli_core}
 \alias{ecoli_core}
-\title{A small ecoli model, created from a number of sources.}
+\title{A small E. coli model, created from a number of sources.}
 \format{A data frame with 95 rows and 7 columns:
 \describe{
   \item{abbreviation}{an abbreviated reaction name, acts as the reaction id}
@@ -21,6 +21,6 @@
 ecoli_core
 }
 \description{
-A small ecoli model, created from a number of sources.
+A small E. coli model, created from a number of sources.
 }
 \keyword{datasets}
