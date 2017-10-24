@@ -2,9 +2,7 @@ context("ROI")
 suppressMessages(library(tidyverse))
 
 test_that('toy model 1', {
-  skip_if_not_installed('ROI')
-  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
-  
+
   expanded <- reactiontbl_to_expanded(dplyr::data_frame(
     abbreviation = c('one', 'two'),
     equation = c('alpha -> beta', 'gamma -> delta'),
@@ -14,7 +12,7 @@ test_that('toy model 1', {
   
   model <- expanded_to_ROI(expanded)
   
-  skip_if_not(length(ROI::ROI_applicable_solvers(model))>=1)
+  expect_gte(length(ROI::ROI_applicable_solvers(model)),1)
   
   result <- ROI::ROI_solve(model)
   
@@ -23,10 +21,7 @@ test_that('toy model 1', {
 })
 
 test_that('toy model 2', {
-  skip_if_not_installed('ROI')
-  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
-  
-  
+
   expanded <- reactiontbl_to_expanded(dplyr::data_frame(
     abbreviation = c('one', 'two'),
     equation = c('alpha -> ', ' <-> alpha'),
@@ -36,7 +31,7 @@ test_that('toy model 2', {
   
   model <- expanded_to_ROI(expanded)
   
-  skip_if_not(length(ROI::ROI_applicable_solvers(model))>=1)
+  expect_gte(length(ROI::ROI_applicable_solvers(model)),1)
   
   result <- ROI::ROI_solve(model)
   

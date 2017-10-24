@@ -1,6 +1,7 @@
 # fbar 0.3.4
 
 - New tests
+- Test updates and tidying to work with new version of ROI
 
 # fbar 0.3.3
 
