@@ -1,5 +1,6 @@
 context("ROI")
 suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
 
 test_that('toy model 1', {
 

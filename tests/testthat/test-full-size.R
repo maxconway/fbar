@@ -1,6 +1,9 @@
 context("full-size")
-data("iJO1366")
+
 suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
+
+data("iJO1366")
 
 test_models <- list(iJO1366 = iJO1366)
 

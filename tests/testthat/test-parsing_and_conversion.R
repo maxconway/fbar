@@ -1,6 +1,7 @@
 context("parsing_and_conversion")
 suppressMessages(library(Matrix))
 suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
 
 data("ecoli_core")
 

@@ -1,7 +1,10 @@
 context("Gene Expression Processing")
+
+suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
+
 data("ecoli_core")
 data("iJO1366")
-suppressMessages(library(tidyverse))
 
 test_that("works with missing values, boolean", {
   genes <- letters[1:2]

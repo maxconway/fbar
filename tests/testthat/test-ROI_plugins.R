@@ -1,5 +1,6 @@
 context("ROI_plugins")
-library(tidyverse)
+suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
 
 data("ecoli_core")
 data("iJO1366")

@@ -1,5 +1,8 @@
 context("convenience")
 
+suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
+
 data("ecoli_core")
 
 test_that("find_fluxes_df gives sensible result with minimization", {

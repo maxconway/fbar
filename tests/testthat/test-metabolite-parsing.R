@@ -1,5 +1,8 @@
 context("metabolite-parsing")
+
 suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
+
 data("ecoli_core")
 
 test_that("tricky equations split correctly", {
