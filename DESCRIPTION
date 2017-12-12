@@ -41,3 +41,4 @@ Suggests:
     tidyverse
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
+LazyData: true
