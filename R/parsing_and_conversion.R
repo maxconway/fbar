@@ -188,14 +188,25 @@ expanded_to_reactiontbl <- function(expanded){
             )
     ) %>%
     group_by(.data$abbreviation, .data$side) %>%
-    summarise(sum = str_c(.data$symbol, collapse=' + ')) %>%
-    tidyr::spread(key = 'side', value = 'sum')
+    summarise(sum = str_c(.data$symbol, collapse=' + ', '')) %>%
+    tidyr::spread(key = 'side', value = 'sum', fill='')
   
-  inner_join(expanded$rxns, equation_tbl, by = "abbreviation") %>%
+  reaction_table <- inner_join(expanded$rxns, equation_tbl, by = "abbreviation") %>%
     mutate(reversible = .data$lowbnd<0) %>%
     mutate(equation = str_c(.data$substrate, c('-->', '<==>')[.data$reversible+1], .data$product,sep=' ')) %>%
     select(-.data$substrate, -.data$product, -.data$reversible) %>%
     ungroup
+  
+  assert_that('data.frame' %in% class(reaction_table))
+  assert_that(reaction_table %has_name% 'abbreviation')
+  assert_that(reaction_table %has_name% 'equation')
+  assert_that(reaction_table %has_name% 'uppbnd')
+  assert_that(reaction_table %has_name% 'lowbnd')
+  assert_that(reaction_table %has_name% 'obj_coef')
+  assert_that(sum(duplicated(reaction_table$abbreviation))==0)
+  assert_that(!any(stringr::str_detect(reaction_table$equation, '^\\[\\w+?]:'))) # can't handle compartments at start of string
+  
+  return(reaction_table)
 }
 
 #' Parse a long format metabolic model to an ROI model

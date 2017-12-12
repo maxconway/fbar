@@ -23,7 +23,8 @@ get_BiGG <- function(address){
     rename(abbreviation = .data$id,
            officialName = .data$name,
            lowbnd = .data$lower_bound,
-           uppbnd = .data$upper_bound
+           uppbnd = .data$upper_bound,
+           geneAssociation = .data$gene_reaction_rule
     ) %>%
     mutate(obj_coef = coalesce(.data$objective_coefficient, 0))
   
@@ -31,7 +32,8 @@ get_BiGG <- function(address){
     purrr::keep(is.vector) %>%
     transmute(chemical = .data$id,
               compartment = .data$compartment,
-              name = .data$name)
+              name = .data$name) %>%
+    recompose_metabolites()
   
   res$stoich <- json_mod$reactions$metabolites %>%
     mutate(abbreviation = json_mod$reactions$id) %>%
