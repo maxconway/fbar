@@ -8,3 +8,4 @@
 ^revdep$
 ^docs$
 ^_pkgdown\.yml$
+^data-raw$
