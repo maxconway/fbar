@@ -1,7 +1,9 @@
 # fbar 0.4.0
 
 - New function for retrieving models from BiGG
-- Changes to data files
+- Changes to model data files
+- New data file to help specify exchange reactions
+- Changed some function argument defaults
 
 # fbar 0.3.4
 
