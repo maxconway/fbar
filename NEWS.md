@@ -1,3 +1,7 @@
+# fbar 0.4.0
+
+- New function for retrieving models from BiGG
+
 # fbar 0.3.3
 
 - Spelling corrections

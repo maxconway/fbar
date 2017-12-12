@@ -189,9 +189,9 @@ expanded_to_reactiontbl <- function(expanded){
     ) %>%
     group_by(.data$abbreviation, .data$side) %>%
     summarise(sum = str_c(.data$symbol, collapse=' + ')) %>%
-    tidyr::spread('side', 'sum')
+    tidyr::spread(key = 'side', value = 'sum')
   
-  inner_join(expanded$rxns, equation_tbl) %>%
+  inner_join(expanded$rxns, equation_tbl, by = "abbreviation") %>%
     mutate(reversible = .data$lowbnd<0) %>%
     mutate(equation = str_c(.data$substrate, c('-->', '<==>')[.data$reversible+1], .data$product,sep=' ')) %>%
     select(-.data$substrate, -.data$product, -.data$reversible) %>%
