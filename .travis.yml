@@ -15,5 +15,4 @@ addons:
   
 matrix:
   include:
-    - r: devel
     - r: release
