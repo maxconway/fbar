@@ -4,10 +4,13 @@
 \alias{decompose_metabolites}
 \title{Decompose a metabolite table into the metabolite stub itself and the compartment it is in}
 \usage{
-decompose_metabolites(met_table)
+decompose_metabolites(met_table,
+  compartment_regex = "(\\\\[[a-zA-Z0-9]+]$)|(_[a-zA-Z]$)")
 }
 \arguments{
 \item{met_table}{A metabolite table, with one column, \code{met}}
+
+\item{compartment_regex}{Regular expression to identify compartments in model}
 }
 \value{
 a metabolite table with the columns \code{chemical} and \code{compartment}

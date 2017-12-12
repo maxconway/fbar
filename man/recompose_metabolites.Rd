@@ -4,13 +4,18 @@
 \alias{recompose_metabolites}
 \title{Merge metabolite stub and compartment to form an id}
 \usage{
-recompose_metabolites(expanded_metabolites)
+recompose_metabolites(expanded_metabolites, before_signifier = "_",
+  after_signifier = "")
 }
 \arguments{
 \item{expanded_metabolites}{a metabolite table as created by \code{\link{decompose_metabolites}}}
+
+\item{before_signifier}{a sring that is inserted before the compartment identifier}
+
+\item{after_signifier}{a sring that is inserted after the compartment identifier}
 }
 \value{
-a merged metabolite table with one column, \code{met}
+A merged metabolite table with one column, \code{met}
 }
 \description{
 Merge metabolite stub and compartment to form an id

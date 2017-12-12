@@ -34,33 +34,35 @@ test_that("works with multi value expressions, boolean", {
   expect_equal(fbar::gene_eval(expressions, genes, presences)==1, c(T,F,T,F))
 })
 
-test_that('full test', {
+test_that('works with ecoli_core', {
   genes <- data_frame(name = stringr::str_extract_all(ecoli_core$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
     flatten_chr() %>%
     discard(is.na)
   ) %>%
     mutate(presence = runif(n())<0.05)
-  res <- gene_associate(ecoli_core, genes)
+  
+  
+  res <- ecoli_core %>%
+    mutate(geneAssociation = str_replace_all(geneAssociation, fixed('or'), '|'),
+           geneAssociation = str_replace_all(geneAssociation, fixed('and'), '&')) %>%
+    gene_associate(genes)
   
   expect_true(all(is.finite(res$lowbnd)))
   expect_true(all(is.finite(res$uppbnd)))
 })
 
-test_that('works with IJO1366', {
-  gene_table = data_frame(name = iJO1366$GRassoc %>%
-                            stringr::str_split('and|or|\\s|\\(|\\)') %>%
-                            purrr::flatten_chr() %>%
-                            unique,
-                          presence = 1) %>%
-    filter(name != '', !is.na(name))
+test_that('works with iJO1366', {
+  genes <- data_frame(name = stringr::str_extract_all(iJO1366$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
+                        flatten_chr() %>%
+                        discard(is.na)
+  ) %>%
+    mutate(presence = runif(n())<0.05)
   
-  res <- gene_associate(reaction_table = iJO1366 %>%
-                   mutate(geneAssociation = GRassoc %>%
-                            stringr::str_replace_all('and', '&') %>%
-                            stringr::str_replace_all('or', '|')
-                          ),
-                 gene_table = gene_table
-                 )
+  
+  res <- iJO1366 %>%
+    mutate(geneAssociation = str_replace_all(geneAssociation, fixed('or'), '|'),
+           geneAssociation = str_replace_all(geneAssociation, fixed('and'), '&')) %>%
+    gene_associate(genes)
   
   expect_true(all(is.finite(res$lowbnd)))
   expect_true(all(is.finite(res$uppbnd)))
