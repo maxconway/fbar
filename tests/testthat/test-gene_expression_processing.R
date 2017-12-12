@@ -1,7 +1,10 @@
 context("Gene Expression Processing")
+
+suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
+
 data("ecoli_core")
 data("iJO1366")
-suppressMessages(library(tidyverse))
 
 test_that("works with missing values, boolean", {
   genes <- letters[1:2]
@@ -37,7 +40,10 @@ test_that('full test', {
     discard(is.na)
   ) %>%
     mutate(presence = runif(n())<0.05)
-  gene_associate(ecoli_core, genes)
+  res <- gene_associate(ecoli_core, genes)
+  
+  expect_true(all(is.finite(res$lowbnd)))
+  expect_true(all(is.finite(res$uppbnd)))
 })
 
 test_that('works with IJO1366', {
@@ -48,11 +54,14 @@ test_that('works with IJO1366', {
                           presence = 1) %>%
     filter(name != '', !is.na(name))
   
-  gene_associate(reaction_table = iJO1366 %>%
+  res <- gene_associate(reaction_table = iJO1366 %>%
                    mutate(geneAssociation = GRassoc %>%
                             stringr::str_replace_all('and', '&') %>%
                             stringr::str_replace_all('or', '|')
                           ),
                  gene_table = gene_table
                  )
+  
+  expect_true(all(is.finite(res$lowbnd)))
+  expect_true(all(is.finite(res$uppbnd)))
 })

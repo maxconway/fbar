@@ -2,6 +2,13 @@
 
 - New function for retrieving models from BiGG
 
+# fbar 0.3.4
+
+- Test updates and tidying to work with new version of ROI
+- New tests
+- Spelling corrections
+- Moving to assuming availability of ecos solver. All other solvers still supported
+
 # fbar 0.3.3
 
 - Spelling corrections

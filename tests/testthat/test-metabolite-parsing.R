@@ -1,12 +1,21 @@
 context("metabolite-parsing")
+
 suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
+
 data("ecoli_core")
 
 test_that("tricky equations split correctly", {
   tricky_equations <- c("peptidylproline (omega=180) <=> peptidylproline (omega=0)",
                         "2 o2.- + 2 h+ <=> hydrogen peroxide + oxygen",
                         "beta-d-galactosyl-(1->4)-beta-d-glucosyl-(1<->1)-ceramide + h2o <=> beta-d-glucosyl-(1<->1)-ceramide + d-galactose")
-  fbar:::split_on_arrow(tricky_equations, regex_arrow = '[[:space:]]*<?[=]+>[[:space:]]*')
+  res <- fbar:::split_on_arrow(tricky_equations, regex_arrow = '[[:space:]]*<?[=]+>[[:space:]]*')
+  
+  expected <- data_frame(before = c("peptidylproline (omega=180)", "2 o2.- + 2 h+", "beta-d-galactosyl-(1->4)-beta-d-glucosyl-(1<->1)-ceramide + h2o"),
+                        after = c("peptidylproline (omega=0)", "hydrogen peroxide + oxygen", "beta-d-glucosyl-(1<->1)-ceramide + d-galactose"),
+                        reversible = TRUE)
+  
+  expect_equal(res, expected)
 })
 
 test_that('metabolites are decomposed and recomposed correctly', {

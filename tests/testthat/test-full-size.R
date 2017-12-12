@@ -1,13 +1,14 @@
 context("full-size")
-data("iJO1366")
+
 suppressMessages(library(tidyverse))
+suppressMessages(library(ROI.plugin.ecos))
+
+data("iJO1366")
 
 test_models <- list(iJO1366 = iJO1366)
 
 test_that("find_fluxes_df works in grouped context", {
-  skip_if_not_installed('ROI')
-  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
-  
+
   d <- find_fluxes_df(iJO1366)$flux
   
   g <- purrr::map_df(1:10, function(x){iJO1366}, .id='sample') %>%
@@ -24,8 +25,6 @@ test_that("find_fluxes_df works in grouped context", {
 })
 
 test_that("find_fluxes_df stable across shuffling", {
-  skip_if_not_installed('ROI')
-  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
   
   skip('known theoretical issue')
   
@@ -36,8 +35,6 @@ test_that("find_fluxes_df stable across shuffling", {
 })
 
 test_that("find_flux_variability_df works", {
-  skip_if_not_installed('ROI')
-  skip_if_not(requireNamespace('ROI.plugin.ecos', quietly = TRUE) | requireNamespace('ROI.plugin.glpk', quietly = TRUE))
   
   skip('known theoretical issue')
 
