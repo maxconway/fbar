@@ -4,7 +4,7 @@
 \alias{find_fluxes_df}
 \title{Given a metabolic model as a data frame, return a new data frame with fluxes}
 \usage{
-find_fluxes_df(reaction_table, do_minimization = TRUE)
+find_fluxes_df(reaction_table, do_minimization = FALSE)
 }
 \arguments{
 \item{reaction_table}{a data frame representing the metabolic model}
