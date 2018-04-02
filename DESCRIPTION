@@ -1,8 +1,8 @@
 Package: fbar
 Type: Package
 Title: An Extensible Approach to Flux Balance Analysis
-Version: 0.4.0
-Date: 2017-12-12
+Version: 0.4.1
+Date: 2018-04-02
 Authors@R: person("Max", "Conway", email = "conway.max1@gmail.com",
                   role = c("aut", "cre"))
 Description: A simple package for Flux Balance Analysis and related
@@ -20,25 +20,24 @@ License: GPL-3
 URL: http://maxconway.github.io/fbar/, https://github.com/maxconway/fbar
 BugReports: https://github.com/maxconway/fbar/issues
 Depends:
-    R (>= 3.0.0)
+    R (>= 3.2.5)
 Imports:
     assertthat,
-    Matrix,
     dplyr,
-    tidyr,
-    purrr,
-    tibble,
-    stringr,
     magrittr,
+    Matrix,
+    purrr,
     rlang,
     ROI,
-    ROI.plugin.ecos
+    ROI.plugin.ecos,
+    stringr,
+    tibble,
+    tidyr
 Suggests:
     jsonlite,
     knitr,
     rmarkdown,
-    testthat,
-    tidyverse
+    testthat
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 LazyData: true

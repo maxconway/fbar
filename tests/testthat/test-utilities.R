@@ -1,5 +1,16 @@
 context("utilities")
 
+suppressMessages(library('testthat'))
+suppressMessages(library('dplyr'))
+suppressMessages(library('magrittr'))
+suppressMessages(library('purrr'))
+suppressMessages(library('stringr'))
+suppressMessages(library('tibble'))
+suppressMessages(library('tidyr'))
+suppressMessages(library('ROI.plugin.ecos'))
+suppressMessages(library('fbar'))
+
+
 addresses <- c(
   'http://bigg.ucsd.edu/static/models/iJO1366.json',
   'http://bigg.ucsd.edu/static/models/iAF1260.json',

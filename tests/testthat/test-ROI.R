@@ -1,6 +1,14 @@
 context("ROI")
-suppressMessages(library(tidyverse))
-suppressMessages(library(ROI.plugin.ecos))
+
+suppressMessages(library('testthat'))
+suppressMessages(library('dplyr'))
+suppressMessages(library('magrittr'))
+suppressMessages(library('purrr'))
+suppressMessages(library('stringr'))
+suppressMessages(library('tibble'))
+suppressMessages(library('tidyr'))
+suppressMessages(library('ROI.plugin.ecos'))
+suppressMessages(library('fbar'))
 
 test_that('toy model 1', {
 

@@ -16,7 +16,8 @@ This tutorial is an in depth example of the use of this package in the context o
 First, we need to load the appropriate libraries. You may also need to load your optimization library of choice.
 
 ```{r, results="hide"}
-library(tidyverse)
+library(dplyr)
+library(purrr)
 library(stringr)
 library(fbar)
 ```

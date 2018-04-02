@@ -1,7 +1,14 @@
 context("convenience")
 
-suppressMessages(library(tidyverse))
-suppressMessages(library(ROI.plugin.ecos))
+suppressMessages(library('testthat'))
+suppressMessages(library('dplyr'))
+suppressMessages(library('magrittr'))
+suppressMessages(library('purrr'))
+suppressMessages(library('stringr'))
+suppressMessages(library('tibble'))
+suppressMessages(library('tidyr'))
+suppressMessages(library('ROI.plugin.ecos'))
+suppressMessages(library('fbar'))
 
 data("ecoli_core")
 
