@@ -10,7 +10,7 @@ get_BiGG(address)
 \item{address}{An address to download from}
 }
 \value{
-A model in exapnded format
+A model in expanded format
 }
 \description{
 Download a model from a BiGG json file
