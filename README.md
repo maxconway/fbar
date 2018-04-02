@@ -3,7 +3,8 @@
 fbar
 ====
 
-[![Travis-CI Build Status](https://travis-ci.org/maxconway/fbar.svg?branch=master)](https://travis-ci.org/maxconway/fbar) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/fbar)](https://cran.r-project.org/package=fbar)
+<!-- [![Travis-CI Build Status](https://travis-ci.org/maxconway/fbar.svg?branch=master)](https://travis-ci.org/maxconway/fbar) -->
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/fbar)](https://cran.r-project.org/package=fbar)
 
 `fbar` is a simple, easy to use Flux Balance Analysis package with a tidy data approach. Just `data_frames` and the occasional `list`, no new classes to learn. The focus is on simplicity and speed. Models are expected as a flat table, and results can be simply appended to the table. This makes this package very suitable for useage in pipelines with pre- and post- processing of models and results, so that it works well as a backbone for customized methods. Loading, parsing and evaluating a model takes around 0.1s, which, together with the straightforward data structures used, makes this library very suitable for large parameter sweeps.
 
@@ -14,8 +15,6 @@ This example calculates the fluxes for the model ecoli\_core. Ecoli\_core starts
 
 ``` r
 library(fbar)
-#> Warning: Installed Rcpp (0.12.13) different from Rcpp used to build dplyr (0.12.11).
-#> Please reinstall dplyr to avoid random crashes or undefined behavior.
 data(ecoli_core)
 
 try({ # this will fail if no appropriate solver is available.
