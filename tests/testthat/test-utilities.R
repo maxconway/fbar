@@ -20,6 +20,7 @@ addresses <- c(
 
 for (address in addresses) {
   test_that(paste("Works correctly with", address), {
+    skip('functionality not ready yet')
     skip_if_not_installed('jsonlite')
     
     expanded <- get_BiGG(address)
