@@ -2,7 +2,7 @@
 #' 
 #' @param address An address to download from
 #' 
-#' @return A model in exapnded format
+#' @return A model in expanded format
 #' 
 #' @export
 #' 
