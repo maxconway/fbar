@@ -12,6 +12,7 @@ addons:
   apt:
     packages:
       - libglpk-dev
+      - curl
   
 matrix:
   include:
