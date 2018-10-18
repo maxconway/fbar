@@ -22,6 +22,7 @@ addresses <- c(
 for (address in addresses) {
   test_that(paste("Works correctly with", address), {
     skip_if_not_installed('jsonlite')
+    skip_on_travis() # can't make curl install correctly on travis
     
     expanded <- get_BiGG(address)
     
