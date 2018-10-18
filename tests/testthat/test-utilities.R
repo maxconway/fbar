@@ -15,17 +15,20 @@ addresses <- c(
   'http://bigg.ucsd.edu/static/models/iJO1366.json',
   'http://bigg.ucsd.edu/static/models/iAF1260.json',
   'http://bigg.ucsd.edu/api/v2/models/iND750/download',
-  'http://bigg.ucsd.edu/static/models/e_coli_core.json'
+  'http://bigg.ucsd.edu/static/models/e_coli_core.json',
+  'http://bigg.ucsd.edu/static/models/RECON1.json'
 )
 
 for (address in addresses) {
   test_that(paste("Works correctly with", address), {
-    skip('functionality not ready yet')
     skip_if_not_installed('jsonlite')
     
     expanded <- get_BiGG(address)
     reaction_table <- expanded_to_reactiontbl(expanded)
     reaction_table <- find_fluxes_df(reaction_table)
     expect_true(all(c('abbreviation', 'lowbnd', 'uppbnd', 'obj_coef', 'equation', 'officialName', 'flux' ) %in% colnames(reaction_table)))
+
+    expanded %>% expanded_to_ROI
+    
   })
 }
