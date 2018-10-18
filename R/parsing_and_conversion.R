@@ -232,7 +232,6 @@ expanded_to_reactiontbl <- function(expanded){
 #' 
 #' @family parsing_and_conversion
 #' @export
-#' @import assertthat 
 #' @import Matrix
 #' @import ROI
 #' 

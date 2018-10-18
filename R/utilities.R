@@ -40,11 +40,13 @@ get_BiGG <- function(address){
 }
 
 #' Validate an expanded model
+#' 
+#' @param reactions_expanded the expanded model to check
+#' 
+#' @return TRUE
+#' 
+#' @import assertthat 
 validate_expanded <- function(reactions_expanded){
-  
-  rxns <- reactions_expanded$rxns
-  stoich <- reactions_expanded$stoich
-  mets <- reactions_expanded$mets
   
   assert_that(
     'data.frame' %in% class(reactions_expanded$rxns),

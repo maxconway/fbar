@@ -4,7 +4,8 @@
 \alias{find_flux_variability_df}
 \title{Given a metabolic model as a data frame, return a new data frame with fluxes and variability}
 \usage{
-find_flux_variability_df(reaction_table, folds = 10, do_minimization = TRUE)
+find_flux_variability_df(reaction_table, folds = 10,
+  do_minimization = TRUE)
 }
 \arguments{
 \item{reaction_table}{a data frame representing the metabolic model}

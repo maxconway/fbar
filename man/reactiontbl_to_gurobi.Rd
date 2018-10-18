@@ -36,3 +36,4 @@ Other parsing_and_conversion: \code{\link{expanded_to_ROI}},
   \code{\link{expanded_to_gurobi}},
   \code{\link{reactiontbl_to_expanded}}
 }
+\concept{parsing_and_conversion}

@@ -1,4 +1,4 @@
-# fbar 0.4.0
+# fbar 0.4.4
 
 - New function for retrieving models from BiGG
 - Changes to model data files
