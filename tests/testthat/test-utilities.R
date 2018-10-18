@@ -24,11 +24,13 @@ for (address in addresses) {
     skip_if_not_installed('jsonlite')
     
     expanded <- get_BiGG(address)
+    
+    expanded %>% validate_expanded()
+    expanded %>% expanded_to_ROI()
+    
     reaction_table <- expanded_to_reactiontbl(expanded)
     reaction_table <- find_fluxes_df(reaction_table)
     expect_true(all(c('abbreviation', 'lowbnd', 'uppbnd', 'obj_coef', 'equation', 'officialName', 'flux' ) %in% colnames(reaction_table)))
-
-    expanded %>% expanded_to_ROI
     
   })
 }

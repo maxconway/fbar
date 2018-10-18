@@ -256,15 +256,11 @@ expanded_to_reactiontbl <- function(expanded){
 #' }
 expanded_to_ROI <- function(reactions_expanded){
   
+  validate_expanded(reactions_expanded)
+  
   rxns <- reactions_expanded$rxns
   stoich <- reactions_expanded$stoich
   mets <- reactions_expanded$mets
-  
-  assert_that('data.frame' %in% class(rxns))
-  assert_that(rxns %has_name% 'abbreviation')
-  assert_that(rxns %has_name% 'uppbnd')
-  assert_that(rxns %has_name% 'lowbnd')
-  assert_that(rxns %has_name% 'obj_coef')
   
   stoichiometric_matrix <- Matrix::sparseMatrix(j = match(stoich$abbreviation, rxns$abbreviation),
                                                 i = match(stoich$met, mets$met),

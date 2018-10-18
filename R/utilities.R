@@ -28,12 +28,8 @@ get_BiGG <- function(address){
     ) %>%
     mutate(obj_coef = coalesce(.data$objective_coefficient, 0))
   
-  res$mets <- json_mod$metabolites %>% 
-    purrr::keep(is.vector) %>%
-    transmute(chemical = .data$id,
-              compartment = .data$compartment,
-              name = .data$name) %>%
-    recompose_metabolites()
+  res$mets <- json_mod$metabolites %>%
+    select(met = id)
   
   res$stoich <- json_mod$reactions$metabolites %>%
     mutate(abbreviation = json_mod$reactions$id) %>%
@@ -41,4 +37,24 @@ get_BiGG <- function(address){
   
   return(res)
   
+}
+
+#' Validate an expanded model
+validate_expanded <- function(reactions_expanded){
+  
+  rxns <- reactions_expanded$rxns
+  stoich <- reactions_expanded$stoich
+  mets <- reactions_expanded$mets
+  
+  assert_that(
+    'data.frame' %in% class(reactions_expanded$rxns),
+    reactions_expanded$rxns %has_name% 'abbreviation',
+    reactions_expanded$rxns %has_name% 'uppbnd',
+    reactions_expanded$rxns %has_name% 'lowbnd',
+    reactions_expanded$rxns %has_name% 'obj_coef',
+    setequal(reactions_expanded$stoich$abbreviation, reactions_expanded$rxns$abbreviation),
+    setequal(reactions_expanded$stoich$met, reactions_expanded$mets$met)
+  )
+  
+  return(TRUE)
 }
