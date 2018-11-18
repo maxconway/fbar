@@ -27,7 +27,10 @@ The model takes the form of a tabular list of reactions.
 
 ```{r}
 data("ecoli_core")
-model <- ecoli_core
+model <- ecoli_core %>%
+  mutate(geneAssociation = geneAssociation %>%
+           str_replace_all('and','&') %>%
+           str_replace_all('or','|'))
 
 genes_in_model <- model$geneAssociation %>%
   str_split('[()|& ]+') %>%
@@ -55,13 +58,13 @@ evaluation_function <- function(genome){
            uppbnd = uppbnd*activation,
            lowbnd = lowbnd*activation) %>%
     find_fluxes_df(do_minimization = FALSE) %>%
-    mutate(lowbnd = ifelse(abbreviation=='Biomass_Ecoli_core_w/GAM', flux*0.99, lowbnd),
-           uppbnd = ifelse(abbreviation=='Biomass_Ecoli_core_w/GAM', flux*1.01, uppbnd),
-           obj_coef = 1*(abbreviation=='EX_ac(e)')) %>%
+    mutate(lowbnd = ifelse(abbreviation=='BIOMASS_Ecoli_core_w_GAM', flux*0.99, lowbnd),
+           uppbnd = ifelse(abbreviation=='BIOMASS_Ecoli_core_w_GAM', flux*1.01, uppbnd),
+           obj_coef = 1*(abbreviation=='EX_ac_e')) %>%
     find_fluxes_df(do_minimization = FALSE)
   
-  return(list(bm = filter(res, abbreviation=='Biomass_Ecoli_core_w/GAM')$flux, 
-              synth = filter(res, abbreviation=='EX_ac(e)')$flux))
+  return(list(bm = filter(res, abbreviation=='BIOMASS_Ecoli_core_w_GAM')$flux, 
+              synth = filter(res, abbreviation=='EX_ac_e')$flux))
 }
 ```
 
