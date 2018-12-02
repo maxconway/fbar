@@ -1,3 +1,8 @@
+# fbar 0.5.0
+
+- Fix to getBiGG function
+- Fix to vignette
+
 # fbar 0.4.4
 
 - New function for retrieving models from BiGG
