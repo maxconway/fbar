@@ -12,6 +12,9 @@ get_BiGG <- function(address){
   if(!requireNamespace('jsonlite', quietly = TRUE)){
     stop('This function requires jsonlite. Please install it before continuing')
   }
+  if(!requireNamespace('curl', quietly = TRUE)){
+    stop('This function requires jsonlite. Please install it before continuing')
+  }
   
   
   json_mod <- jsonlite::fromJSON(address)

@@ -35,6 +35,7 @@ Imports:
     tidyr
 Suggests:
     jsonlite,
+    curl,
     knitr,
     rmarkdown,
     testthat
