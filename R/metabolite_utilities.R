@@ -28,8 +28,8 @@ decompose_metabolites <- function(met_table, compartment_regex = '(\\[[a-zA-Z0-9
 #' Merge metabolite stub and compartment to form an id
 #' 
 #' @param expanded_metabolites a metabolite table as created by \code{\link{decompose_metabolites}}
-#' @param before_signifier a sring that is inserted before the compartment identifier
-#' @param after_signifier a sring that is inserted after the compartment identifier
+#' @param before_signifier a string that is inserted before the compartment identifier
+#' @param after_signifier a string that is inserted after the compartment identifier
 #' 
 #' @return A merged metabolite table with one column, \code{met}
 #' 

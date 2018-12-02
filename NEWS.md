@@ -1,4 +1,4 @@
-# fbar 0.5.0
+# fbar 0.5.2
 
 - Fix to getBiGG function
 - Fix to vignette
