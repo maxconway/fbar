@@ -10,9 +10,9 @@ recompose_metabolites(expanded_metabolites, before_signifier = "_",
 \arguments{
 \item{expanded_metabolites}{a metabolite table as created by \code{\link{decompose_metabolites}}}
 
-\item{before_signifier}{a sring that is inserted before the compartment identifier}
+\item{before_signifier}{a string that is inserted before the compartment identifier}
 
-\item{after_signifier}{a sring that is inserted after the compartment identifier}
+\item{after_signifier}{a string that is inserted after the compartment identifier}
 }
 \value{
 A merged metabolite table with one column, \code{met}
