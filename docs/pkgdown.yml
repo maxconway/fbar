@@ -1,8 +1,11 @@
-urls:
-  reference: http://maxconway.github.io/pkgdown/reference
-  article: http://maxconway.github.io/pkgdown/articles
+pandoc: 1.19.2.4
+pkgdown: 1.2.0
+pkgdown_sha: ~
 articles:
   Introduction: Introduction.html
   Multi-Objective_Optimization_case_study: Multi-Objective_Optimization_case_study.html
   Tutorial: Tutorial.html
+urls:
+  reference: http://maxconway.github.io/pkgdown/reference
+  article: http://maxconway.github.io/pkgdown/articles
 

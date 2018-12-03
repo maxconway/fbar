@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Internal function: Splitting reaction equation into substrate and product — split_on_arrow • fbar</title>
+<title>Download a model from a BiGG json file — get_BiGG • fbar</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Internal function: Splitting reaction equation into substrate and product — split_on_arrow" />
+<meta property="og:title" content="Download a model from a BiGG json file — get_BiGG" />
 
-<meta property="og:description" content="Internal function: Splitting reaction equation into substrate and product" />
+<meta property="og:description" content="Download a model from a BiGG json file" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -120,40 +120,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Internal function: Splitting reaction equation into substrate and product</h1>
-    <small class="dont-index">Source: <a href='https://github.com/maxconway/fbar/blob/master/R/parsing_and_conversion.R'><code>R/parsing_and_conversion.R</code></a></small>
-    <div class="hidden name"><code>split_on_arrow.Rd</code></div>
+    <h1>Download a model from a BiGG json file</h1>
+    <small class="dont-index">Source: <a href='https://github.com/maxconway/fbar/blob/master/R/utilities.R'><code>R/utilities.R</code></a></small>
+    <div class="hidden name"><code>get_BiGG.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Internal function: Splitting reaction equation into substrate and product</p>
+    <p>Download a model from a BiGG json file</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>split_on_arrow</span>(<span class='no'>equations</span>, <span class='kw'>regex_arrow</span> <span class='kw'>=</span> <span class='st'>"&lt;?[-=]+&gt;"</span>)</pre>
+    <pre class="usage"><span class='fu'>get_BiGG</span>(<span class='no'>address</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>equations</th>
-      <td><p>Character vector of reaction equations.</p></td>
-    </tr>
-    <tr>
-      <th>regex_arrow</th>
-      <td><p>Regular expression for the arrow splitting sides of the reaction equation.</p></td>
+      <th>address</th>
+      <td><p>An address to download from</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a <code>data_frame</code>, with columns:</p><dl class='dl-horizontal'>
-  <dt>reversible</dt><dd><p>boolean, is reaction reversible</p></dd>
-  <dt>before</dt><dd><p>the left hand side of the reaction string</p></dd>
-  <dt>after</dt><dd><p>the right hand side of the reaction string</p></dd>
-</dl>
-
+    <p>A model in expanded format</p>
     
 
   </div>
