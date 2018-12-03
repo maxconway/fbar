@@ -34,6 +34,7 @@ Imports:
     tibble,
     tidyr
 Suggests:
+    spelling,
     jsonlite,
     curl,
     knitr,
@@ -42,3 +43,4 @@ Suggests:
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
 LazyData: true
+Language: en-GB
