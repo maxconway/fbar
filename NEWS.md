@@ -1,3 +1,5 @@
+# fbar 0.5.2.9000
+
 # fbar 0.5.2
 
 - Fix to getBiGG function
