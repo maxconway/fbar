@@ -18,7 +18,7 @@ A data frame with 95 rows and 7 columns:
 }
 }
 \source{
-\url{http://bigg.ucsd.edu}, \url{http://gcrg.ucsd.edu/Downloads/EcoliCore}, \href{http://www.asmscience.org/content/journal/ecosalplus/10.1128/ecosalplus.10.2.1}{Reconstruction and Use of Microbial Metabolic Networks: the Core Escherichia coli Metabolic Model as an Educational Guide}, \href{https://www.ncbi.nlm.nih.gov/pubmed/21988831}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
+\url{http://bigg.ucsd.edu}, \href{https://www.asmscience.org/content/journal/ecosalplus/10.1128/ecosalplus.10.2.1}{Reconstruction and Use of Microbial Metabolic Networks: the Core Escherichia coli Metabolic Model as an Educational Guide}, \href{https://www.ncbi.nlm.nih.gov/pubmed/21988831}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
 }
 \usage{
 ecoli_core

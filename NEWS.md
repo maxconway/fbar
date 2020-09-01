@@ -2,7 +2,7 @@
 
 - Fix for new CRAN check for 'return' without '()'
 - Lots of changes to take into account changes in dependencies
-- Simplified installatin documentation
+- Simplified installation documentation
 
 # fbar 0.5.2
 
@@ -88,7 +88,7 @@
 
 # fbar 0.1.13
 
-- Checks and filters in tests, vigentte and examples to remove implicit dependency on ROI.plugin.glpk.
+- Checks and filters in tests, vignette and examples to remove implicit dependency on ROI.plugin.glpk.
 - Other pdates and improvements to documentation and examples.
 - Updated tests for cleaner output
 
