@@ -1,5 +1,9 @@
 # fbar 0.5.2.9000
 
+- Fix for new CRAN check for 'return' without '()'
+- Lots of changes to take into account changes in dependencies
+- Simplified installatin documentation
+
 # fbar 0.5.2
 
 - Fix to getBiGG function
