@@ -86,7 +86,7 @@ find_fluxes_df <- function(reaction_table, do_minimization=FALSE){
 #' @importFrom purrr map
 #' @importFrom rlang .data
 find_flux_variability_df <- function(reaction_table, folds=10, do_minimization=TRUE){
-  replicates <- data_frame(index=1:(folds %/% 2)) %>% 
+  replicates <- tibble(index=1:(folds %/% 2)) %>% 
     mutate(data = purrr::map(.data$index, function(x){reaction_table})) %>%
     mutate(data = map(.data$data, sample_frac)) 
   
@@ -96,7 +96,7 @@ find_flux_variability_df <- function(reaction_table, folds=10, do_minimization=T
   fluxdf <- bind_rows(replicates, replicates_reversed) %>%
     mutate(data = map(.data$data, find_fluxes_df, do_minimization=do_minimization)) %>%
     mutate(data = map(.data$data, arrange_, 'abbreviation')) %>%
-    tidyr::unnest() %>%
+    tidyr::unnest(cols='data') %>%
     select(.data$abbreviation, .data$flux) %>%
     group_by(.data$abbreviation) %>%
     summarise(sd = stats::sd(.data$flux, na.rm=TRUE), flux = first(.data$flux))

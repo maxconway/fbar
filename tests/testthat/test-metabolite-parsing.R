@@ -18,7 +18,7 @@ test_that("tricky equations split correctly", {
                         "beta-d-galactosyl-(1->4)-beta-d-glucosyl-(1<->1)-ceramide + h2o <=> beta-d-glucosyl-(1<->1)-ceramide + d-galactose")
   res <- fbar:::split_on_arrow(tricky_equations, regex_arrow = '[[:space:]]*<?[=]+>[[:space:]]*')
   
-  expected <- data_frame(before = c("peptidylproline (omega=180)", "2 o2.- + 2 h+", "beta-d-galactosyl-(1->4)-beta-d-glucosyl-(1<->1)-ceramide + h2o"),
+  expected <- tibble(before = c("peptidylproline (omega=180)", "2 o2.- + 2 h+", "beta-d-galactosyl-(1->4)-beta-d-glucosyl-(1<->1)-ceramide + h2o"),
                         after = c("peptidylproline (omega=0)", "hydrogen peroxide + oxygen", "beta-d-glucosyl-(1<->1)-ceramide + d-galactose"),
                         reversible = TRUE)
   
@@ -40,14 +40,14 @@ test_that('metabolites are decomposed and recomposed correctly', {
 
 test_that('works correctly with duplicated metabolite', {
   
-  normal_example <- reactiontbl_to_expanded(dplyr::data_frame(
+  normal_example <- reactiontbl_to_expanded(dplyr::tibble(
     abbreviation = c('one', 'two'),
     equation = c('2 alpha -> beta', 'gamma -> 2 delta'),
     lowbnd = c(-1,-1),
     uppbnd = c(3,3),
     obj_coef = c(1,0)))
   
-  duplicated_example <- reactiontbl_to_expanded(dplyr::data_frame(
+  duplicated_example <- reactiontbl_to_expanded(dplyr::tibble(
     abbreviation = c('one', 'two'),
     equation = c('alpha + alpha -> beta', 'gamma -> delta + delta'),
     lowbnd = c(-1,-1),

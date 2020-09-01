@@ -36,7 +36,7 @@ For more information, read the code.
 data(iJO1366)
 library(dplyr)
 
-gene_table = data_frame(name = iJO1366$geneAssociation \%>\%
+gene_table = tibble(name = iJO1366$geneAssociation \%>\%
 stringr::str_split('and|or|\\\\s|\\\\(|\\\\)') \%>\%
   purrr::flatten_chr() \%>\%
   unique,

@@ -42,7 +42,7 @@ test_that("works with multi value expressions, boolean", {
 })
 
 test_that('works with ecoli_core', {
-  genes <- data_frame(name = stringr::str_extract_all(ecoli_core$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
+  genes <- tibble(name = stringr::str_extract_all(ecoli_core$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
     flatten_chr() %>%
     discard(is.na)
   ) %>%
@@ -59,7 +59,7 @@ test_that('works with ecoli_core', {
 })
 
 test_that('works with iJO1366', {
-  genes <- data_frame(name = stringr::str_extract_all(iJO1366$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
+  genes <- tibble(name = stringr::str_extract_all(iJO1366$geneAssociation, '[[:alpha:]][0-9]{4}') %>%
                         flatten_chr() %>%
                         discard(is.na)
   ) %>%

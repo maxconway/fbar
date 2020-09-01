@@ -22,7 +22,7 @@ test_that("find_fluxes_df works in grouped context", {
     group_by(sample) %>%
     tidyr::nest() %>%
     mutate(data = map(data, find_fluxes_df)) %>%
-    tidyr::unnest() %>%
+    tidyr::unnest(cols='data') %>%
     ungroup %>%
     filter(sample=='3') %>%
     select(-sample) %>%

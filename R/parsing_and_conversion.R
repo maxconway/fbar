@@ -24,7 +24,7 @@ split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
   colnames(split) <- c('before', 'after')
   
   split %>% 
-    tibble::as_data_frame() %>%
+    tibble::as_tibble() %>%
     mutate(reversible = equations %>%
               str_extract(regex_arrow) %>%
               str_detect('<'),
@@ -57,7 +57,7 @@ parse_met_list <- function(mets){
   met <- mets %>% 
     str_replace( pattern_stoich,'') %>% 
     str_trim()
-  tibble::data_frame(stoich, met)
+  tibble::tibble(stoich, met)
 }
 
 
@@ -136,7 +136,7 @@ reactiontbl_to_expanded <- function(reaction_table, regex_arrow = '<?[-=]+>'){
     mutate(symbol = stringr::str_split(.data$string, stringr::fixed(' + '))) %>%
     (function(x){
       if(nrow(x)>0){
-        tidyr::unnest(x, .data$symbol)
+        tidyr::unnest(x, cols=.data$symbol)
       } else {
         return(x)
       }

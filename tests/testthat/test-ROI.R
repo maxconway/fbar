@@ -12,7 +12,7 @@ suppressMessages(library('fbar'))
 
 test_that('toy model 1', {
 
-  expanded <- reactiontbl_to_expanded(dplyr::data_frame(
+  expanded <- reactiontbl_to_expanded(dplyr::tibble(
     abbreviation = c('one', 'two'),
     equation = c('alpha -> beta', 'gamma -> delta'),
     lowbnd = c(-1,-1),
@@ -31,7 +31,7 @@ test_that('toy model 1', {
 
 test_that('toy model 2', {
 
-  expanded <- reactiontbl_to_expanded(dplyr::data_frame(
+  expanded <- reactiontbl_to_expanded(dplyr::tibble(
     abbreviation = c('one', 'two'),
     equation = c('alpha -> ', ' <-> alpha'),
     lowbnd = c(-1,-1),
