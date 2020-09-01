@@ -90,12 +90,8 @@ These functions process gene protein reaction mappings.
 devtools::install_github('maxconway/fbar')
 ```
 
-#### Install a linear programming solver:
-This package requires a linear programming solver. There are a number of options for this (see below), but the easiest way to get started is to install `ROI.plugin.ecos` (one of the suggested packages).
-
-```{r, eval=FALSE}
-install.packages('ROI.plugin.ecos')
-```
+#### Install an additional linear programming solver (optional):
+This package requires a linear programming solver. `ROI.plugin.ecos` is installed by default, and does the job, but other solvers, such as Gurobi and GLPK are faster. Anything that is supported by the R Optimization Infrastructure package should work.
 
 
 ### Comparison with other packages
