@@ -31,7 +31,7 @@ split_on_arrow <- function(equations, regex_arrow = '<?[-=]+>'){
             before = str_trim(.data$before),
             after = str_trim(.data$after)
     ) %>%
-    return
+    return()
 }
 
 
