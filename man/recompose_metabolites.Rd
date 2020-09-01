@@ -4,8 +4,11 @@
 \alias{recompose_metabolites}
 \title{Merge metabolite stub and compartment to form an id}
 \usage{
-recompose_metabolites(expanded_metabolites, before_signifier = "_",
-  after_signifier = "")
+recompose_metabolites(
+  expanded_metabolites,
+  before_signifier = "_",
+  after_signifier = ""
+)
 }
 \arguments{
 \item{expanded_metabolites}{a metabolite table as created by \code{\link{decompose_metabolites}}}

@@ -51,9 +51,10 @@ if(length(ROI::ROI_applicable_solvers(roi_model))>=1){
 }
 }
 \seealso{
-Other parsing_and_conversion: \code{\link{expanded_to_ROI}},
-  \code{\link{expanded_to_glpk}},
-  \code{\link{expanded_to_gurobi}},
-  \code{\link{reactiontbl_to_gurobi}}
+Other parsing_and_conversion: 
+\code{\link{expanded_to_ROI}()},
+\code{\link{expanded_to_glpk}()},
+\code{\link{expanded_to_gurobi}()},
+\code{\link{reactiontbl_to_gurobi}()}
 }
 \concept{parsing_and_conversion}

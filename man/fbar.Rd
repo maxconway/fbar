@@ -3,7 +3,6 @@
 \docType{package}
 \name{fbar}
 \alias{fbar}
-\alias{fbar-package}
 \title{fbar: Flux Balance Analysis in R with a tidy data approach}
 \description{
 fbar is a simple, easy to use Flux Balance Analysis package with a tidy data approach. 

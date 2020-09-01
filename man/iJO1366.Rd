@@ -4,7 +4,8 @@
 \name{iJO1366}
 \alias{iJO1366}
 \title{A full size E. coli model.}
-\format{A data frame with 2,583 rows and 10 columns:
+\format{
+A data frame with 2,583 rows and 10 columns:
 \describe{
   \item{abbreviation}{an abbreviated reaction name, acts as the reaction id}
   \item{lowbnd}{lower bound on the reaction rate}
@@ -14,7 +15,8 @@
   \item{officialName}{full reaction name}
   \item{geneAssociation}{A boolean combination of genes which control the reaction}
   \item{subsystem}{an indicator of reaction function}
-}}
+}
+}
 \source{
 \url{http://bigg.ucsd.edu}, \href{https://www.ncbi.nlm.nih.gov/pubmed/21988831}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
 }

@@ -4,11 +4,13 @@
 \name{nutrient_types}
 \alias{nutrient_types}
 \title{A subset of exchange reactions annotated to indicate typical availability}
-\format{A data frame with 25 rows and 2 columns:
+\format{
+A data frame with 25 rows and 2 columns:
 \describe{
   \item{abbreviation}{an exchange reaction id}
   \item{nutrient_type}{the nutrient availability, one of 'micro', 'macro' or 'substrate'}
-}}
+}
+}
 \usage{
 nutrient_types
 }

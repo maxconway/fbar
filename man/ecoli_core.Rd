@@ -4,7 +4,8 @@
 \name{ecoli_core}
 \alias{ecoli_core}
 \title{A small E. coli model, created from a number of sources.}
-\format{A data frame with 95 rows and 7 columns:
+\format{
+A data frame with 95 rows and 7 columns:
 \describe{
   \item{abbreviation}{an abbreviated reaction name, acts as the reaction id}
   \item{lowbnd}{lower bound on the reaction rate}
@@ -14,7 +15,8 @@
   \item{officialName}{full reaction name}
   \item{geneAssociation}{A boolean combination of genes which control the reaction}
   \item{subsystem}{an indicator of reaction function}
-}}
+}
+}
 \source{
 \url{http://bigg.ucsd.edu}, \url{http://gcrg.ucsd.edu/Downloads/EcoliCore}, \href{http://www.asmscience.org/content/journal/ecosalplus/10.1128/ecosalplus.10.2.1}{Reconstruction and Use of Microbial Metabolic Networks: the Core Escherichia coli Metabolic Model as an Educational Guide}, \href{https://www.ncbi.nlm.nih.gov/pubmed/21988831}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
 }

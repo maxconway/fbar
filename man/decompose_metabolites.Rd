@@ -4,8 +4,10 @@
 \alias{decompose_metabolites}
 \title{Decompose a metabolite table into the metabolite stub itself and the compartment it is in}
 \usage{
-decompose_metabolites(met_table,
-  compartment_regex = "(\\\\[[a-zA-Z0-9]+]$)|(_[a-zA-Z]$)")
+decompose_metabolites(
+  met_table,
+  compartment_regex = "(\\\\[[a-zA-Z0-9]+]$)|(_[a-zA-Z]$)"
+)
 }
 \arguments{
 \item{met_table}{A metabolite table, with one column, \code{met}}
