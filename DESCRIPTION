@@ -16,7 +16,7 @@ Description: A toolkit for Flux Balance Analysis and related
     providing reusable components that can be used in the design of new
     implementation of new techniques, in particular those that involve large
     parameter sweeps. For a background on the theory, see What is Flux Balance 
-    Analysis <https://dx.doi.org/10.1038/nbt.1614>.
+    Analysis <doi:10.1038/nbt.1614>.
 License: GPL-3
 URL: http://maxconway.github.io/fbar/, https://github.com/maxconway/fbar
 BugReports: https://github.com/maxconway/fbar/issues
