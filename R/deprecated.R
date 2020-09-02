@@ -7,7 +7,7 @@
 #' Used as the second half of \code{\link{reactiontbl_to_gurobi}}, this parses the long format produced by \code{reactiontbl_to_expanded} to a Gurobi model
 #' 
 #' @details 
-#' For installation instructions for Gurobi, refer to the Gurobi website: \url{http://www.gurobi.com/}.
+#' For installation instructions for Gurobi, refer to the Gurobi website: \url{https://www.gurobi.com/}.
 #' 
 #' The \code{reaction_table} must have columns:
 #' \itemize{

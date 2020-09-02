@@ -1,3 +1,9 @@
+## Resubmission
+This is a resubmission. In this version I have:
+- Fixed hyperlinks that were pointing to redirects
+- Omitted redundant 'A simple package' in the Description field of DESCRIPTION
+- Added a link to a review paper describing the method to the Description field. I don't have a paper that describes this package, per se. The most full description is in my thesis, but that includes a whole bunch of other stuff so it wouldn't be a good description to use.
+
 ## Test environments
 - elementary OS 5.1.7 Hera, built on Ubuntu 18.04 LTS, R 4.0.2
 - travis-ci:

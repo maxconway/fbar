@@ -11,7 +11,7 @@
 #'   \item{geneAssociation}{A boolean combination of genes which control the reaction}
 #'   \item{subsystem}{an indicator of reaction function}
 #' }
-#' @source \url{http://bigg.ucsd.edu}, \href{https://www.asmscience.org/content/journal/ecosalplus/10.1128/ecosalplus.10.2.1}{Reconstruction and Use of Microbial Metabolic Networks: the Core Escherichia coli Metabolic Model as an Educational Guide}, \href{https://www.ncbi.nlm.nih.gov/pubmed/21988831}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
+#' @source \url{http://bigg.ucsd.edu}, \href{https://www.asmscience.org/content/journal/ecosalplus/10.1128/ecosalplus.10.2.1}{Reconstruction and Use of Microbial Metabolic Networks: the Core Escherichia coli Metabolic Model as an Educational Guide}, \href{https://pubmed.ncbi.nlm.nih.gov/21988831/}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
 'ecoli_core'
 
 #' A full size E. coli model.
@@ -27,7 +27,7 @@
 #'   \item{geneAssociation}{A boolean combination of genes which control the reaction}
 #'   \item{subsystem}{an indicator of reaction function}
 #' }
-#' @source \url{http://bigg.ucsd.edu}, \href{https://www.ncbi.nlm.nih.gov/pubmed/21988831}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
+#' @source \url{http://bigg.ucsd.edu}, \href{https://pubmed.ncbi.nlm.nih.gov/21988831/}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
 'iJO1366'
 
 #' A subset of exchange reactions annotated to indicate typical availability

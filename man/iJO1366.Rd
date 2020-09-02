@@ -18,7 +18,7 @@ A data frame with 2,583 rows and 10 columns:
 }
 }
 \source{
-\url{http://bigg.ucsd.edu}, \href{https://www.ncbi.nlm.nih.gov/pubmed/21988831}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
+\url{http://bigg.ucsd.edu}, \href{https://pubmed.ncbi.nlm.nih.gov/21988831/}{A comprehensive genome-scale reconstruction of Escherichia coli metabolism--2011.}
 }
 \usage{
 iJO1366
