@@ -8,21 +8,29 @@
 
 <title>Apply gene expressions to reaction table — gene_associate • fbar</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +38,10 @@
 
 
 
-<meta property="og:title" content="Apply gene expressions to reaction table — gene_associate" />
 
+<meta property="og:title" content="Apply gene expressions to reaction table — gene_associate" />
 <meta property="og:description" content="A convenience function that uses gene_eval and a custom function to apply new upper and lower bounds." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -47,9 +55,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -63,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fbar</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
       </span>
     </div>
 
@@ -71,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -100,11 +109,10 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/maxconway/fbar">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/maxconway/fbar/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -115,6 +123,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -126,15 +135,16 @@
     </div>
 
     <div class="ref-description">
-    
     <p>A convenience function that uses <code><a href='gene_eval.html'>gene_eval</a></code> and a custom function to apply new upper and lower bounds.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>gene_associate</span>(<span class='no'>reaction_table</span>, <span class='no'>gene_table</span>,
-  <span class='kw'>expression_flux_function</span> <span class='kw'>=</span> <span class='kw'>function</span>(<span class='no'>x</span>) {     (<span class='fl'>1</span> +
-  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Log'>log</a></span>(<span class='no'>x</span>)/<span class='kw pkg'>stats</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/sd'>sd</a></span>(<span class='no'>x</span>)^<span class='fl'>2</span>)^<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/sign'>sign</a></span>(<span class='no'>x</span> - <span class='fl'>1</span>) })</pre>
-    
+    <pre class="usage"><span class='fu'>gene_associate</span>(
+  <span class='no'>reaction_table</span>,
+  <span class='no'>gene_table</span>,
+  <span class='kw'>expression_flux_function</span> <span class='kw'>=</span> <span class='kw'>function</span>(<span class='no'>x</span>) {     (<span class='fl'>1</span> + <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span>(<span class='no'>x</span>)/<span class='kw pkg'>stats</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span>(<span class='no'>x</span>)^<span class='fl'>2</span>)^<span class='fu'><a href='https://rdrr.io/r/base/sign.html'>sign</a></span>(<span class='no'>x</span> - <span class='fl'>1</span>)
+    }
+)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -151,79 +161,65 @@
       <td><p>a function to convert from gene set expression to flux</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>the reaction_table, with a new column, present, and altered upper and lower bounds</p>
-    
     <h2 class="hasAnchor" id="warning"><a class="anchor" href="#warning"></a>Warning</h2>
 
     
-    <p>This function relies on <code><a href='gene_eval.html'>gene_eval</a></code>, which uses <code><a href='https://www.rdocumentation.org/packages/base/topics/eval'>eval</a></code> to evaluate gene expression sets. 
+
+<p>This function relies on <code><a href='gene_eval.html'>gene_eval</a></code>, which uses <code><a href='https://rdrr.io/r/base/eval.html'>eval</a></code> to evaluate gene expression sets. 
 This gives flexibility, but means that malicious code in the <code>gene_sets</code> argument could get evaluated.
 <code>gene_sets</code> is evaluated in a restricted environment, but there might be a way around this, so you might want to check for anything suspicious in this argument manually.
 For more information, read the code.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>gene_eval</p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>iJO1366</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>dplyr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:testthat’:</span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>    matches</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>iJO1366</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    filter, lag</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:base’:</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='input'>
-<span class='no'>gene_table</span> <span class='kw'>=</span> <span class='fu'><a href='http://dplyr.tidyverse.org/reference/reexports.html'>data_frame</a></span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='no'>iJO1366</span>$<span class='no'>geneAssociation</span> <span class='kw'>%&gt;%</span>
-<span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/stringr/topics/str_split'>str_split</a></span>(<span class='st'>'and|or|\\s|\\(|\\)'</span>) <span class='kw'>%&gt;%</span>
-  <span class='kw pkg'>purrr</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/purrr/topics/flatten'>flatten_chr</a></span>() <span class='kw'>%&gt;%</span>
+<span class='no'>gene_table</span> <span class='kw'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/reexports.html'>tibble</a></span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='no'>iJO1366</span>$<span class='no'>geneAssociation</span> <span class='kw'>%&gt;%</span>
+<span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_split.html'>str_split</a></span>(<span class='st'>'and|or|\\s|\\(|\\)'</span>) <span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>purrr</span><span class='kw ns'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/flatten.html'>flatten_chr</a></span>() <span class='kw'>%&gt;%</span>
   <span class='no'>unique</span>,
 <span class='kw'>presence</span> <span class='kw'>=</span> <span class='fl'>1</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/filter.html'>filter</a></span>(<span class='no'>name</span> <span class='kw'>!=</span> <span class='st'>''</span>, !<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/NA'>is.na</a></span>(<span class='no'>name</span>))
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span>(<span class='no'>name</span> <span class='kw'>!=</span> <span class='st'>''</span>, !<span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span>(<span class='no'>name</span>))
 
 <span class='fu'>gene_associate</span>(<span class='kw'>reaction_table</span> <span class='kw'>=</span> <span class='no'>iJO1366</span> <span class='kw'>%&gt;%</span>
-                 <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>geneAssociation</span> <span class='kw'>=</span> <span class='no'>geneAssociation</span> <span class='kw'>%&gt;%</span>
-                          <span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace_all</a></span>(<span class='st'>'and'</span>, <span class='st'>'&amp;'</span>) <span class='kw'>%&gt;%</span>
-                          <span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace_all</a></span>(<span class='st'>'or'</span>, <span class='st'>'|'</span>)
+                 <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>geneAssociation</span> <span class='kw'>=</span> <span class='no'>geneAssociation</span> <span class='kw'>%&gt;%</span>
+                          <span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span>(<span class='st'>'and'</span>, <span class='st'>'&amp;'</span>) <span class='kw'>%&gt;%</span>
+                          <span class='kw pkg'>stringr</span><span class='kw ns'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span>(<span class='st'>'or'</span>, <span class='st'>'|'</span>)
                  ),
                <span class='kw'>gene_table</span> <span class='kw'>=</span> <span class='no'>gene_table</span>
-)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 2,583 x 9</span><span>
+)</div><div class='output co'>#&gt; # A tibble: 2,583 x 9
 #&gt;    abbreviation lowbnd uppbnd obj_coef equation officialName geneAssociation
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 12DGR120tipp      0   </span><span style='text-decoration: underline;'>1</span><span>000        0 12dgr12… 1,2 diacylg… </span><span style='color: #949494;'>""</span><span>             
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 12DGR140tipp      0   </span><span style='text-decoration: underline;'>1</span><span>000        0 12dgr14… 1,2 diacylg… </span><span style='color: #949494;'>""</span><span>             
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 12DGR141tipp      0   </span><span style='text-decoration: underline;'>1</span><span>000        0 12dgr14… 1,2 diacylg… </span><span style='color: #949494;'>""</span><span>             
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 12DGR160tipp      0   </span><span style='text-decoration: underline;'>1</span><span>000        0 12dgr16… 1,2 diacylg… </span><span style='color: #949494;'>""</span><span>             
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 12DGR161tipp      0   </span><span style='text-decoration: underline;'>1</span><span>000        0 12dgr16… 1,2 diacylg… </span><span style='color: #949494;'>""</span><span>             
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 12DGR180tipp      0   </span><span style='text-decoration: underline;'>1</span><span>000        0 12dgr18… 1,2 diacylg… </span><span style='color: #949494;'>""</span><span>             
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 12DGR181tipp      0   </span><span style='text-decoration: underline;'>1</span><span>000        0 12dgr18… 1,2 diacylg… </span><span style='color: #949494;'>""</span><span>             
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 12PPDRtex     -</span><span style='color: #BB0000;text-decoration: underline;'>1</span><span style='color: #BB0000;'>000</span><span>   </span><span style='text-decoration: underline;'>1</span><span>000        0 12ppd__… (R)-Propane… b0241 | b0929 …
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 12PPDRtpp     -</span><span style='color: #BB0000;text-decoration: underline;'>1</span><span style='color: #BB0000;'>000</span><span>   </span><span style='text-decoration: underline;'>1</span><span>000        0 12ppd__… (R)-Propane… </span><span style='color: #949494;'>""</span><span>             
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 12PPDStex     -</span><span style='color: #BB0000;text-decoration: underline;'>1</span><span style='color: #BB0000;'>000</span><span>   </span><span style='text-decoration: underline;'>1</span><span>000        0 12ppd__… (S)-Propane… b0241 | b0929 …
-#&gt; </span><span style='color: #949494;'># ... with 2,573 more rows, and 2 more variables: subsystem </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
-#&gt; #   present </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
+#&gt;    &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;          
+#&gt;  1 12DGR120tipp      0   1000        0 12dgr12… 1,2 diacylg… ""             
+#&gt;  2 12DGR140tipp      0   1000        0 12dgr14… 1,2 diacylg… ""             
+#&gt;  3 12DGR141tipp      0   1000        0 12dgr14… 1,2 diacylg… ""             
+#&gt;  4 12DGR160tipp      0   1000        0 12dgr16… 1,2 diacylg… ""             
+#&gt;  5 12DGR161tipp      0   1000        0 12dgr16… 1,2 diacylg… ""             
+#&gt;  6 12DGR180tipp      0   1000        0 12dgr18… 1,2 diacylg… ""             
+#&gt;  7 12DGR181tipp      0   1000        0 12dgr18… 1,2 diacylg… ""             
+#&gt;  8 12PPDRtex     -1000   1000        0 12ppd__… (R)-Propane… "b0241 | b0929…
+#&gt;  9 12PPDRtpp     -1000   1000        0 12ppd__… (R)-Propane… ""             
+#&gt; 10 12PPDStex     -1000   1000        0 12ppd__… (S)-Propane… "b0241 | b0929…
+#&gt; # … with 2,573 more rows, and 2 more variables: subsystem &lt;chr&gt;, present &lt;dbl&gt;</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#warning">Warning</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -231,13 +227,16 @@ For more information, read the code.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

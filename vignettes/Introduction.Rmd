@@ -98,7 +98,7 @@ The most famous package for constraint based methods is probably COBRA, a Matlab
 The existing R packages for Flux Balance Analysis include `sybil` and `abcdeFBA`. Compared to these packages, `fbar` is smaller and does less. The aim of `fbar` is to be more suitable for use as a building block in bioinformatics pipelines. Whereas `sybil` and to a lesser extent `abcdeFBA` intend to act as tools with a function for each analysis you might want to do, `fbar` intends to supply just enough functionality that you can easily construct your analysis with only standard data frame operations.
 
 ### Linear programming solvers
-`fbar` uses [ROI](https://CRAN.R-project.org/package=ROI) by default, which gives access to a number of solvers via plugins. It also supports Rglpk and Gurobi directly. [Gurobi](http://www.gurobi.com) is substantially faster than other solvers in my experience, so it is recommended if you can get it (it is commercial, but has a free academic licence).
+`fbar` uses [ROI](https://CRAN.R-project.org/package=ROI) by default, which gives access to a number of solvers via plugins. It also supports Rglpk and Gurobi directly. [Gurobi](https://www.gurobi.com/) is substantially faster than other solvers in my experience, so it is recommended if you can get it (it is commercial, but has a free academic licence).
 
 ### Bugs and feature requests
 If you find problems with the package, or there's anything that it doesn't do which you think it should, please submit them to https://github.com/maxconway/fbar/issues. In particular, let me know about optimizers and formats which you'd like supported, or if you have a workflow which might make sense for inclusion as a default convenience function.

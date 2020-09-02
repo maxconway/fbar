@@ -1,4 +1,4 @@
-# fbar 0.5.2.9000
+# fbar 0.6.0
 
 - Fix for new CRAN check for 'return' without '()'
 - Lots of changes to take into account changes in dependencies
