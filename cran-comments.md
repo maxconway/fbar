@@ -7,7 +7,7 @@ This is a resubmission. In this version I have:
 ## Test environments
 - elementary OS 5.1.7 Hera, built on Ubuntu 18.04 LTS, R 4.0.2
 - travis-ci:
-  - ubuntu 16.04, oldrel
+  - ubuntu 16.04, oldreldevt
   - ubuntu 16.04, release
   - ubuntu 16.04, devel
 - win-builder:

@@ -2,7 +2,7 @@ Package: fbar
 Type: Package
 Title: An Extensible Approach to Flux Balance Analysis
 Version: 0.6.0
-Date: 2020-09-01
+Date: 2020-09-02
 Authors@R: person("Max", "Conway", email = "conway.max1@gmail.com",
                   role = c("aut", "cre"))
 Description: A toolkit for Flux Balance Analysis and related
